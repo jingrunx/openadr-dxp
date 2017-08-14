@@ -16,7 +16,7 @@ import cn.openadr.payload.rpt.RegisterReportResponse;
 
 /** 报告 */
 @Path("/report")
-public interface RestReport {
+public interface RestReport extends RestApi {
 	/** VEN注册默认报告 */
 	@POST
 	@Path("/register")

@@ -11,7 +11,7 @@ import cn.openadr.payload.reg.QueryRegistrationRequest;
 import cn.openadr.payload.reg.QueryRegistrationResponse;
 
 @Path("/registration")
-public interface RestRegistration {
+public interface RestRegistration extends RestApi {
 	@POST
 	@Path("/create")
 	CreateRegistrationResponse create(CreateRegistrationRequest request);

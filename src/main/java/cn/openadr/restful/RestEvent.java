@@ -7,7 +7,7 @@ import cn.openadr.payload.evt.RequestEventRequest;
 import cn.openadr.payload.evt.RequestEventResponse;
 
 @Path("/event")
-public interface RestEvent {
+public interface RestEvent extends RestApi {
 	@POST
 	@Path("/query")
 	RequestEventResponse request(RequestEventRequest request);

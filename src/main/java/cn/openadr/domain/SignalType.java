@@ -2,20 +2,20 @@ package cn.openadr.domain;
 
 /** 信号类别 */
 public enum SignalType implements EnumeratedType {
-	/** 偏移 */
-	DELTA("delta"),
 	/** 等级 */
 	LEVEL("level"),
-	/** 倍率 */
-	MULTIPLIER("multiplier"),
 	/** 价格 */
 	PRICE("price"),
+	/** 设定值 */
+	SETPOINT("setpoint"),
+	/** 偏移 */
+	DELTA("delta"),
+	/** 倍率 */
+	MULTIPLIER("multiplier"),
 	/** 价格倍数 */
 	PRICE_MULTIPLIER("priceMultiplier"),
 	/** 相对价格 */
 	PRICE_RELATIVE("priceRelative"),
-	/** 设定值 */
-	SETPOINT("setpoint"),
 	/** 它指示负荷控制器在某一个水平运行，即占最大负荷消耗容量的百分比 */
 	X_LOAD_CONTROL_CAPACITY("x-loadControlCapacity"),
 	/** 与正常运行（0是正常运行）相关的离散整型水平 */

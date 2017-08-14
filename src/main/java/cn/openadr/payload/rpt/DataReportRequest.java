@@ -2,6 +2,7 @@ package cn.openadr.payload.rpt;
 
 import org.joda.time.DateTime;
 
+/** 数据报送请求 */
 public class DataReportRequest extends ReportRequest {
 	private static final long serialVersionUID = 1L;
 

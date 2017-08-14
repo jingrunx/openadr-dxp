@@ -3,8 +3,12 @@ package cn.openadr.payload;
 import java.io.Serializable;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import cn.openadr.domain.UniqueIdentifier;
 
+@JsonInclude(Include.NON_EMPTY)
 public class OadrPayload implements Serializable {
 	private static final long serialVersionUID = 1L;
 

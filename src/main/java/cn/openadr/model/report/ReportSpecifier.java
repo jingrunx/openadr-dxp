@@ -12,6 +12,7 @@ import cn.openadr.domain.ReportType;
 import cn.openadr.jackson.EnumeratedDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.OadrObject;
+import cn.openadr.tsdb.Point;
 
 class ReportTypeDeserializer extends EnumeratedDeserializer<ReportType> {
 	public ReportTypeDeserializer() {
@@ -35,8 +36,8 @@ public class ReportSpecifier extends OadrObject {
 	private int period;
 	/** 允许延迟的时间(单位:分钟) */
 	private int granularity;
-	/** 要报告的测点及数据类型(如果已经报告过，可以只报告metric+tags) */
-	private final List<PointMetaData> points = new ArrayList<>();
+	/** 要报告的测点 */
+	private final List<Point> points = new ArrayList<>();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	public ReportType getType() {
@@ -88,7 +89,7 @@ public class ReportSpecifier extends OadrObject {
 		this.granularity = granularity;
 	}
 
-	public List<PointMetaData> getPoints() {
+	public List<Point> getPoints() {
 		return points;
 	}
 }

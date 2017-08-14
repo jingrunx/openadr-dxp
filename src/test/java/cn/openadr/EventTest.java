@@ -46,7 +46,7 @@ public class EventTest extends AbstractJsonTest<Event> {
 		Interval interval = baseline.getInterval();
 
 		interval.getMetric()
-			.setName(MetricType.POWER_ACTIVE);
+			.setName(MetricType.POWER_ACTIVE.value());
 		interval.getMetric()
 			.setMultiplier(UnitMultiplier.k);
 		interval.getMetric()

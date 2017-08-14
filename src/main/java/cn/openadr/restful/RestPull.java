@@ -7,7 +7,7 @@ import cn.openadr.payload.pull.PullRequest;
 import cn.openadr.payload.pull.PullResponse;
 
 @Path("/pull")
-public interface RestPull {
+public interface RestPull extends RestApi {
 	/** 查询事件或报表 */
 	@POST
 	@Path("/")

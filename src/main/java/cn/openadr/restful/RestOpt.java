@@ -9,7 +9,7 @@ import cn.openadr.payload.opt.CreateOptRequest;
 import cn.openadr.payload.opt.CreateOptResponse;
 
 @Path("/opt")
-public interface RestOpt {
+public interface RestOpt extends RestApi {
 	@POST
 	@Path("/create")
 	CreateOptResponse create(CreateOptRequest request);
