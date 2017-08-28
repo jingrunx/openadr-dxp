@@ -25,7 +25,7 @@ public class FillUtils {
 	private static DateTime dtstart = LocalDate.now()
 		.toDateTimeAtStartOfDay();
 
-	public String uuid() {
+	public static String id() {
 		return UUID.randomUUID()
 			.toString();
 	}

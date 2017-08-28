@@ -73,16 +73,53 @@ public class RptTest extends AbstractJsonTest<ReportRequest> {
 		object = request;
 	}
 
-//@Test
-//public void testReport() throws IOException {
-//	Report r = new Report();
-//	r.setType(ReportType.BASELINE);
-//
-//	String json = jsonMapper.writeValueAsString(r);
-//	System.out.println(json);
-//
-//	r = jsonMapper.readValue(json, Report.class);
-//	System.out.println(r.getId());
-//	System.out.println(r.getType());
-//}
+	@Test
+	public void testRegisterReportRequest() {
+
+	}
+
+	@Test
+	public void testRegisterReportResponse() {
+
+	}
+
+	@Test
+	public void testCreateReportRequest() {
+
+	}
+
+	@Test
+	public void testCreateReportResponse() {
+
+	}
+
+	@Test
+	public void testCancelReportRequest() {
+
+	}
+
+	@Test
+	public void testCancelReportResponse() {
+
+	}
+
+	@Test
+	public void testLiveReportRequest() {
+
+	}
+
+	@Test
+	public void testLiveReportResponse() {
+
+	}
+
+	@Test
+	public void testHistoryReportRequest() {
+
+	}
+
+	@Test
+	public void testHistoryReportResponse() {
+
+	}
 }
