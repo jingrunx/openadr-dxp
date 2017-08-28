@@ -2,13 +2,14 @@ package cn.openadr;
 
 import org.junit.Test;
 
-import cn.openadr.payload.pull.PullRequest;
-import cn.openadr.payload.pull.PullResponse;
+import cn.openadr.payload.pull.PollRequest;
+import cn.openadr.payload.pull.PollResponse;
+
 
 public class PollTest extends AbstractJsonTest<Object>{
 	@Test
-	public void testPullRequest() {
-		PullRequest request = new PullRequest();
+	public void testPollRequest() {
+		PollRequest request = new PollRequest();
 		request.setDnID(FillUtils.uuid());
 		request.setId(FillUtils.uuid());
 		request.setVersion(0);
@@ -16,18 +17,16 @@ public class PollTest extends AbstractJsonTest<Object>{
 	}
 	
 	@Test 
-	public void testPullResponse() {
-		PullRequest request = new PullRequest();
+	public void testPollResponse() {
+		PollRequest request = new PollRequest();
 		request.setDnID(FillUtils.uuid());
 		request.setId(FillUtils.uuid());
 		request.setVersion(0);
-		PullResponse response = new PullResponse(request);
-		response.setAbility(true);
+		PollResponse response = new PollResponse(request);
 		response.setCode(200);
 		response.setId(FillUtils.uuid());
 		response.setReason("no reason");
 		response.setRegisterReport(true);
-		response.setReportMetadata(true);
 		response.setReregistration(false);
 		object  = response;
 	}

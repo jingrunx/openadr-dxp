@@ -8,11 +8,12 @@ import org.joda.time.Minutes;
 import org.junit.Test;
 
 import cn.openadr.domain.MetricType;
+import cn.openadr.model.report.PointValue;
 import cn.openadr.model.report.PointValues;
 import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
+import cn.openadr.payload.rpt.RegisterReportRequest;
 import cn.openadr.payload.rpt.ReportRequest;
-import cn.openadr.tsdb.PointValue;
 import cn.openadr.tsdb.TagKey;
 import cn.openadr.tsdb.ValuePart;
 
@@ -32,7 +33,8 @@ public class RptTest extends AbstractJsonTest<ReportRequest> {
 				.put(TagKey.device, UUID.randomUUID()
 					.toString());
 
-			value.setValue(5.5f);
+			value.getValue()
+				.setValue(5.5f);
 
 			request.getValues()
 				.add(value);
@@ -74,16 +76,57 @@ public class RptTest extends AbstractJsonTest<ReportRequest> {
 	}
 	
 
-//@Test
-//public void testReport() throws IOException {
-//	Report r = new Report();
-//	r.setType(ReportType.BASELINE);
-//
-//	String json = jsonMapper.writeValueAsString(r);
-//	System.out.println(json);
-//
-//	r = jsonMapper.readValue(json, Report.class);
-//	System.out.println(r.getId());
-//	System.out.println(r.getType());
-//}
+	@Test
+	public void testRegisterReportRequest() {
+		RegisterReportRequest v = new RegisterReportRequest();
+
+		CommonUtils.fillRptRequest(v);
+
+		object = v;
+	}
+
+	@Test
+	public void testRegisterReportResponse() {
+
+	}
+
+	@Test
+	public void testCreateReportRequest() {
+
+	}
+
+	@Test
+	public void testCreateReportResponse() {
+
+	}
+
+	@Test
+	public void testCancelReportRequest() {
+
+	}
+
+	@Test
+	public void testCancelReportResponse() {
+
+	}
+
+	@Test
+	public void testLiveReportRequest() {
+
+	}
+
+	@Test
+	public void testLiveReportResponse() {
+
+	}
+
+	@Test
+	public void testHistoryReportRequest() {
+
+	}
+
+	@Test
+	public void testHistoryReportResponse() {
+
+	}
 }

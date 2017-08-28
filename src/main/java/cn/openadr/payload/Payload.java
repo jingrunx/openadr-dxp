@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import cn.openadr.domain.UniqueIdentifier;
 
 @JsonInclude(Include.NON_EMPTY)
-public class OadrPayload implements Serializable {
+public class Payload implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/** 广播 */

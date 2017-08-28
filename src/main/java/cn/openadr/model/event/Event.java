@@ -1,6 +1,9 @@
 package cn.openadr.model.event;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import cn.openadr.domain.ResponseRequired;
+import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.DRObject;
 import cn.openadr.model.target.Target;
 
@@ -14,6 +17,7 @@ public class Event extends DRObject {
 	private final EventSignals signals = new EventSignals();
 	private final Target target = new Target();
 
+	@JsonSerialize(using = EnumeratedSerializer.class)
 	public ResponseRequired getResponseRequired() {
 		return responseRequired;
 	}

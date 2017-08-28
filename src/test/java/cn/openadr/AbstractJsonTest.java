@@ -16,7 +16,7 @@ import cn.openadr.model.UN;
 public class AbstractJsonTest<T> {
 	private static JodaMapper jsonMapper = new JodaMapper();
 
-	public T object;
+	public Object object;
 
 	@BeforeClass
 	public static void beforeClass() {

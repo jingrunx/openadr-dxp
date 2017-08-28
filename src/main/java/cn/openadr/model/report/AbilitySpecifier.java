@@ -5,8 +5,6 @@ import java.util.List;
 
 import cn.openadr.model.DRObject;
 import cn.openadr.model.event.Intervals;
-import cn.openadr.tsdb.PointLimit;
-import cn.openadr.tsdb.PointValue;
 
 /** 策略及响应能力 */
 public class AbilitySpecifier extends DRObject {

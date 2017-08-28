@@ -6,28 +6,28 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import cn.openadr.model.event.Event;
+import cn.openadr.model.report.ReportSpecifier;
 import cn.openadr.payload.DRResponse;
 
 /** 需要由DN主动轮询获取的信息 */
-public class PullResponse extends DRResponse<PullRequest> {
+public class PollResponse extends DRResponse<PollRequest> {
 	private static final long serialVersionUID = 1L;
 
 	/** 需要重新注册 */
 	private Boolean reregistration;
 	/** 要求DN报告能够采集数据的测点 */
-	private Boolean reportMetadata;
-	/** 要求DN重新注册默认报表 */
 	private Boolean registerReport;
-	/** 要求DN报告可供调用策略以及降负荷能力 */
-	private Boolean ability;
-	/** 事件 */
+	/** 要求DN重新注册默认报表 */
+	private Boolean createReport;
+	/** UN推送给DN的事件 */
 	@JsonInclude(Include.NON_EMPTY)
-	private final List<String> eventIDs = new ArrayList<>();
-	/** 报表 */
+	private final List<Event> events = new ArrayList<>();
+	/** UN要求DN创建的报告 */
 	@JsonInclude(Include.NON_EMPTY)
-	private final List<String> reportIDs = new ArrayList<>();
+	private final List<ReportSpecifier> reports = new ArrayList<>();
 
-	public PullResponse(PullRequest request) {
+	public PollResponse(PollRequest request) {
 		super(request);
 	}
 
@@ -39,14 +39,6 @@ public class PullResponse extends DRResponse<PullRequest> {
 		this.reregistration = reregistration;
 	}
 
-	public Boolean getReportMetadata() {
-		return reportMetadata;
-	}
-
-	public void setReportMetadata(Boolean reportMetadata) {
-		this.reportMetadata = reportMetadata;
-	}
-
 	public Boolean getRegisterReport() {
 		return registerReport;
 	}
@@ -55,19 +47,19 @@ public class PullResponse extends DRResponse<PullRequest> {
 		this.registerReport = registerReport;
 	}
 
-	public Boolean getAbility() {
-		return ability;
+	public Boolean getCreateReport() {
+		return createReport;
 	}
 
-	public void setAbility(Boolean ability) {
-		this.ability = ability;
+	public void setCreateReport(Boolean createReport) {
+		this.createReport = createReport;
 	}
 
-	public List<String> getEventIDs() {
-		return eventIDs;
+	public List<Event> getEvents() {
+		return events;
 	}
 
-	public List<String> getReportIDs() {
-		return reportIDs;
+	public List<ReportSpecifier> getReports() {
+		return reports;
 	}
 }
