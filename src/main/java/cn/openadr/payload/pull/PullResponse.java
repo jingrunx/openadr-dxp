@@ -19,7 +19,7 @@ public class PullResponse extends OadrResponse<PullRequest> {
 	/** 要求VEN重新注册默认报表 */
 	private Boolean registerReport;
 	/** 要求VEN报告可供调用策略以及降负荷能力 */
-	private Boolean capability;
+	private Boolean ability;
 	/** 事件 */
 	@JsonInclude(Include.NON_EMPTY)
 	private final List<String> eventIDs = new ArrayList<>();
@@ -55,12 +55,12 @@ public class PullResponse extends OadrResponse<PullRequest> {
 		this.registerReport = registerReport;
 	}
 
-	public Boolean getCapability() {
-		return capability;
+	public Boolean getAbility() {
+		return ability;
 	}
 
-	public void setCapability(Boolean capability) {
-		this.capability = capability;
+	public void setAbility(Boolean ability) {
+		this.ability = ability;
 	}
 
 	public List<String> getEventIDs() {

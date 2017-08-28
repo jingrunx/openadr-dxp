@@ -1,18 +1,22 @@
 package cn.openadr.model.event;
 
+import javax.validation.constraints.NotNull;
+
 import org.joda.time.DateTime;
+import org.joda.time.Period;
 
 public class EventActivePeriod {
 	/** 开始时间 */
 	private DateTime dtstart;
 	/** 持续时间(单位:分钟) */
-	private int duration;
+	@NotNull
+	private Period duration;
 	/** 提前通知时间(单位:分钟) */
-	private Integer notification;
+	private Period notification;
 	/** 从开始执行到满足要求所需时间(单位:分钟) */
-	private Integer rampup;
+	private Period rampup;
 	/** 恢复时间(单位:分钟) */
-	private Integer recovery;
+	private Period recovery;
 
 	public DateTime getDtstart() {
 		return dtstart;
@@ -22,35 +26,35 @@ public class EventActivePeriod {
 		this.dtstart = dtstart;
 	}
 
-	public int getDuration() {
+	public Period getDuration() {
 		return duration;
 	}
 
-	public void setDuration(int duration) {
+	public void setDuration(Period duration) {
 		this.duration = duration;
 	}
 
-	public Integer getNotification() {
+	public Period getNotification() {
 		return notification;
 	}
 
-	public void setNotification(Integer notification) {
+	public void setNotification(Period notification) {
 		this.notification = notification;
 	}
 
-	public Integer getRampup() {
+	public Period getRampup() {
 		return rampup;
 	}
 
-	public void setRampup(Integer rampup) {
+	public void setRampup(Period rampup) {
 		this.rampup = rampup;
 	}
 
-	public Integer getRecovery() {
+	public Period getRecovery() {
 		return recovery;
 	}
 
-	public void setRecovery(Integer recovery) {
+	public void setRecovery(Period recovery) {
 		this.recovery = recovery;
 	}
 }

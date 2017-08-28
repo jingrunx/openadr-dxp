@@ -1,0 +1,97 @@
+{
+  "id" : null,
+  "name" : null,
+  "descriptor" : {
+    "modificationNumber" : 0,
+    "modificationReason" : null,
+    "priority" : 0,
+    "published" : false,
+    "template" : false,
+    "test" : false
+  },
+  "activePeriod" : {
+    "dtstart" : "2017-08-27T16:00:00.000Z",
+    "duration" : 120,
+    "notification" : null,
+    "rampup" : 15,
+    "recovery" : null
+  },
+  "signals" : [ {
+    "id" : null,
+    "name" : null,
+    "type" : "level",
+    "value" : 1.0,
+    "target" : {
+      "id" : null,
+      "name" : null,
+      "endDeviceAsset" : [ "76b54fbf-cbca-4791-87fa-8678a497ba51" ]
+    }
+  }, {
+    "id" : null,
+    "name" : null,
+    "type" : "level",
+    "value" : 1.0,
+    "target" : {
+      "id" : null,
+      "name" : null,
+      "endDeviceAsset" : [ "76b54fbf-cbca-4791-87fa-8678a497ba51" ]
+    }
+  } ],
+  "baselines" : [ {
+    "id" : null,
+    "name" : null,
+    "interval" : {
+      "metric" : {
+        "name" : "power.active",
+        "readingType" : null,
+        "multiplier" : "k",
+        "symbol" : "W"
+      },
+      "regular" : {
+        "dtstart" : "2017-08-27T16:00:00.000Z",
+        "period" : 15,
+        "array" : [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ]
+      },
+      "irregular" : {
+        "values" : [ {
+          "value" : 0.0,
+          "timestamp" : "2017-08-27T16:00:00.000Z"
+        }, {
+          "value" : 1.0,
+          "timestamp" : "2017-08-27T16:15:00.000Z"
+        }, {
+          "value" : 2.0,
+          "timestamp" : "2017-08-27T17:00:00.000Z"
+        } ]
+      }
+    }
+  }, {
+    "id" : null,
+    "name" : null,
+    "interval" : {
+      "metric" : {
+        "name" : "power.active",
+        "readingType" : null,
+        "multiplier" : "k",
+        "symbol" : "W"
+      },
+      "regular" : {
+        "dtstart" : "2017-08-27T16:00:00.000Z",
+        "period" : 15,
+        "array" : [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0 ]
+      },
+      "irregular" : {
+        "values" : [ {
+          "value" : 0.0,
+          "timestamp" : "2017-08-27T16:00:00.000Z"
+        }, {
+          "value" : 1.0,
+          "timestamp" : "2017-08-27T16:15:00.000Z"
+        }, {
+          "value" : 2.0,
+          "timestamp" : "2017-08-27T17:00:00.000Z"
+        } ]
+      }
+    }
+  } ]
+}

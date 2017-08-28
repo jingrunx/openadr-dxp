@@ -4,8 +4,9 @@ import java.io.IOException;
 import java.util.UUID;
 
 import org.joda.time.DateTime;
-import org.joda.time.DateTimeConstants;
+import org.joda.time.Hours;
 import org.joda.time.LocalDate;
+import org.joda.time.Minutes;
 import org.junit.Test;
 
 import cn.openadr.domain.MetricType;
@@ -30,8 +31,9 @@ public class EventTest extends AbstractJsonTest<Event> {
 
 	public void fillActivePeriod(EventActivePeriod activePeriod) {
 		activePeriod.setDtstart(dtstart);
-		activePeriod.setDuration(DateTimeConstants.MINUTES_PER_HOUR * 2);
-		activePeriod.setRampup(15);
+		activePeriod.setDuration(Hours.TWO.toPeriod());
+		activePeriod.setRampup(Minutes.minutes(15)
+			.toPeriod());
 	}
 
 	public void fillEventSignal(EventSignal signal) {

@@ -1,17 +1,16 @@
 package cn.openadr.payload.evt;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.openadr.payload.OadrRequest;
 
 public class RequestEventRequest extends OadrRequest {
 	private static final long serialVersionUID = 1L;
 
-	private String eventID;
+	private final List<String> eventIDs = new ArrayList<>();
 
-	public String getEventID() {
-		return eventID;
-	}
-
-	public void setEventID(String eventID) {
-		this.eventID = eventID;
+	public List<String> getEventIDs() {
+		return eventIDs;
 	}
 }

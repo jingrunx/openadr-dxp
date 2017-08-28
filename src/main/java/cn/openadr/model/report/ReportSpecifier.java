@@ -3,7 +3,10 @@ package cn.openadr.model.report;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+
 import org.joda.time.DateTime;
+import org.joda.time.Period;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -30,12 +33,14 @@ public class ReportSpecifier extends OadrObject {
 	/** 取消报告时间 */
 	private DateTime endDateTime;
 	/** 报告周期，每隔多长时间报告一次(单位:分钟) */
-	private int interval;
+	@NotNull
+	private Period interval;
 	/** 曲线数据之间的采样间隔(单位:分钟) */
 	//如果interval=(period | 0), 按照LiveReport格式报告，否则按照HistoryReport格式报告
-	private int period;
+	@NotNull
+	private Period period;
 	/** 允许延迟的时间(单位:分钟) */
-	private int granularity;
+	private Period granularity;
 	/** 要报告的测点 */
 	private final List<Point> points = new ArrayList<>();
 
@@ -65,27 +70,27 @@ public class ReportSpecifier extends OadrObject {
 		this.endDateTime = endDateTime;
 	}
 
-	public int getInterval() {
+	public Period getInterval() {
 		return interval;
 	}
 
-	public void setInterval(int interval) {
+	public void setInterval(Period interval) {
 		this.interval = interval;
 	}
 
-	public int getPeriod() {
+	public Period getPeriod() {
 		return period;
 	}
 
-	public void setPeriod(int period) {
+	public void setPeriod(Period period) {
 		this.period = period;
 	}
 
-	public int getGranularity() {
+	public Period getGranularity() {
 		return granularity;
 	}
 
-	public void setGranularity(int granularity) {
+	public void setGranularity(Period granularity) {
 		this.granularity = granularity;
 	}
 
