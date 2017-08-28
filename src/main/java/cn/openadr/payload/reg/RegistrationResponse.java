@@ -13,7 +13,7 @@ public class RegistrationResponse<R extends RegistrationRequest> extends DRRespo
 		return request.getRegistrationID();
 	}
 
-	public String getVenID() {
-		return request.getVenID();
+	public String getDnID() {
+		return request.getDnID();
 	}
 }

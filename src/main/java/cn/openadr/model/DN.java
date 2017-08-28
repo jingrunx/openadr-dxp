@@ -4,19 +4,19 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import cn.openadr.jackson.DRObjectSerializer;
 
-/** Virtual End Node */
-public class VEN extends DRObject {
+/** Down Node */
+public class DN extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	private String accessId;
 	private String secretKey;
-	private VTN vtn;
+	private UN un;
 
-	public VEN() {
+	public DN() {
 		super();
 	}
 
-	public VEN(String id) {
+	public DN(String id) {
 		super(id);
 	}
 
@@ -37,11 +37,11 @@ public class VEN extends DRObject {
 	}
 
 	@JsonSerialize(using = DRObjectSerializer.Id.class)
-	public VTN getVtn() {
-		return vtn;
+	public UN getUn() {
+		return un;
 	}
 
-	public void setVtn(VTN vtn) {
-		this.vtn = vtn;
+	public void setUn(UN un) {
+		this.un = un;
 	}
 }

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import cn.openadr.jackson.DRObjectSerializer;
 import cn.openadr.model.DRObject;
-import cn.openadr.model.VEN;
+import cn.openadr.model.DN;
 
 public class Target extends DRObject {
 	private static final long serialVersionUID = 1L;
@@ -25,7 +25,7 @@ public class Target extends DRObject {
 
 	private final List<Group> groups = new ArrayList<>();
 	private final List<Resource> resources = new ArrayList<>();
-	private final List<VEN> vens = new ArrayList<>();
+	private final List<DN> dns = new ArrayList<>();
 	private final List<Party> parties = new ArrayList<>();
 
 	public Target() {
@@ -98,8 +98,8 @@ public class Target extends DRObject {
 
 	@JsonInclude(value = Include.NON_EMPTY)
 	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
-	public List<VEN> getVens() {
-		return this.vens;
+	public List<DN> getVens() {
+		return this.dns;
 	}
 
 	@JsonInclude(value = Include.NON_EMPTY)

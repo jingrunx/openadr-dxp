@@ -8,17 +8,17 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import cn.openadr.payload.DRResponse;
 
-/** 需要由VEN主动轮询获取的信息 */
+/** 需要由DN主动轮询获取的信息 */
 public class PullResponse extends DRResponse<PullRequest> {
 	private static final long serialVersionUID = 1L;
 
 	/** 需要重新注册 */
 	private Boolean reregistration;
-	/** 要求VEN报告能够采集数据的测点 */
+	/** 要求DN报告能够采集数据的测点 */
 	private Boolean reportMetadata;
-	/** 要求VEN重新注册默认报表 */
+	/** 要求DN重新注册默认报表 */
 	private Boolean registerReport;
-	/** 要求VEN报告可供调用策略以及降负荷能力 */
+	/** 要求DN报告可供调用策略以及降负荷能力 */
 	private Boolean ability;
 	/** 事件 */
 	@JsonInclude(Include.NON_EMPTY)

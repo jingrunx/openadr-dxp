@@ -6,8 +6,8 @@ public class DRRequest extends OadrPayload {
 
 	/** 版本号 */
 	private int version;
-	/** VEN编号 */
-	private String venID;
+	/** DN编号 */
+	private String dnID;
 
 	public int getVersion() {
 		return version;
@@ -17,11 +17,11 @@ public class DRRequest extends OadrPayload {
 		this.version = version;
 	}
 
-	public String getVenID() {
-		return venID;
+	public String getDnID() {
+		return dnID;
 	}
 
-	public void setVenID(String venID) {
-		this.venID = venID;
+	public void setDnID(String dnID) {
+		this.dnID = dnID;
 	}
 }

@@ -20,8 +20,8 @@ public class DRResponse<R extends DRRequest> extends OadrPayload {
 		return request.getId();
 	}
 
-	public String getVenID() {
-		return request.getVenID();
+	public String getDnID() {
+		return request.getDnID();
 	}
 
 	public int getCode() {

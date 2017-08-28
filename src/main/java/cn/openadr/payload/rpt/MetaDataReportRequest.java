@@ -5,7 +5,7 @@ import java.util.List;
 
 import cn.openadr.model.report.PointMetaData;
 
-/** 报告VEN支持的采样点 */
+/** 报告DN支持的采样点 */
 public class MetaDataReportRequest extends DataReportRequest {
 	private static final long serialVersionUID = 1L;
 

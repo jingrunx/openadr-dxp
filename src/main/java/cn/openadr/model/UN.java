@@ -4,12 +4,12 @@ import java.util.List;
 
 import cn.openadr.model.target.Market;
 
-/** Virtual Top Node */
-public class VTN extends DRObject {
+/** Up Node */
+public class UN extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	private Market market;
-	private List<VEN> vens;
+	private List<DN> dns;
 
 	public Market getMarket() {
 		return market;
@@ -19,11 +19,11 @@ public class VTN extends DRObject {
 		this.market = market;
 	}
 
-	public List<VEN> getVens() {
-		return vens;
+	public List<DN> getDns() {
+		return dns;
 	}
 
-	public void setVens(List<VEN> vens) {
-		this.vens = vens;
+	public void setDns(List<DN> dns) {
+		this.dns = dns;
 	}
 }
