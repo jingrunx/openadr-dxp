@@ -10,8 +10,8 @@ import org.junit.Test;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.joda.JodaMapper;
 
-import cn.openadr.model.VEN;
-import cn.openadr.model.VTN;
+import cn.openadr.model.DN;
+import cn.openadr.model.UN;
 
 public class AbstractJsonTest<T> {
 	private static JodaMapper jsonMapper = new JodaMapper();
@@ -36,8 +36,8 @@ public class AbstractJsonTest<T> {
 
 	@Test
 	public void testVEN() throws IOException {
-		VEN ven = new VEN();
-		ven.setVtn(new VTN());
+		DN ven = new DN();
+		ven.setUn(new UN());
 
 		String json = jsonMapper.writeValueAsString(ven);
 		System.out.println(json);
