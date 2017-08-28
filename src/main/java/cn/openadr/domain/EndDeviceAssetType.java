@@ -1,6 +1,6 @@
 package cn.openadr.domain;
 
-public enum EndDeviceAsset {
+public enum EndDeviceAssetType {
 	Thermostat,
 	Strip_Heater,
 	Baseboard_Heater,

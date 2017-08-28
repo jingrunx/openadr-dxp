@@ -16,7 +16,7 @@ import cn.openadr.tsdb.PointValue;
 import cn.openadr.tsdb.TagKey;
 import cn.openadr.tsdb.ValuePart;
 
-public class ReportTest extends AbstractJsonTest<ReportRequest> {
+public class RptTest extends AbstractJsonTest<ReportRequest> {
 	private DateTime dtstart = LocalDate.now()
 		.toDateTimeAtStartOfDay();
 

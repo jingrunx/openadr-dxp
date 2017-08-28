@@ -1,5 +1,6 @@
 package cn.openadr.model.target;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,10 +9,9 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import cn.openadr.jackson.DRObjectSerializer;
-import cn.openadr.model.DRObject;
 import cn.openadr.model.DN;
 
-public class Target extends DRObject {
+public class Target implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private final List<Pnode> pnode = new ArrayList<>();
@@ -27,14 +27,6 @@ public class Target extends DRObject {
 	private final List<Resource> resources = new ArrayList<>();
 	private final List<DN> dns = new ArrayList<>();
 	private final List<Party> parties = new ArrayList<>();
-
-	public Target() {
-		super();
-	}
-
-	public Target(String id) {
-		super(id);
-	}
 
 	@JsonInclude(value = Include.NON_EMPTY)
 	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
