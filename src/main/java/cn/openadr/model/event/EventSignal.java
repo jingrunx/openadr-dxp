@@ -7,6 +7,7 @@ import cn.openadr.domain.SignalType;
 import cn.openadr.jackson.EnumeratedDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.DRObject;
+import cn.openadr.model.report.MetricMetaData;
 import cn.openadr.model.target.Target;
 
 class SignalTypeDeserializer extends EnumeratedDeserializer<SignalType> {
@@ -20,7 +21,10 @@ public class EventSignal extends DRObject {
 
 	private SignalType type;
 	private double value;
-	private Target target;
+	/** 相当于ItemBase */
+	private final MetricMetaData metric = new MetricMetaData();
+	private final Intervals intervals = new Intervals();
+	private final Target target = new Target();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	public SignalType getType() {
@@ -40,13 +44,15 @@ public class EventSignal extends DRObject {
 		this.value = value;
 	}
 
-	public Target getTarget() {
-		if (null == this.target)
-			this.target = new Target();
-		return this.target;
+	public MetricMetaData getMetric() {
+		return metric;
 	}
 
-	public void setTarget(Target target) {
-		this.target = target;
+	public Intervals getIntervals() {
+		return intervals;
+	}
+
+	public Target getTarget() {
+		return this.target;
 	}
 }

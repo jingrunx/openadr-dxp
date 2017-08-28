@@ -7,16 +7,18 @@ import java.util.Objects;
 import javax.validation.constraints.NotNull;
 
 import org.joda.time.DateTime;
+import org.joda.time.Duration;
 import org.joda.time.Interval;
-import org.joda.time.Minutes;
 import org.joda.time.Period;
 import org.joda.time.ReadableDateTime;
+import org.joda.time.ReadablePeriod;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+/** 由固定时间间隔的数据序列组成 */
 public class RegularPart extends ValuesPart {
 	/** 开始时间 */
-	private DateTime dtstart = new DateTime(1900, 1, 1, 0, 0, 0);
+	private DateTime dtstart;
 	/** 步长(单位:分钟) */
 	@NotNull
 	private Period period;
@@ -26,9 +28,9 @@ public class RegularPart extends ValuesPart {
 	public RegularPart() {
 	}
 
-	public RegularPart(ReadableDateTime dtstart, Period period, double[] array) {
+	public RegularPart(ReadableDateTime dtstart, ReadablePeriod period, double[] array) {
 		setDtstart(dtstart.toDateTime());
-		setPeriod(period);
+		setPeriod(period.toPeriod());
 		setArray(array);
 	}
 
@@ -55,7 +57,9 @@ public class RegularPart extends ValuesPart {
 	@JsonIgnore
 	@Override
 	public Interval getInterval() {
-		return new Interval(dtstart, Minutes.minutes(period * array.length));
+		Duration duration = period.toStandardDuration()
+			.multipliedBy(array.length);
+		return new Interval(dtstart, duration);
 	}
 
 	/** 数据 */
@@ -85,6 +89,7 @@ public class RegularPart extends ValuesPart {
 	}
 
 	protected DateTime getDateTime(DateTime start, Period period, int idx) {
-		return start.plusMinutes(period * idx);
+		return start.plus(period.toStandardDuration()
+			.multipliedBy(idx));
 	}
 }

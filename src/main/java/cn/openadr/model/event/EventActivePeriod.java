@@ -11,6 +11,8 @@ public class EventActivePeriod {
 	/** 持续时间(单位:分钟) */
 	@NotNull
 	private Period duration;
+	/** 降低同时率 */
+	private Period tolerance;
 	/** 提前通知时间(单位:分钟) */
 	private Period notification;
 	/** 从开始执行到满足要求所需时间(单位:分钟) */
@@ -32,6 +34,14 @@ public class EventActivePeriod {
 
 	public void setDuration(Period duration) {
 		this.duration = duration;
+	}
+
+	public Period getTolerance() {
+		return tolerance;
+	}
+
+	public void setTolerance(Period tolerance) {
+		this.tolerance = tolerance;
 	}
 
 	public Period getNotification() {

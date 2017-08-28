@@ -1,16 +1,18 @@
 package cn.openadr.payload.evt;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import cn.openadr.payload.DRRequest;
 
 public class RequestEventRequest extends DRRequest {
 	private static final long serialVersionUID = 1L;
 
-	private final List<String> eventIDs = new ArrayList<>();
+	/** 限制返回的事件数目 */
+	private int replyLimit;
 
-	public List<String> getEventIDs() {
-		return eventIDs;
+	public int getReplyLimit() {
+		return replyLimit;
+	}
+
+	public void setReplyLimit(int replyLimit) {
+		this.replyLimit = replyLimit;
 	}
 }

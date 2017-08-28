@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import cn.openadr.jackson.DRObjectSerializer;
 import cn.openadr.model.DRObject;
+import cn.openadr.model.VEN;
 
 public class Target extends DRObject {
 	private static final long serialVersionUID = 1L;
@@ -21,6 +22,11 @@ public class Target extends DRObject {
 	private final List<ServiceDeliveryPoint> serviceDeliveryPoint = new ArrayList<>();
 	private final List<ServiceArea> serviceArea = new ArrayList<>();
 	private final List<Transport> transport = new ArrayList<>();
+
+	private final List<Group> groups = new ArrayList<>();
+	private final List<Resource> resources = new ArrayList<>();
+	private final List<VEN> vens = new ArrayList<>();
+	private final List<Party> parties = new ArrayList<>();
 
 	public Target() {
 		super();
@@ -76,5 +82,29 @@ public class Target extends DRObject {
 	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
 	public List<Transport> getTransport() {
 		return this.transport;
+	}
+
+	@JsonInclude(value = Include.NON_EMPTY)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
+	public List<Group> getGroups() {
+		return this.groups;
+	}
+
+	@JsonInclude(value = Include.NON_EMPTY)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
+	public List<Resource> getResources() {
+		return this.resources;
+	}
+
+	@JsonInclude(value = Include.NON_EMPTY)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
+	public List<VEN> getVens() {
+		return this.vens;
+	}
+
+	@JsonInclude(value = Include.NON_EMPTY)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
+	public List<Party> getParties() {
+		return this.parties;
 	}
 }

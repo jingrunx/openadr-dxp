@@ -12,7 +12,7 @@ import org.joda.time.Interval;
 import org.joda.time.ReadableInterval;
 import org.joda.time.Seconds;
 
-/** 不规则曲线 */
+/** 由一组时间和值组成的时间序列数据 */
 public class IrregularPart extends ValuesPart {
 	private final List<ValuePart> values = new ArrayList<>();
 

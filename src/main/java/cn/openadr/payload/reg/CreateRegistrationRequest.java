@@ -6,6 +6,7 @@ public class CreateRegistrationRequest extends RegistrationRequest {
 	private static final long serialVersionUID = 1L;
 
 	private boolean reportOnly;
+	private boolean pullMode;
 	private String profile;
 	private TransportType transport;
 	private String endpoint;
@@ -20,6 +21,14 @@ public class CreateRegistrationRequest extends RegistrationRequest {
 
 	public String getProfile() {
 		return profile;
+	}
+
+	public boolean isPullMode() {
+		return pullMode;
+	}
+
+	public void setPullMode(boolean pullMode) {
+		this.pullMode = pullMode;
 	}
 
 	public void setProfile(String profile) {

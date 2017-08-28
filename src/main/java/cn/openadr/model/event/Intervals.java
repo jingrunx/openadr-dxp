@@ -2,23 +2,16 @@ package cn.openadr.model.event;
 
 import java.io.Serializable;
 
-import cn.openadr.model.report.MetricMetaData;
 import cn.openadr.tsdb.IrregularPart;
 import cn.openadr.tsdb.RegularPart;
 
-public class Interval implements Serializable {
+public class Intervals implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/** 测点定义 */
-	private final MetricMetaData metric = new MetricMetaData();
-	/** 规则数据 */
+	/** 规则数据，Interval的一种简单表达方式 */
 	private final RegularPart regular = new RegularPart();
-	/** 不规则数据 */
+	/** 不规则数据，Interval的标准表达方式 */
 	private final IrregularPart irregular = new IrregularPart();
-
-	public MetricMetaData getMetric() {
-		return metric;
-	}
 
 	public RegularPart getRegular() {
 		return regular;

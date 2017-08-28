@@ -1,6 +1,7 @@
 package cn.openadr.tsdb;
 
-import org.joda.time.DateTime;
+import org.joda.time.ReadableDateTime;
+import org.joda.time.ReadablePeriod;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -18,7 +19,7 @@ public class RegularValues extends PointValues {
 		this(key, new RegularPart());
 	}
 
-	public RegularValues(Point key, DateTime dtstart, int period, double[] array) {
+	public RegularValues(Point key, ReadableDateTime dtstart, ReadablePeriod period, double[] array) {
 		this(key, new RegularPart(dtstart, period, array));
 	}
 }
