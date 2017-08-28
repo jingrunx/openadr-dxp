@@ -72,6 +72,7 @@ public class RptTest extends AbstractJsonTest<ReportRequest> {
 
 		object = request;
 	}
+	
 
 //@Test
 //public void testReport() throws IOException {
