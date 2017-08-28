@@ -1,8 +1,8 @@
 package cn.openadr.payload.opt;
 
-import cn.openadr.payload.OadrRequest;
+import cn.openadr.payload.DRRequest;
 
-public class OptRequest extends OadrRequest {
+public class OptRequest extends DRRequest {
 	private static final long serialVersionUID = 1L;
 
 	private String optID;

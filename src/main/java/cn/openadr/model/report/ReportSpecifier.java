@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.ReportType;
 import cn.openadr.jackson.EnumeratedDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
-import cn.openadr.model.OadrObject;
+import cn.openadr.model.DRObject;
 import cn.openadr.tsdb.Point;
 
 class ReportTypeDeserializer extends EnumeratedDeserializer<ReportType> {
@@ -23,7 +23,7 @@ class ReportTypeDeserializer extends EnumeratedDeserializer<ReportType> {
 	}
 }
 
-public class ReportSpecifier extends OadrObject {
+public class ReportSpecifier extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	/** 报表类型 */

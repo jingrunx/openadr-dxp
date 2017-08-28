@@ -1,8 +1,8 @@
 package cn.openadr.payload.rpt;
 
-import cn.openadr.payload.OadrRequest;
+import cn.openadr.payload.DRRequest;
 
-public class ReportRequest extends OadrRequest {
+public class ReportRequest extends DRRequest {
 	private static final long serialVersionUID = 1L;
 
 	/** 报表请求编号 */

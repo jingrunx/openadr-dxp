@@ -6,10 +6,10 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-import cn.openadr.payload.OadrResponse;
+import cn.openadr.payload.DRResponse;
 
 /** 需要由VEN主动轮询获取的信息 */
-public class PullResponse extends OadrResponse<PullRequest> {
+public class PullResponse extends DRResponse<PullRequest> {
 	private static final long serialVersionUID = 1L;
 
 	/** 需要重新注册 */

@@ -1,8 +1,8 @@
 package cn.openadr.model.target;
 
-import cn.openadr.model.OadrObject;
+import cn.openadr.model.DRObject;
 
-public class Resource extends OadrObject {
+public class Resource extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	public Resource() {

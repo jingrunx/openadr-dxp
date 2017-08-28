@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.openadr.model.event.Event;
-import cn.openadr.payload.OadrResponse;
+import cn.openadr.payload.DRResponse;
 
-public class RequestEventResponse extends OadrResponse<RequestEventRequest> {
+public class RequestEventResponse extends DRResponse<RequestEventRequest> {
 	private static final long serialVersionUID = 1L;
 
 	private final List<Event> events = new ArrayList<>();

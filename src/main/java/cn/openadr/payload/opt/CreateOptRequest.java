@@ -32,6 +32,7 @@ public class CreateOptRequest extends OptRequest {
 	private String eventID;
 	private long modificationNumber;
 	private final Target target = new Target();
+	private final Target deviceClass = new Target();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	public OptType getType() {
@@ -79,5 +80,9 @@ public class CreateOptRequest extends OptRequest {
 
 	public Target getTarget() {
 		return target;
+	}
+
+	public Target getDeviceClass() {
+		return deviceClass;
 	}
 }

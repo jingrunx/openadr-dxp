@@ -60,11 +60,11 @@ public enum MessageType implements EnumeratedType {
 
 	private final String value;
 	public final ServiceName service;
-	public final Class<? extends OadrRequest> request;
-	public final Class<? extends OadrResponse<?>> response;
+	public final Class<? extends DRRequest> request;
+	public final Class<? extends DRResponse<?>> response;
 
-	private MessageType(String value, ServiceName service, Class<? extends OadrRequest> request,
-		Class<? extends OadrResponse<?>> response) {
+	private MessageType(String value, ServiceName service, Class<? extends DRRequest> request,
+		Class<? extends DRResponse<?>> response) {
 		this.value = value;
 		this.service = service;
 		this.request = request;

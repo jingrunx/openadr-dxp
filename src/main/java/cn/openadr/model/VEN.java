@@ -2,10 +2,10 @@ package cn.openadr.model;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import cn.openadr.jackson.OadrObjectSerializer;
+import cn.openadr.jackson.DRObjectSerializer;
 
 /** Virtual End Node */
-public class VEN extends OadrObject {
+public class VEN extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	private String accessId;
@@ -36,7 +36,7 @@ public class VEN extends OadrObject {
 		this.secretKey = secretKey;
 	}
 
-	@JsonSerialize(using = OadrObjectSerializer.Id.class)
+	@JsonSerialize(using = DRObjectSerializer.Id.class)
 	public VTN getVtn() {
 		return vtn;
 	}

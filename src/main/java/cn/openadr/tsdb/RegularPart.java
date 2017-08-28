@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import javax.validation.constraints.NotNull;
+
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
 import org.joda.time.Minutes;
+import org.joda.time.Period;
 import org.joda.time.ReadableDateTime;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,14 +18,15 @@ public class RegularPart extends ValuesPart {
 	/** 开始时间 */
 	private DateTime dtstart = new DateTime(1900, 1, 1, 0, 0, 0);
 	/** 步长(单位:分钟) */
-	private int period;
+	@NotNull
+	private Period period;
 	/** 数据数组 */
 	private double[] array = new double[] {};
 
 	public RegularPart() {
 	}
 
-	public RegularPart(ReadableDateTime dtstart, int period, double[] array) {
+	public RegularPart(ReadableDateTime dtstart, Period period, double[] array) {
 		setDtstart(dtstart.toDateTime());
 		setPeriod(period);
 		setArray(array);
@@ -39,12 +43,12 @@ public class RegularPart extends ValuesPart {
 		this.dtstart = dtstart;
 	}
 
-	public int getPeriod() {
+	public Period getPeriod() {
 		return period;
 	}
 
 	/** 设置步长 */
-	public void setPeriod(int period) {
+	public void setPeriod(Period period) {
 		this.period = period;
 	}
 
@@ -80,7 +84,7 @@ public class RegularPart extends ValuesPart {
 		return values;
 	}
 
-	protected DateTime getDateTime(DateTime start, int period, int idx) {
+	protected DateTime getDateTime(DateTime start, Period period, int idx) {
 		return start.plusMinutes(period * idx);
 	}
 }

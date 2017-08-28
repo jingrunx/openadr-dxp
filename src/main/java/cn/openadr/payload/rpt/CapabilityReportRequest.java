@@ -1,13 +1,13 @@
 package cn.openadr.payload.rpt;
 
-import cn.openadr.model.report.CapabilitySpecifier;
+import cn.openadr.model.report.AbilitySpecifier;
 
 public class CapabilityReportRequest extends ReportRequest {
 	private static final long serialVersionUID = 1L;
 
-	private final CapabilitySpecifier capabilitySpecifier = new CapabilitySpecifier();
+	private final AbilitySpecifier capabilitySpecifier = new AbilitySpecifier();
 
-	public CapabilitySpecifier getCapabilitySpecifier() {
+	public AbilitySpecifier getCapabilitySpecifier() {
 		return capabilitySpecifier;
 	}
 }

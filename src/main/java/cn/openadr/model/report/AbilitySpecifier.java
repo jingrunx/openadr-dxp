@@ -3,13 +3,13 @@ package cn.openadr.model.report;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.openadr.model.OadrObject;
+import cn.openadr.model.DRObject;
 import cn.openadr.model.event.Interval;
 import cn.openadr.tsdb.PointLimit;
 import cn.openadr.tsdb.PointValue;
 
 /** 策略及响应能力 */
-public class CapabilitySpecifier extends OadrObject {
+public class AbilitySpecifier extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	/** 响应能力 */

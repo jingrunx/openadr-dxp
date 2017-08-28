@@ -5,7 +5,7 @@ import java.util.List;
 import cn.openadr.model.target.Market;
 
 /** Virtual Top Node */
-public class VTN extends OadrObject {
+public class VTN extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	private Market market;

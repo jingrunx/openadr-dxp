@@ -1,7 +1,7 @@
 package cn.openadr.payload;
 
 /** 通用响应 */
-public class OadrResponse<R extends OadrRequest> extends OadrPayload {
+public class DRResponse<R extends DRRequest> extends OadrPayload {
 	private static final long serialVersionUID = 1L;
 
 	/** 请求 */
@@ -11,7 +11,7 @@ public class OadrResponse<R extends OadrRequest> extends OadrPayload {
 	/** 错误原因 */
 	private String reason;
 
-	public OadrResponse(R request) {
+	public DRResponse(R request) {
 		super();
 		this.request = request;
 	}

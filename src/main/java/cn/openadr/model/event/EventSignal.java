@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.SignalType;
 import cn.openadr.jackson.EnumeratedDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
-import cn.openadr.model.OadrObject;
+import cn.openadr.model.DRObject;
 import cn.openadr.model.target.Target;
 
 class SignalTypeDeserializer extends EnumeratedDeserializer<SignalType> {
@@ -15,7 +15,7 @@ class SignalTypeDeserializer extends EnumeratedDeserializer<SignalType> {
 	}
 }
 
-public class EventSignal extends OadrObject {
+public class EventSignal extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	private SignalType type;

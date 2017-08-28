@@ -3,10 +3,10 @@ package cn.openadr.model.event;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.openadr.model.OadrObject;
+import cn.openadr.model.DRObject;
 
 /** 事件 */
-public class Event extends OadrObject {
+public class Event extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	private final EventDescriptor descriptor = new EventDescriptor();

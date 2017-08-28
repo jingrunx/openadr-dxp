@@ -6,8 +6,8 @@ import javax.ws.rs.Path;
 import cn.openadr.payload.pull.PullRequest;
 import cn.openadr.payload.pull.PullResponse;
 
-@Path("/pull")
-public interface RestPull extends RestApi {
+@Path("/poll")
+public interface RestPoll extends RestApi {
 	/** 查询事件或报表 */
 	@POST
 	@Path("/")

@@ -7,10 +7,10 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import cn.openadr.jackson.OadrObjectSerializer;
-import cn.openadr.model.OadrObject;
+import cn.openadr.jackson.DRObjectSerializer;
+import cn.openadr.model.DRObject;
 
-public class Target extends OadrObject {
+public class Target extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	private final List<Pnode> pnode = new ArrayList<>();
@@ -31,49 +31,49 @@ public class Target extends OadrObject {
 	}
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	@JsonSerialize(contentUsing = OadrObjectSerializer.Id.class)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
 	public List<Pnode> getPnode() {
 		return this.pnode;
 	}
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	@JsonSerialize(contentUsing = OadrObjectSerializer.Id.class)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
 	public List<AggregatedPnode> getAggregatedPnode() {
 		return this.aggregatedPnode;
 	}
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	@JsonSerialize(contentUsing = OadrObjectSerializer.Id.class)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
 	public List<EndDeviceAsset> getEndDeviceAsset() {
 		return this.endDeviceAsset;
 	}
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	@JsonSerialize(contentUsing = OadrObjectSerializer.Id.class)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
 	public List<MeterAsset> getMeterAsset() {
 		return this.meterAsset;
 	}
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	@JsonSerialize(contentUsing = OadrObjectSerializer.Id.class)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
 	public List<ServiceLocation> getServiceLocation() {
 		return this.serviceLocation;
 	}
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	@JsonSerialize(contentUsing = OadrObjectSerializer.Id.class)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
 	public List<ServiceDeliveryPoint> getServiceDeliveryPoint() {
 		return this.serviceDeliveryPoint;
 	}
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	@JsonSerialize(contentUsing = OadrObjectSerializer.Id.class)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
 	public List<ServiceArea> getServiceArea() {
 		return this.serviceArea;
 	}
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	@JsonSerialize(contentUsing = OadrObjectSerializer.Id.class)
+	@JsonSerialize(contentUsing = DRObjectSerializer.Id.class)
 	public List<Transport> getTransport() {
 		return this.transport;
 	}

@@ -2,16 +2,16 @@ package cn.openadr.model;
 
 import java.io.Serializable;
 
-public class OadrObject implements Serializable {
+public class DRObject implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String id;
 	private String name;
 
-	public OadrObject() {
+	public DRObject() {
 	}
 
-	public OadrObject(String id) {
+	public DRObject(String id) {
 		setId(id);
 	}
 

@@ -1,8 +1,8 @@
 package cn.openadr.payload.reg;
 
-import cn.openadr.payload.OadrResponse;
+import cn.openadr.payload.DRResponse;
 
-public class RegistrationResponse<R extends RegistrationRequest> extends OadrResponse<R> {
+public class RegistrationResponse<R extends RegistrationRequest> extends DRResponse<R> {
 	private static final long serialVersionUID = 1L;
 
 	public RegistrationResponse(R request) {
