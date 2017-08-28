@@ -7,6 +7,7 @@ import org.joda.time.Hours;
 import org.joda.time.LocalDate;
 import org.joda.time.Minutes;
 
+import cn.openadr.domain.EndDeviceAssetType;
 import cn.openadr.domain.MetricType;
 import cn.openadr.domain.SignalType;
 import cn.openadr.domain.UnitMultiplier;
@@ -21,10 +22,13 @@ import cn.openadr.tsdb.RegularPart;
 import cn.openadr.tsdb.ValuePart;
 
 public class FillUtils {
-	private static String endDeviceID = UUID.randomUUID()
-		.toString();
 	private static DateTime dtstart = LocalDate.now()
 		.toDateTimeAtStartOfDay();
+
+	public String uuid() {
+		return UUID.randomUUID()
+			.toString();
+	}
 
 	public static void fillRegular(RegularPart regular) {
 		regular.setDtstart(dtstart);
@@ -64,7 +68,7 @@ public class FillUtils {
 		signal.setValue(120);
 		signal.getTarget()
 			.getEndDeviceAsset()
-			.add(new EndDeviceAsset(endDeviceID));
+			.add(new EndDeviceAsset(EndDeviceAssetType.Energy_Management_System));
 	}
 
 	public static void fillBaseline(EventBaseline baseline) {
