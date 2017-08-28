@@ -1,7 +1,7 @@
 package cn.openadr.payload;
 
 /** 通用响应 */
-public class DRResponse<R extends DRRequest> extends OadrPayload {
+public class DRResponse<R extends DRRequest> extends Payload {
 	private static final long serialVersionUID = 1L;
 
 	/** 请求 */

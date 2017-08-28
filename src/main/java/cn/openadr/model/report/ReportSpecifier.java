@@ -15,7 +15,6 @@ import cn.openadr.domain.ReportType;
 import cn.openadr.jackson.EnumeratedDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.DRObject;
-import cn.openadr.tsdb.Point;
 
 class ReportTypeDeserializer extends EnumeratedDeserializer<ReportType> {
 	public ReportTypeDeserializer() {
@@ -32,17 +31,17 @@ public class ReportSpecifier extends DRObject {
 	private DateTime startDateTime;
 	/** 取消报告时间 */
 	private DateTime endDateTime;
-	/** 报告周期，每隔多长时间报告一次(单位:分钟) */
+	/** 报告周期，每隔多长时间报告一次 */
 	@NotNull
 	private Period interval;
-	/** 曲线数据之间的采样间隔(单位:分钟) */
-	//如果interval=(period | 0), 按照LiveReport格式报告，否则按照HistoryReport格式报告
+	/** 曲线数据之间的采样间隔 */
+	//如果interval=(period | PT0S), 按照LiveReport格式报告，否则按照HistoryReport格式报告
 	@NotNull
 	private Period period;
-	/** 允许延迟的时间(单位:分钟) */
+	/** 允许延迟的时间 */
 	private Period granularity;
 	/** 要报告的测点 */
-	private final List<Point> points = new ArrayList<>();
+	private final List<PointMetaData> points = new ArrayList<>();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	public ReportType getType() {
@@ -94,7 +93,7 @@ public class ReportSpecifier extends DRObject {
 		this.granularity = granularity;
 	}
 
-	public List<Point> getPoints() {
+	public List<PointMetaData> getPoints() {
 		return points;
 	}
 }

@@ -1,15 +1,18 @@
 package cn.openadr.payload.rpt;
 
-import cn.openadr.model.report.ReportSpecifier;
+import java.util.ArrayList;
+import java.util.List;
+
+import cn.openadr.model.report.PointMetaData;
 
 /** 固定格式报表 */
 public class RegisterReportRequest extends ReportRequest {
 	private static final long serialVersionUID = 1L;
 
-	/** 报表规范 */
-	private final ReportSpecifier reportSpecifier = new ReportSpecifier();
+	/** 要报告的测点及数据类型 */
+	private final List<PointMetaData> points = new ArrayList<>();
 
-	public ReportSpecifier getReportSpecifier() {
-		return reportSpecifier;
+	public List<PointMetaData> getPoints() {
+		return points;
 	}
 }

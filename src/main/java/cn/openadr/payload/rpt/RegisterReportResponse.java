@@ -6,9 +6,4 @@ public class RegisterReportResponse extends ReportResponse<RegisterReportRequest
 	public RegisterReportResponse(RegisterReportRequest request) {
 		super(request);
 	}
-
-	public String getReportSpecifierID() {
-		return request.getReportSpecifier()
-			.getId();
-	}
 }

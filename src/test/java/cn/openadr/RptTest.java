@@ -8,11 +8,12 @@ import org.joda.time.Minutes;
 import org.junit.Test;
 
 import cn.openadr.domain.MetricType;
+import cn.openadr.model.report.PointValue;
 import cn.openadr.model.report.PointValues;
 import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
+import cn.openadr.payload.rpt.RegisterReportRequest;
 import cn.openadr.payload.rpt.ReportRequest;
-import cn.openadr.tsdb.PointValue;
 import cn.openadr.tsdb.TagKey;
 import cn.openadr.tsdb.ValuePart;
 
@@ -32,7 +33,8 @@ public class RptTest extends AbstractJsonTest<ReportRequest> {
 				.put(TagKey.device, UUID.randomUUID()
 					.toString());
 
-			value.setValue(5.5f);
+			value.getValue()
+				.setValue(5.5f);
 
 			request.getValues()
 				.add(value);
@@ -75,7 +77,11 @@ public class RptTest extends AbstractJsonTest<ReportRequest> {
 
 	@Test
 	public void testRegisterReportRequest() {
+		RegisterReportRequest v = new RegisterReportRequest();
 
+		CommonUtils.fillRptRequest(v);
+
+		object = v;
 	}
 
 	@Test

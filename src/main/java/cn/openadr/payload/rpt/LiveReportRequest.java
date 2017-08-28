@@ -3,7 +3,7 @@ package cn.openadr.payload.rpt;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.openadr.tsdb.PointValue;
+import cn.openadr.model.report.PointValue;
 
 public class LiveReportRequest extends DataReportRequest {
 	private static final long serialVersionUID = 1L;
