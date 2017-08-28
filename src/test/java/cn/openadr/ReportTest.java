@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
+import org.joda.time.Minutes;
 import org.junit.Test;
 
 import cn.openadr.domain.MetricType;
@@ -52,7 +53,8 @@ public class ReportTest extends AbstractJsonTest<ReportRequest> {
 		value.getRegular()
 			.setDtstart(dtstart);
 		value.getRegular()
-			.setPeriod(15);
+			.setPeriod(Minutes.minutes(15)
+				.toPeriod());
 		value.getRegular()
 			.setArray(new double[] { 1, 2, 3, 4, 5 });
 		request.getValues()
