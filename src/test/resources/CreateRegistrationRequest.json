@@ -1,0 +1,11 @@
+{
+  "id" : "3b59d4fb-8c12-4131-9652-3a251f7ee62e",
+  "version" : 1,
+  "dnID" : "dn#1",
+  "registrationID" : "c67f416d-7881-438b-a8b0-4b2c7bb7782a",
+  "reportOnly" : false,
+  "pullMode" : true,
+  "profile" : "unknown",
+  "transport" : "JSON",
+  "endpoint" : "http://www.openadr.cn/rest/api/"
+}

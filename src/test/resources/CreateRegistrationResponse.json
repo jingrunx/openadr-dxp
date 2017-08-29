@@ -1,0 +1,14 @@
+{
+  "id" : "e60460da-4848-4fe6-975d-761553bb665e",
+  "code" : 200,
+  "reason" : "successful",
+  "unID" : "e24acf0e-e542-48fe-8b66-d4900d6f3716",
+  "pollFreq" : "PT5M",
+  "profiles" : [ {
+    "token" : null,
+    "transports" : [ "JSON" ]
+  } ],
+  "dnID" : "dn#1",
+  "registrationID" : "ebd08c0c-b9e7-46f5-9571-d8e1329bb920",
+  "requestID" : "57f521ce-a753-4038-8efb-4ed020b9d3d7"
+}

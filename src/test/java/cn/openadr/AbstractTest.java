@@ -1,5 +1,6 @@
 package cn.openadr;
 
+import java.io.File;
 import java.io.IOException;
 
 import org.junit.After;
@@ -27,9 +28,14 @@ public class AbstractTest {
 
 	@After
 	public void after() throws IOException {
-		System.out.println(object.getClass()
-			.getSimpleName());
-		System.out.println(jsonMapper.writeValueAsString(object));
-		System.out.println();
+		String path = "C:\\Users\\jrxian\\Workspaces\\openadr\\openadr-dxp\\src\\test\\resources\\";
+		String name = object.getClass()
+			.getSimpleName();
+		File file = new File(path + name + ".json");
+		jsonMapper.writeValue(file, object);
+
+//		System.out.println(name);
+//		System.out.println(jsonMapper.writeValueAsString(object));
+//		System.out.println();
 	}
 }

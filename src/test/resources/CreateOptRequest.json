@@ -1,0 +1,15 @@
+{
+  "id" : "a12aa5d7-76d2-467d-91ec-fa516e3d4ae3",
+  "version" : 1,
+  "dnID" : "dn#1",
+  "optID" : "bc448016-4e05-4811-9c2a-45d9241ba2a0",
+  "type" : "optOut",
+  "optReason" : "economic",
+  "createdDateTime" : "2017-08-29T01:03:02.743Z",
+  "eventID" : "72eaa74c-563e-45bd-9971-0e621087aae3",
+  "modificationNumber" : 0,
+  "target" : {
+    "endDeviceAsset" : [ "Energy_Management_System" ]
+  },
+  "deviceClass" : { }
+}
