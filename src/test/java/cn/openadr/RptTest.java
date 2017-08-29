@@ -1,209 +1,132 @@
 package cn.openadr;
 
-import java.util.UUID;
-
-import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
-import org.joda.time.Minutes;
 import org.junit.Test;
 
 import cn.openadr.domain.MetricType;
-import cn.openadr.model.report.PointValue;
-import cn.openadr.model.report.PointValues;
 import cn.openadr.payload.rpt.CancelReportRequest;
 import cn.openadr.payload.rpt.CancelReportResponse;
 import cn.openadr.payload.rpt.CreateReportRequest;
 import cn.openadr.payload.rpt.CreateReportResponse;
-import cn.openadr.payload.rpt.DataReportRequest;
 import cn.openadr.payload.rpt.DataReportResponse;
 import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
 import cn.openadr.payload.rpt.RegisterReportRequest;
 import cn.openadr.payload.rpt.RegisterReportResponse;
-import cn.openadr.payload.rpt.ReportRequest;
-import cn.openadr.tsdb.TagKey;
-import cn.openadr.tsdb.ValuePart;
+import cn.openadr.utils.CommonUtils;
+import cn.openadr.utils.MetricUtils;
+import cn.openadr.utils.RptUtils;
 
-public class RptTest extends AbstractJsonTest<ReportRequest> {
-	private DateTime dtstart = LocalDate.now()
-		.toDateTimeAtStartOfDay();
-
-	@Test
-	public void testLiveReport() {
-		LiveReportRequest request = new LiveReportRequest();
-
-		for (int i = 0; i < 2; ++i) {
-			PointValue value = new PointValue();
-
-			value.setMetric(MetricType.CURRENT.value());
-			value.getTags()
-				.put(TagKey.device, UUID.randomUUID()
-					.toString());
-
-			value.getValue()
-				.setValue(5.5f);
-
-			request.getValues()
-				.add(value);
-		}
-
-		object = request;
-	}
-
-	@Test
-	public void testHistoryReport() {
-		HistoryReportRequest request = new HistoryReportRequest();
-
-		PointValues value = new PointValues();
-		value.setMetric(MetricType.CURRENT.value());
-		value.getTags()
-			.put(TagKey.device, UUID.randomUUID()
-				.toString());
-		value.getRegular()
-			.setDtstart(dtstart);
-		value.getRegular()
-			.setPeriod(Minutes.minutes(15)
-				.toPeriod());
-		value.getRegular()
-			.setArray(new double[] { 1, 2, 3, 4, 5 });
-		request.getValues()
-			.add(value);
-
-		value.getIrregular()
-			.getValues()
-			.add(new ValuePart(1.0d, dtstart));
-		value.getIrregular()
-			.getValues()
-			.add(new ValuePart(2.0d, dtstart.plusMinutes(15)));
-		value.getIrregular()
-			.getValues()
-			.add(new ValuePart(3.0d, dtstart.plusMinutes(60)));
-
-		object = request;
-	}
-	
+public class RptTest extends AbstractTest {
 
 	@Test
 	public void testRegisterReportRequest() {
-		RegisterReportRequest v = new RegisterReportRequest();
+		RegisterReportRequest req = new RegisterReportRequest();
+		CommonUtils.fillRptRequest(req);
 
-		CommonUtils.fillRptRequest(v);
-
-		object = v;
+		object = req;
 	}
 
 	@Test
 	public void testRegisterReportResponse() {
-		RegisterReportRequest v = new RegisterReportRequest();
-		CommonUtils.fillRptRequest(v);
-		RegisterReportResponse response = new RegisterReportResponse(v);
-		response.setCode(200);
-		response.setId(FillUtils.uuid());
-		response.setReason("no reason");
-		object = response;
+		RegisterReportRequest req = new RegisterReportRequest();
+		CommonUtils.fillRptRequest(req);
+
+		RegisterReportResponse rep = new RegisterReportResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
 	}
 
 	@Test
 	public void testCreateReportRequest() {
-		CreateReportRequest request =new CreateReportRequest();
-		request.setDnID(FillUtils.uuid());
-		request.setId(FillUtils.uuid());
-		request.setReportRequestID(FillUtils.uuid());
-		request.setVersion(0);
-		object = request;
+		CreateReportRequest req = new CreateReportRequest();
+		CommonUtils.fillRptRequest(req);
+		RptUtils.fillReportSpecifier(req.getReportSpecifier());
+
+		object = req;
 	}
 
 	@Test
 	public void testCreateReportResponse() {
-		CreateReportRequest request =new CreateReportRequest();
-		request.setDnID(FillUtils.uuid());
-		request.setId(FillUtils.uuid());
-		request.setReportRequestID(FillUtils.uuid());
-		request.setVersion(0);
-		CreateReportResponse response =new CreateReportResponse(request);
-		response.setCode(200);
-		response.setId(FillUtils.uuid());
-		response.setReason("no reason");
-		object = response;
+		CreateReportRequest req = new CreateReportRequest();
+		CommonUtils.fillRptRequest(req);
+
+		CreateReportResponse rep = new CreateReportResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
 	}
 
 	@Test
 	public void testCancelReportRequest() {
-		CancelReportRequest request =new CancelReportRequest();
-		request.setDnID(FillUtils.uuid());
-		request.setId(FillUtils.uuid());
-		request.setReportRequestID(FillUtils.uuid());
-		request.setVersion(0);
-		object = request;
+		CancelReportRequest req = new CancelReportRequest();
+		CommonUtils.fillRptRequest(req);
+
+		object = req;
 	}
 
 	@Test
 	public void testCancelReportResponse() {
-		CancelReportRequest request =new CancelReportRequest();
-		request.setDnID(FillUtils.uuid());
-		request.setId(FillUtils.uuid());
-		request.setReportRequestID(FillUtils.uuid());
-		request.setVersion(0);
-		CancelReportResponse response =new CancelReportResponse(request);
-		response.setCode(200);
-		response.setId(FillUtils.uuid());
-		response.setReason("no reason");
-		object = response;
+		CancelReportRequest req = new CancelReportRequest();
+		CommonUtils.fillRptRequest(req);
+
+		CancelReportResponse rep = new CancelReportResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
 	}
 
 	@Test
 	public void testLiveReportRequest() {
-		LiveReportRequest request =new LiveReportRequest();
-		request.setCreatedDateTime(dtstart);
-		request.setDnID(FillUtils.uuid());
-		request.setId(FillUtils.uuid());
-		request.setReportRequestID(FillUtils.uuid());
-		request.setReportSpecifierID(FillUtils.uuid());
-		request.setVersion(0);
-		object = request;
+		LiveReportRequest req = new LiveReportRequest();
+		RptUtils.fillDataReportRequest(req);
+
+		String resourceID = CommonUtils.id();
+		req.getValues()
+			.add(MetricUtils.createPointValue(MetricType.POWER_ACTIVE, resourceID, 97));
+		req.getValues()
+			.add(MetricUtils.createPointValue(MetricType.ENERGY_ACTIVE, resourceID, 4567));
+		req.getValues()
+			.add(MetricUtils.createPointValue(MetricType.VOLTAGE, resourceID, 232.2));
+
+		object = req;
 	}
 
 	@Test
 	public void testLiveReportResponse() {
-		DataReportRequest request = new DataReportRequest();
-		request.setCreatedDateTime(dtstart);
-		request.setDnID(FillUtils.uuid());
-		request.setDnID(FillUtils.uuid());
-		request.setReportRequestID(FillUtils.uuid());
-		request.setReportSpecifierID(FillUtils.uuid());
-		request.setVersion(0);
-		DataReportResponse response = new DataReportResponse(request);
-		response.setCode(200);
-		response.setId(FillUtils.uuid());
-		response.setReason("no reason");
-		object = response;
+		LiveReportRequest req = new LiveReportRequest();
+		RptUtils.fillDataReportRequest(req);
+
+		DataReportResponse rep = new DataReportResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
 	}
 
 	@Test
 	public void testHistoryReportRequest() {
-		HistoryReportRequest request = new HistoryReportRequest();
-		request.setCreatedDateTime(dtstart);
-		request.setDnID(FillUtils.uuid());
-		request.setId(FillUtils.uuid());
-		request.setReportRequestID(FillUtils.uuid());
-		request.setReportSpecifierID(FillUtils.uuid());
-		request.setVersion(0);
-		object = request;
+		HistoryReportRequest req = new HistoryReportRequest();
+		RptUtils.fillDataReportRequest(req);
+
+		String resourceID = CommonUtils.id();
+		req.getValues()
+			.add(MetricUtils.createPointValues(MetricType.POWER_ACTIVE, resourceID));
+		req.getValues()
+			.add(MetricUtils.createPointValues(MetricType.VOLTAGE, resourceID));
+		req.getValues()
+			.add(MetricUtils.createPointValues(MetricType.CURRENT, resourceID));
+
+		object = req;
 	}
 
 	@Test
 	public void testHistoryReportResponse() {
-		HistoryReportRequest request = new HistoryReportRequest();
-		request.setCreatedDateTime(dtstart);
-		request.setDnID(FillUtils.uuid());
-		request.setId(FillUtils.uuid());
-		request.setReportRequestID(FillUtils.uuid());
-		request.setReportSpecifierID(FillUtils.uuid());
-		request.setVersion(0);
-		DataReportResponse response = new DataReportResponse(request);
-		response.setCode(200);
-		response.setId(FillUtils.uuid());
-		response.setReason("no reason");
-		object = response;
+		HistoryReportRequest req = new HistoryReportRequest();
+		RptUtils.fillDataReportRequest(req);
+
+		DataReportResponse rep = new DataReportResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
 	}
 }

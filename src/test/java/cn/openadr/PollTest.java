@@ -2,32 +2,38 @@ package cn.openadr;
 
 import org.junit.Test;
 
+import cn.openadr.model.event.Event;
 import cn.openadr.payload.pull.PollRequest;
 import cn.openadr.payload.pull.PollResponse;
+import cn.openadr.utils.CommonUtils;
+import cn.openadr.utils.EventUtils;
 
-
-public class PollTest extends AbstractJsonTest<Object>{
+public class PollTest extends AbstractTest {
 	@Test
 	public void testPollRequest() {
-		PollRequest request = new PollRequest();
-		request.setDnID(FillUtils.uuid());
-		request.setId(FillUtils.uuid());
-		request.setVersion(0);
-		object  = request;
+		PollRequest req = new PollRequest();
+		CommonUtils.fillRequest(req);
+
+		object = req;
 	}
-	
-	@Test 
+
+	@Test
 	public void testPollResponse() {
-		PollRequest request = new PollRequest();
-		request.setDnID(FillUtils.uuid());
-		request.setId(FillUtils.uuid());
-		request.setVersion(0);
-		PollResponse response = new PollResponse(request);
-		response.setCode(200);
-		response.setId(FillUtils.uuid());
-		response.setReason("no reason");
-		response.setRegisterReport(true);
-		response.setReregistration(false);
-		object  = response;
+		PollRequest req = new PollRequest();
+		CommonUtils.fillRequest(req);
+
+		PollResponse rep = new PollResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		rep.setReregistration(true);
+		rep.setRegisterReport(true);
+		rep.setCreateReport(true);
+
+		Event event = new Event();
+		EventUtils.fillEvent(event);
+		rep.getEvents()
+			.add(event);
+
+		object = rep;
 	}
 }

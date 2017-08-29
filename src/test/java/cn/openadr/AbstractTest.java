@@ -5,15 +5,11 @@ import java.io.IOException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
 
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.joda.JodaMapper;
 
-import cn.openadr.model.DN;
-import cn.openadr.model.UN;
-
-public class AbstractJsonTest<T> {
+public class AbstractTest {
 	private static JodaMapper jsonMapper = new JodaMapper();
 
 	public Object object;
@@ -31,15 +27,9 @@ public class AbstractJsonTest<T> {
 
 	@After
 	public void after() throws IOException {
-		jsonMapper.writeValue(System.out, object);
-	}
-
-	@Test
-	public void testVEN() throws IOException {
-		DN ven = new DN();
-		ven.setUn(new UN());
-
-		String json = jsonMapper.writeValueAsString(ven);
-		System.out.println(json);
+		System.out.println(object.getClass()
+			.getSimpleName());
+		System.out.println(jsonMapper.writeValueAsString(object));
+		System.out.println();
 	}
 }

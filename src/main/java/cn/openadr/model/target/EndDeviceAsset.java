@@ -10,10 +10,6 @@ public class EndDeviceAsset extends CimObject {
 		super();
 	}
 
-	public EndDeviceAsset(String id) {
-		super(id);
-	}
-
 	public EndDeviceAsset(EndDeviceAssetType type) {
 		super(type.name());
 	}

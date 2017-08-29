@@ -30,7 +30,7 @@ public class CreateOptRequest extends OptRequest {
 	private OptReason optReason;
 	private DateTime createdDateTime;
 	private String eventID;
-	private long modificationNumber;
+	private int modificationNumber;
 	private final Target target = new Target();
 	private final Target deviceClass = new Target();
 
@@ -70,11 +70,11 @@ public class CreateOptRequest extends OptRequest {
 		this.eventID = eventID;
 	}
 
-	public long getModificationNumber() {
+	public int getModificationNumber() {
 		return modificationNumber;
 	}
 
-	public void setModificationNumber(long modificationNumber) {
+	public void setModificationNumber(int modificationNumber) {
 		this.modificationNumber = modificationNumber;
 	}
 
