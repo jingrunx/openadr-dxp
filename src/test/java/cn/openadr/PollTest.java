@@ -2,11 +2,12 @@ package cn.openadr;
 
 import org.junit.Test;
 
-import cn.openadr.model.event.Event;
+import cn.openadr.payload.pull.CustomReportResponse;
 import cn.openadr.payload.pull.PollRequest;
-import cn.openadr.payload.pull.PollResponse;
+import cn.openadr.payload.pull.ReregistrationResponse;
+import cn.openadr.payload.pull.RereportReponse;
 import cn.openadr.utils.CommonUtils;
-import cn.openadr.utils.EventUtils;
+import cn.openadr.utils.RptUtils;
 
 public class PollTest extends AbstractTest {
 	@Test
@@ -18,21 +19,37 @@ public class PollTest extends AbstractTest {
 	}
 
 	@Test
-	public void testPollResponse() {
+	public void testReregistrationResponse() {
 		PollRequest req = new PollRequest();
 		CommonUtils.fillRequest(req);
 
-		PollResponse rep = new PollResponse(req);
+		ReregistrationResponse rep = new ReregistrationResponse(req);
 		CommonUtils.fillResponse(rep);
 
-		rep.setReregistration(true);
-		rep.setRegisterReport(true);
-		rep.setCreateReport(true);
+		object = rep;
+	}
 
-		Event event = new Event();
-		EventUtils.fillEvent(event);
-		rep.getEvents()
-			.add(event);
+	@Test
+	public void testRereportReponse() {
+		PollRequest req = new PollRequest();
+		CommonUtils.fillRequest(req);
+
+		RereportReponse rep = new RereportReponse(req);
+		CommonUtils.fillResponse(rep);
+
+		rep.setReportSpecifierID(CommonUtils.id());
+
+		object = rep;
+	}
+
+	@Test
+	public void testCustomReportResponse() {
+		PollRequest req = new PollRequest();
+		CommonUtils.fillRequest(req);
+
+		CustomReportResponse rep = new CustomReportResponse(req);
+		CommonUtils.fillResponse(rep);
+		RptUtils.fillReportSpecifier(rep.getReportSpecifier());
 
 		object = rep;
 	}

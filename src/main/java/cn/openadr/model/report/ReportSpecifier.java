@@ -22,6 +22,7 @@ class ReportTypeDeserializer extends EnumeratedDeserializer<ReportType> {
 	}
 }
 
+/** 为报告数据准备的格式规范 */
 public class ReportSpecifier extends DRObject {
 	private static final long serialVersionUID = 1L;
 
@@ -32,14 +33,14 @@ public class ReportSpecifier extends DRObject {
 	/** 取消报告时间 */
 	private DateTime endDateTime;
 	/** 报告周期，每隔多长时间报告一次 */
+	//等同于reportBackDuration
+	//如果interval=(period | PT0S), 按照LiveReport格式报告，否则按照HistoryReport格式报告
 	@NotNull
 	private Period interval;
 	/** 曲线数据之间的采样间隔 */
-	//如果interval=(period | PT0S), 按照LiveReport格式报告，否则按照HistoryReport格式报告
+	//等同于granularity，取值范围必须在minPeriod和maxPeriod之间
 	@NotNull
 	private Period period;
-	/** 允许延迟的时间 */
-	private Period granularity;
 	/** 要报告的测点 */
 	private final List<PointMetaData> points = new ArrayList<>();
 
@@ -83,14 +84,6 @@ public class ReportSpecifier extends DRObject {
 
 	public void setPeriod(Period period) {
 		this.period = period;
-	}
-
-	public Period getGranularity() {
-		return granularity;
-	}
-
-	public void setGranularity(Period granularity) {
-		this.granularity = granularity;
 	}
 
 	public List<PointMetaData> getPoints() {

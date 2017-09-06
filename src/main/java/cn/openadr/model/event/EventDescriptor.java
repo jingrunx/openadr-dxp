@@ -6,6 +6,8 @@ import cn.openadr.domain.EventStatus;
 import cn.openadr.model.target.Market;
 
 public class EventDescriptor {
+	/** 事件ID */
+	private String eventID;
 	/** 事件状态 */
 	private EventStatus status;
 	/** 优先级 */
@@ -24,6 +26,14 @@ public class EventDescriptor {
 	private Market market;
 	/** 注解 */
 	private String comment;
+
+	public String getEventID() {
+		return eventID;
+	}
+
+	public void setEventID(String eventID) {
+		this.eventID = eventID;
+	}
 
 	public EventStatus getStatus() {
 		return status;

@@ -8,6 +8,7 @@ import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
 import cn.openadr.jackson.EnumeratedDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
+import cn.openadr.model.DRObject;
 
 class ReadingTypeDeserializer extends EnumeratedDeserializer<ReadingType> {
 	public ReadingTypeDeserializer() {
@@ -15,24 +16,17 @@ class ReadingTypeDeserializer extends EnumeratedDeserializer<ReadingType> {
 	}
 }
 
-/** 测点元数据 */
-public class MetricMetaData {
-	/** 测点名称 */
-	private /* MetricType */String name;
+/** 测点信息 */
+public class MetricMetaData extends DRObject {
+	private static final long serialVersionUID = 1L;
+
+	//private MetricType id;
 	/** 读数类型 */
 	private ReadingType readingType;
 	/** 单位乘数 */
 	private UnitMultiplier multiplier;
 	/** 单位符号 */
 	private UnitSymbol symbol;
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	public ReadingType getReadingType() {

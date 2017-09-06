@@ -2,10 +2,10 @@ package cn.openadr.payload.rpt;
 
 import cn.openadr.payload.DRResponse;
 
-public class ReportResponse<R extends ReportRequest> extends DRResponse<R> {
+public class ReportResponse extends DRResponse<ReportRequest> {
 	private static final long serialVersionUID = 1L;
 
-	public ReportResponse(R request) {
+	public ReportResponse(ReportRequest request) {
 		super(request);
 	}
 

@@ -4,24 +4,24 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
 import cn.openadr.payload.rpt.CancelReportRequest;
-import cn.openadr.payload.rpt.CancelReportResponse;
 import cn.openadr.payload.rpt.CreateReportRequest;
 import cn.openadr.payload.rpt.CreateReportResponse;
 import cn.openadr.payload.rpt.DataReportResponse;
 import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
-import cn.openadr.payload.rpt.RegisterReportRequest;
-import cn.openadr.payload.rpt.RegisterReportResponse;
+import cn.openadr.payload.rpt.MetadataReportRequest;
+import cn.openadr.payload.rpt.ReportResponse;
+import cn.openadr.payload.rpt.ResourceReportRequest;
 
 /** 报告 */
 @Path("/report")
 public interface RestReport extends RestApi {
-	/** DN支持的元数据 */
+	/** DN报告支持的元数据 */
 	@POST
 	@Path("/register")
-	RegisterReportResponse register(RegisterReportRequest request);
+	ReportResponse register(ResourceReportRequest request);
 
-	/** DN注册默认报告 */
+	/** 可以由UN或DN发起 */
 	@POST
 	@Path("/create")
 	CreateReportResponse create(CreateReportRequest request);
@@ -31,7 +31,12 @@ public interface RestReport extends RestApi {
 	/** 取消报告 */
 	@POST
 	@Path("/cancel")
-	CancelReportResponse cancel(CancelReportRequest request);
+	ReportResponse cancel(CancelReportRequest request);
+
+	/** 实时数据 */
+	@POST
+	@Path("/update/metadata")
+	DataReportResponse updateLive(MetadataReportRequest request);
 
 	/** 实时数据 */
 	@POST

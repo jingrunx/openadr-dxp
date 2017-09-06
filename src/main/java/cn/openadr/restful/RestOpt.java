@@ -4,17 +4,16 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
 import cn.openadr.payload.opt.CancelOptRequest;
-import cn.openadr.payload.opt.CancelOptResponse;
 import cn.openadr.payload.opt.CreateOptRequest;
-import cn.openadr.payload.opt.CreateOptResponse;
+import cn.openadr.payload.opt.OptResponse;
 
 @Path("/opt")
 public interface RestOpt extends RestApi {
 	@POST
 	@Path("/create")
-	CreateOptResponse create(CreateOptRequest request);
+	OptResponse create(CreateOptRequest request);
 
 	@POST
 	@Path("/cancel")
-	CancelOptResponse cancel(CancelOptRequest request);
+	OptResponse cancel(CancelOptRequest request);
 }

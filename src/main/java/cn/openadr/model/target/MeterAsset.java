@@ -1,7 +1,7 @@
 package cn.openadr.model.target;
 
-/** 计量设备 */
-public class MeterAsset extends CimObject {
+/** 表计类型 */
+public class MeterAsset extends Asset {
 	private static final long serialVersionUID = 1L;
 
 	public MeterAsset() {

@@ -28,14 +28,15 @@ public class AbstractTest {
 
 	@After
 	public void after() throws IOException {
-		String path = "C:\\Users\\jrxian\\Workspaces\\openadr\\openadr-dxp\\src\\test\\resources\\";
 		String name = object.getClass()
 			.getSimpleName();
+
+		String path = "C:\\Users\\jrxian\\Workspaces\\openadr\\openadr-dxp\\src\\test\\resources\\";
 		File file = new File(path + name + ".json");
 		jsonMapper.writeValue(file, object);
 
-//		System.out.println(name);
-//		System.out.println(jsonMapper.writeValueAsString(object));
-//		System.out.println();
+		System.out.println(name);
+		System.out.println(jsonMapper.writeValueAsString(object));
+		System.out.println();
 	}
 }

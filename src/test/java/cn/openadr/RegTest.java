@@ -6,11 +6,10 @@ import org.junit.Test;
 import cn.openadr.domain.TransportType;
 import cn.openadr.model.register.Profile;
 import cn.openadr.payload.reg.CancelRegistrationRequest;
-import cn.openadr.payload.reg.CancelRegistrationResponse;
 import cn.openadr.payload.reg.CreateRegistrationRequest;
 import cn.openadr.payload.reg.CreateRegistrationResponse;
 import cn.openadr.payload.reg.QueryRegistrationRequest;
-import cn.openadr.payload.reg.QueryRegistrationResponse;
+import cn.openadr.payload.reg.RegistrationResponse;
 import cn.openadr.utils.CommonUtils;
 
 public class RegTest extends AbstractTest {
@@ -28,7 +27,7 @@ public class RegTest extends AbstractTest {
 		QueryRegistrationRequest req = new QueryRegistrationRequest();
 		CommonUtils.fillRegRequest(req);
 
-		QueryRegistrationResponse rep = new QueryRegistrationResponse(req);
+		RegistrationResponse rep = new RegistrationResponse(req);
 		CommonUtils.fillResponse(rep);
 
 		object = rep;
@@ -75,16 +74,5 @@ public class RegTest extends AbstractTest {
 		CommonUtils.fillRegRequest(req);
 
 		object = req;
-	}
-
-	@Test
-	public void testCancelRegstrationResponse() {
-		CancelRegistrationRequest req = new CancelRegistrationRequest();
-		CommonUtils.fillRegRequest(req);
-
-		CancelRegistrationResponse rep = new CancelRegistrationResponse(req);
-		CommonUtils.fillResponse(rep);
-
-		object = rep;
 	}
 }

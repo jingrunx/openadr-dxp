@@ -33,7 +33,7 @@ public class CommonUtils {
 	}
 
 	public static void fillRequest(DRRequest req) {
-		req.setId(id());
+		req.setRequestID(id());
 		req.setVersion(1);
 		req.setDnID("dn#1");
 	}
@@ -54,7 +54,6 @@ public class CommonUtils {
 	}
 
 	public static void fillResponse(DRResponse<? extends DRRequest> rep) {
-		rep.setId(id());
 		rep.setCode(200);
 		rep.setReason("successful");
 	}

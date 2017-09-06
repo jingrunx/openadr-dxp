@@ -1,13 +1,18 @@
-package cn.openadr.payload.rpt;
+package cn.openadr.payload.pull;
 
 import cn.openadr.model.report.ReportSpecifier;
+import cn.openadr.payload.DRResponse;
 
-/** 由DN主动创建的或者由UN发起创建的报告，作为定期传送数据的规范 */
-public class CreateReportRequest extends ReportRequest {
+/** 由UN向DN发起的注册自定义报表响应 */
+public class CustomReportResponse extends DRResponse<PollRequest> {
 	private static final long serialVersionUID = 1L;
 
 	/** 报表规范 */
 	private final ReportSpecifier reportSpecifier = new ReportSpecifier();
+
+	public CustomReportResponse(PollRequest request) {
+		super(request);
+	}
 
 	public ReportSpecifier getReportSpecifier() {
 		return reportSpecifier;

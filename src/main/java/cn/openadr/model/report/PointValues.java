@@ -1,33 +1,25 @@
 package cn.openadr.model.report;
 
-import java.util.Map;
+import cn.openadr.tsdb.CurveValues;
 
-import cn.openadr.tsdb.IrregularPart;
-import cn.openadr.tsdb.Point;
-import cn.openadr.tsdb.RegularPart;
-import cn.openadr.tsdb.TagKey;
-
-public class PointValues extends Point {
+public class PointValues extends CurveValues {
 	private static final long serialVersionUID = 1L;
 
-	/** 规则数据，各数据之间间隔相同 */
-	private final RegularPart regular = new RegularPart();
-	/** 不规则数据，各数据之间间隔不同 */
-	private final IrregularPart irregular = new IrregularPart();
+	/** 测点编号 */
+	private int rID;
 
 	public PointValues() {
-		super();
 	}
 
-	public PointValues(String metric, Map<TagKey, String> tags) {
-		super(metric, tags);
+	public PointValues(int rID) {
+		this.rID = rID;
 	}
 
-	public RegularPart getRegular() {
-		return regular;
+	public int getrID() {
+		return rID;
 	}
 
-	public IrregularPart getIrregular() {
-		return irregular;
+	public void setrID(int rID) {
+		this.rID = rID;
 	}
 }

@@ -1,25 +1,28 @@
 package cn.openadr.model.report;
 
-import java.util.Map;
-
-import cn.openadr.tsdb.Point;
-import cn.openadr.tsdb.TagKey;
 import cn.openadr.tsdb.ValuePart;
 
-public class PointValue extends Point {
+public class PointValue extends ValuePart {
 	private static final long serialVersionUID = 1L;
 
-	private final ValuePart value = new ValuePart();
+	/** 测点编号 */
+	private int rID;
 
 	public PointValue() {
 		super();
 	}
 
-	public PointValue(String metric, Map<TagKey, String> tags) {
-		super(metric, tags);
+	public PointValue(int rID) {
+		super();
+		this.rID = rID;
 	}
 
-	public ValuePart getValue() {
-		return value;
+	public int getrID() {
+		return rID;
 	}
+
+	public void setrID(int rID) {
+		this.rID = rID;
+	}
+
 }

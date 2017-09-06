@@ -1,17 +1,19 @@
 package cn.openadr;
 
+import java.util.Collections;
+
 import org.junit.Test;
 
-import cn.openadr.domain.MetricType;
+import cn.openadr.model.report.ResourceModel;
+import cn.openadr.model.target.Resource;
 import cn.openadr.payload.rpt.CancelReportRequest;
-import cn.openadr.payload.rpt.CancelReportResponse;
 import cn.openadr.payload.rpt.CreateReportRequest;
 import cn.openadr.payload.rpt.CreateReportResponse;
 import cn.openadr.payload.rpt.DataReportResponse;
 import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
-import cn.openadr.payload.rpt.RegisterReportRequest;
-import cn.openadr.payload.rpt.RegisterReportResponse;
+import cn.openadr.payload.rpt.MetadataReportRequest;
+import cn.openadr.payload.rpt.ResourceReportRequest;
 import cn.openadr.utils.CommonUtils;
 import cn.openadr.utils.MetricUtils;
 import cn.openadr.utils.RptUtils;
@@ -19,22 +21,45 @@ import cn.openadr.utils.RptUtils;
 public class RptTest extends AbstractTest {
 
 	@Test
-	public void testRegisterReportRequest() {
-		RegisterReportRequest req = new RegisterReportRequest();
+	public void testResourceReportRequest() {
+		ResourceReportRequest req = new ResourceReportRequest();
 		CommonUtils.fillRptRequest(req);
+
+		ResourceModel rm1 = new ResourceModel();
+		RptUtils.fillResourceModel(rm1);
+		req.getModels()
+			.add(rm1);
+
+		Resource r1 = new Resource();
+		r1.setAsset(rm1.getAsset());
+		r1.setId(CommonUtils.id());
+		r1.setName("空调#1");
+		req.getResources()
+			.add(r1);
+
+		Resource r2 = new Resource();
+		r1.setAsset(rm1.getAsset());
+		r2.setId(CommonUtils.id());
+		r2.setName("空调#2");
+		req.getResources()
+			.add(r2);
+
+		Resource rootMeter = new Resource();
+		rootMeter.setId(CommonUtils.id());
+		rootMeter.setName("总表#1");
+		req.getResources()
+			.add(rootMeter);
+
+		Resource r3 = new Resource();
+		r3.setId(CommonUtils.id());
+		r3.setName("空调电表#1");
+		r3.setParentID(rootMeter.getId());
+		r3.getRelations()
+			.put("reading", Collections.singletonList(r1.getId()));
+		req.getResources()
+			.add(r3);
 
 		object = req;
-	}
-
-	@Test
-	public void testRegisterReportResponse() {
-		RegisterReportRequest req = new RegisterReportRequest();
-		CommonUtils.fillRptRequest(req);
-
-		RegisterReportResponse rep = new RegisterReportResponse(req);
-		CommonUtils.fillResponse(rep);
-
-		object = rep;
 	}
 
 	@Test
@@ -66,14 +91,13 @@ public class RptTest extends AbstractTest {
 	}
 
 	@Test
-	public void testCancelReportResponse() {
-		CancelReportRequest req = new CancelReportRequest();
+	public void testMetadataReportRequest() {
+		MetadataReportRequest req = new MetadataReportRequest();
 		CommonUtils.fillRptRequest(req);
 
-		CancelReportResponse rep = new CancelReportResponse(req);
-		CommonUtils.fillResponse(rep);
+		RptUtils.fillPointMetaData(req.getPoints());
 
-		object = rep;
+		object = req;
 	}
 
 	@Test
@@ -81,26 +105,14 @@ public class RptTest extends AbstractTest {
 		LiveReportRequest req = new LiveReportRequest();
 		RptUtils.fillDataReportRequest(req);
 
-		String resourceID = CommonUtils.id();
 		req.getValues()
-			.add(MetricUtils.createPointValue(MetricType.POWER_ACTIVE, resourceID, 97));
+			.add(MetricUtils.createPointValue(1, 97));
 		req.getValues()
-			.add(MetricUtils.createPointValue(MetricType.ENERGY_ACTIVE, resourceID, 4567));
+			.add(MetricUtils.createPointValue(2, 4567));
 		req.getValues()
-			.add(MetricUtils.createPointValue(MetricType.VOLTAGE, resourceID, 232.2));
+			.add(MetricUtils.createPointValue(3, 232.2));
 
 		object = req;
-	}
-
-	@Test
-	public void testLiveReportResponse() {
-		LiveReportRequest req = new LiveReportRequest();
-		RptUtils.fillDataReportRequest(req);
-
-		DataReportResponse rep = new DataReportResponse(req);
-		CommonUtils.fillResponse(rep);
-
-		object = rep;
 	}
 
 	@Test
@@ -108,20 +120,19 @@ public class RptTest extends AbstractTest {
 		HistoryReportRequest req = new HistoryReportRequest();
 		RptUtils.fillDataReportRequest(req);
 
-		String resourceID = CommonUtils.id();
 		req.getValues()
-			.add(MetricUtils.createPointValues(MetricType.POWER_ACTIVE, resourceID));
+			.add(MetricUtils.createPointValues(1));
 		req.getValues()
-			.add(MetricUtils.createPointValues(MetricType.VOLTAGE, resourceID));
+			.add(MetricUtils.createPointValues(2));
 		req.getValues()
-			.add(MetricUtils.createPointValues(MetricType.CURRENT, resourceID));
+			.add(MetricUtils.createPointValues(3));
 
 		object = req;
 	}
 
 	@Test
-	public void testHistoryReportResponse() {
-		HistoryReportRequest req = new HistoryReportRequest();
+	public void testReportResponse() {
+		LiveReportRequest req = new LiveReportRequest();
 		RptUtils.fillDataReportRequest(req);
 
 		DataReportResponse rep = new DataReportResponse(req);

@@ -4,7 +4,6 @@ import org.joda.time.DateTime;
 import org.joda.time.DateTimeConstants;
 import org.joda.time.Hours;
 
-import cn.openadr.domain.MetricType;
 import cn.openadr.domain.ReadingType;
 import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
@@ -19,38 +18,45 @@ import cn.openadr.tsdb.ValuePart;
 
 public class MetricUtils {
 	public static void fillMetric(MetricMetaData metric) {
-		metric.setName(MetricType.POWER_ACTIVE.value());
 		metric.setReadingType(ReadingType.DIRECT_READ);
 		metric.setMultiplier(UnitMultiplier.k);
 		metric.setSymbol(UnitSymbol.W);
 	}
 
-	public static void fillPoint(Point point, MetricType metric, String resourceID) {
-		point.setMetric(metric.value());
-		point.getTags()
-			.put(TagKey.device, resourceID);
+	public static MetricMetaData createMetric(String metric, String metricName) {
+		MetricMetaData r = new MetricMetaData();
+
+		r.setId(metric);
+		r.setName(metricName);
+		fillMetric(r);
+
+		return r;
 	}
 
-	public static PointValue createPointValue(MetricType metric, String resourceID, double val) {
-		PointValue value = new PointValue();
+	public static void fillPoint(Point point, String metric, String resourceID) {
+		point.setMetric(metric);
+		point.getTags()
+			.put(TagKey.device, resourceID);
+		point.getTags()
+			.put(TagKey.customer, CommonUtils.id());
+		point.getTags()
+			.put(TagKey.catalog, CommonUtils.id());
+		point.getTags()
+			.put(TagKey.facility, CommonUtils.id());
+	}
 
-		fillPoint(value, metric, resourceID);
+	public static PointValue createPointValue(int rID, double val) {
+		PointValue value = new PointValue(rID);
 
-		value.getValue()
-			.setValue(val);
-		value.getValue()
-			.setTimestamp(DateTime.now());
+		value.setValue(val);
+		value.setTimestamp(DateTime.now());
 
 		return value;
 	}
 
-	public static PointValues createPointValues(MetricType metric, String resourceID) {
-		PointValues value = new PointValues();
-
-		fillPoint(value, metric, resourceID);
-
+	public static PointValues createPointValues(int rID) {
+		PointValues value = new PointValues(rID);
 		fillRegular(value.getRegular());
-
 		return value;
 	}
 

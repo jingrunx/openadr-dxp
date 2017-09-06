@@ -8,9 +8,10 @@ import org.joda.time.Period;
 import cn.openadr.model.register.Profile;
 import cn.openadr.model.register.ServiceSpecific;
 
-public class CreateRegistrationResponse extends RegistrationResponse<CreateRegistrationRequest> {
+public class CreateRegistrationResponse extends RegistrationResponse {
 	private static final long serialVersionUID = 1L;
 
+	/** 主站ID */
 	private String unID;
 	/** 轮询频率 */
 	private Period pollFreq;

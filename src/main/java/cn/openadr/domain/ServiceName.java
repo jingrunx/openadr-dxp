@@ -5,7 +5,7 @@ public enum ServiceName implements EnumeratedType {
 	EI_OPT("EiOpt"), //
 	EI_REPORT("EiReport"), //
 	EI_REGISTER_PARTY("EiRegisterParty"), //
-	EI_PULL("EiPull");
+	EI_POLL("EiPull");
 
 	private final String value;
 

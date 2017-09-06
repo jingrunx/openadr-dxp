@@ -2,10 +2,10 @@ package cn.openadr.payload.pull;
 
 import cn.openadr.payload.DRResponse;
 
-public class PollResponse extends DRResponse<PollRequest> {
+public class ReregistrationResponse extends DRResponse<PollRequest> {
 	private static final long serialVersionUID = 1L;
 
-	public PollResponse(PollRequest request) {
+	public ReregistrationResponse(PollRequest request) {
 		super(request);
 	}
 }

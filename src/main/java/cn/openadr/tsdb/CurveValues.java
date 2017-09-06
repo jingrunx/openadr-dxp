@@ -1,16 +1,13 @@
-package cn.openadr.model.event;
+package cn.openadr.tsdb;
 
 import java.io.Serializable;
 
-import cn.openadr.tsdb.IrregularPart;
-import cn.openadr.tsdb.RegularPart;
-
-public class Intervals implements Serializable {
+public class CurveValues implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/** 规则数据，Interval的一种简单表达方式 */
+	/** 规则数据，各数据之间间隔相同 */
 	private final RegularPart regular = new RegularPart();
-	/** 不规则数据，Interval的标准表达方式 */
+	/** 不规则数据，各数据之间间隔不同 */
 	private final IrregularPart irregular = new IrregularPart();
 
 	public RegularPart getRegular() {

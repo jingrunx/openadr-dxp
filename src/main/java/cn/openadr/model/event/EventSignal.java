@@ -9,6 +9,7 @@ import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.DRObject;
 import cn.openadr.model.report.MetricMetaData;
 import cn.openadr.model.target.Target;
+import cn.openadr.tsdb.CurveValues;
 
 class SignalTypeDeserializer extends EnumeratedDeserializer<SignalType> {
 	public SignalTypeDeserializer() {
@@ -20,10 +21,10 @@ public class EventSignal extends DRObject {
 	private static final long serialVersionUID = 1L;
 
 	private SignalType type;
-	private double value;
+	private Double value;
 	/** 相当于ItemBase */
 	private final MetricMetaData metric = new MetricMetaData();
-	private final Intervals intervals = new Intervals();
+	private final CurveValues intervals = new CurveValues();
 	private final Target target = new Target();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
@@ -36,11 +37,11 @@ public class EventSignal extends DRObject {
 		this.type = type;
 	}
 
-	public double getValue() {
+	public Double getValue() {
 		return value;
 	}
 
-	public void setValue(double value) {
+	public void setValue(Double value) {
 		this.value = value;
 	}
 
@@ -48,7 +49,7 @@ public class EventSignal extends DRObject {
 		return metric;
 	}
 
-	public Intervals getIntervals() {
+	public CurveValues getIntervals() {
 		return intervals;
 	}
 

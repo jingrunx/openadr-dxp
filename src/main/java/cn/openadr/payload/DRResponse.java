@@ -17,7 +17,7 @@ public class DRResponse<R extends DRRequest> extends Payload {
 	}
 
 	public String getRequestID() {
-		return request.getId();
+		return request.getRequestID();
 	}
 
 	public String getDnID() {

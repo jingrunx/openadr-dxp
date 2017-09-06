@@ -1,36 +1,21 @@
 {
-  "id" : "9f9197f2-3264-471c-b386-b73d210bae4d",
   "version" : 1,
+  "requestID" : "e6ccf7e2-802e-4d4d-953f-ecfc8fcd23c6",
   "dnID" : "dn#1",
-  "reportRequestID" : "7c20ff9a-432f-46ed-a4dd-090b208eebf2",
-  "reportSpecifierID" : "84ff96b6-1b28-440d-b197-aadb2c5ab2ed",
-  "createdDateTime" : "2017-08-29T01:03:02.874Z",
+  "reportRequestID" : "9b385b27-6cc1-43c3-9360-8cea790478d1",
+  "reportSpecifierID" : "1e2e2a8a-f545-4a1a-bf98-6d1b15d9ad40",
+  "createdDateTime" : "2017-09-06T06:47:45.190Z",
   "values" : [ {
-    "metric" : "power.active",
-    "tags" : {
-      "device" : "fcc2dcbb-60db-4fdc-b057-2da6838858dd"
-    },
-    "value" : {
-      "value" : 97.0,
-      "timestamp" : "2017-08-29T01:03:02.874Z"
-    }
+    "value" : 97.0,
+    "timestamp" : "2017-09-06T06:47:45.190Z",
+    "rID" : 1
   }, {
-    "metric" : "energy.active",
-    "tags" : {
-      "device" : "fcc2dcbb-60db-4fdc-b057-2da6838858dd"
-    },
-    "value" : {
-      "value" : 4567.0,
-      "timestamp" : "2017-08-29T01:03:02.874Z"
-    }
+    "value" : 4567.0,
+    "timestamp" : "2017-09-06T06:47:45.190Z",
+    "rID" : 2
   }, {
-    "metric" : "voltage",
-    "tags" : {
-      "device" : "fcc2dcbb-60db-4fdc-b057-2da6838858dd"
-    },
-    "value" : {
-      "value" : 232.2,
-      "timestamp" : "2017-08-29T01:03:02.874Z"
-    }
+    "value" : 232.2,
+    "timestamp" : "2017-09-06T06:47:45.190Z",
+    "rID" : 3
   } ]
 }

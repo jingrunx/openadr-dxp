@@ -4,17 +4,17 @@ package cn.openadr.payload;
 public class DRRequest extends Payload {
 	private static final long serialVersionUID = 1L;
 
-	/** 版本号 */
-	private int version;
+	/** 编号 */
+	private String requestID;
 	/** DN编号 */
 	private String dnID;
 
-	public int getVersion() {
-		return version;
+	public String getRequestID() {
+		return requestID;
 	}
 
-	public void setVersion(int version) {
-		this.version = version;
+	public void setRequestID(String requestID) {
+		this.requestID = requestID;
 	}
 
 	public String getDnID() {

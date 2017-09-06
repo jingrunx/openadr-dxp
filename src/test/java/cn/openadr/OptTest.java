@@ -6,9 +6,8 @@ import org.junit.Test;
 import cn.openadr.domain.OptReason;
 import cn.openadr.domain.OptType;
 import cn.openadr.payload.opt.CancelOptRequest;
-import cn.openadr.payload.opt.CancelOptResponse;
 import cn.openadr.payload.opt.CreateOptRequest;
-import cn.openadr.payload.opt.CreateOptResponse;
+import cn.openadr.payload.opt.OptResponse;
 import cn.openadr.utils.CommonUtils;
 
 public class OptTest extends AbstractTest {
@@ -27,17 +26,6 @@ public class OptTest extends AbstractTest {
 	}
 
 	@Test
-	public void testCreateOptResponse() {
-		CreateOptRequest req = new CreateOptRequest();
-		CommonUtils.fillOptRequest(req);
-
-		CreateOptResponse rep = new CreateOptResponse(req);
-		CommonUtils.fillResponse(rep);
-
-		object = rep;
-	}
-
-	@Test
 	public void testCancelOptRequest() {
 		CancelOptRequest req = new CancelOptRequest();
 		CommonUtils.fillOptRequest(req);
@@ -46,11 +34,11 @@ public class OptTest extends AbstractTest {
 	}
 
 	@Test
-	public void testCancelOptResponse() {
-		CancelOptRequest req = new CancelOptRequest();
+	public void testOptResponse() {
+		CreateOptRequest req = new CreateOptRequest();
 		CommonUtils.fillOptRequest(req);
 
-		CancelOptResponse rep = new CancelOptResponse(req);
+		OptResponse rep = new OptResponse(req);
 		CommonUtils.fillResponse(rep);
 
 		object = rep;

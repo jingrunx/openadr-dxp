@@ -1,14 +1,15 @@
 package cn.openadr.model.event;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import cn.openadr.domain.ResponseRequired;
 import cn.openadr.jackson.EnumeratedSerializer;
-import cn.openadr.model.DRObject;
 import cn.openadr.model.target.Target;
 
 /** 事件 */
-public class Event extends DRObject {
+public class Event implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private ResponseRequired responseRequired;

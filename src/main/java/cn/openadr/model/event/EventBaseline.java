@@ -3,36 +3,22 @@ package cn.openadr.model.event;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.joda.time.DateTime;
-import org.joda.time.Period;
-
 import cn.openadr.model.DRObject;
+import cn.openadr.model.report.MetricMetaData;
+import cn.openadr.tsdb.CurveValues;
 
 public class EventBaseline extends DRObject {
 	private static final long serialVersionUID = 1L;
 
-	private DateTime dtstart;
-	private Period duration;
-	private final Intervals intervals = new Intervals();
+	private final MetricMetaData metric = new MetricMetaData();
+	private final CurveValues intervals = new CurveValues();
 	private final List<String> resourceIDs = new ArrayList<>();
 
-	public DateTime getDtstart() {
-		return dtstart;
+	public MetricMetaData getMetric() {
+		return metric;
 	}
 
-	public void setDtstart(DateTime dtstart) {
-		this.dtstart = dtstart;
-	}
-
-	public Period getDuration() {
-		return duration;
-	}
-
-	public void setDuration(Period duration) {
-		this.duration = duration;
-	}
-
-	public Intervals getIntervals() {
+	public CurveValues getIntervals() {
 		return this.intervals;
 	}
 

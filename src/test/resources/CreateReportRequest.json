@@ -1,46 +1,29 @@
 {
-  "id" : "b4ac5d96-41ab-43f7-887f-ed17263bea0c",
   "version" : 1,
+  "requestID" : "f0dcb292-7548-452f-aace-7537ecd840f4",
   "dnID" : "dn#1",
-  "reportRequestID" : "bf37c5c3-d591-43b0-9d78-525cc8ee1b99",
+  "reportRequestID" : "598d0084-7707-4f63-8a76-a101b9281c04",
   "reportSpecifier" : {
     "id" : null,
     "name" : null,
     "type" : "x-resourceStatus",
-    "startDateTime" : "2017-08-28T16:00:00.000Z",
-    "endDateTime" : "2018-08-28T16:00:00.000Z",
+    "startDateTime" : "2017-09-05T16:00:00.000Z",
+    "endDateTime" : "2018-09-05T16:00:00.000Z",
     "interval" : "P1D",
     "period" : "PT1M",
-    "granularity" : "PT15M",
     "points" : [ {
-      "metric" : {
-        "name" : "voltage",
-        "readingType" : null,
-        "multiplier" : null,
-        "symbol" : null
-      },
-      "tags" : {
-        "device" : {
-          "98d2a312-7108-4f0d-a626-dd76b087433e" : "r#1"
-        }
-      },
+      "rID" : 1,
+      "metric" : "voltage",
+      "resourceID" : "resourceID#1",
       "samplingRate" : {
         "minPeriod" : "PT1M",
         "maxPeriod" : "PT1H",
         "onChange" : false
       }
     }, {
-      "metric" : {
-        "name" : "power.active",
-        "readingType" : null,
-        "multiplier" : null,
-        "symbol" : null
-      },
-      "tags" : {
-        "device" : {
-          "98d2a312-7108-4f0d-a626-dd76b087433e" : "r#1"
-        }
-      },
+      "rID" : 1,
+      "metric" : "power.active",
+      "resourceID" : "resourceID#1",
       "samplingRate" : {
         "minPeriod" : "PT1M",
         "maxPeriod" : "PT1H",

@@ -6,8 +6,6 @@ import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-import cn.openadr.domain.UniqueIdentifier;
-
 @JsonInclude(Include.NON_EMPTY)
 public class Payload implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -17,15 +15,14 @@ public class Payload implements Serializable {
 	/** 单播 */
 	public static final String UNICAST = new UUID(0L, 0L).toString();
 
-	/** 编号 */
-	private String id = UniqueIdentifier.classBased(getClass())
-		.toString();
+	/** 版本号 */
+	private int version;
 
-	public String getId() {
-		return id;
+	public int getVersion() {
+		return version;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setVersion(int version) {
+		this.version = version;
 	}
 }
