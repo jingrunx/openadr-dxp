@@ -1,0 +1,35 @@
+{
+  "version" : 0,
+  "code" : 200,
+  "reason" : "successful",
+  "reportSpecifier" : {
+    "id" : null,
+    "name" : null,
+    "type" : "x-resourceStatus",
+    "startDateTime" : "2017-09-05T16:00:00.000Z",
+    "endDateTime" : "2018-09-05T16:00:00.000Z",
+    "interval" : "P1D",
+    "period" : "PT1M",
+    "points" : [ {
+      "rID" : 1,
+      "metric" : "voltage",
+      "resourceID" : "resourceID#1",
+      "samplingRate" : {
+        "minPeriod" : "PT1M",
+        "maxPeriod" : "PT1H",
+        "onChange" : false
+      }
+    }, {
+      "rID" : 1,
+      "metric" : "power.active",
+      "resourceID" : "resourceID#1",
+      "samplingRate" : {
+        "minPeriod" : "PT1M",
+        "maxPeriod" : "PT1H",
+        "onChange" : false
+      }
+    } ]
+  },
+  "requestID" : "60e5cd13-6e1c-4cd1-9585-c07dcbe4b42b",
+  "dnID" : "dn#1"
+}

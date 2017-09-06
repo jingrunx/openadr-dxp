@@ -1,0 +1,25 @@
+{
+  "version" : 1,
+  "requestID" : "c6a210a3-a612-4a3b-8d75-23f73a647888",
+  "dnID" : "dn#1",
+  "reportRequestID" : "206b6c96-6c4c-4e40-9147-d62da165b09f",
+  "points" : [ {
+    "rID" : 1,
+    "metric" : "voltage",
+    "resourceID" : "resourceID#1",
+    "samplingRate" : {
+      "minPeriod" : "PT1M",
+      "maxPeriod" : "PT1H",
+      "onChange" : false
+    }
+  }, {
+    "rID" : 1,
+    "metric" : "power.active",
+    "resourceID" : "resourceID#1",
+    "samplingRate" : {
+      "minPeriod" : "PT1M",
+      "maxPeriod" : "PT1H",
+      "onChange" : false
+    }
+  } ]
+}

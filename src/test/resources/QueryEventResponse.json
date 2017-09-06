@@ -1,0 +1,92 @@
+{
+  "version" : 0,
+  "code" : 200,
+  "reason" : "successful",
+  "events" : [ {
+    "responseRequired" : "always",
+    "descriptor" : {
+      "eventID" : "b8aab11a-1a4e-477c-8266-66302bee794e",
+      "status" : "FAR",
+      "priority" : 0,
+      "test" : false,
+      "modificationNumber" : 0,
+      "modificationDateTime" : null,
+      "modificationReason" : null,
+      "createdDateTime" : "2017-09-06T06:47:44.909Z",
+      "market" : null,
+      "comment" : null
+    },
+    "activePeriod" : {
+      "dtstart" : "2017-09-06T06:00:00.000Z",
+      "duration" : "PT2H",
+      "tolerance" : "PT3M",
+      "notification" : "P1D",
+      "rampup" : "PT15M",
+      "recovery" : "PT30M"
+    },
+    "signals" : {
+      "baseline" : {
+        "id" : null,
+        "name" : null,
+        "metric" : {
+          "id" : null,
+          "name" : null,
+          "readingType" : null,
+          "multiplier" : null,
+          "symbol" : null
+        },
+        "intervals" : {
+          "regular" : {
+            "dtstart" : "2017-09-05T16:00:00.000Z",
+            "period" : "PT1H",
+            "array" : [ 1000.0, 1841.0, 1909.0, 1141.0, 243.0, 41.0, 720.0, 1656.0, 1989.0, 1412.0, 455.0, 0.0, 463.0, 1420.0, 1990.0, 1650.0, 712.0, 38.0, 249.0, 1149.0, 1912.0, 1836.0, 991.0, 153.0 ]
+          },
+          "irregular" : {
+            "values" : [ {
+              "value" : 100.0,
+              "timestamp" : "2017-09-05T16:00:00.000Z"
+            }, {
+              "value" : 200.0,
+              "timestamp" : "2017-09-05T16:15:00.000Z"
+            }, {
+              "value" : 400.0,
+              "timestamp" : "2017-09-05T17:00:00.000Z"
+            } ]
+          }
+        },
+        "resourceIDs" : [ ]
+      },
+      "signal" : [ {
+        "id" : null,
+        "name" : null,
+        "type" : "level",
+        "value" : 3.0,
+        "metric" : {
+          "id" : null,
+          "name" : null,
+          "readingType" : "Direct Read",
+          "multiplier" : "k",
+          "symbol" : "W"
+        },
+        "intervals" : {
+          "regular" : {
+            "dtstart" : null,
+            "period" : null,
+            "array" : [ ]
+          },
+          "irregular" : {
+            "values" : [ ]
+          }
+        },
+        "target" : {
+          "endDeviceAsset" : [ "Energy_Management_System" ]
+        }
+      } ]
+    },
+    "target" : {
+      "endDeviceAsset" : [ "Energy_Management_System" ]
+    }
+  } ],
+  "requestID" : "88eeb674-9ed3-4a18-8f32-342ce06b1638",
+  "dnID" : "dn#1"
+}

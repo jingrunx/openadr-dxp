@@ -1,0 +1,71 @@
+{
+  "version" : 1,
+  "requestID" : "bf519e56-63f5-4558-8e45-01a2f9580b24",
+  "dnID" : "dn#1",
+  "reportRequestID" : "1e7ea194-fab5-4f3e-a4cc-65ecac4e7ca7",
+  "models" : [ {
+    "asset" : {
+      "id" : "Water_Heater",
+      "name" : "电热水器"
+    },
+    "metrics" : [ {
+      "id" : "voltage",
+      "name" : "电压",
+      "readingType" : "Direct Read",
+      "multiplier" : "k",
+      "symbol" : "W"
+    }, {
+      "id" : "power.active",
+      "name" : "功率",
+      "readingType" : "Direct Read",
+      "multiplier" : "k",
+      "symbol" : "W"
+    } ]
+  } ],
+  "resources" : [ {
+    "id" : "349e2bec-62ae-4d0e-a5ba-10733d950705",
+    "name" : "空调#1",
+    "ratedU" : null,
+    "ratedI" : null,
+    "ratedS" : null,
+    "asset" : {
+      "id" : "Water_Heater",
+      "name" : "电热水器"
+    },
+    "parentID" : null,
+    "relations" : { },
+    "properties" : { }
+  }, {
+    "id" : "43ed4183-3ffd-400c-86ff-4c1272216f94",
+    "name" : "空调#2",
+    "ratedU" : null,
+    "ratedI" : null,
+    "ratedS" : null,
+    "asset" : null,
+    "parentID" : null,
+    "relations" : { },
+    "properties" : { }
+  }, {
+    "id" : "7c8a5078-a5a6-4c49-af79-83932ccef50a",
+    "name" : "总表#1",
+    "ratedU" : null,
+    "ratedI" : null,
+    "ratedS" : null,
+    "asset" : null,
+    "parentID" : null,
+    "relations" : { },
+    "properties" : { }
+  }, {
+    "id" : "651c6b20-ca4b-4900-9035-028bbb82a7a7",
+    "name" : "空调电表#1",
+    "ratedU" : null,
+    "ratedI" : null,
+    "ratedS" : null,
+    "asset" : null,
+    "parentID" : "7c8a5078-a5a6-4c49-af79-83932ccef50a",
+    "relations" : {
+      "reading" : [ "349e2bec-62ae-4d0e-a5ba-10733d950705" ]
+    },
+    "properties" : { }
+  } ]
+}
