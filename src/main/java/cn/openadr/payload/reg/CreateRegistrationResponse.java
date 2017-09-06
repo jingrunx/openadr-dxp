@@ -1,11 +1,13 @@
 package cn.openadr.payload.reg;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
+import java.util.Set;
 
 import org.joda.time.Period;
 
-import cn.openadr.model.register.Profile;
+import cn.openadr.domain.TransportType;
 import cn.openadr.model.register.ServiceSpecific;
 
 public class CreateRegistrationResponse extends RegistrationResponse {
@@ -15,7 +17,7 @@ public class CreateRegistrationResponse extends RegistrationResponse {
 	private String unID;
 	/** 轮询频率 */
 	private Period pollFreq;
-	private final List<Profile> profiles = new ArrayList<>();
+	private final Set<TransportType> transports = EnumSet.noneOf(TransportType.class);
 	private final List<ServiceSpecific> services = new ArrayList<>();
 
 	public CreateRegistrationResponse(CreateRegistrationRequest request) {
@@ -38,8 +40,8 @@ public class CreateRegistrationResponse extends RegistrationResponse {
 		this.pollFreq = pollFreq;
 	}
 
-	public List<Profile> getProfiles() {
-		return profiles;
+	public Set<TransportType> getTransports() {
+		return transports;
 	}
 
 	public List<ServiceSpecific> getServices() {

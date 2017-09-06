@@ -2,13 +2,16 @@
   "version" : 0,
   "code" : 200,
   "reason" : "successful",
-  "unID" : "e3cbffc5-75c7-4f86-b3d9-e84df46c8c8f",
+  "unID" : "787eb512-c6c0-4301-b498-589cbbb0fa6a",
   "pollFreq" : "PT5M",
-  "profiles" : [ {
-    "token" : null,
-    "transports" : [ "JSON" ]
+  "transports" : [ "JSON" ],
+  "services" : [ {
+    "type" : "EiEvent",
+    "extensions" : {
+      "event_key" : "key_value"
+    }
   } ],
   "dnID" : "dn#1",
-  "registrationID" : "546d2fc6-c525-4b74-902c-72c5ecdcccaa",
-  "requestID" : "6c4bd7bb-6f6e-41f6-b691-6c82248ec042"
+  "registrationID" : "e1d64c04-c847-4e08-88a8-71b3ccc64e7d",
+  "requestID" : "d867481f-6bd1-4dea-9951-10e3b6bb5f05"
 }

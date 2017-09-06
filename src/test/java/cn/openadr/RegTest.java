@@ -3,8 +3,9 @@ package cn.openadr;
 import org.joda.time.Minutes;
 import org.junit.Test;
 
+import cn.openadr.domain.ServiceName;
 import cn.openadr.domain.TransportType;
-import cn.openadr.model.register.Profile;
+import cn.openadr.model.register.ServiceSpecific;
 import cn.openadr.payload.reg.CancelRegistrationRequest;
 import cn.openadr.payload.reg.CreateRegistrationRequest;
 import cn.openadr.payload.reg.CreateRegistrationResponse;
@@ -59,11 +60,15 @@ public class RegTest extends AbstractTest {
 		rep.setPollFreq(Minutes.minutes(5)
 			.toPeriod());
 
-		Profile profile = new Profile();
-		profile.getTransports()
+		rep.getTransports()
 			.add(TransportType.JSON);
-		rep.getProfiles()
-			.add(profile);
+
+		ServiceSpecific spec = new ServiceSpecific();
+		spec.setType(ServiceName.EI_EVENT);
+		spec.getExtensions()
+			.put("event_key", "key_value");
+		rep.getServices()
+			.add(spec);
 
 		object = rep;
 	}

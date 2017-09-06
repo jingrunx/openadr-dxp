@@ -1,21 +1,21 @@
 {
   "version" : 1,
-  "requestID" : "e6ccf7e2-802e-4d4d-953f-ecfc8fcd23c6",
+  "requestID" : "f9298bdd-bcd0-4959-bcf1-f9df4cebe6ef",
   "dnID" : "dn#1",
-  "reportRequestID" : "9b385b27-6cc1-43c3-9360-8cea790478d1",
-  "reportSpecifierID" : "1e2e2a8a-f545-4a1a-bf98-6d1b15d9ad40",
-  "createdDateTime" : "2017-09-06T06:47:45.190Z",
+  "reportRequestID" : "e553a4d1-05d9-4e71-b8f9-e7c3bb5a78fb",
+  "reportSpecifierID" : "b6508297-6722-4b9d-b2aa-ffcef957ed1a",
+  "createdDateTime" : "2017-09-06T07:04:02.237Z",
   "values" : [ {
     "value" : 97.0,
-    "timestamp" : "2017-09-06T06:47:45.190Z",
+    "timestamp" : "2017-09-06T07:04:02.237Z",
     "rID" : 1
   }, {
     "value" : 4567.0,
-    "timestamp" : "2017-09-06T06:47:45.190Z",
+    "timestamp" : "2017-09-06T07:04:02.237Z",
     "rID" : 2
   }, {
     "value" : 232.2,
-    "timestamp" : "2017-09-06T06:47:45.190Z",
+    "timestamp" : "2017-09-06T07:04:02.237Z",
     "rID" : 3
   } ]
 }

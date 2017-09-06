@@ -1,11 +1,11 @@
 package cn.openadr.domain;
 
 public enum ServiceName implements EnumeratedType {
+	EI_REGISTER_PARTY("EiRegisterParty"), //
 	EI_EVENT("EiEvent"), //
 	EI_OPT("EiOpt"), //
 	EI_REPORT("EiReport"), //
-	EI_REGISTER_PARTY("EiRegisterParty"), //
-	EI_POLL("EiPull");
+	EI_POLL("EiPoll");
 
 	private final String value;
 

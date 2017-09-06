@@ -2,8 +2,19 @@ package cn.openadr.model.event;
 
 import org.joda.time.DateTime;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import cn.openadr.domain.EventStatus;
+import cn.openadr.jackson.EnumeratedDeserializer;
+import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.target.Market;
+
+class EventStatusDeserializer extends EnumeratedDeserializer<EventStatus> {
+	public EventStatusDeserializer() {
+		super(EventStatus.class);
+	}
+}
 
 public class EventDescriptor {
 	/** 事件ID */
@@ -35,10 +46,12 @@ public class EventDescriptor {
 		this.eventID = eventID;
 	}
 
+	@JsonSerialize(using = EnumeratedSerializer.class)
 	public EventStatus getStatus() {
 		return status;
 	}
 
+	@JsonDeserialize(using = EventStatusDeserializer.class)
 	public void setStatus(EventStatus status) {
 		this.status = status;
 	}

@@ -5,14 +5,14 @@
   "events" : [ {
     "responseRequired" : "always",
     "descriptor" : {
-      "eventID" : "b8aab11a-1a4e-477c-8266-66302bee794e",
-      "status" : "FAR",
+      "eventID" : "bb9092a9-e24e-4a1f-9f74-f5f63aeb2af6",
+      "status" : "far",
       "priority" : 0,
       "test" : false,
       "modificationNumber" : 0,
       "modificationDateTime" : null,
       "modificationReason" : null,
-      "createdDateTime" : "2017-09-06T06:47:44.909Z",
+      "createdDateTime" : "2017-09-06T07:04:01.857Z",
       "market" : null,
       "comment" : null
     },
@@ -87,6 +87,6 @@
       "endDeviceAsset" : [ "Energy_Management_System" ]
     }
   } ],
-  "requestID" : "88eeb674-9ed3-4a18-8f32-342ce06b1638",
+  "requestID" : "5d2eeb9a-a987-4ad9-83c9-91e032b70c5e",
   "dnID" : "dn#1"
 }

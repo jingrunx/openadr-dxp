@@ -4,32 +4,27 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import cn.openadr.domain.ServiceName;
+import cn.openadr.jackson.EnumeratedSerializer;
 
 public class ServiceSpecific implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private String token;
-	private ServiceName serviceType;
-	private final Map<String, String> specs = new HashMap<>();
+	private ServiceName type;
+	private final Map<String, String> extensions = new HashMap<>();
 
-	public String getToken() {
-		return token;
+	@JsonSerialize(using = EnumeratedSerializer.class)
+	public ServiceName getType() {
+		return type;
 	}
 
-	public void setToken(String token) {
-		this.token = token;
+	public void setType(ServiceName type) {
+		this.type = type;
 	}
 
-	public ServiceName getServiceType() {
-		return serviceType;
-	}
-
-	public void setServiceType(ServiceName serviceType) {
-		this.serviceType = serviceType;
-	}
-
-	public Map<String, String> getSpecs() {
-		return specs;
+	public Map<String, String> getExtensions() {
+		return extensions;
 	}
 }
