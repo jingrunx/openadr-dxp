@@ -11,15 +11,14 @@ import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
 import cn.openadr.payload.rpt.MetadataReportRequest;
 import cn.openadr.payload.rpt.ReportResponse;
-import cn.openadr.payload.rpt.ResourceReportRequest;
 
 /** 报告 */
 @Path("/report")
 public interface RestReport extends RestApi {
-	/** DN报告支持的元数据 */
+	/** DN包含的测点信息 */
 	@POST
 	@Path("/register")
-	ReportResponse register(ResourceReportRequest request);
+	ReportResponse register(MetadataReportRequest request);
 
 	/** 可以由UN或DN发起 */
 	@POST
@@ -35,16 +34,11 @@ public interface RestReport extends RestApi {
 
 	/** 实时数据 */
 	@POST
-	@Path("/update/metadata")
-	DataReportResponse updateLive(MetadataReportRequest request);
-
-	/** 实时数据 */
-	@POST
-	@Path("/update/live")
-	DataReportResponse updateLive(LiveReportRequest request);
+	@Path("/live")
+	DataReportResponse live(LiveReportRequest request);
 
 	/** 历史数据 */
 	@POST
-	@Path("/update/history")
-	DataReportResponse updateHistory(HistoryReportRequest request);
+	@Path("/history")
+	DataReportResponse history(HistoryReportRequest request);
 }

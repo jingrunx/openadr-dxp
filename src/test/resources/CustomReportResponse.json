@@ -6,30 +6,12 @@
     "id" : null,
     "name" : null,
     "type" : "x-resourceStatus",
-    "startDateTime" : "2017-09-05T16:00:00.000Z",
-    "endDateTime" : "2018-09-05T16:00:00.000Z",
+    "startDateTime" : "2017-09-11T16:00:00.000Z",
+    "endDateTime" : "2018-09-11T16:00:00.000Z",
     "interval" : "P1D",
     "period" : "PT1M",
-    "points" : [ {
-      "rID" : 1,
-      "metric" : "voltage",
-      "resourceID" : "resourceID#1",
-      "samplingRate" : {
-        "minPeriod" : "PT1M",
-        "maxPeriod" : "PT1H",
-        "onChange" : false
-      }
-    }, {
-      "rID" : 1,
-      "metric" : "power.active",
-      "resourceID" : "resourceID#1",
-      "samplingRate" : {
-        "minPeriod" : "PT1M",
-        "maxPeriod" : "PT1H",
-        "onChange" : false
-      }
-    } ]
+    "points" : [ 1, 2, 3, 4, 5 ]
   },
-  "requestID" : "2f364c38-3e41-48f9-9547-acc96edd62b3",
-  "dnID" : "dn#1"
+  "dnID" : "dn#1",
+  "requestID" : "8d8906ea-90f4-4056-aa84-8d55ff470b20"
 }

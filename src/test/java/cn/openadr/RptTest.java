@@ -13,7 +13,6 @@ import cn.openadr.payload.rpt.DataReportResponse;
 import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
 import cn.openadr.payload.rpt.MetadataReportRequest;
-import cn.openadr.payload.rpt.ResourceReportRequest;
 import cn.openadr.utils.CommonUtils;
 import cn.openadr.utils.MetricUtils;
 import cn.openadr.utils.RptUtils;
@@ -21,8 +20,36 @@ import cn.openadr.utils.RptUtils;
 public class RptTest extends AbstractTest {
 
 	@Test
-	public void testResourceReportRequest() {
-		ResourceReportRequest req = new ResourceReportRequest();
+	public void testCreateReportRequest() {
+		CreateReportRequest req = new CreateReportRequest();
+		CommonUtils.fillRptRequest(req);
+		RptUtils.fillReportSpecifier(req.getReportSpecifier());
+
+		object = req;
+	}
+
+	@Test
+	public void testCreateReportResponse() {
+		CreateReportRequest req = new CreateReportRequest();
+		CommonUtils.fillRptRequest(req);
+
+		CreateReportResponse rep = new CreateReportResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
+	}
+
+	@Test
+	public void testCancelReportRequest() {
+		CancelReportRequest req = new CancelReportRequest();
+		CommonUtils.fillRptRequest(req);
+
+		object = req;
+	}
+
+	@Test
+	public void testMetadataReportRequest() {
+		MetadataReportRequest req = new MetadataReportRequest();
 		CommonUtils.fillRptRequest(req);
 
 		ResourceModel rm1 = new ResourceModel();
@@ -58,42 +85,6 @@ public class RptTest extends AbstractTest {
 			.put("reading", Collections.singletonList(r1.getId()));
 		req.getResources()
 			.add(r3);
-
-		object = req;
-	}
-
-	@Test
-	public void testCreateReportRequest() {
-		CreateReportRequest req = new CreateReportRequest();
-		CommonUtils.fillRptRequest(req);
-		RptUtils.fillReportSpecifier(req.getReportSpecifier());
-
-		object = req;
-	}
-
-	@Test
-	public void testCreateReportResponse() {
-		CreateReportRequest req = new CreateReportRequest();
-		CommonUtils.fillRptRequest(req);
-
-		CreateReportResponse rep = new CreateReportResponse(req);
-		CommonUtils.fillResponse(rep);
-
-		object = rep;
-	}
-
-	@Test
-	public void testCancelReportRequest() {
-		CancelReportRequest req = new CancelReportRequest();
-		CommonUtils.fillRptRequest(req);
-
-		object = req;
-	}
-
-	@Test
-	public void testMetadataReportRequest() {
-		MetadataReportRequest req = new MetadataReportRequest();
-		CommonUtils.fillRptRequest(req);
 
 		RptUtils.fillPointMetaData(req.getPoints());
 

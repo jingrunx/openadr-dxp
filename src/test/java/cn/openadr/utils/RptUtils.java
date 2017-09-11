@@ -49,7 +49,8 @@ public class RptUtils {
 		r.setInterval(Days.ONE.toPeriod());
 		r.setPeriod(Minutes.ONE.toPeriod());
 
-		fillPointMetaData(r.getPoints());
+		r.getPoints()
+			.addAll(Arrays.asList(1, 2, 3, 4, 5));
 	}
 
 	public static void fillResourceModel(ResourceModel r) {

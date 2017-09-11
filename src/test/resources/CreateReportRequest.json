@@ -1,34 +1,16 @@
 {
   "version" : 1,
-  "requestID" : "603f51a1-651b-48fc-93c7-c733964ed3d8",
+  "requestID" : "304368a0-e5a8-474b-8ae7-29d22cedea0f",
   "dnID" : "dn#1",
-  "reportRequestID" : "236bb150-ec96-4584-a38e-c73503692123",
+  "reportRequestID" : "f4644cb3-4085-44fd-8f3c-6090dd19fde6",
   "reportSpecifier" : {
     "id" : null,
     "name" : null,
     "type" : "x-resourceStatus",
-    "startDateTime" : "2017-09-05T16:00:00.000Z",
-    "endDateTime" : "2018-09-05T16:00:00.000Z",
+    "startDateTime" : "2017-09-11T16:00:00.000Z",
+    "endDateTime" : "2018-09-11T16:00:00.000Z",
     "interval" : "P1D",
     "period" : "PT1M",
-    "points" : [ {
-      "rID" : 1,
-      "metric" : "voltage",
-      "resourceID" : "resourceID#1",
-      "samplingRate" : {
-        "minPeriod" : "PT1M",
-        "maxPeriod" : "PT1H",
-        "onChange" : false
-      }
-    }, {
-      "rID" : 1,
-      "metric" : "power.active",
-      "resourceID" : "resourceID#1",
-      "samplingRate" : {
-        "minPeriod" : "PT1M",
-        "maxPeriod" : "PT1H",
-        "onChange" : false
-      }
-    } ]
+    "points" : [ 1, 2, 3, 4, 5 ]
   }
 }

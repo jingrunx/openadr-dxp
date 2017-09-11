@@ -42,7 +42,7 @@ public class ReportSpecifier extends DRObject {
 	@NotNull
 	private Period period;
 	/** 要报告的测点 */
-	private final List<PointMetaData> points = new ArrayList<>();
+	private final List<Integer> points = new ArrayList<>();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	public ReportType getType() {
@@ -86,7 +86,7 @@ public class ReportSpecifier extends DRObject {
 		this.period = period;
 	}
 
-	public List<PointMetaData> getPoints() {
+	public List<Integer> getPoints() {
 		return points;
 	}
 }

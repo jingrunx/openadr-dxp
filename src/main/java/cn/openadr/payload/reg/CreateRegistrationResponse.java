@@ -17,8 +17,8 @@ public class CreateRegistrationResponse extends RegistrationResponse {
 	private String unID;
 	/** 轮询频率 */
 	private Period pollFreq;
-	private final Set<TransportType> transports = EnumSet.noneOf(TransportType.class);
-	private final List<ServiceSpecific> services = new ArrayList<>();
+	private final Set<TransportType> transport = EnumSet.noneOf(TransportType.class);
+	private final List<ServiceSpecific> service = new ArrayList<>();
 
 	public CreateRegistrationResponse(CreateRegistrationRequest request) {
 		super(request);
@@ -40,11 +40,11 @@ public class CreateRegistrationResponse extends RegistrationResponse {
 		this.pollFreq = pollFreq;
 	}
 
-	public Set<TransportType> getTransports() {
-		return transports;
+	public Set<TransportType> getTransport() {
+		return transport;
 	}
 
-	public List<ServiceSpecific> getServices() {
-		return services;
+	public List<ServiceSpecific> getService() {
+		return service;
 	}
 }

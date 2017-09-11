@@ -5,11 +5,20 @@ import cn.openadr.domain.TransportType;
 public class CreateRegistrationRequest extends RegistrationRequest {
 	private static final long serialVersionUID = 1L;
 
+	private String dnName;
 	private boolean reportOnly;
 	private boolean pullMode;
 	private String profile;
 	private TransportType transport;
 	private String endpoint;
+
+	public String getDnName() {
+		return dnName;
+	}
+
+	public void setDnName(String dnName) {
+		this.dnName = dnName;
+	}
 
 	public boolean isReportOnly() {
 		return reportOnly;

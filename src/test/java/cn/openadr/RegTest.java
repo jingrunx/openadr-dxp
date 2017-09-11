@@ -39,6 +39,7 @@ public class RegTest extends AbstractTest {
 		CreateRegistrationRequest req = new CreateRegistrationRequest();
 		CommonUtils.fillRegRequest(req);
 
+		req.setDnName("dnname");
 		req.setReportOnly(false);
 		req.setTransport(TransportType.JSON);
 		req.setEndpoint("http://www.openadr.cn/rest/api/");
@@ -60,14 +61,16 @@ public class RegTest extends AbstractTest {
 		rep.setPollFreq(Minutes.minutes(5)
 			.toPeriod());
 
-		rep.getTransports()
+		rep.getTransport()
 			.add(TransportType.JSON);
 
 		ServiceSpecific spec = new ServiceSpecific();
-		spec.setType(ServiceName.EI_EVENT);
-		spec.getExtensions()
-			.put("event_key", "key_value");
-		rep.getServices()
+		spec.setName(ServiceName.EI_EVENT);
+		spec.getInfo()
+			.put("IP", "192.168.1.1");
+		spec.getInfo()
+			.put("PORT", "80");
+		rep.getService()
 			.add(spec);
 
 		object = rep;
