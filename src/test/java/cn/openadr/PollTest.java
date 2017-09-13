@@ -2,8 +2,9 @@ package cn.openadr;
 
 import org.junit.Test;
 
-import cn.openadr.payload.pull.CustomReportResponse;
+import cn.openadr.payload.pull.PendingReportResponse;
 import cn.openadr.payload.pull.PollRequest;
+import cn.openadr.payload.pull.PollResponse;
 import cn.openadr.payload.pull.ReregistrationResponse;
 import cn.openadr.payload.pull.RereportReponse;
 import cn.openadr.utils.CommonUtils;
@@ -16,6 +17,17 @@ public class PollTest extends AbstractTest {
 		CommonUtils.fillRequest(req);
 
 		object = req;
+	}
+
+	@Test
+	public void testPollResoonse() {
+		PollRequest req = new PollRequest();
+		CommonUtils.fillRequest(req);
+
+		PollResponse rep = new PollResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
 	}
 
 	@Test
@@ -43,11 +55,11 @@ public class PollTest extends AbstractTest {
 	}
 
 	@Test
-	public void testCustomReportResponse() {
+	public void testPendingReportResponse() {
 		PollRequest req = new PollRequest();
 		CommonUtils.fillRequest(req);
 
-		CustomReportResponse rep = new CustomReportResponse(req);
+		PendingReportResponse rep = new PendingReportResponse(req);
 		CommonUtils.fillResponse(rep);
 		RptUtils.fillReportSpecifier(rep.getReportSpecifier());
 

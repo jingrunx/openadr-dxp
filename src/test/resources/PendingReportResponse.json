@@ -6,12 +6,12 @@
     "id" : null,
     "name" : null,
     "type" : "x-resourceStatus",
-    "startDateTime" : "2017-09-11T16:00:00.000Z",
-    "endDateTime" : "2018-09-11T16:00:00.000Z",
+    "startDateTime" : "2017-09-12T16:00:00.000Z",
+    "endDateTime" : "2018-09-12T16:00:00.000Z",
     "interval" : "P1D",
     "period" : "PT1M",
     "points" : [ 1, 2, 3, 4, 5 ]
   },
   "dnID" : "dn#1",
-  "requestID" : "8d8906ea-90f4-4056-aa84-8d55ff470b20"
+  "requestID" : "bba1bf3c-379c-4c85-96f3-a89f28c669f5"
 }

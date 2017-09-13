@@ -7,49 +7,22 @@ import org.junit.Test;
 import cn.openadr.model.report.ResourceModel;
 import cn.openadr.model.target.Resource;
 import cn.openadr.payload.rpt.CancelReportRequest;
+import cn.openadr.payload.rpt.CancelReportResponse;
 import cn.openadr.payload.rpt.CreateReportRequest;
 import cn.openadr.payload.rpt.CreateReportResponse;
 import cn.openadr.payload.rpt.DataReportResponse;
 import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
-import cn.openadr.payload.rpt.MetadataReportRequest;
+import cn.openadr.payload.rpt.RegisterReportRequest;
+import cn.openadr.payload.rpt.RegisterReportResponse;
 import cn.openadr.utils.CommonUtils;
 import cn.openadr.utils.MetricUtils;
 import cn.openadr.utils.RptUtils;
 
 public class RptTest extends AbstractTest {
-
 	@Test
-	public void testCreateReportRequest() {
-		CreateReportRequest req = new CreateReportRequest();
-		CommonUtils.fillRptRequest(req);
-		RptUtils.fillReportSpecifier(req.getReportSpecifier());
-
-		object = req;
-	}
-
-	@Test
-	public void testCreateReportResponse() {
-		CreateReportRequest req = new CreateReportRequest();
-		CommonUtils.fillRptRequest(req);
-
-		CreateReportResponse rep = new CreateReportResponse(req);
-		CommonUtils.fillResponse(rep);
-
-		object = rep;
-	}
-
-	@Test
-	public void testCancelReportRequest() {
-		CancelReportRequest req = new CancelReportRequest();
-		CommonUtils.fillRptRequest(req);
-
-		object = req;
-	}
-
-	@Test
-	public void testMetadataReportRequest() {
-		MetadataReportRequest req = new MetadataReportRequest();
+	public void testRegisterReportRequest() {
+		RegisterReportRequest req = new RegisterReportRequest();
 		CommonUtils.fillRptRequest(req);
 
 		ResourceModel rm1 = new ResourceModel();
@@ -92,6 +65,56 @@ public class RptTest extends AbstractTest {
 	}
 
 	@Test
+	public void testRegisterReportResponse() {
+		RegisterReportRequest req = new RegisterReportRequest();
+		CommonUtils.fillRptRequest(req);
+
+		RegisterReportResponse rep = new RegisterReportResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
+	}
+
+	@Test
+	public void testCreateReportRequest() {
+		CreateReportRequest req = new CreateReportRequest();
+		CommonUtils.fillRptRequest(req);
+		RptUtils.fillReportSpecifier(req.getReportSpecifier());
+
+		object = req;
+	}
+
+	@Test
+	public void testCreateReportResponse() {
+		CreateReportRequest req = new CreateReportRequest();
+		CommonUtils.fillRptRequest(req);
+
+		CreateReportResponse rep = new CreateReportResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
+	}
+
+	@Test
+	public void testCancelReportRequest() {
+		CancelReportRequest req = new CancelReportRequest();
+		CommonUtils.fillRptRequest(req);
+
+		object = req;
+	}
+
+	@Test
+	public void testCancelReportResponse() {
+		CancelReportRequest req = new CancelReportRequest();
+		CommonUtils.fillRptRequest(req);
+
+		CancelReportResponse rep = new CancelReportResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
+	}
+
+	@Test
 	public void testLiveReportRequest() {
 		LiveReportRequest req = new LiveReportRequest();
 		RptUtils.fillDataReportRequest(req);
@@ -122,7 +145,7 @@ public class RptTest extends AbstractTest {
 	}
 
 	@Test
-	public void testReportResponse() {
+	public void testDataReportResponse() {
 		LiveReportRequest req = new LiveReportRequest();
 		RptUtils.fillDataReportRequest(req);
 

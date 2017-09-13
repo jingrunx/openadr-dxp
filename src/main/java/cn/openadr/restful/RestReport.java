@@ -9,7 +9,7 @@ import cn.openadr.payload.rpt.CreateReportResponse;
 import cn.openadr.payload.rpt.DataReportResponse;
 import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
-import cn.openadr.payload.rpt.MetadataReportRequest;
+import cn.openadr.payload.rpt.RegisterReportRequest;
 import cn.openadr.payload.rpt.ReportResponse;
 
 /** 报告 */
@@ -18,7 +18,7 @@ public interface RestReport extends RestApi {
 	/** DN包含的测点信息 */
 	@POST
 	@Path("/register")
-	ReportResponse register(MetadataReportRequest request);
+	ReportResponse register(RegisterReportRequest request);
 
 	/** 可以由UN或DN发起 */
 	@POST

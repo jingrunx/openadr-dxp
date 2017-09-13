@@ -9,6 +9,7 @@ import cn.openadr.model.event.EventDescriptor;
 import cn.openadr.payload.evt.QueryEventRequest;
 import cn.openadr.payload.evt.QueryEventResponse;
 import cn.openadr.payload.evt.ReplyEventRequest;
+import cn.openadr.payload.evt.ReplyEventResponse;
 import cn.openadr.utils.CommonUtils;
 import cn.openadr.utils.EventUtils;
 
@@ -40,15 +41,32 @@ public class EventTest extends AbstractTest {
 	}
 
 	@Test
-	public void testdd() {
-		EventDescriptor descriptor = new EventDescriptor();
-		descriptor.setEventID(CommonUtils.id());
-		descriptor.setModificationNumber(3);
+	public void testReplyEventRequest() {
+		EventDescriptor evtDesc = new EventDescriptor();
+		evtDesc.setEventID(CommonUtils.id());
+		evtDesc.setModificationNumber(1);
 
-		ReplyEventRequest req = new ReplyEventRequest(descriptor);
+		ReplyEventRequest req = new ReplyEventRequest(evtDesc);
+		CommonUtils.fillRequest(req);
+
 		req.setOpt(OptType.OPT_IN);
 		req.setReason(OptReason.ECONOMIC);
 
 		object = req;
+	}
+
+	@Test
+	public void testReplyEventResponse() {
+		EventDescriptor evtDesc = new EventDescriptor();
+		evtDesc.setEventID(CommonUtils.id());
+		evtDesc.setModificationNumber(1);
+
+		ReplyEventRequest req = new ReplyEventRequest(evtDesc);
+		CommonUtils.fillRequest(req);
+
+		ReplyEventResponse rep = new ReplyEventResponse(req);
+		CommonUtils.fillResponse(rep);
+
+		object = rep;
 	}
 }

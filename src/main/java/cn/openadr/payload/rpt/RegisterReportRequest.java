@@ -8,7 +8,7 @@ import cn.openadr.model.report.ResourceModel;
 import cn.openadr.model.target.Resource;
 
 /** 元数据报告，由终端向主站报送拥有的资源和资源模型，定义的测点rID */
-public class MetadataReportRequest extends DataReportRequest {
+public class RegisterReportRequest extends ReportRequest {
 	private static final long serialVersionUID = 1L;
 
 	/** 资源模型，如：电表、中央空调、电锅炉、电动汽车等的模型 */

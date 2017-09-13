@@ -1,7 +1,9 @@
 {
-  "version" : 0,
+  "version" : 1,
+  "requestID" : "1b3a50b5-f1f8-407d-91f2-9f34976592aa",
+  "dnID" : "dn#1",
   "opt" : "optIn",
   "reason" : "economic",
-  "modificationNumber" : 3,
-  "eventID" : "ea18beac-1f0d-4276-ae10-1f574effe50b"
+  "eventID" : "e3712e13-d69c-45cb-80a8-a772b82ec37c",
+  "modificationNumber" : 1
 }
