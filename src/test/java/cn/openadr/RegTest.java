@@ -91,6 +91,7 @@ public class RegTest extends AbstractTest {
 		CommonUtils.fillRegRequest(req);
 
 		CancelRegistrationResponse rep = new CancelRegistrationResponse(req);
+		CommonUtils.fillResponse(rep);
 		object = rep;
 	}
 }

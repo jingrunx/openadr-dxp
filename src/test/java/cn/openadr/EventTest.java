@@ -49,8 +49,8 @@ public class EventTest extends AbstractTest {
 		ReplyEventRequest req = new ReplyEventRequest(evtDesc);
 		CommonUtils.fillRequest(req);
 
-		req.setOpt(OptType.OPT_IN);
-		req.setReason(OptReason.ECONOMIC);
+		req.setOptType(OptType.OPT_IN);
+		req.setOptReason(OptReason.ECONOMIC);
 
 		object = req;
 	}

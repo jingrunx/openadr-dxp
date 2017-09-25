@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import cn.openadr.domain.OptReason;
 import cn.openadr.domain.OptType;
+import cn.openadr.model.event.EventDescriptor;
 import cn.openadr.payload.opt.CancelOptRequest;
 import cn.openadr.payload.opt.CancelOptResponse;
 import cn.openadr.payload.opt.CreateOptRequest;
@@ -14,12 +15,15 @@ import cn.openadr.utils.CommonUtils;
 public class OptTest extends AbstractTest {
 	@Test
 	public void testCreateOptRequest() {
-		CreateOptRequest req = new CreateOptRequest();
+		EventDescriptor evtDesc = new EventDescriptor();
+		evtDesc.setEventID(CommonUtils.id());
+		evtDesc.setModificationNumber(1);
+
+		CreateOptRequest req = new CreateOptRequest(evtDesc);
 		CommonUtils.fillOptRequest(req);
 
-		req.setType(OptType.OPT_OUT);
+		req.setOptType(OptType.OPT_OUT);
 		req.setOptReason(OptReason.ECONOMIC);
-		req.setEventID(CommonUtils.id());
 		req.setCreatedDateTime(DateTime.now());
 		CommonUtils.fillEndDeviceAsset(req.getTarget());
 
@@ -28,7 +32,11 @@ public class OptTest extends AbstractTest {
 
 	@Test
 	public void testCreateOptResponse() {
-		CreateOptRequest req = new CreateOptRequest();
+		EventDescriptor evtDesc = new EventDescriptor();
+		evtDesc.setEventID(CommonUtils.id());
+		evtDesc.setModificationNumber(1);
+
+		CreateOptRequest req = new CreateOptRequest(evtDesc);
 		CommonUtils.fillOptRequest(req);
 
 		CreateOptResponse rep = new CreateOptResponse(req);

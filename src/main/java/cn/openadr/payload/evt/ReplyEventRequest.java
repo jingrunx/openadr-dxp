@@ -12,8 +12,8 @@ public class ReplyEventRequest extends DRRequest {
 	private static final long serialVersionUID = 1L;
 
 	private final EventDescriptor evtDescriptor;
-	private OptType opt;
-	private OptReason reason;
+	private OptType optType;
+	private OptReason optReason;
 
 	public ReplyEventRequest(EventDescriptor evtDescriptor) {
 		super();
@@ -30,20 +30,20 @@ public class ReplyEventRequest extends DRRequest {
 	}
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	public OptType getOpt() {
-		return opt;
+	public OptType getOptType() {
+		return optType;
 	}
 
-	public void setOpt(OptType opt) {
-		this.opt = opt;
+	public void setOptType(OptType optType) {
+		this.optType = optType;
 	}
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	public OptReason getReason() {
-		return reason;
+	public OptReason getOptReason() {
+		return optReason;
 	}
 
-	public void setReason(OptReason reason) {
-		this.reason = reason;
+	public void setOptReason(OptReason optReason) {
+		this.optReason = optReason;
 	}
 }

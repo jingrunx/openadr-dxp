@@ -9,6 +9,7 @@ import cn.openadr.domain.OptReason;
 import cn.openadr.domain.OptType;
 import cn.openadr.jackson.EnumeratedDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
+import cn.openadr.model.event.EventDescriptor;
 import cn.openadr.model.target.Target;
 
 class OptTypeDeserializer extends EnumeratedDeserializer<OptType> {
@@ -26,22 +27,35 @@ class OptReasonDeserializer extends EnumeratedDeserializer<OptReason> {
 public class CreateOptRequest extends OptRequest {
 	private static final long serialVersionUID = 1L;
 
-	private OptType type;
+	private final EventDescriptor evtDescriptor;
+	private OptType optType;
 	private OptReason optReason;
 	private DateTime createdDateTime;
-	private String eventID;
-	private int modificationNumber;
 	private final Target target = new Target();
 	private final Target deviceClass = new Target();
 
+	public CreateOptRequest(EventDescriptor evtDescriptor) {
+		super();
+
+		this.evtDescriptor = evtDescriptor;
+	}
+
+	public String getEventID() {
+		return evtDescriptor.getEventID();
+	}
+
+	public int getModificationNumber() {
+		return evtDescriptor.getModificationNumber();
+	}
+
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	public OptType getType() {
-		return type;
+	public OptType getOptType() {
+		return optType;
 	}
 
 	@JsonDeserialize(using = OptTypeDeserializer.class)
-	public void setType(OptType type) {
-		this.type = type;
+	public void setOptType(OptType optType) {
+		this.optType = optType;
 	}
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
@@ -60,22 +74,6 @@ public class CreateOptRequest extends OptRequest {
 
 	public void setCreatedDateTime(DateTime createdDateTime) {
 		this.createdDateTime = createdDateTime;
-	}
-
-	public String getEventID() {
-		return eventID;
-	}
-
-	public void setEventID(String eventID) {
-		this.eventID = eventID;
-	}
-
-	public int getModificationNumber() {
-		return modificationNumber;
-	}
-
-	public void setModificationNumber(int modificationNumber) {
-		this.modificationNumber = modificationNumber;
 	}
 
 	public Target getTarget() {
