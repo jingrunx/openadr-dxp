@@ -5,19 +5,19 @@
   "events" : [ {
     "responseRequired" : "always",
     "descriptor" : {
-      "eventID" : "e4f057d8-4b73-4bde-89ff-c800be8070df",
+      "eventID" : "c9aec230-ebfe-45c2-947d-4201a8ac3946",
       "status" : "far",
       "priority" : 0,
       "test" : false,
       "modificationNumber" : 0,
       "modificationDateTime" : null,
       "modificationReason" : null,
-      "createdDateTime" : "2017-09-13T02:25:40.964Z",
+      "createdDateTime" : "2017-10-09T08:36:20.219Z",
       "market" : null,
       "comment" : null
     },
     "activePeriod" : {
-      "dtstart" : "2017-09-13T06:00:00.000Z",
+      "dtstart" : "2017-10-09T06:00:00.000Z",
       "duration" : "PT2H",
       "tolerance" : "PT3M",
       "notification" : "P1D",
@@ -37,20 +37,20 @@
         },
         "intervals" : {
           "regular" : {
-            "dtstart" : "2017-09-12T16:00:00.000Z",
+            "dtstart" : "2017-10-08T16:00:00.000Z",
             "period" : "PT1H",
             "array" : [ 1000.0, 1841.0, 1909.0, 1141.0, 243.0, 41.0, 720.0, 1656.0, 1989.0, 1412.0, 455.0, 0.0, 463.0, 1420.0, 1990.0, 1650.0, 712.0, 38.0, 249.0, 1149.0, 1912.0, 1836.0, 991.0, 153.0 ]
           },
           "irregular" : {
             "values" : [ {
               "value" : 100.0,
-              "timestamp" : "2017-09-12T16:00:00.000Z"
+              "timestamp" : "2017-10-08T16:00:00.000Z"
             }, {
               "value" : 200.0,
-              "timestamp" : "2017-09-12T16:15:00.000Z"
+              "timestamp" : "2017-10-08T16:15:00.000Z"
             }, {
               "value" : 400.0,
-              "timestamp" : "2017-09-12T17:00:00.000Z"
+              "timestamp" : "2017-10-08T17:00:00.000Z"
             } ]
           }
         },
@@ -87,6 +87,6 @@
       "endDeviceAsset" : [ "Energy_Management_System" ]
     }
   } ],
-  "dnID" : "dn#1",
-  "requestID" : "f9e47d3d-209e-4ae2-b858-3ba55c5ab1d7"
+  "requestID" : "f5c209c6-fbbb-4ad3-81a7-af0b7bd76569",
+  "dnID" : "dn#1"
 }

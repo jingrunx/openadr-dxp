@@ -18,6 +18,7 @@ public class AbstractTest {
 	@BeforeClass
 	public static void beforeClass() {
 		jsonMapper.setWriteDatesAsTimestamps(false);
+//		jsonMapper.enable(SerializationFeature.WRAP_ROOT_VALUE);
 		jsonMapper.enable(SerializationFeature.INDENT_OUTPUT);
 	}
 

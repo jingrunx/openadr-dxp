@@ -4,10 +4,11 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
 import cn.openadr.payload.reg.CancelRegistrationRequest;
+import cn.openadr.payload.reg.CancelRegistrationResponse;
 import cn.openadr.payload.reg.CreateRegistrationRequest;
 import cn.openadr.payload.reg.CreateRegistrationResponse;
 import cn.openadr.payload.reg.QueryRegistrationRequest;
-import cn.openadr.payload.reg.RegistrationResponse;
+import cn.openadr.payload.reg.QueryRegistrationResponse;
 
 @Path("/registration")
 public interface RestRegistration extends RestApi {
@@ -17,9 +18,9 @@ public interface RestRegistration extends RestApi {
 
 	@POST
 	@Path("/query")
-	RegistrationResponse query(QueryRegistrationRequest request);
+	QueryRegistrationResponse query(QueryRegistrationRequest request);
 
 	@POST
 	@Path("/cancel")
-	RegistrationResponse cancel(CancelRegistrationRequest request);
+	CancelRegistrationResponse cancel(CancelRegistrationRequest request);
 }

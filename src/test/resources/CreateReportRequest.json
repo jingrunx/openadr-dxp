@@ -1,14 +1,14 @@
 {
   "version" : 1,
-  "requestID" : "cfe33e2d-56fc-47fc-bc09-29ea40183f0b",
+  "requestID" : "7564fa40-640b-4d32-bb84-014f153ee677",
   "dnID" : "dn#1",
-  "reportRequestID" : "262d08cf-e91d-4d61-849e-59d49cd2d3c2",
+  "reportRequestID" : "a821a41d-9a09-4f24-b19e-d7abaab47da6",
   "reportSpecifier" : {
     "id" : null,
     "name" : null,
     "type" : "x-resourceStatus",
-    "startDateTime" : "2017-09-12T16:00:00.000Z",
-    "endDateTime" : "2018-09-12T16:00:00.000Z",
+    "startDateTime" : "2017-10-08T16:00:00.000Z",
+    "endDateTime" : "2018-10-08T16:00:00.000Z",
     "interval" : "P1D",
     "period" : "PT1M",
     "points" : [ 1, 2, 3, 4, 5 ]

@@ -4,13 +4,14 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
 import cn.openadr.payload.rpt.CancelReportRequest;
+import cn.openadr.payload.rpt.CancelReportResponse;
 import cn.openadr.payload.rpt.CreateReportRequest;
 import cn.openadr.payload.rpt.CreateReportResponse;
 import cn.openadr.payload.rpt.DataReportResponse;
 import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
 import cn.openadr.payload.rpt.RegisterReportRequest;
-import cn.openadr.payload.rpt.ReportResponse;
+import cn.openadr.payload.rpt.RegisterReportResponse;
 
 /** 报告 */
 @Path("/report")
@@ -18,7 +19,7 @@ public interface RestReport extends RestApi {
 	/** DN包含的测点信息 */
 	@POST
 	@Path("/register")
-	ReportResponse register(RegisterReportRequest request);
+	RegisterReportResponse register(RegisterReportRequest request);
 
 	/** 可以由UN或DN发起 */
 	@POST
@@ -30,7 +31,7 @@ public interface RestReport extends RestApi {
 	/** 取消报告 */
 	@POST
 	@Path("/cancel")
-	ReportResponse cancel(CancelReportRequest request);
+	CancelReportResponse cancel(CancelReportRequest request);
 
 	/** 实时数据 */
 	@POST

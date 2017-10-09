@@ -1,8 +1,8 @@
 {
   "version" : 1,
-  "requestID" : "57c7b564-b039-4a08-bcc1-6a26075478c7",
+  "requestID" : "6e113d32-fb74-47f3-8bda-12be709bc02f",
   "dnID" : "dn#1",
-  "reportRequestID" : "07e16cd6-d725-40ac-9394-54e51da62fcd",
+  "reportRequestID" : "2c4a75b4-1210-475a-b0e9-df61de480e91",
   "models" : [ {
     "asset" : {
       "id" : "Water_Heater",
@@ -23,7 +23,7 @@
     } ]
   } ],
   "resources" : [ {
-    "id" : "77e4eaed-b6ac-438c-a75e-ee2bfbeabf0c",
+    "id" : "c3dd8f0a-9cec-4aa9-9fe7-a1c4be66f27a",
     "name" : "空调#1",
     "ratedU" : null,
     "ratedI" : null,
@@ -36,7 +36,7 @@
     "relations" : { },
     "properties" : { }
   }, {
-    "id" : "2aa7a236-e739-454d-b2ba-73bd52a810cb",
+    "id" : "f4db89f3-df08-444e-a678-ad49c07f3fc5",
     "name" : "空调#2",
     "ratedU" : null,
     "ratedI" : null,
@@ -46,7 +46,7 @@
     "relations" : { },
     "properties" : { }
   }, {
-    "id" : "740ec730-5fe6-4fec-bbf5-d531ee44c5a5",
+    "id" : "96e35641-ca4c-4dbd-8ec5-9540bb1c4d91",
     "name" : "总表#1",
     "ratedU" : null,
     "ratedI" : null,
@@ -56,15 +56,15 @@
     "relations" : { },
     "properties" : { }
   }, {
-    "id" : "54aa718b-4f6b-4d3c-bd70-5139259ab273",
+    "id" : "c15183ec-e453-4e84-9f9d-969140c5b3a7",
     "name" : "空调电表#1",
     "ratedU" : null,
     "ratedI" : null,
     "ratedS" : null,
     "asset" : null,
-    "parentID" : "740ec730-5fe6-4fec-bbf5-d531ee44c5a5",
+    "parentID" : "96e35641-ca4c-4dbd-8ec5-9540bb1c4d91",
     "relations" : {
-      "reading" : [ "77e4eaed-b6ac-438c-a75e-ee2bfbeabf0c" ]
+      "reading" : [ "c3dd8f0a-9cec-4aa9-9fe7-a1c4be66f27a" ]
     },
     "properties" : { }
   } ],

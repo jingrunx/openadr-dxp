@@ -1,15 +1,15 @@
 {
   "version" : 1,
-  "requestID" : "8b81aa08-f72c-4a90-a0aa-7779cd22837b",
+  "requestID" : "b60f949a-2a37-4926-b960-29ffb3ae3422",
   "dnID" : "dn#1",
-  "optID" : "8773f8df-b453-4942-bf96-63f385deadd3",
-  "type" : "optOut",
+  "optID" : "9ff06dd4-5519-41c8-8302-c32289b79b9b",
+  "optType" : "optOut",
   "optReason" : "economic",
-  "createdDateTime" : "2017-09-13T02:25:41.139Z",
-  "eventID" : "a73a20cc-b34a-4714-8ad5-ce1028a714f0",
-  "modificationNumber" : 0,
+  "createdDateTime" : "2017-10-09T08:36:20.604Z",
   "target" : {
     "endDeviceAsset" : [ "Energy_Management_System" ]
   },
-  "deviceClass" : { }
+  "deviceClass" : { },
+  "eventID" : "5b766bb9-06e4-4255-9e38-6985bd73406b",
+  "modificationNumber" : 1
 }

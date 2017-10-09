@@ -1,21 +1,21 @@
 {
   "version" : 1,
-  "requestID" : "b8f23f2c-0c06-41d4-8745-6afa624e6477",
+  "requestID" : "9d7feca1-1b38-47d7-8118-50acf2916cc7",
   "dnID" : "dn#1",
-  "reportRequestID" : "21d2f922-8a3f-4ca6-b5d1-06dcbedfed32",
-  "reportSpecifierID" : "ea2dbe58-8f04-4ea9-9622-593c15d1ea5e",
-  "createdDateTime" : "2017-09-13T02:25:41.326Z",
+  "reportRequestID" : "bed875a4-112b-43d8-a2a0-a5518c70ed44",
+  "reportSpecifierID" : "e082a815-56e0-4875-bfd5-73f948f08001",
+  "createdDateTime" : "2017-10-09T08:36:20.823Z",
   "values" : [ {
     "value" : 97.0,
-    "timestamp" : "2017-09-13T02:25:41.326Z",
+    "timestamp" : "2017-10-09T08:36:20.838Z",
     "rID" : 1
   }, {
     "value" : 4567.0,
-    "timestamp" : "2017-09-13T02:25:41.326Z",
+    "timestamp" : "2017-10-09T08:36:20.838Z",
     "rID" : 2
   }, {
     "value" : 232.2,
-    "timestamp" : "2017-09-13T02:25:41.326Z",
+    "timestamp" : "2017-10-09T08:36:20.838Z",
     "rID" : 3
   } ]
 }
