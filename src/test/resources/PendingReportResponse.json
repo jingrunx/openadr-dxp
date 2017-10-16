@@ -1,17 +1,17 @@
 {
   "version" : 0,
   "code" : 200,
-  "reason" : "successful",
+  "description" : "successful",
   "reportSpecifier" : {
-    "id" : null,
-    "name" : null,
-    "type" : "x-resourceStatus",
-    "startDateTime" : "2017-10-08T16:00:00.000Z",
-    "endDateTime" : "2018-10-08T16:00:00.000Z",
+    "reportSpecifierID" : null,
+    "reportName" : "HISTORY_USAGE",
+    "reportType" : "x-resourceStatus",
+    "startDateTime" : "2017-10-15T16:00:00.000Z",
+    "endDateTime" : "2018-10-15T16:00:00.000Z",
     "interval" : "P1D",
     "period" : "PT1M",
     "points" : [ 1, 2, 3, 4, 5 ]
   },
-  "requestID" : "d81b74c5-2ecd-4e87-9310-268603b26fe0",
+  "requestID" : "38b3eba3-e279-45f3-92b2-802866bf4f75",
   "dnID" : "dn#1"
 }

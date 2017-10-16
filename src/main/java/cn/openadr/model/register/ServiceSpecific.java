@@ -1,8 +1,8 @@
 package cn.openadr.model.register;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -12,19 +12,19 @@ import cn.openadr.jackson.EnumeratedSerializer;
 public class ServiceSpecific implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private ServiceName name;
-	private final Map<String, String> info = new HashMap<>();
+	private ServiceName serviceName;
+	private final List<ServiceInfo> serviceInfo = new ArrayList<>();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	public ServiceName getName() {
-		return name;
+	public ServiceName getServiceName() {
+		return serviceName;
 	}
 
-	public void setName(ServiceName name) {
-		this.name = name;
+	public void setServiceName(ServiceName name) {
+		this.serviceName = name;
 	}
 
-	public Map<String, String> getInfo() {
-		return info;
+	public List<ServiceInfo> getServiceInfo() {
+		return serviceInfo;
 	}
 }

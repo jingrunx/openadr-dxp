@@ -1,8 +1,8 @@
 {
   "version" : 0,
   "code" : 200,
-  "reason" : "successful",
-  "reportRequestID" : "d8a4e533-2e6b-41c1-868f-51bc6a28c427",
-  "requestID" : "0df83e7f-99f9-4277-abef-e6029150be48",
+  "description" : "successful",
+  "reportRequestID" : "bf385f56-699a-47bd-be3f-b571828d62b9",
+  "requestID" : "9f6b426d-5d0d-448f-87fa-fe74ef42be3e",
   "dnID" : "dn#1"
 }

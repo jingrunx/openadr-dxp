@@ -1,18 +1,21 @@
 {
   "version" : 0,
   "code" : 200,
-  "reason" : "successful",
-  "unID" : "d3656346-a2c6-44b8-946f-88a7bc123b4c",
+  "description" : "successful",
+  "unID" : "df9d4295-ed1e-4711-88dd-453d18c7a3fd",
   "pollFreq" : "PT5M",
   "transport" : [ "JSON" ],
-  "service" : [ {
-    "name" : "EiEvent",
-    "info" : {
-      "PORT" : "80",
-      "IP" : "192.168.1.1"
-    }
+  "serviceSpecific" : [ {
+    "serviceName" : "EiEvent",
+    "serviceInfo" : [ {
+      "key" : "IP",
+      "value" : "192.168.1.1"
+    }, {
+      "key" : "PORT",
+      "value" : "80"
+    } ]
   } ],
+  "registrationID" : "03254d30-bd35-4337-88bc-02e2a642a52b",
   "dnID" : "dn#1",
-  "registrationID" : "1ad8594d-fce8-4dbe-a555-07d3fb7b6b91",
-  "requestID" : "ab1ceea7-02da-484f-b005-2c883e25801d"
+  "requestID" : "95d87abc-a0e2-44be-9c67-8fb002263756"
 }

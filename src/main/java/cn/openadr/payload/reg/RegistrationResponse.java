@@ -19,7 +19,7 @@ public class RegistrationResponse<T extends RegistrationRequest> extends DRRespo
 	/** 轮询频率 */
 	private Period pollFreq;
 	private final Set<TransportType> transport = EnumSet.noneOf(TransportType.class);
-	private final List<ServiceSpecific> service = new ArrayList<>();
+	private final List<ServiceSpecific> serviceSpecific = new ArrayList<>();
 
 	public RegistrationResponse(T request) {
 		super(request);
@@ -53,7 +53,7 @@ public class RegistrationResponse<T extends RegistrationRequest> extends DRRespo
 		return transport;
 	}
 
-	public List<ServiceSpecific> getService() {
-		return service;
+	public List<ServiceSpecific> getServiceSpecific() {
+		return serviceSpecific;
 	}
 }

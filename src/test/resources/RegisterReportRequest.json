@@ -1,70 +1,68 @@
 {
   "version" : 1,
-  "requestID" : "6e113d32-fb74-47f3-8bda-12be709bc02f",
+  "requestID" : "38adaa95-9b09-4c43-801f-9c9ed10ed9da",
   "dnID" : "dn#1",
-  "reportRequestID" : "2c4a75b4-1210-475a-b0e9-df61de480e91",
+  "reportRequestID" : "2c7f4463-b67c-4ed6-86f2-47175426083d",
   "models" : [ {
     "asset" : {
-      "id" : "Water_Heater",
-      "name" : "电热水器"
+      "mrid" : "Water_Heater"
     },
     "metrics" : [ {
-      "id" : "voltage",
-      "name" : "电压",
-      "readingType" : "Direct Read",
+      "metric" : "voltage",
       "multiplier" : "k",
       "symbol" : "W"
     }, {
-      "id" : "power.active",
-      "name" : "功率",
-      "readingType" : "Direct Read",
+      "metric" : "power.active",
       "multiplier" : "k",
       "symbol" : "W"
     } ]
   } ],
   "resources" : [ {
-    "id" : "c3dd8f0a-9cec-4aa9-9fe7-a1c4be66f27a",
-    "name" : "空调#1",
+    "resourceID" : "3efdb5a9-914f-483e-8d03-1a97d4e20ecd",
+    "resourceName" : "空调#1",
+    "status" : null,
     "ratedU" : null,
     "ratedI" : null,
     "ratedS" : null,
     "asset" : {
-      "id" : "Water_Heater",
-      "name" : "电热水器"
+      "mrid" : "Water_Heater"
     },
-    "parentID" : null,
+    "parentResourceID" : null,
     "relations" : { },
     "properties" : { }
   }, {
-    "id" : "f4db89f3-df08-444e-a678-ad49c07f3fc5",
-    "name" : "空调#2",
+    "resourceID" : "e3dc0257-6e85-4294-b59a-f3d95804f14e",
+    "resourceName" : "空调#2",
+    "status" : null,
     "ratedU" : null,
     "ratedI" : null,
     "ratedS" : null,
     "asset" : null,
-    "parentID" : null,
+    "parentResourceID" : null,
     "relations" : { },
     "properties" : { }
   }, {
-    "id" : "96e35641-ca4c-4dbd-8ec5-9540bb1c4d91",
-    "name" : "总表#1",
+    "resourceID" : "be8b4447-382b-42a0-a382-896dfa6ef240",
+    "resourceName" : "总表#1",
+    "status" : null,
     "ratedU" : null,
     "ratedI" : null,
     "ratedS" : null,
     "asset" : null,
-    "parentID" : null,
+    "parentResourceID" : null,
     "relations" : { },
     "properties" : { }
   }, {
-    "id" : "c15183ec-e453-4e84-9f9d-969140c5b3a7",
-    "name" : "空调电表#1",
+    "resourceID" : "be272334-8b13-4768-a0a9-d189b09763c6",
+    "resourceName" : "空调电表#1",
+    "status" : null,
     "ratedU" : null,
     "ratedI" : null,
     "ratedS" : null,
     "asset" : null,
-    "parentID" : "96e35641-ca4c-4dbd-8ec5-9540bb1c4d91",
+    "parentResourceID" : "be8b4447-382b-42a0-a382-896dfa6ef240",
     "relations" : {
-      "reading" : [ "c3dd8f0a-9cec-4aa9-9fe7-a1c4be66f27a" ]
+      "reading" : [ "3efdb5a9-914f-483e-8d03-1a97d4e20ecd" ]
     },
     "properties" : { }
   } ],
@@ -72,6 +70,7 @@
     "rID" : 1,
     "metric" : "voltage",
     "resourceID" : "resourceID#1",
+    "readingType" : null,
     "samplingRate" : {
       "minPeriod" : "PT1M",
       "maxPeriod" : "PT1H",
@@ -81,6 +80,7 @@
     "rID" : 1,
     "metric" : "power.active",
     "resourceID" : "resourceID#1",
+    "readingType" : null,
     "samplingRate" : {
       "minPeriod" : "PT1M",
       "maxPeriod" : "PT1H",

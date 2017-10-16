@@ -1,23 +1,23 @@
 {
   "version" : 0,
   "code" : 200,
-  "reason" : "successful",
+  "description" : "successful",
   "events" : [ {
     "responseRequired" : "always",
     "descriptor" : {
-      "eventID" : "c9aec230-ebfe-45c2-947d-4201a8ac3946",
+      "eventID" : "dd9dac71-67b8-429e-a7a9-005720f3058b",
       "status" : "far",
       "priority" : 0,
       "test" : false,
       "modificationNumber" : 0,
       "modificationDateTime" : null,
       "modificationReason" : null,
-      "createdDateTime" : "2017-10-09T08:36:20.219Z",
-      "market" : null,
-      "comment" : null
+      "createdDateTime" : "2017-10-16T13:31:26.935Z",
+      "comment" : null,
+      "marketContext" : null
     },
     "activePeriod" : {
-      "dtstart" : "2017-10-09T06:00:00.000Z",
+      "dtstart" : "2017-10-16T06:00:00.000Z",
       "duration" : "PT2H",
       "tolerance" : "PT3M",
       "notification" : "P1D",
@@ -26,45 +26,41 @@
     },
     "signals" : {
       "baseline" : {
-        "id" : null,
-        "name" : null,
+        "baselineID" : null,
+        "baselineName" : null,
         "metric" : {
-          "id" : null,
-          "name" : null,
-          "readingType" : null,
+          "metric" : null,
           "multiplier" : null,
           "symbol" : null
         },
+        "resourceID" : [ ],
         "intervals" : {
           "regular" : {
-            "dtstart" : "2017-10-08T16:00:00.000Z",
+            "dtstart" : "2017-10-15T16:00:00.000Z",
             "period" : "PT1H",
             "array" : [ 1000.0, 1841.0, 1909.0, 1141.0, 243.0, 41.0, 720.0, 1656.0, 1989.0, 1412.0, 455.0, 0.0, 463.0, 1420.0, 1990.0, 1650.0, 712.0, 38.0, 249.0, 1149.0, 1912.0, 1836.0, 991.0, 153.0 ]
           },
           "irregular" : {
             "values" : [ {
               "value" : 100.0,
-              "timestamp" : "2017-10-08T16:00:00.000Z"
+              "timestamp" : "2017-10-15T16:00:00.000Z"
             }, {
               "value" : 200.0,
-              "timestamp" : "2017-10-08T16:15:00.000Z"
+              "timestamp" : "2017-10-15T16:15:00.000Z"
             }, {
               "value" : 400.0,
-              "timestamp" : "2017-10-08T17:00:00.000Z"
+              "timestamp" : "2017-10-15T17:00:00.000Z"
             } ]
           }
-        },
-        "resourceIDs" : [ ]
+        }
       },
       "signal" : [ {
-        "id" : null,
-        "name" : null,
-        "type" : "level",
-        "value" : 3.0,
+        "signalID" : null,
+        "signalName" : null,
+        "signalType" : "level",
+        "currentValue" : 3.0,
         "metric" : {
-          "id" : null,
-          "name" : null,
-          "readingType" : "Direct Read",
+          "metric" : null,
           "multiplier" : "k",
           "symbol" : "W"
         },
@@ -79,14 +75,18 @@
           }
         },
         "target" : {
-          "endDeviceAsset" : [ "Energy_Management_System" ]
+          "endDeviceAsset" : [ {
+            "mrid" : "Energy_Management_System"
+          } ]
         }
       } ]
     },
     "target" : {
-      "endDeviceAsset" : [ "Energy_Management_System" ]
+      "endDeviceAsset" : [ {
+        "mrid" : "Energy_Management_System"
+      } ]
     }
   } ],
-  "requestID" : "f5c209c6-fbbb-4ad3-81a7-af0b7bd76569",
+  "requestID" : "2a72069d-0968-412f-a82e-94780df84a2b",
   "dnID" : "dn#1"
 }

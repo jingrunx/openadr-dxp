@@ -2,14 +2,9 @@ package cn.openadr;
 
 import org.junit.Test;
 
-import cn.openadr.domain.OptReason;
-import cn.openadr.domain.OptType;
 import cn.openadr.model.event.Event;
-import cn.openadr.model.event.EventDescriptor;
 import cn.openadr.payload.evt.QueryEventRequest;
 import cn.openadr.payload.evt.QueryEventResponse;
-import cn.openadr.payload.evt.ReplyEventRequest;
-import cn.openadr.payload.evt.ReplyEventResponse;
 import cn.openadr.utils.CommonUtils;
 import cn.openadr.utils.EventUtils;
 
@@ -40,33 +35,33 @@ public class EventTest extends AbstractTest {
 		object = rep;
 	}
 
-	@Test
-	public void testReplyEventRequest() {
-		EventDescriptor evtDesc = new EventDescriptor();
-		evtDesc.setEventID(CommonUtils.id());
-		evtDesc.setModificationNumber(1);
-
-		ReplyEventRequest req = new ReplyEventRequest(evtDesc);
-		CommonUtils.fillRequest(req);
-
-		req.setOptType(OptType.OPT_IN);
-		req.setOptReason(OptReason.ECONOMIC);
-
-		object = req;
-	}
-
-	@Test
-	public void testReplyEventResponse() {
-		EventDescriptor evtDesc = new EventDescriptor();
-		evtDesc.setEventID(CommonUtils.id());
-		evtDesc.setModificationNumber(1);
-
-		ReplyEventRequest req = new ReplyEventRequest(evtDesc);
-		CommonUtils.fillRequest(req);
-
-		ReplyEventResponse rep = new ReplyEventResponse(req);
-		CommonUtils.fillResponse(rep);
-
-		object = rep;
-	}
+//	@Test
+//	public void testReplyEventRequest() {
+//		EventDescriptor evtDesc = new EventDescriptor();
+//		evtDesc.setEventID(CommonUtils.id());
+//		evtDesc.setModificationNumber(1);
+//
+//		ReplyEventRequest req = new ReplyEventRequest(evtDesc);
+//		CommonUtils.fillRequest(req);
+//
+//		req.setOptType(OptType.OPT_IN);
+//		req.setOptReason(OptReason.ECONOMIC);
+//
+//		object = req;
+//	}
+//
+//	@Test
+//	public void testReplyEventResponse() {
+//		EventDescriptor evtDesc = new EventDescriptor();
+//		evtDesc.setEventID(CommonUtils.id());
+//		evtDesc.setModificationNumber(1);
+//
+//		ReplyEventRequest req = new ReplyEventRequest(evtDesc);
+//		CommonUtils.fillRequest(req);
+//
+//		ReplyEventResponse rep = new ReplyEventResponse(req);
+//		CommonUtils.fillResponse(rep);
+//
+//		object = rep;
+//	}
 }
