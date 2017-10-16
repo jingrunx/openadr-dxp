@@ -10,7 +10,7 @@ public class CreateReportResponse extends ReportResponse<CreateReportRequest> {
 		super(request);
 
 		this.reportSpecifierID = request.getReportSpecifier()
-			.getId();
+			.getReportSpecifierID();
 	}
 
 	public String getReportSpecifierID() {

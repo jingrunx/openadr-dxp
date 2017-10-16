@@ -1,41 +1,29 @@
 package cn.openadr.model.report;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.io.Serializable;
 
-import cn.openadr.domain.ReadingType;
+import javax.validation.constraints.NotNull;
+
 import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
-import cn.openadr.jackson.EnumeratedDeserializer;
-import cn.openadr.jackson.EnumeratedSerializer;
-import cn.openadr.model.DRObject;
 
-class ReadingTypeDeserializer extends EnumeratedDeserializer<ReadingType> {
-	public ReadingTypeDeserializer() {
-		super(ReadingType.class);
-	}
-}
-
-/** 测点信息 */
-public class MetricMetaData extends DRObject {
+/** 计量单位 */
+public class MetricMetaData implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	//private MetricType id;
-	/** 读数类型 */
-	private ReadingType readingType;
-	/** 单位乘数 */
+	@NotNull
+	private /* MetricType */ String metric;
+	/** 倍率 */
 	private UnitMultiplier multiplier;
-	/** 单位符号 */
+	/** 单位 */
 	private UnitSymbol symbol;
 
-	@JsonSerialize(using = EnumeratedSerializer.class)
-	public ReadingType getReadingType() {
-		return readingType;
+	public String getMetric() {
+		return metric;
 	}
 
-	@JsonDeserialize(using = ReadingTypeDeserializer.class)
-	public void setReadingType(ReadingType readingType) {
-		this.readingType = readingType;
+	public void setMetric(String metric) {
+		this.metric = metric;
 	}
 
 	public UnitMultiplier getMultiplier() {

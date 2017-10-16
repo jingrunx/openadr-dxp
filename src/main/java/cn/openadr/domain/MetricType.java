@@ -1,6 +1,6 @@
 package cn.openadr.domain;
 
-public interface ElectricMetric {
+public interface MetricType {
 	static final String CURRENT = "current";
 	static final String CURRENT_A = "current.a";
 	static final String CURRENT_B = "current.b";

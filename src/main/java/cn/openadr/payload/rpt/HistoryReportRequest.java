@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import org.joda.time.DateTime;
 import org.joda.time.Period;
 
-import cn.openadr.model.report.PointValues;
+import cn.openadr.model.report.PointCurveData;
 
 public class HistoryReportRequest extends DataReportRequest {
 	private static final long serialVersionUID = 1L;
@@ -18,7 +18,7 @@ public class HistoryReportRequest extends DataReportRequest {
 	/** 步长(单位:分钟) */
 	@NotNull
 	private Period period;
-	private final List<PointValues> values = new ArrayList<>();
+	private final List<PointCurveData> values = new ArrayList<>();
 
 	public DateTime getDtstart() {
 		return dtstart;
@@ -36,7 +36,7 @@ public class HistoryReportRequest extends DataReportRequest {
 		this.period = period;
 	}
 
-	public List<PointValues> getValues() {
+	public List<PointCurveData> getValues() {
 		return values;
 	}
 }

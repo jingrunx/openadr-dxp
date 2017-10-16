@@ -1,25 +1,20 @@
 package cn.openadr.model.target;
 
-import java.util.List;
+import java.io.Serializable;
 
-public class ServiceLocation extends CimObject {
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
+public class ServiceLocation implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private List<ServiceDeliveryPoint> serviceDeliveryPoints;
+	private GeoPolygon geoPolygon;
 
-	public ServiceLocation() {
-		super();
+	@JsonUnwrapped
+	public GeoPolygon getGeoPolygon() {
+		return geoPolygon;
 	}
 
-	public ServiceLocation(String id) {
-		super(id);
-	}
-
-	public List<ServiceDeliveryPoint> getServiceDeliveryPoints() {
-		return serviceDeliveryPoints;
-	}
-
-	public void setServiceDeliveryPoints(List<ServiceDeliveryPoint> serviceDeliveryPoints) {
-		this.serviceDeliveryPoints = serviceDeliveryPoints;
+	public void setGeoPolygon(GeoPolygon geoPolygon) {
+		this.geoPolygon = geoPolygon;
 	}
 }

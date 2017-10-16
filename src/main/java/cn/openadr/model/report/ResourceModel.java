@@ -3,6 +3,9 @@ package cn.openadr.model.report;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import cn.openadr.model.target.Asset;
 
 /** 资源模型 */
@@ -13,8 +16,10 @@ import cn.openadr.model.target.Asset;
  */
 public class ResourceModel {
 	/** 资源类型 */
+	@NotNull
 	private Asset asset;
 	/** 资源具有的测点：key=点号，value=点描述 */
+	@Size(min = 1)
 	private final List<MetricMetaData> metrics = new ArrayList<>();
 
 	public Asset getAsset() {

@@ -1,13 +1,17 @@
 package cn.openadr.model.target;
 
-public class Node extends CimObject {
+import java.io.Serializable;
+
+public class Node implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	public Node() {
-		super();
+	private String node;
+
+	public String getNode() {
+		return node;
 	}
 
-	public Node(String id) {
-		super(id);
+	public void setNode(String node) {
+		this.node = node;
 	}
 }

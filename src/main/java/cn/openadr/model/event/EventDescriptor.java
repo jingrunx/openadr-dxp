@@ -1,5 +1,7 @@
 package cn.openadr.model.event;
 
+import javax.validation.constraints.NotNull;
+
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -8,7 +10,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.EventStatus;
 import cn.openadr.jackson.EnumeratedDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
-import cn.openadr.model.target.Market;
 
 class EventStatusDeserializer extends EnumeratedDeserializer<EventStatus> {
 	public EventStatusDeserializer() {
@@ -16,27 +17,39 @@ class EventStatusDeserializer extends EnumeratedDeserializer<EventStatus> {
 	}
 }
 
+/** 事件描述 */
 public class EventDescriptor {
 	/** 事件ID */
+	@NotNull
 	private String eventID;
+
 	/** 事件状态 */
+	@NotNull
 	private EventStatus status;
+
 	/** 优先级 */
 	private int priority;
+
 	/** 测试事件 */
 	private boolean test;
+
 	/** 修改版本 */
 	private int modificationNumber;
+
 	/** 修改时间 */
 	private DateTime modificationDateTime;
+
 	/** 修改原因 */
 	private String modificationReason;
+
 	/** 创建时间 */
 	private DateTime createdDateTime;
-	/** 市场信息 */
-	private Market market;
-	/** 注解 */
+
+	/** 注释 */
 	private String comment;
+
+	/** 市场信息 */
+	private String marketContext;
 
 	public String getEventID() {
 		return eventID;
@@ -104,19 +117,19 @@ public class EventDescriptor {
 		this.createdDateTime = createdDateTime;
 	}
 
-	public Market getMarket() {
-		return market;
-	}
-
-	public void setMarket(Market market) {
-		this.market = market;
-	}
-
 	public String getComment() {
 		return comment;
 	}
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+
+	public String getMarketContext() {
+		return marketContext;
+	}
+
+	public void setMarketContext(String marketContext) {
+		this.marketContext = marketContext;
 	}
 }

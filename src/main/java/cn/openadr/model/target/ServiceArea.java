@@ -1,29 +1,20 @@
 package cn.openadr.model.target;
 
-import java.util.List;
+import java.io.Serializable;
 
-import cn.openadr.domain.GeoPoint;
-import cn.openadr.domain.GeoPolygon;
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
 
-public class ServiceArea extends CimObject implements GeoPolygon {
+public class ServiceArea implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private List<GeoPoint> polygon;
+	private GeoPolygon geoPolygon;
 
-	public ServiceArea() {
-		super();
+	@JsonUnwrapped
+	public GeoPolygon getGeoPolygon() {
+		return geoPolygon;
 	}
 
-	public ServiceArea(String id) {
-		super(id);
-	}
-
-	@Override
-	public List<GeoPoint> getPolygon() {
-		return polygon;
-	}
-
-	public void setPolygon(List<GeoPoint> polygon) {
-		this.polygon = polygon;
+	public void setGeoPolygon(GeoPolygon geoPolygon) {
+		this.geoPolygon = geoPolygon;
 	}
 }

@@ -1,4 +1,4 @@
-package cn.openadr.payload.pull;
+package cn.openadr.payload.poll;
 
 import cn.openadr.payload.DRRequest;
 

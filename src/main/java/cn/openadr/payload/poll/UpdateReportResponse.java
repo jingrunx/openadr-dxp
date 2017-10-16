@@ -1,14 +1,13 @@
-package cn.openadr.payload.pull;
-
-import cn.openadr.payload.DRResponse;
+package cn.openadr.payload.poll;
 
 /** 要求DN主动报送报告 */
-public class RereportReponse extends DRResponse<PollRequest> {
+public class UpdateReportResponse extends PollResponse {
 	private static final long serialVersionUID = 1L;
 
+	/** @see cn.openadr.model.report.ReportSpecifier */
 	private String reportSpecifierID;
 
-	public RereportReponse(PollRequest request) {
+	public UpdateReportResponse(PollRequest request) {
 		super(request);
 	}
 

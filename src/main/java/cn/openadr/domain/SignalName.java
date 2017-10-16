@@ -1,0 +1,14 @@
+package cn.openadr.domain;
+
+public enum SignalName {
+	SIMPLE,
+	ELECTRICITY_PRICE,
+	ENERGY_PRICE,
+	DEMAND_CHARGE,
+	BID_PRICE,
+	BID_LOAD,
+	BID_ENERGY,
+	CHARGE_STATE,
+	LOAD_DISPATCH,
+	LOAD_CONTROL;
+}

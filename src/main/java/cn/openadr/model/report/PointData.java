@@ -1,17 +1,19 @@
 package cn.openadr.model.report;
 
-import cn.openadr.tsdb.CurveValues;
+import cn.openadr.tsdb.QualityData;
 
-public class PointValues extends CurveValues {
+public class PointData extends QualityData {
 	private static final long serialVersionUID = 1L;
 
 	/** 测点编号 */
 	private int rID;
 
-	public PointValues() {
+	public PointData() {
+		super();
 	}
 
-	public PointValues(int rID) {
+	public PointData(int rID) {
+		super();
 		this.rID = rID;
 	}
 
@@ -22,4 +24,5 @@ public class PointValues extends CurveValues {
 	public void setrID(int rID) {
 		this.rID = rID;
 	}
+
 }

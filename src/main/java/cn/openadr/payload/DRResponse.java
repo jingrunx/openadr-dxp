@@ -8,11 +8,12 @@ public class DRResponse<R extends DRRequest> extends Payload {
 	protected final R request;
 	/** 状态代码 */
 	private int code;
-	/** 错误原因 */
-	private String reason;
+	/** 错误描述 */
+	private String description;
 
 	public DRResponse(R request) {
 		super();
+
 		this.request = request;
 	}
 
@@ -32,11 +33,11 @@ public class DRResponse<R extends DRRequest> extends Payload {
 		this.code = code;
 	}
 
-	public String getReason() {
-		return reason;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setReason(String reason) {
-		this.reason = reason;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

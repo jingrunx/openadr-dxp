@@ -1,46 +1,33 @@
 package cn.openadr.model.target;
 
-import cn.openadr.domain.GeoPoint;
-
-public class ServiceDeliveryPoint extends Node implements GeoPoint {
+public class ServiceDeliveryPoint extends Node {
 	private static final long serialVersionUID = 1L;
 
-	private double Latitude;
-	private double longitude;
-	private String location;
+	private String name;
+	private String tariffProfile;
+	private String customerAgreement;
 
-	public ServiceDeliveryPoint() {
-		super();
+	public String getName() {
+		return name;
 	}
 
-	public ServiceDeliveryPoint(String id) {
-		super(id);
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	@Override
-	public double getLatitude() {
-		return Latitude;
+	public String getTariffProfile() {
+		return tariffProfile;
 	}
 
-	public void setLatitude(double latitude) {
-		Latitude = latitude;
+	public void setTariffProfile(String tariffProfile) {
+		this.tariffProfile = tariffProfile;
 	}
 
-	@Override
-	public double getLongitude() {
-		return longitude;
+	public String getCustomerAgreement() {
+		return customerAgreement;
 	}
 
-	public void setLongitude(double longitude) {
-		this.longitude = longitude;
-	}
-
-	@Override
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
+	public void setCustomerAgreement(String customerAgreement) {
+		this.customerAgreement = customerAgreement;
 	}
 }

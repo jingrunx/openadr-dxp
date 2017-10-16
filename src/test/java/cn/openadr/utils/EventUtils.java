@@ -14,7 +14,7 @@ import cn.openadr.model.event.EventBaseline;
 import cn.openadr.model.event.EventDescriptor;
 import cn.openadr.model.event.EventSignal;
 import cn.openadr.model.event.EventSignals;
-import cn.openadr.tsdb.CurveValues;
+import cn.openadr.tsdb.CurveData;
 
 public class EventUtils {
 
@@ -59,15 +59,15 @@ public class EventUtils {
 	}
 
 	public static void fillBaseline(EventBaseline baseline) {
-		CurveValues interval = baseline.getIntervals();
+		CurveData interval = baseline.getIntervals();
 		MetricUtils.fillRegular(interval.getRegular());
 		MetricUtils.fillIrregular(interval.getIrregular());
 	}
 
 	public static void fillEventSignal(EventSignal signal) {
 		MetricUtils.fillMetric(signal.getMetric());
-		signal.setType(SignalType.LEVEL);
-		signal.setValue(3.0d);
+		signal.setSignalType(SignalType.LEVEL);
+		signal.setCurrentValue(3.0f);
 		CommonUtils.fillEndDeviceAsset(signal.getTarget());
 	}
 

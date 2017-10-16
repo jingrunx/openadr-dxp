@@ -6,7 +6,6 @@ import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
 import cn.openadr.domain.EndDeviceAssetType;
-import cn.openadr.model.DRObject;
 import cn.openadr.model.target.EndDeviceAsset;
 import cn.openadr.model.target.Target;
 import cn.openadr.payload.DRRequest;
@@ -24,12 +23,6 @@ public class CommonUtils {
 	public static DateTime dtstart() {
 		return LocalDate.now()
 			.toDateTimeAtStartOfDay();
-	}
-
-	public static void fillObject(DRObject obj) {
-		obj.setId(id());
-		obj.setName(obj.getClass()
-			.getSimpleName() + "#1");
 	}
 
 	public static void fillRequest(DRRequest req) {
@@ -55,11 +48,13 @@ public class CommonUtils {
 
 	public static void fillResponse(DRResponse<? extends DRRequest> rep) {
 		rep.setCode(200);
-		rep.setReason("successful");
+		rep.setDescription("successful");
 	}
 
 	public static void fillEndDeviceAsset(Target target) {
+		EndDeviceAsset asset = new EndDeviceAsset();
+		asset.setMrid(EndDeviceAssetType.Energy_Management_System.name());
 		target.getEndDeviceAsset()
-			.add(new EndDeviceAsset(EndDeviceAssetType.Energy_Management_System));
+			.add(asset);
 	}
 }

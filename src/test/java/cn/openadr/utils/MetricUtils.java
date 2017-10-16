@@ -4,21 +4,19 @@ import org.joda.time.DateTime;
 import org.joda.time.DateTimeConstants;
 import org.joda.time.Hours;
 
-import cn.openadr.domain.ReadingType;
 import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
 import cn.openadr.model.report.MetricMetaData;
-import cn.openadr.model.report.PointValue;
-import cn.openadr.model.report.PointValues;
-import cn.openadr.tsdb.IrregularPart;
+import cn.openadr.model.report.PointCurveData;
+import cn.openadr.model.report.PointData;
+import cn.openadr.tsdb.IrregularCurve;
 import cn.openadr.tsdb.Point;
-import cn.openadr.tsdb.RegularPart;
+import cn.openadr.tsdb.QualityData;
+import cn.openadr.tsdb.RegularCurve;
 import cn.openadr.tsdb.TagKey;
-import cn.openadr.tsdb.ValuePart;
 
 public class MetricUtils {
 	public static void fillMetric(MetricMetaData metric) {
-		metric.setReadingType(ReadingType.DIRECT_READ);
 		metric.setMultiplier(UnitMultiplier.k);
 		metric.setSymbol(UnitSymbol.W);
 	}
@@ -26,8 +24,7 @@ public class MetricUtils {
 	public static MetricMetaData createMetric(String metric, String metricName) {
 		MetricMetaData r = new MetricMetaData();
 
-		r.setId(metric);
-		r.setName(metricName);
+		r.setMetric(metric);
 		fillMetric(r);
 
 		return r;
@@ -45,8 +42,8 @@ public class MetricUtils {
 			.put(TagKey.facility, CommonUtils.id());
 	}
 
-	public static PointValue createPointValue(int rID, double val) {
-		PointValue value = new PointValue(rID);
+	public static PointData createPointValue(int rID, double val) {
+		PointData value = new PointData(rID);
 
 		value.setValue(val);
 		value.setTimestamp(DateTime.now());
@@ -54,13 +51,13 @@ public class MetricUtils {
 		return value;
 	}
 
-	public static PointValues createPointValues(int rID) {
-		PointValues value = new PointValues(rID);
+	public static PointCurveData createPointValues(int rID) {
+		PointCurveData value = new PointCurveData(rID);
 		fillRegular(value.getRegular());
 		return value;
 	}
 
-	public static void fillRegular(RegularPart regular) {
+	public static void fillRegular(RegularCurve regular) {
 		regular.setDtstart(CommonUtils.dtstart());
 		regular.setPeriod(Hours.ONE.toPeriod()
 			.toPeriod());
@@ -71,14 +68,14 @@ public class MetricUtils {
 		regular.setArray(array);
 	}
 
-	public static void fillIrregular(IrregularPart irregular) {
+	public static void fillIrregular(IrregularCurve irregular) {
 		DateTime dtstart = CommonUtils.dtstart();
 
 		irregular.getValues()
-			.add(new ValuePart(100.0d, dtstart));
+			.add(new QualityData(100.0d, dtstart));
 		irregular.getValues()
-			.add(new ValuePart(200.0d, dtstart.plusMinutes(15)));
+			.add(new QualityData(200.0d, dtstart.plusMinutes(15)));
 		irregular.getValues()
-			.add(new ValuePart(400.0d, dtstart.plusHours(1)));
+			.add(new QualityData(400.0d, dtstart.plusHours(1)));
 	}
 }

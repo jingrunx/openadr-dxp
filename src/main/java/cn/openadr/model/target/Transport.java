@@ -1,18 +1,12 @@
 package cn.openadr.model.target;
 
-public class Transport extends CimObject {
+import java.io.Serializable;
+
+public class Transport implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Node receipt;
 	private Node delivery;
-
-	public Transport() {
-		super();
-	}
-
-	public Transport(String id) {
-		super(id);
-	}
 
 	public Node getReceipt() {
 		return receipt;

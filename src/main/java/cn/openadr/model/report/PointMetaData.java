@@ -1,13 +1,28 @@
 package cn.openadr.model.report;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import cn.openadr.domain.ReadingType;
+import cn.openadr.jackson.EnumeratedDeserializer;
+import cn.openadr.jackson.EnumeratedSerializer;
+
+class ReadingTypeDeserializer extends EnumeratedDeserializer<ReadingType> {
+	public ReadingTypeDeserializer() {
+		super(ReadingType.class);
+	}
+}
+
 /** 采样点元数据 */
 public class PointMetaData {
-	/** 同一个DN唯一 */
+	/** 测点 */
 	private int rID;
-	/** 测点名 */
+	/** 计量单位 */
 	private String metric;
-	/** 对应的resourceID */
+	/** 资源ID */
 	private String resourceID;
+	/** 读数类型 */
+	private ReadingType readingType;
 	/** 采样周期 */
 	private final SamplingRate samplingRate = new SamplingRate();
 
@@ -33,6 +48,16 @@ public class PointMetaData {
 
 	public void setResourceID(String resourceID) {
 		this.resourceID = resourceID;
+	}
+
+	@JsonSerialize(using = EnumeratedSerializer.class)
+	public ReadingType getReadingType() {
+		return readingType;
+	}
+
+	@JsonDeserialize(using = ReadingTypeDeserializer.class)
+	public void setReadingType(ReadingType readingType) {
+		this.readingType = readingType;
 	}
 
 	public SamplingRate getSamplingRate() {

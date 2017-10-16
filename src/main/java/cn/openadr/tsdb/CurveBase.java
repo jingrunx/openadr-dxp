@@ -7,7 +7,7 @@ import org.joda.time.ReadableInterval;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public abstract class ValuesPart {
+public abstract class CurveBase {
 	/** 时间段 */
 	protected final MutableInterval interval = new MutableInterval();
 
@@ -17,5 +17,5 @@ public abstract class ValuesPart {
 	}
 
 	/** 数据 */
-	public abstract List<ValuePart> getValues();
+	public abstract List<QualityData> getValues();
 }

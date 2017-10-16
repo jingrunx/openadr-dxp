@@ -10,26 +10,26 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import cn.openadr.domain.DataQuality;
 
 @JsonInclude(Include.NON_NULL)
-public class ValuePart implements Serializable {
+public class QualityData implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Number value;
 	private DateTime timestamp;
 	private DataQuality quality;
 
-	public ValuePart() {
+	public QualityData() {
 	}
 
-	public ValuePart(Number value) {
+	public QualityData(Number value) {
 		this.value = value;
 	}
 
-	public ValuePart(Number value, DateTime timestamp) {
+	public QualityData(Number value, DateTime timestamp) {
 		this.value = value;
 		this.timestamp = timestamp;
 	}
 
-	public ValuePart(Number value, DateTime timestamp, DataQuality quality) {
+	public QualityData(Number value, DateTime timestamp, DataQuality quality) {
 		this.value = value;
 		this.timestamp = timestamp;
 		this.quality = quality;

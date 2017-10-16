@@ -32,30 +32,30 @@ public class RptTest extends AbstractTest {
 
 		Resource r1 = new Resource();
 		r1.setAsset(rm1.getAsset());
-		r1.setId(CommonUtils.id());
-		r1.setName("空调#1");
+		r1.setResourceID(CommonUtils.id());
+		r1.setResourceName("空调#1");
 		req.getResources()
 			.add(r1);
 
 		Resource r2 = new Resource();
 		r1.setAsset(rm1.getAsset());
-		r2.setId(CommonUtils.id());
-		r2.setName("空调#2");
+		r2.setResourceID(CommonUtils.id());
+		r2.setResourceName("空调#2");
 		req.getResources()
 			.add(r2);
 
 		Resource rootMeter = new Resource();
-		rootMeter.setId(CommonUtils.id());
-		rootMeter.setName("总表#1");
+		rootMeter.setResourceID(CommonUtils.id());
+		rootMeter.setResourceName("总表#1");
 		req.getResources()
 			.add(rootMeter);
 
 		Resource r3 = new Resource();
-		r3.setId(CommonUtils.id());
-		r3.setName("空调电表#1");
-		r3.setParentID(rootMeter.getId());
+		r3.setResourceID(CommonUtils.id());
+		r3.setResourceName("空调电表#1");
+		r3.setParentResourceID(rootMeter.getResourceID());
 		r3.getRelations()
-			.put("reading", Collections.singletonList(r1.getId()));
+			.put("reading", Collections.singletonList(r1.getResourceID()));
 		req.getResources()
 			.add(r3);
 
