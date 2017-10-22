@@ -2,9 +2,12 @@ package cn.openadr;
 
 import org.junit.Test;
 
+import cn.openadr.domain.OptType;
 import cn.openadr.model.event.Event;
+import cn.openadr.model.event.EventResponse;
+import cn.openadr.payload.evt.CreatedEventResponse;
+import cn.openadr.payload.evt.DistributeEventRequest;
 import cn.openadr.payload.evt.QueryEventRequest;
-import cn.openadr.payload.evt.QueryEventResponse;
 import cn.openadr.utils.CommonUtils;
 import cn.openadr.utils.EventUtils;
 
@@ -20,48 +23,38 @@ public class EventTest extends AbstractTest {
 	}
 
 	@Test
-	public void testQueryEventResponse() {
-		QueryEventRequest req = new QueryEventRequest();
-		CommonUtils.fillRequest(req);
+	public void testDistributeEventRequest() {
+		DistributeEventRequest req = new DistributeEventRequest();
 
-		QueryEventResponse rep = new QueryEventResponse(req);
+		for (int i = 0; i < 2; ++i) {
+			Event event = new Event();
+			EventUtils.fillEvent(event);
+			req.getEvents()
+				.add(event);
+		}
+
+		object = req;
+	}
+
+	@Test
+	public void testCreatedEventResponse() {
+		CreatedEventResponse rep = new CreatedEventResponse();
 		CommonUtils.fillResponse(rep);
 
-		Event event = new Event();
-		EventUtils.fillEvent(event);
-		rep.getEvents()
-			.add(event);
+		for (int i = 0; i < 2; ++i) {
+			EventResponse eventResponse = new EventResponse();
+
+			CommonUtils.fillResponse(eventResponse.getResponse());
+			eventResponse.setOptType(OptType.OPT_IN);
+			eventResponse.getQualifiedEventID()
+				.setEventID(CommonUtils.id());
+			eventResponse.getQualifiedEventID()
+				.setModificationNumber(1);
+
+			rep.getEventResponses()
+				.add(eventResponse);
+		}
 
 		object = rep;
 	}
-
-//	@Test
-//	public void testReplyEventRequest() {
-//		EventDescriptor evtDesc = new EventDescriptor();
-//		evtDesc.setEventID(CommonUtils.id());
-//		evtDesc.setModificationNumber(1);
-//
-//		ReplyEventRequest req = new ReplyEventRequest(evtDesc);
-//		CommonUtils.fillRequest(req);
-//
-//		req.setOptType(OptType.OPT_IN);
-//		req.setOptReason(OptReason.ECONOMIC);
-//
-//		object = req;
-//	}
-//
-//	@Test
-//	public void testReplyEventResponse() {
-//		EventDescriptor evtDesc = new EventDescriptor();
-//		evtDesc.setEventID(CommonUtils.id());
-//		evtDesc.setModificationNumber(1);
-//
-//		ReplyEventRequest req = new ReplyEventRequest(evtDesc);
-//		CommonUtils.fillRequest(req);
-//
-//		ReplyEventResponse rep = new ReplyEventResponse(req);
-//		CommonUtils.fillResponse(rep);
-//
-//		object = rep;
-//	}
 }

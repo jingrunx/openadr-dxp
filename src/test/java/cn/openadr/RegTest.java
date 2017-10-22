@@ -12,29 +12,10 @@ import cn.openadr.payload.reg.CancelRegistrationResponse;
 import cn.openadr.payload.reg.CreateRegistrationRequest;
 import cn.openadr.payload.reg.CreateRegistrationResponse;
 import cn.openadr.payload.reg.QueryRegistrationRequest;
-import cn.openadr.payload.reg.QueryRegistrationResponse;
+import cn.openadr.payload.reg.ReregistrationRequest;
 import cn.openadr.utils.CommonUtils;
 
 public class RegTest extends AbstractTest {
-
-	@Test
-	public void testQueryRegistrationRequest() {
-		QueryRegistrationRequest req = new QueryRegistrationRequest();
-		CommonUtils.fillRegRequest(req);
-
-		object = req;
-	}
-
-	@Test
-	public void testQueryRegistrationResponse() {
-		QueryRegistrationRequest req = new QueryRegistrationRequest();
-		CommonUtils.fillRegRequest(req);
-
-		QueryRegistrationResponse rep = new QueryRegistrationResponse(req);
-		CommonUtils.fillResponse(rep);
-
-		object = rep;
-	}
 
 	@Test
 	public void testCreateRegistrationRequest() {
@@ -43,20 +24,16 @@ public class RegTest extends AbstractTest {
 
 		req.setDnName("dnname");
 		req.setReportOnly(false);
-		req.setTransport(TransportType.JSON);
-		req.setEndpoint("http://www.openadr.cn/rest/api/");
-		req.setProfile("unknown");//此处存在疑问，是否该传一个Profile对象
 		req.setPullMode(true);
+		req.setTransport(TransportType.JSON);
+		req.setTransportAddress("http://www.openadr.cn/rest/api/");
 
 		object = req;
 	}
 
 	@Test
 	public void testCreateRegistrationResponse() {
-		CreateRegistrationRequest req = new CreateRegistrationRequest();
-		CommonUtils.fillRegRequest(req);
-
-		CreateRegistrationResponse rep = new CreateRegistrationResponse(req);
+		CreateRegistrationResponse rep = new CreateRegistrationResponse();
 		CommonUtils.fillResponse(rep);
 
 		rep.setUnID(CommonUtils.id());
@@ -68,9 +45,9 @@ public class RegTest extends AbstractTest {
 
 		ServiceSpecific spec = new ServiceSpecific();
 		spec.setServiceName(ServiceName.EI_EVENT);
-		spec.getServiceInfo()
+		spec.getInfo()
 			.add(new KeyValue("IP", "192.168.1.1"));
-		spec.getServiceInfo()
+		spec.getInfo()
 			.add(new KeyValue("PORT", "80"));
 		rep.getServiceSpecific()
 			.add(spec);
@@ -88,11 +65,24 @@ public class RegTest extends AbstractTest {
 
 	@Test
 	public void testCancelRegstrationResponse() {
-		CancelRegistrationRequest req = new CancelRegistrationRequest();
-		CommonUtils.fillRegRequest(req);
-
-		CancelRegistrationResponse rep = new CancelRegistrationResponse(req);
+		CancelRegistrationResponse rep = new CancelRegistrationResponse();
 		CommonUtils.fillResponse(rep);
 		object = rep;
+	}
+
+	@Test
+	public void testQueryRegistrationRequest() {
+		QueryRegistrationRequest req = new QueryRegistrationRequest();
+		CommonUtils.fillRequest(req);
+
+		object = req;
+	}
+
+	@Test
+	public void testReregistrationRequest() {
+		ReregistrationRequest req = new ReregistrationRequest();
+		CommonUtils.fillRequest(req);
+
+		object = req;
 	}
 }
