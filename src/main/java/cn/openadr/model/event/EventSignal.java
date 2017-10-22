@@ -10,36 +10,36 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import cn.openadr.domain.SignalType;
-import cn.openadr.jackson.EnumeratedDeserializer;
+import cn.openadr.domain.SignalType.SignalTypeDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
-import cn.openadr.model.report.MetricMetaData;
+import cn.openadr.model.report.MetricDescription;
 import cn.openadr.model.target.Target;
 import cn.openadr.tsdb.CurveData;
-
-class SignalTypeDeserializer extends EnumeratedDeserializer<SignalType> {
-	public SignalTypeDeserializer() {
-		super(SignalType.class);
-	}
-}
 
 public class EventSignal implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
 	private String signalID;
+
 	/** cn.openadr.domain.SignalName */
 	@NotNull
 	private String signalName;
+
 	/** 信号类别 */
 	@NotNull
 	private SignalType signalType;
+
 	/** 信号的当前值 */
 	private Float currentValue;
+
 	/** 相当于ItemBase */
 	@Null
-	private final MetricMetaData metric = new MetricMetaData();
+	private final MetricDescription metric = new MetricDescription();
+
 	@Size(min = 1)
 	private final CurveData intervals = new CurveData();
+
 	private final Target target = new Target();
 
 	public String getSignalID() {
@@ -76,7 +76,7 @@ public class EventSignal implements Serializable {
 		this.currentValue = currentValue;
 	}
 
-	public MetricMetaData getMetric() {
+	public MetricDescription getMetric() {
 		return metric;
 	}
 

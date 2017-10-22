@@ -1,9 +1,6 @@
 package cn.openadr.payload.opt;
 
-public class CreateOptResponse extends OptResponse<CreateOptRequest> {
+// OadrCreatedOptType
+public class CreateOptResponse extends OptResponse {
 	private static final long serialVersionUID = 1L;
-
-	public CreateOptResponse(CreateOptRequest request) {
-		super(request);
-	}
 }

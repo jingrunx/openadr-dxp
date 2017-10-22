@@ -1,19 +1,19 @@
 package cn.openadr.payload.rpt;
 
+import javax.validation.constraints.NotNull;
+
+import cn.openadr.model.report.PendingReports;
+import cn.openadr.payload.DNResponse;
+
 /** 由UN发起，要求DN按照规范要求创建的自定义报表 */
-public class CreateReportResponse extends ReportResponse<CreateReportRequest> {
+// OadrCreatedReportType
+public class CreateReportResponse extends DNResponse {
 	private static final long serialVersionUID = 1L;
 
-	private final String reportSpecifierID;
+	@NotNull
+	private final PendingReports pendingReports = new PendingReports();
 
-	public CreateReportResponse(CreateReportRequest request) {
-		super(request);
-
-		this.reportSpecifierID = request.getReportSpecifier()
-			.getReportSpecifierID();
-	}
-
-	public String getReportSpecifierID() {
-		return reportSpecifierID;
+	public PendingReports getPendingReports() {
+		return pendingReports;
 	}
 }

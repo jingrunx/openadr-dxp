@@ -1,10 +1,13 @@
 package cn.openadr.payload.opt;
 
-import cn.openadr.payload.DRRequest;
+import javax.validation.constraints.NotNull;
 
-public class OptRequest extends DRRequest {
+import cn.openadr.payload.DNRequest;
+
+public class OptRequest extends DNRequest {
 	private static final long serialVersionUID = 1L;
 
+	@NotNull
 	private String optID;
 
 	public String getOptID() {

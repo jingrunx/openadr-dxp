@@ -12,26 +12,28 @@ import cn.openadr.domain.EndDeviceAssetType;
 import cn.openadr.domain.MetricType;
 import cn.openadr.domain.ReportName;
 import cn.openadr.domain.ReportType;
-import cn.openadr.model.report.PointMetaData;
+import cn.openadr.model.report.ReportDescription;
 import cn.openadr.model.report.ReportSpecifier;
 import cn.openadr.model.report.ResourceModel;
 import cn.openadr.model.target.EndDeviceAsset;
-import cn.openadr.payload.rpt.DataReportRequest;
+import cn.openadr.payload.rpt.UpdateReportRequest;
 
 public class RptUtils {
-	public static void fillDataReportRequest(DataReportRequest req) {
+	public static void fillDataReportRequest(UpdateReportRequest req) {
 		CommonUtils.fillRptRequest(req);
 
 		req.setReportSpecifierID(CommonUtils.id());
 		req.setCreatedDateTime(DateTime.now());
 	}
 
-	public static void fillPointMetaData(List<PointMetaData> points) {
+	public static void fillPointMetaData(List<ReportDescription> points) {
 		for (String metric : Arrays.asList(MetricType.VOLTAGE, MetricType.POWER_ACTIVE)) {
-			PointMetaData point = new PointMetaData();
+			ReportDescription point = new ReportDescription();
 			point.setrID(1);
 			point.setMetric(metric);
-			point.setResourceID("resourceID#1");
+			point.getReportDataSource()
+				.getResourceID()
+				.add("resourceID#1");
 
 			point.getSamplingRate()
 				.setMinPeriod(Minutes.ONE.toPeriod());

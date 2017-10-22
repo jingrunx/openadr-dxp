@@ -1,5 +1,7 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 public enum EventStatus implements EnumeratedType {
 	/** 无 */
 	NONE("none"),
@@ -23,5 +25,11 @@ public enum EventStatus implements EnumeratedType {
 	@Override
 	public String value() {
 		return value;
+	}
+
+	public static class EventStatusDeserializer extends EnumeratedDeserializer<EventStatus> {
+		public EventStatusDeserializer() {
+			super(EventStatus.class);
+		}
 	}
 }

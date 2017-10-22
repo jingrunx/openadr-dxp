@@ -8,20 +8,12 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import cn.openadr.domain.EventStatus;
-import cn.openadr.jackson.EnumeratedDeserializer;
+import cn.openadr.domain.EventStatus.EventStatusDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 
-class EventStatusDeserializer extends EnumeratedDeserializer<EventStatus> {
-	public EventStatusDeserializer() {
-		super(EventStatus.class);
-	}
-}
-
 /** 事件描述 */
-public class EventDescriptor {
-	/** 事件ID */
-	@NotNull
-	private String eventID;
+public class EventDescriptor extends QualifiedEventID {
+	private static final long serialVersionUID = 1L;
 
 	/** 事件状态 */
 	@NotNull
@@ -32,9 +24,6 @@ public class EventDescriptor {
 
 	/** 测试事件 */
 	private boolean test;
-
-	/** 修改版本 */
-	private int modificationNumber;
 
 	/** 修改时间 */
 	private DateTime modificationDateTime;
@@ -51,14 +40,6 @@ public class EventDescriptor {
 	/** 市场信息 */
 	private String marketContext;
 
-	public String getEventID() {
-		return eventID;
-	}
-
-	public void setEventID(String eventID) {
-		this.eventID = eventID;
-	}
-
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	public EventStatus getStatus() {
 		return status;
@@ -67,14 +48,6 @@ public class EventDescriptor {
 	@JsonDeserialize(using = EventStatusDeserializer.class)
 	public void setStatus(EventStatus status) {
 		this.status = status;
-	}
-
-	public int getModificationNumber() {
-		return modificationNumber;
-	}
-
-	public void setModificationNumber(int modificationNumber) {
-		this.modificationNumber = modificationNumber;
 	}
 
 	public DateTime getModificationDateTime() {

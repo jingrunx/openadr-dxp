@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 import javax.validation.constraints.Size;
 
 import org.joda.time.DateTime;
@@ -15,16 +14,11 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import cn.openadr.domain.ReportType;
-import cn.openadr.jackson.EnumeratedDeserializer;
+import cn.openadr.domain.ReportType.ReportTypeDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 
-class ReportTypeDeserializer extends EnumeratedDeserializer<ReportType> {
-	public ReportTypeDeserializer() {
-		super(ReportType.class);
-	}
-}
-
-/** 为报告数据准备的格式规范 */
+/** 为报告数据准备的格式样式 */
+// ReportSpecifierType
 public class ReportSpecifier implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -45,24 +39,24 @@ public class ReportSpecifier implements Serializable {
 	@NotNull
 	private DateTime startDateTime;
 
-	/** 取消报告时间 */
-	@Null
+	/** 取消报告时间，超过此时间后不再发送报告，为空表示一直发送直到收到取消报送指令 */
 	private DateTime endDateTime;
 
-	/** 报告周期，每隔多长时间报告一次 */
-	//等同于reportBackDuration
-	//如果interval=(period | PT0S), 按照LiveReport格式报告，否则按照HistoryReport格式报告
+	/**
+	 * 报告周期，每隔多长时间报告一次
+	 * 如果与granularity相同或者为PT0S，则相当于每次报送实时数据，用LiveReport格式报送
+	 * 否则按照HistoryReport格式报送
+	 */
 	@NotNull
-	private Period interval;
+	private Period backDuration;
 
 	/** 曲线数据之间的采样间隔 */
-	//等同于granularity，取值范围必须在minPeriod和maxPeriod之间
 	@NotNull
-	private Period period;
+	private Period granularity;
 
+	/** 要报告的rID清单 */
 	@Size(min = 1)
-	/** 要报告的测点 */
-	private final List<Integer> points = new ArrayList<>();
+	private final List<Integer> rID = new ArrayList<>();
 
 	public String getReportSpecifierID() {
 		return reportSpecifierID;
@@ -106,23 +100,23 @@ public class ReportSpecifier implements Serializable {
 		this.endDateTime = endDateTime;
 	}
 
-	public Period getInterval() {
-		return interval;
+	public Period getBackDuration() {
+		return backDuration;
 	}
 
-	public void setInterval(Period interval) {
-		this.interval = interval;
+	public void setBackDuration(Period backDuration) {
+		this.backDuration = backDuration;
 	}
 
-	public Period getPeriod() {
-		return period;
+	public Period getGranularity() {
+		return granularity;
 	}
 
-	public void setPeriod(Period period) {
-		this.period = period;
+	public void setGranularity(Period granularity) {
+		this.granularity = granularity;
 	}
 
-	public List<Integer> getPoints() {
-		return points;
+	public List<Integer> getrID() {
+		return rID;
 	}
 }

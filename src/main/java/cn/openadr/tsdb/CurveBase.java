@@ -13,9 +13,9 @@ public abstract class CurveBase {
 
 	@JsonIgnore
 	public ReadableInterval getInterval() {
-		return interval.toInterval();
+		return interval;
 	}
 
 	/** 数据 */
-	public abstract List<QualityData> getValues();
+	public abstract List<DataValue> getValues();
 }

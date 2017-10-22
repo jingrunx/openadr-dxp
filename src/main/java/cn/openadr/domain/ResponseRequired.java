@@ -1,5 +1,7 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 public enum ResponseRequired implements EnumeratedType {
 	ALWAYS("always"), NEVER("never");
 
@@ -12,5 +14,11 @@ public enum ResponseRequired implements EnumeratedType {
 	@Override
 	public String value() {
 		return value;
+	}
+
+	public static class ResponseRequiredDeserializer extends EnumeratedDeserializer<ResponseRequired> {
+		public ResponseRequiredDeserializer() {
+			super(ResponseRequired.class);
+		}
 	}
 }

@@ -1,5 +1,7 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 /** 选择理由 */
 public enum OptReason implements EnumeratedType {
 	/** 经济 */
@@ -28,5 +30,11 @@ public enum OptReason implements EnumeratedType {
 	@Override
 	public String value() {
 		return value;
+	}
+
+	public static class OptReasonDeserializer extends EnumeratedDeserializer<OptReason> {
+		public OptReasonDeserializer() {
+			super(OptReason.class);
+		}
 	}
 }

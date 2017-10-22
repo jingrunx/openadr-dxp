@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import cn.openadr.domain.ServiceName;
 import cn.openadr.domain.TransportType;
-import cn.openadr.model.register.ServiceInfo;
+import cn.openadr.model.register.KeyValue;
 import cn.openadr.model.register.ServiceSpecific;
 import cn.openadr.payload.reg.CancelRegistrationRequest;
 import cn.openadr.payload.reg.CancelRegistrationResponse;
@@ -69,9 +69,9 @@ public class RegTest extends AbstractTest {
 		ServiceSpecific spec = new ServiceSpecific();
 		spec.setServiceName(ServiceName.EI_EVENT);
 		spec.getServiceInfo()
-			.add(new ServiceInfo("IP", "192.168.1.1"));
+			.add(new KeyValue("IP", "192.168.1.1"));
 		spec.getServiceInfo()
-			.add(new ServiceInfo("PORT", "80"));
+			.add(new KeyValue("PORT", "80"));
 		rep.getServiceSpecific()
 			.add(spec);
 

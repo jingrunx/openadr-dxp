@@ -2,7 +2,7 @@ package cn.openadr.tsdb;
 
 import java.io.Serializable;
 
-public class LimitPart implements Serializable {
+public class LimitValue implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/** 下限(>=) */

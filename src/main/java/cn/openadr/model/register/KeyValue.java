@@ -2,16 +2,16 @@ package cn.openadr.model.register;
 
 import java.io.Serializable;
 
-public class ServiceInfo implements Serializable {
+public class KeyValue implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String key;
 	private String value;
 
-	public ServiceInfo() {
+	public KeyValue() {
 	}
 
-	public ServiceInfo(String key, String value) {
+	public KeyValue(String key, String value) {
 		this.key = key;
 		this.value = value;
 	}
@@ -31,5 +31,4 @@ public class ServiceInfo implements Serializable {
 	public void setValue(String value) {
 		this.value = value;
 	}
-
 }

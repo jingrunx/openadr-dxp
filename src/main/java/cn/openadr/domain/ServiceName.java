@@ -1,5 +1,7 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 public enum ServiceName implements EnumeratedType {
 	EI_REGISTER_PARTY("EiRegisterParty"), //
 	EI_EVENT("EiEvent"), //
@@ -16,5 +18,11 @@ public enum ServiceName implements EnumeratedType {
 	@Override
 	public String value() {
 		return value;
+	}
+
+	public static class ServiceNameDeserializer extends EnumeratedDeserializer<ServiceName> {
+		public ServiceNameDeserializer() {
+			super(ServiceName.class);
+		}
 	}
 }

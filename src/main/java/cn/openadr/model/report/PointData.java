@@ -1,8 +1,8 @@
 package cn.openadr.model.report;
 
-import cn.openadr.tsdb.QualityData;
+import cn.openadr.tsdb.DataValue;
 
-public class PointData extends QualityData {
+public class PointData extends DataValue {
 	private static final long serialVersionUID = 1L;
 
 	/** 测点编号 */

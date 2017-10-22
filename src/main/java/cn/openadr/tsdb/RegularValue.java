@@ -16,7 +16,7 @@ import org.joda.time.ReadablePeriod;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /** 由固定时间间隔的数据序列组成 */
-public class RegularCurve extends CurveBase {
+public class RegularValue extends CurveBase {
 	/** 开始时间 */
 	private DateTime dtstart;
 	/** 步长(单位:分钟) */
@@ -25,10 +25,10 @@ public class RegularCurve extends CurveBase {
 	/** 数据数组 */
 	private double[] array = new double[] {};
 
-	public RegularCurve() {
+	public RegularValue() {
 	}
 
-	public RegularCurve(ReadableDateTime dtstart, ReadablePeriod period, double[] array) {
+	public RegularValue(ReadableDateTime dtstart, ReadablePeriod period, double[] array) {
 		setDtstart(dtstart.toDateTime());
 		setPeriod(period.toPeriod());
 		setArray(array);
@@ -76,13 +76,13 @@ public class RegularCurve extends CurveBase {
 
 	@JsonIgnore
 	@Override
-	public List<QualityData> getValues() {
-		ArrayList<QualityData> values = new ArrayList<>(array.length);
+	public List<DataValue> getValues() {
+		ArrayList<DataValue> values = new ArrayList<>(array.length);
 
 		for (int i = 0; i < array.length; ++i) {
 			DateTime occur = getDateTime(dtstart, period, i);
 			Number value = Double.isNaN(array[i]) ? null : array[i];
-			values.add(new QualityData(value, occur));
+			values.add(new DataValue(value, occur));
 		}
 
 		return values;

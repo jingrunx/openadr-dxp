@@ -2,25 +2,16 @@ package cn.openadr.payload;
 
 import java.io.Serializable;
 
-public class Message implements Serializable {
+public class DRPayload implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private final Payload payload;
+	private final SignedObject signedObject = new SignedObject();
 	private String publicKey;
 	private SignMethod signMethod;
 	private String signature;
 
-	public Message(Payload payload) {
-		this.payload = payload;
-	}
-
-	public String getPayloadType() {
-		return payload.getClass()
-			.getSimpleName();
-	}
-
-	public Payload getPayload() {
-		return payload;
+	public SignedObject getSignedObject() {
+		return signedObject;
 	}
 
 	public String getPublicKey() {

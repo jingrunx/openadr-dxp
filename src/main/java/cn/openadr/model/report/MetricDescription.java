@@ -8,7 +8,7 @@ import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
 
 /** 计量单位 */
-public class MetricMetaData implements Serializable {
+public class MetricDescription implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@NotNull

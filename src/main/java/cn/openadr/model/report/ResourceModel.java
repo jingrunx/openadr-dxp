@@ -20,7 +20,7 @@ public class ResourceModel {
 	private Asset asset;
 	/** 资源具有的测点：key=点号，value=点描述 */
 	@Size(min = 1)
-	private final List<MetricMetaData> metrics = new ArrayList<>();
+	private final List<MetricDescription> metrics = new ArrayList<>();
 
 	public Asset getAsset() {
 		return asset;
@@ -30,7 +30,7 @@ public class ResourceModel {
 		this.asset = asset;
 	}
 
-	public List<MetricMetaData> getMetrics() {
+	public List<MetricDescription> getMetrics() {
 		return metrics;
 	}
 }

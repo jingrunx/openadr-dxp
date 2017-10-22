@@ -6,23 +6,23 @@ import org.joda.time.Hours;
 
 import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
-import cn.openadr.model.report.MetricMetaData;
+import cn.openadr.model.report.MetricDescription;
 import cn.openadr.model.report.PointCurveData;
 import cn.openadr.model.report.PointData;
-import cn.openadr.tsdb.IrregularCurve;
+import cn.openadr.tsdb.IrregularValue;
 import cn.openadr.tsdb.Point;
-import cn.openadr.tsdb.QualityData;
-import cn.openadr.tsdb.RegularCurve;
+import cn.openadr.tsdb.DataValue;
+import cn.openadr.tsdb.RegularValue;
 import cn.openadr.tsdb.TagKey;
 
 public class MetricUtils {
-	public static void fillMetric(MetricMetaData metric) {
+	public static void fillMetric(MetricDescription metric) {
 		metric.setMultiplier(UnitMultiplier.k);
 		metric.setSymbol(UnitSymbol.W);
 	}
 
-	public static MetricMetaData createMetric(String metric, String metricName) {
-		MetricMetaData r = new MetricMetaData();
+	public static MetricDescription createMetric(String metric, String metricName) {
+		MetricDescription r = new MetricDescription();
 
 		r.setMetric(metric);
 		fillMetric(r);
@@ -57,7 +57,7 @@ public class MetricUtils {
 		return value;
 	}
 
-	public static void fillRegular(RegularCurve regular) {
+	public static void fillRegular(RegularValue regular) {
 		regular.setDtstart(CommonUtils.dtstart());
 		regular.setPeriod(Hours.ONE.toPeriod()
 			.toPeriod());
@@ -68,14 +68,14 @@ public class MetricUtils {
 		regular.setArray(array);
 	}
 
-	public static void fillIrregular(IrregularCurve irregular) {
+	public static void fillIrregular(IrregularValue irregular) {
 		DateTime dtstart = CommonUtils.dtstart();
 
 		irregular.getValues()
-			.add(new QualityData(100.0d, dtstart));
+			.add(new DataValue(100.0d, dtstart));
 		irregular.getValues()
-			.add(new QualityData(200.0d, dtstart.plusMinutes(15)));
+			.add(new DataValue(200.0d, dtstart.plusMinutes(15)));
 		irregular.getValues()
-			.add(new QualityData(400.0d, dtstart.plusHours(1)));
+			.add(new DataValue(400.0d, dtstart.plusHours(1)));
 	}
 }

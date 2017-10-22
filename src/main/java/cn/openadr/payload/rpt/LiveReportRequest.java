@@ -5,12 +5,12 @@ import java.util.List;
 
 import cn.openadr.model.report.PointData;
 
-public class LiveReportRequest extends DataReportRequest {
+public class LiveReportRequest extends ReportRequest {
 	private static final long serialVersionUID = 1L;
 
-	private final List<PointData> values = new ArrayList<>();
+	private final List<PointData> pointData = new ArrayList<>();
 
-	public List<PointData> getValues() {
-		return values;
+	public List<PointData> getPointData() {
+		return pointData;
 	}
 }

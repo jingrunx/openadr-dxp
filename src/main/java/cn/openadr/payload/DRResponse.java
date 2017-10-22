@@ -1,43 +1,20 @@
 package cn.openadr.payload;
 
+import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonUnwrapped;
+
+import cn.openadr.model.Response;
+
 /** 通用响应 */
-public class DRResponse<R extends DRRequest> extends Payload {
+public class DRResponse extends DRObject {
 	private static final long serialVersionUID = 1L;
 
-	/** 请求 */
-	protected final R request;
-	/** 状态代码 */
-	private int code;
-	/** 错误描述 */
-	private String description;
+	@NotNull
+	private final Response response = new Response();
 
-	public DRResponse(R request) {
-		super();
-
-		this.request = request;
-	}
-
-	public String getRequestID() {
-		return request.getRequestID();
-	}
-
-	public String getDnID() {
-		return request.getDnID();
-	}
-
-	public int getCode() {
-		return code;
-	}
-
-	public void setCode(int code) {
-		this.code = code;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
+	@JsonUnwrapped
+	public Response getResponse() {
+		return response;
 	}
 }

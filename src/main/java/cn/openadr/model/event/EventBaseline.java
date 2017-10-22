@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.openadr.model.report.MetricMetaData;
+import cn.openadr.model.report.MetricDescription;
 import cn.openadr.tsdb.CurveData;
 
 /** 基线 */
@@ -13,7 +13,7 @@ public class EventBaseline implements Serializable {
 
 	private String baselineID;
 	private String baselineName;
-	private final MetricMetaData metric = new MetricMetaData();
+	private final MetricDescription metric = new MetricDescription();
 	private final List<String> resourceID = new ArrayList<>();
 	private final CurveData intervals = new CurveData();
 
@@ -33,7 +33,7 @@ public class EventBaseline implements Serializable {
 		this.baselineName = baselineName;
 	}
 
-	public MetricMetaData getMetric() {
+	public MetricDescription getMetric() {
 		return metric;
 	}
 

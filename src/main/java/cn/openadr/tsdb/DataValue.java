@@ -2,6 +2,8 @@ package cn.openadr.tsdb;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotNull;
+
 import org.joda.time.DateTime;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -9,27 +11,27 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import cn.openadr.domain.DataQuality;
 
-@JsonInclude(Include.NON_NULL)
-public class QualityData implements Serializable {
+public class DataValue implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@NotNull
 	private Number value;
 	private DateTime timestamp;
 	private DataQuality quality;
 
-	public QualityData() {
+	public DataValue() {
 	}
 
-	public QualityData(Number value) {
+	public DataValue(Number value) {
 		this.value = value;
 	}
 
-	public QualityData(Number value, DateTime timestamp) {
+	public DataValue(Number value, DateTime timestamp) {
 		this.value = value;
 		this.timestamp = timestamp;
 	}
 
-	public QualityData(Number value, DateTime timestamp, DataQuality quality) {
+	public DataValue(Number value, DateTime timestamp, DataQuality quality) {
 		this.value = value;
 		this.timestamp = timestamp;
 		this.quality = quality;
@@ -43,6 +45,7 @@ public class QualityData implements Serializable {
 		this.value = value;
 	}
 
+	@JsonInclude(Include.NON_NULL)
 	public DateTime getTimestamp() {
 		return timestamp;
 	}

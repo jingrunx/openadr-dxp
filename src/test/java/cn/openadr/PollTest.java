@@ -2,7 +2,7 @@ package cn.openadr;
 
 import org.junit.Test;
 
-import cn.openadr.payload.poll.DistributeEventResponse;
+import cn.openadr.payload.evt.DistributeEventRequest;
 import cn.openadr.payload.poll.PendingReportResponse;
 import cn.openadr.payload.poll.PollRequest;
 import cn.openadr.payload.poll.PollResponse;
@@ -48,7 +48,7 @@ public class PollTest extends AbstractTest {
 		PollRequest req = new PollRequest();
 		CommonUtils.fillRequest(req);
 
-		DistributeEventResponse rep = new DistributeEventResponse(req);
+		DistributeEventRequest rep = new DistributeEventRequest(req);
 		CommonUtils.fillResponse(rep);
 
 		object = rep;

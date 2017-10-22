@@ -7,11 +7,10 @@ import cn.openadr.payload.rpt.CancelReportRequest;
 import cn.openadr.payload.rpt.CancelReportResponse;
 import cn.openadr.payload.rpt.CreateReportRequest;
 import cn.openadr.payload.rpt.CreateReportResponse;
-import cn.openadr.payload.rpt.DataReportResponse;
-import cn.openadr.payload.rpt.HistoryReportRequest;
-import cn.openadr.payload.rpt.LiveReportRequest;
 import cn.openadr.payload.rpt.RegisterReportRequest;
 import cn.openadr.payload.rpt.RegisterReportResponse;
+import cn.openadr.payload.rpt.UpdateReportRequest;
+import cn.openadr.payload.rpt.UpdateReportResponse;
 
 /** 报告 */
 @Path("/report")
@@ -26,20 +25,13 @@ public interface RestReport extends RestApi {
 	@Path("/create")
 	CreateReportResponse create(CreateReportRequest request);
 
-	//由UN主动要求DN报送的报告在poll中实现
-
 	/** 取消报告 */
 	@POST
 	@Path("/cancel")
 	CancelReportResponse cancel(CancelReportRequest request);
 
-	/** 实时数据 */
+	/** 更新报告 */
 	@POST
-	@Path("/live")
-	DataReportResponse live(LiveReportRequest request);
-
-	/** 历史数据 */
-	@POST
-	@Path("/history")
-	DataReportResponse history(HistoryReportRequest request);
+	@Path("/update")
+	UpdateReportResponse update(UpdateReportRequest request);
 }

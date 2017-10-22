@@ -1,16 +1,29 @@
 package cn.openadr.payload.reg;
 
+import javax.validation.constraints.NotNull;
+
 import cn.openadr.domain.TransportType;
 
+// OadrCreatePartyRegistrationType
 public class CreateRegistrationRequest extends RegistrationRequest {
 	private static final long serialVersionUID = 1L;
 
 	private String dnName;
+	/** 只报送数据 */
 	private boolean reportOnly;
+	/** 主动拉的模式 */
 	private boolean pullMode;
-	private String profile;
+	/** 传输的数据需要签名 */
+	private boolean signature;
+	/** 传输类型 */
+	@NotNull
 	private TransportType transport;
-	private String endpoint;
+	/**
+	 * 传输地址
+	 * JSON格式是RESTful地址
+	 * MQTT格式是mqtt服务器地址
+	 */
+	private String transportAddress;
 
 	public String getDnName() {
 		return dnName;
@@ -28,10 +41,6 @@ public class CreateRegistrationRequest extends RegistrationRequest {
 		this.reportOnly = reportOnly;
 	}
 
-	public String getProfile() {
-		return profile;
-	}
-
 	public boolean isPullMode() {
 		return pullMode;
 	}
@@ -40,8 +49,12 @@ public class CreateRegistrationRequest extends RegistrationRequest {
 		this.pullMode = pullMode;
 	}
 
-	public void setProfile(String profile) {
-		this.profile = profile;
+	public boolean isSignature() {
+		return signature;
+	}
+
+	public void setSignature(boolean signature) {
+		this.signature = signature;
 	}
 
 	public TransportType getTransport() {
@@ -52,11 +65,11 @@ public class CreateRegistrationRequest extends RegistrationRequest {
 		this.transport = transport;
 	}
 
-	public String getEndpoint() {
-		return endpoint;
+	public String getTransportAddress() {
+		return transportAddress;
 	}
 
-	public void setEndpoint(String endpoint) {
-		this.endpoint = endpoint;
+	public void setTransportAddress(String transportAddress) {
+		this.transportAddress = transportAddress;
 	}
 }

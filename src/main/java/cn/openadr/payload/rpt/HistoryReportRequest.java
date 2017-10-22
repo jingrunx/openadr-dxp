@@ -10,7 +10,7 @@ import org.joda.time.Period;
 
 import cn.openadr.model.report.PointCurveData;
 
-public class HistoryReportRequest extends DataReportRequest {
+public class HistoryReportRequest extends ReportRequest {
 	private static final long serialVersionUID = 1L;
 
 	/** 开始时间 */
@@ -18,7 +18,7 @@ public class HistoryReportRequest extends DataReportRequest {
 	/** 步长(单位:分钟) */
 	@NotNull
 	private Period period;
-	private final List<PointCurveData> values = new ArrayList<>();
+	private final List<PointCurveData> pointCurveData = new ArrayList<>();
 
 	public DateTime getDtstart() {
 		return dtstart;
@@ -36,7 +36,7 @@ public class HistoryReportRequest extends DataReportRequest {
 		this.period = period;
 	}
 
-	public List<PointCurveData> getValues() {
-		return values;
+	public List<PointCurveData> getPointCurveData() {
+		return pointCurveData;
 	}
 }

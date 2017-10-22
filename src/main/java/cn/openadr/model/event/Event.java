@@ -2,9 +2,11 @@ package cn.openadr.model.event;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import cn.openadr.domain.ResponseRequired;
+import cn.openadr.domain.ResponseRequired.ResponseRequiredDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.target.Target;
 
@@ -23,6 +25,7 @@ public class Event implements Serializable {
 		return responseRequired;
 	}
 
+	@JsonDeserialize(using = ResponseRequiredDeserializer.class)
 	public void setResponseRequired(ResponseRequired responseRequired) {
 		this.responseRequired = responseRequired;
 	}

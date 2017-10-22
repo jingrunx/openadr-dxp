@@ -1,5 +1,7 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 /** 信号类别 */
 public enum SignalType implements EnumeratedType {
 	/** 等级 */
@@ -34,5 +36,11 @@ public enum SignalType implements EnumeratedType {
 	@Override
 	public String value() {
 		return value;
+	}
+
+	public static class SignalTypeDeserializer extends EnumeratedDeserializer<SignalType> {
+		public SignalTypeDeserializer() {
+			super(SignalType.class);
+		}
 	}
 }

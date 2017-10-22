@@ -1,5 +1,7 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 /** 报表类型 */
 public enum ReportType implements EnumeratedType {
 	READING("reading"), //
@@ -36,5 +38,11 @@ public enum ReportType implements EnumeratedType {
 	@Override
 	public String value() {
 		return value;
+	}
+
+	public static class ReportTypeDeserializer extends EnumeratedDeserializer<ReportType> {
+		public ReportTypeDeserializer() {
+			super(ReportType.class);
+		}
 	}
 }

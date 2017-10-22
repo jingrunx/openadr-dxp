@@ -2,7 +2,7 @@ package cn.openadr;
 
 import org.junit.Test;
 
-import cn.openadr.payload.Message;
+import cn.openadr.payload.DRPayload;
 import cn.openadr.payload.poll.PollRequest;
 import cn.openadr.utils.CommonUtils;
 
@@ -12,7 +12,7 @@ public class MessageTest extends AbstractTest {
 		PollRequest req = new PollRequest();
 		CommonUtils.fillRequest(req);
 
-		Message message = new Message(req);
+		DRPayload message = new DRPayload(req);
 		object = message;
 	}
 }

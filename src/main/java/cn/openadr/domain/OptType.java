@@ -1,5 +1,7 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 public enum OptType implements EnumeratedType {
 	OPT_IN("optIn"), OPT_OUT("optOut");
 
@@ -12,5 +14,11 @@ public enum OptType implements EnumeratedType {
 	@Override
 	public String value() {
 		return value;
+	}
+
+	public static class OptTypeDeserializer extends EnumeratedDeserializer<OptType> {
+		public OptTypeDeserializer() {
+			super(OptType.class);
+		}
 	}
 }

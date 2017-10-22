@@ -1,15 +1,7 @@
 package cn.openadr.payload.rpt;
 
-import cn.openadr.payload.DRResponse;
+import cn.openadr.payload.DNResponse;
 
-public class ReportResponse<T extends ReportRequest> extends DRResponse<T> {
+public class ReportResponse extends DNResponse {
 	private static final long serialVersionUID = 1L;
-
-	public ReportResponse(T request) {
-		super(request);
-	}
-
-	public String getReportRequestID() {
-		return request.getReportRequestID();
-	}
 }

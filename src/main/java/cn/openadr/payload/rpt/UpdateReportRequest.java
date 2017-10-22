@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.openadr.model.report.Report;
+import cn.openadr.payload.DNRequest;
 
-// OadrRegisterReportType
-public class RegisterReportRequest extends ReportRequest {
+/** 数据报送请求 */
+// OadrUpdateReportType
+public class UpdateReportRequest extends DNRequest {
 	private static final long serialVersionUID = 1L;
 
 	private final List<Report> report = new ArrayList<>();
