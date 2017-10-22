@@ -1,9 +1,12 @@
 package cn.openadr.model.target;
 
 import java.io.Serializable;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
+import javax.validation.constraints.NotNull;
+
+import cn.openadr.model.register.KeyValue;
 
 /** 资源 */
 public class Resource implements Serializable {
@@ -21,14 +24,17 @@ public class Resource implements Serializable {
 	private Double ratedI;
 	/** 额定功率 */
 	private Double ratedS;
-	/** 资源类型，对应到资源模型 */
-	private Asset asset;
 	/** 上级资源 */
 	private String parentResourceID;
-	/** 资源之间的关联关系，key=关联类型, values=关联的资源 */
-	private final Map<String, List<String>> relations = new HashMap<>();
-	/** 扩展属性 */
-	private final Map<String, Object> properties = new HashMap<>();
+	/** 资源类型，对应到资源模型 */
+	@NotNull
+	private EndDeviceAsset endDeviceAsset;
+	/** 关联的表计 */
+	private MeterAsset meterAsset;
+	/** 资源之间的横向关联关系 */
+	private final List<String> relationID = new ArrayList<>();
+	/** 资源的扩展属性 */
+	private final List<KeyValue> properties = new ArrayList<>();
 
 	public String getResourceID() {
 		return resourceID;
@@ -78,14 +84,6 @@ public class Resource implements Serializable {
 		this.ratedS = ratedS;
 	}
 
-	public Asset getAsset() {
-		return asset;
-	}
-
-	public void setAsset(Asset asset) {
-		this.asset = asset;
-	}
-
 	public String getParentResourceID() {
 		return parentResourceID;
 	}
@@ -94,11 +92,27 @@ public class Resource implements Serializable {
 		this.parentResourceID = parentResourceID;
 	}
 
-	public Map<String, List<String>> getRelations() {
-		return relations;
+	public EndDeviceAsset getEndDeviceAsset() {
+		return endDeviceAsset;
 	}
 
-	public Map<String, Object> getProperties() {
+	public void setEndDeviceAsset(EndDeviceAsset endDeviceAsset) {
+		this.endDeviceAsset = endDeviceAsset;
+	}
+
+	public MeterAsset getMeterAsset() {
+		return meterAsset;
+	}
+
+	public void setMeterAsset(MeterAsset meterAsset) {
+		this.meterAsset = meterAsset;
+	}
+
+	public List<String> getRelationID() {
+		return relationID;
+	}
+
+	public List<KeyValue> getProperties() {
 		return properties;
 	}
 }

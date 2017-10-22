@@ -1,8 +1,8 @@
 package cn.openadr.payload.rpt;
 
-import cn.openadr.payload.DNResponse;
+import cn.openadr.payload.DNRequest;
 
-public class ReportRequest extends DNResponse {
+public abstract class ReportRequest extends DNRequest {
 	private static final long serialVersionUID = 1L;
 
 	private String reportRequestID;

@@ -8,7 +8,6 @@ import cn.openadr.payload.reg.CancelRegistrationResponse;
 import cn.openadr.payload.reg.CreateRegistrationRequest;
 import cn.openadr.payload.reg.CreateRegistrationResponse;
 import cn.openadr.payload.reg.QueryRegistrationRequest;
-import cn.openadr.payload.reg.QueryRegistrationResponse;
 
 @Path("/registration")
 public interface RestRegistration extends RestApi {
@@ -18,7 +17,7 @@ public interface RestRegistration extends RestApi {
 
 	@POST
 	@Path("/query")
-	QueryRegistrationResponse query(QueryRegistrationRequest request);
+	CreateRegistrationResponse query(QueryRegistrationRequest request);
 
 	@POST
 	@Path("/cancel")

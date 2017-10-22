@@ -2,7 +2,7 @@ package cn.openadr.payload;
 
 import java.io.Serializable;
 
-public class DRObject implements Serializable {
+public abstract class DRObject implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/** 协议版本号 */

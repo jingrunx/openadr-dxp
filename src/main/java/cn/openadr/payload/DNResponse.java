@@ -1,7 +1,7 @@
 package cn.openadr.payload;
 
 /** 由DN发出的响应 */
-public class DNResponse extends DRResponse {
+public abstract class DNResponse extends DRResponse {
 	private static final long serialVersionUID = 1L;
 
 	private String dnID;

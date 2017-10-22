@@ -2,7 +2,7 @@ package cn.openadr.payload.reg;
 
 import cn.openadr.payload.DNRequest;
 
-public class RegistrationRequest extends DNRequest {
+public abstract class RegistrationRequest extends DNRequest {
 	private static final long serialVersionUID = 1L;
 
 	private String registrationID;

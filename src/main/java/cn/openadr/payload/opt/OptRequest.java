@@ -4,7 +4,7 @@ import javax.validation.constraints.NotNull;
 
 import cn.openadr.payload.DNRequest;
 
-public class OptRequest extends DNRequest {
+public abstract class OptRequest extends DNRequest {
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
