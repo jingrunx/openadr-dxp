@@ -1,12 +1,14 @@
 {
-  "version" : 1,
-  "requestID" : "1e26fc05-e16c-44ce-87b1-34ce42b79ec2",
-  "dnID" : "dn#1",
-  "registrationID" : "492c0320-15c2-483f-b08a-359c25c7419e",
-  "dnName" : "dnname",
-  "reportOnly" : false,
-  "pullMode" : true,
-  "profile" : "unknown",
-  "transport" : "JSON",
-  "endpoint" : "http://www.openadr.cn/rest/api/"
+  "CreateRegistrationRequest" : {
+    "version" : 1,
+    "requestID" : "201589f0-4add-40dd-b7bb-1b07b8123327",
+    "dnID" : "dn#1",
+    "registrationID" : "77d085f9-c02f-4131-af50-11e3f8c88de4",
+    "dnName" : "dnname",
+    "reportOnly" : false,
+    "pullMode" : true,
+    "signature" : false,
+    "transport" : "JSON",
+    "transportAddress" : "http://www.openadr.cn/rest/api/"
+  }
 }

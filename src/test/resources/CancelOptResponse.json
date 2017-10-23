@@ -1,8 +1,9 @@
 {
-  "version" : 0,
-  "code" : 200,
-  "description" : "successful",
-  "optID" : "025f3b51-bb6d-4e9c-8e00-6bbd8ec8b8a6",
-  "requestID" : "e6513e85-00d2-4f2a-b95f-b543f70b6bce",
-  "dnID" : "dn#1"
+  "CancelOptResponse" : {
+    "version" : 0,
+    "code" : 200,
+    "description" : "successful",
+    "requestID" : "19919a83-101a-480f-8f11-f71df1b63839",
+    "optID" : "6cb4dc6c-7876-4285-b0fa-185a67e20dcb"
+  }
 }

@@ -8,25 +8,23 @@ import org.joda.time.Days;
 import org.joda.time.Hours;
 import org.joda.time.Minutes;
 
-import cn.openadr.domain.EndDeviceAssetType;
 import cn.openadr.domain.MetricType;
 import cn.openadr.domain.ReportName;
 import cn.openadr.domain.ReportType;
 import cn.openadr.model.report.ReportDescription;
 import cn.openadr.model.report.ReportSpecifier;
-import cn.openadr.model.report.ResourceModel;
-import cn.openadr.model.target.EndDeviceAsset;
-import cn.openadr.payload.rpt.UpdateReportRequest;
+import cn.openadr.payload.rpt.DataReportRequest;
 
 public class RptUtils {
-	public static void fillDataReportRequest(UpdateReportRequest req) {
-		CommonUtils.fillRptRequest(req);
+	public static void fillDataReportRequest(DataReportRequest req) {
+		CommonUtils.fillRequest(req);
 
+		req.setReportRequestID(CommonUtils.id());
 		req.setReportSpecifierID(CommonUtils.id());
 		req.setCreatedDateTime(DateTime.now());
 	}
 
-	public static void fillPointMetaData(List<ReportDescription> points) {
+	public static void fillReportDescription(List<ReportDescription> points) {
 		for (String metric : Arrays.asList(MetricType.VOLTAGE, MetricType.POWER_ACTIVE)) {
 			ReportDescription point = new ReportDescription();
 			point.setrID(1);
@@ -50,20 +48,10 @@ public class RptUtils {
 		r.setStartDateTime(CommonUtils.dtstart());
 		r.setEndDateTime(r.getStartDateTime()
 			.plusYears(1));
-		r.setInterval(Days.ONE.toPeriod());
-		r.setPeriod(Minutes.ONE.toPeriod());
+		r.setBackDuration(Days.ONE.toPeriod());
+		r.setGranularity(Minutes.ONE.toPeriod());
 
-		r.getPoints()
+		r.getrID()
 			.addAll(Arrays.asList(1, 2, 3, 4, 5));
-	}
-
-	public static void fillResourceModel(ResourceModel r) {
-		EndDeviceAsset asset = new EndDeviceAsset();
-		asset.setMrid(EndDeviceAssetType.Water_Heater.name());
-		r.setAsset(asset);
-		r.getMetrics()
-			.add(MetricUtils.createMetric(MetricType.VOLTAGE, "电压"));
-		r.getMetrics()
-			.add(MetricUtils.createMetric(MetricType.POWER_ACTIVE, "功率"));
 	}
 }

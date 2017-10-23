@@ -28,7 +28,7 @@ public class Resource implements Serializable {
 	private String parentResourceID;
 	/** 资源类型，对应到资源模型 */
 	@NotNull
-	private EndDeviceAsset endDeviceAsset;
+	private final EndDeviceAsset endDeviceAsset = new EndDeviceAsset();
 	/** 关联的表计 */
 	private MeterAsset meterAsset;
 	/** 资源之间的横向关联关系 */
@@ -94,10 +94,6 @@ public class Resource implements Serializable {
 
 	public EndDeviceAsset getEndDeviceAsset() {
 		return endDeviceAsset;
-	}
-
-	public void setEndDeviceAsset(EndDeviceAsset endDeviceAsset) {
-		this.endDeviceAsset = endDeviceAsset;
 	}
 
 	public MeterAsset getMeterAsset() {

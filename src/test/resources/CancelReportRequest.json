@@ -1,7 +1,8 @@
 {
-  "version" : 1,
-  "requestID" : "d74f067f-70e9-4afb-bf8e-501730c1c4f6",
-  "dnID" : "dn#1",
-  "reportRequestID" : "8ee84273-ba10-4e1a-a993-1db54dacc66f",
-  "reportToFollow" : false
+  "CancelReportRequest" : {
+    "version" : 1,
+    "requestID" : "1a4b3a48-d92e-4150-9568-be5ae713ad22",
+    "reportToFollow" : true,
+    "reportRequestID" : [ "3f7d1816-c390-4202-8c3e-ca9a69eb0d7e", "529deed4-7658-49b6-8286-d2afa714d768" ]
+  }
 }

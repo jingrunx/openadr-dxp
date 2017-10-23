@@ -1,90 +1,75 @@
 {
-  "version" : 1,
-  "requestID" : "38adaa95-9b09-4c43-801f-9c9ed10ed9da",
-  "dnID" : "dn#1",
-  "reportRequestID" : "2c7f4463-b67c-4ed6-86f2-47175426083d",
-  "models" : [ {
-    "asset" : {
-      "mrid" : "Water_Heater"
-    },
-    "metrics" : [ {
-      "metric" : "voltage",
-      "multiplier" : "k",
-      "symbol" : "W"
+  "RegisterReportRequest" : {
+    "version" : 1,
+    "requestID" : "593d07f5-cb9f-4815-b5fb-1d737faf42a7",
+    "dnID" : "dn#1",
+    "reportRequestID" : null,
+    "report" : [ {
+      "reportID" : null,
+      "reportName" : "HISTORY_USAGE",
+      "reportRequestID" : "dd7efe13-5bac-4b77-b0bf-8ce7c87beaee",
+      "reportSpecifierID" : "cc794320-23d5-4d29-9066-a96e267faa53",
+      "createdDateTime" : "2017-10-23T01:35:21.193Z",
+      "reportDescription" : [ {
+        "rID" : 1,
+        "metric" : "voltage",
+        "readingType" : null,
+        "samplingRate" : {
+          "minPeriod" : "PT1M",
+          "maxPeriod" : "PT1H",
+          "onChange" : false
+        },
+        "reportSubject" : { },
+        "reportDataSource" : {
+          "resourceID" : [ "resourceID#1" ]
+        }
+      }, {
+        "rID" : 1,
+        "metric" : "power.active",
+        "readingType" : null,
+        "samplingRate" : {
+          "minPeriod" : "PT1M",
+          "maxPeriod" : "PT1H",
+          "onChange" : false
+        },
+        "reportSubject" : { },
+        "reportDataSource" : {
+          "resourceID" : [ "resourceID#1" ]
+        }
+      } ]
     }, {
-      "metric" : "power.active",
-      "multiplier" : "k",
-      "symbol" : "W"
+      "reportID" : null,
+      "reportName" : "HISTORY_USAGE",
+      "reportRequestID" : "3c51626b-5c9c-4b4b-9be6-6ac751e88508",
+      "reportSpecifierID" : "0b2c2369-7582-4fd1-ad36-8a15abe9aefd",
+      "createdDateTime" : "2017-10-23T01:35:21.194Z",
+      "reportDescription" : [ {
+        "rID" : 1,
+        "metric" : "voltage",
+        "readingType" : null,
+        "samplingRate" : {
+          "minPeriod" : "PT1M",
+          "maxPeriod" : "PT1H",
+          "onChange" : false
+        },
+        "reportSubject" : { },
+        "reportDataSource" : {
+          "resourceID" : [ "resourceID#1" ]
+        }
+      }, {
+        "rID" : 1,
+        "metric" : "power.active",
+        "readingType" : null,
+        "samplingRate" : {
+          "minPeriod" : "PT1M",
+          "maxPeriod" : "PT1H",
+          "onChange" : false
+        },
+        "reportSubject" : { },
+        "reportDataSource" : {
+          "resourceID" : [ "resourceID#1" ]
+        }
+      } ]
     } ]
-  } ],
-  "resources" : [ {
-    "resourceID" : "3efdb5a9-914f-483e-8d03-1a97d4e20ecd",
-    "resourceName" : "空调#1",
-    "status" : null,
-    "ratedU" : null,
-    "ratedI" : null,
-    "ratedS" : null,
-    "asset" : {
-      "mrid" : "Water_Heater"
-    },
-    "parentResourceID" : null,
-    "relations" : { },
-    "properties" : { }
-  }, {
-    "resourceID" : "e3dc0257-6e85-4294-b59a-f3d95804f14e",
-    "resourceName" : "空调#2",
-    "status" : null,
-    "ratedU" : null,
-    "ratedI" : null,
-    "ratedS" : null,
-    "asset" : null,
-    "parentResourceID" : null,
-    "relations" : { },
-    "properties" : { }
-  }, {
-    "resourceID" : "be8b4447-382b-42a0-a382-896dfa6ef240",
-    "resourceName" : "总表#1",
-    "status" : null,
-    "ratedU" : null,
-    "ratedI" : null,
-    "ratedS" : null,
-    "asset" : null,
-    "parentResourceID" : null,
-    "relations" : { },
-    "properties" : { }
-  }, {
-    "resourceID" : "be272334-8b13-4768-a0a9-d189b09763c6",
-    "resourceName" : "空调电表#1",
-    "status" : null,
-    "ratedU" : null,
-    "ratedI" : null,
-    "ratedS" : null,
-    "asset" : null,
-    "parentResourceID" : "be8b4447-382b-42a0-a382-896dfa6ef240",
-    "relations" : {
-      "reading" : [ "3efdb5a9-914f-483e-8d03-1a97d4e20ecd" ]
-    },
-    "properties" : { }
-  } ],
-  "points" : [ {
-    "rID" : 1,
-    "metric" : "voltage",
-    "resourceID" : "resourceID#1",
-    "readingType" : null,
-    "samplingRate" : {
-      "minPeriod" : "PT1M",
-      "maxPeriod" : "PT1H",
-      "onChange" : false
-    }
-  }, {
-    "rID" : 1,
-    "metric" : "power.active",
-    "resourceID" : "resourceID#1",
-    "readingType" : null,
-    "samplingRate" : {
-      "minPeriod" : "PT1M",
-      "maxPeriod" : "PT1H",
-      "onChange" : false
-    }
-  } ]
+  }
 }

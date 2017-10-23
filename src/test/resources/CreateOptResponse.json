@@ -1,8 +1,9 @@
 {
-  "version" : 0,
-  "code" : 200,
-  "description" : "successful",
-  "optID" : "521d941d-c60a-46ad-9e7d-744fc4ec5365",
-  "requestID" : "6027764a-f9d5-4d88-99d6-4939d2b395d4",
-  "dnID" : "dn#1"
+  "CreateOptResponse" : {
+    "version" : 0,
+    "code" : 200,
+    "description" : "successful",
+    "requestID" : "11df16d4-ae01-4ad5-82a4-f08bfed1506b",
+    "optID" : "39765a75-030a-4562-ae14-e9bfa107b5ac"
+  }
 }

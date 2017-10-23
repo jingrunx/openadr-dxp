@@ -1,16 +1,32 @@
 {
-  "version" : 1,
-  "requestID" : "96340d05-4a41-48c0-b3a2-397f8bde0ae7",
-  "dnID" : "dn#1",
-  "reportRequestID" : "873b344f-37a8-4a6f-b40a-2bcece1d5751",
-  "reportSpecifier" : {
-    "reportSpecifierID" : null,
-    "reportName" : "HISTORY_USAGE",
-    "reportType" : "x-resourceStatus",
-    "startDateTime" : "2017-10-15T16:00:00.000Z",
-    "endDateTime" : "2018-10-15T16:00:00.000Z",
-    "interval" : "P1D",
-    "period" : "PT1M",
-    "points" : [ 1, 2, 3, 4, 5 ]
+  "CreateReportRequest" : {
+    "version" : 0,
+    "requestID" : null,
+    "dnID" : null,
+    "reportRequest" : [ {
+      "reportRequestID" : "e6cc97ee-684c-40ca-b9b5-40b02c9a2e6f",
+      "reportSpecifier" : {
+        "reportSpecifierID" : null,
+        "reportName" : "HISTORY_USAGE",
+        "reportType" : "x-resourceStatus",
+        "startDateTime" : "2017-10-22T16:00:00.000Z",
+        "endDateTime" : "2018-10-22T16:00:00.000Z",
+        "backDuration" : "P1D",
+        "granularity" : "PT1M",
+        "rID" : [ 1, 2, 3, 4, 5 ]
+      }
+    }, {
+      "reportRequestID" : "97cae69f-e541-44a3-8c9b-fc9e3907935e",
+      "reportSpecifier" : {
+        "reportSpecifierID" : null,
+        "reportName" : "HISTORY_USAGE",
+        "reportType" : "x-resourceStatus",
+        "startDateTime" : "2017-10-22T16:00:00.000Z",
+        "endDateTime" : "2018-10-22T16:00:00.000Z",
+        "backDuration" : "P1D",
+        "granularity" : "PT1M",
+        "rID" : [ 1, 2, 3, 4, 5 ]
+      }
+    } ]
   }
 }

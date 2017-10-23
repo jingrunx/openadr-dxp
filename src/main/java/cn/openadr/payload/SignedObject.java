@@ -2,6 +2,9 @@ package cn.openadr.payload;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import cn.openadr.payload.evt.CreatedEventResponse;
 import cn.openadr.payload.evt.DistributeEventRequest;
 import cn.openadr.payload.evt.QueryEventRequest;
@@ -25,8 +28,11 @@ import cn.openadr.payload.rpt.RegisterReportResponse;
 import cn.openadr.payload.rpt.UpdateReportRequest;
 import cn.openadr.payload.rpt.UpdateReportResponse;
 
+@JsonInclude(Include.NON_NULL)
 public class SignedObject implements Serializable {
 	private static final long serialVersionUID = 1L;
+
+	private String id;
 
 	//private OadrDistributeEventType oadrDistributeEvent;
 	private DistributeEventRequest distributeEventRequest;
@@ -78,6 +84,14 @@ public class SignedObject implements Serializable {
 
 	//private OadrPollType oadrPoll;
 	private PollRequest pollRequest;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 
 	public DistributeEventRequest getDistributeEventRequest() {
 		return distributeEventRequest;

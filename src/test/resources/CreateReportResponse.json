@@ -1,8 +1,12 @@
 {
-  "version" : 0,
-  "code" : 200,
-  "description" : "successful",
-  "reportRequestID" : "d0db10a2-1730-420b-a20d-df42b3e93e48",
-  "requestID" : "994242a5-4356-4ab7-aa01-72750f2db0e1",
-  "dnID" : "dn#1"
+  "CreateReportResponse" : {
+    "version" : 0,
+    "code" : 200,
+    "description" : "successful",
+    "requestID" : "322d7cb1-b453-496d-a1c9-6178b650cb2b",
+    "dnID" : null,
+    "pendingReports" : {
+      "reportRequestID" : [ "8106573d-3214-4fda-8483-a70aea34e49b", "c3c32c51-db4e-4f57-8531-27e50dabedb4" ]
+    }
+  }
 }

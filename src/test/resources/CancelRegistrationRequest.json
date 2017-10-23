@@ -1,6 +1,8 @@
 {
-  "version" : 1,
-  "requestID" : "61151cc5-bbdf-43e1-8f8b-4e5863161682",
-  "dnID" : "dn#1",
-  "registrationID" : "5b078a97-5924-41cd-999e-3f5e1789c7dd"
+  "CancelRegistrationRequest" : {
+    "version" : 1,
+    "requestID" : "cf7b8829-d703-4a1a-b571-16695f342ad7",
+    "dnID" : "dn#1",
+    "registrationID" : "2d7ef1b0-e562-492e-9ca5-dba1f0f84a0f"
+  }
 }

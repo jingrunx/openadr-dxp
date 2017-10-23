@@ -14,7 +14,6 @@ import cn.openadr.payload.DRRequest;
 import cn.openadr.payload.DRResponse;
 import cn.openadr.payload.opt.OptRequest;
 import cn.openadr.payload.reg.RegistrationRequest;
-import cn.openadr.payload.rpt.ReportRequest;
 
 public class CommonUtils {
 	public static String id() {
@@ -45,11 +44,6 @@ public class CommonUtils {
 	public static void fillOptRequest(OptRequest req) {
 		fillRequest(req);
 		req.setOptID(id());
-	}
-
-	public static void fillRptRequest(ReportRequest req) {
-		fillRequest(req);
-		req.setReportRequestID(id());
 	}
 
 	public static void fillResponse(DRResponse rep) {

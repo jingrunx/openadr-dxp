@@ -1,20 +1,24 @@
 package cn.openadr;
 
-import java.util.Collections;
-
+import org.joda.time.DateTime;
 import org.junit.Test;
 
-import cn.openadr.model.report.ResourceModel;
+import cn.openadr.domain.EndDeviceAssetType;
+import cn.openadr.domain.ReportName;
+import cn.openadr.model.report.Report;
+import cn.openadr.model.report.ReportRequest;
+import cn.openadr.model.target.MeterAsset;
 import cn.openadr.model.target.Resource;
 import cn.openadr.payload.rpt.CancelReportRequest;
 import cn.openadr.payload.rpt.CancelReportResponse;
 import cn.openadr.payload.rpt.CreateReportRequest;
 import cn.openadr.payload.rpt.CreateReportResponse;
-import cn.openadr.payload.rpt.DataReportResponse;
 import cn.openadr.payload.rpt.HistoryReportRequest;
 import cn.openadr.payload.rpt.LiveReportRequest;
 import cn.openadr.payload.rpt.RegisterReportRequest;
 import cn.openadr.payload.rpt.RegisterReportResponse;
+import cn.openadr.payload.rpt.ResourceReportRequest;
+import cn.openadr.payload.rpt.UpdateReportResponse;
 import cn.openadr.utils.CommonUtils;
 import cn.openadr.utils.MetricUtils;
 import cn.openadr.utils.RptUtils;
@@ -23,54 +27,39 @@ public class RptTest extends AbstractTest {
 	@Test
 	public void testRegisterReportRequest() {
 		RegisterReportRequest req = new RegisterReportRequest();
-		CommonUtils.fillRptRequest(req);
+		CommonUtils.fillRequest(req);
 
-		ResourceModel rm1 = new ResourceModel();
-		RptUtils.fillResourceModel(rm1);
-		req.getModels()
-			.add(rm1);
+		for (int i = 0; i < 2; ++i) {
+			Report report = new Report();
 
-		Resource r1 = new Resource();
-		r1.setAsset(rm1.getAsset());
-		r1.setResourceID(CommonUtils.id());
-		r1.setResourceName("空调#1");
-		req.getResources()
-			.add(r1);
+			report.setReportName(ReportName.HISTORY_USAGE);
+			report.setReportRequestID(CommonUtils.id());
+			report.setReportSpecifierID(CommonUtils.id());
+			report.setCreatedDateTime(DateTime.now());
 
-		Resource r2 = new Resource();
-		r1.setAsset(rm1.getAsset());
-		r2.setResourceID(CommonUtils.id());
-		r2.setResourceName("空调#2");
-		req.getResources()
-			.add(r2);
+			RptUtils.fillReportDescription(report.getReportDescription());
 
-		Resource rootMeter = new Resource();
-		rootMeter.setResourceID(CommonUtils.id());
-		rootMeter.setResourceName("总表#1");
-		req.getResources()
-			.add(rootMeter);
-
-		Resource r3 = new Resource();
-		r3.setResourceID(CommonUtils.id());
-		r3.setResourceName("空调电表#1");
-		r3.setParentResourceID(rootMeter.getResourceID());
-		r3.getRelations()
-			.put("reading", Collections.singletonList(r1.getResourceID()));
-		req.getResources()
-			.add(r3);
-
-		RptUtils.fillPointMetaData(req.getPoints());
+			req.getReport()
+				.add(report);
+		}
 
 		object = req;
 	}
 
 	@Test
 	public void testRegisterReportResponse() {
-		RegisterReportRequest req = new RegisterReportRequest();
-		CommonUtils.fillRptRequest(req);
-
-		RegisterReportResponse rep = new RegisterReportResponse(req);
+		RegisterReportResponse rep = new RegisterReportResponse();
 		CommonUtils.fillResponse(rep);
+
+		for (int i = 0; i < 2; ++i) {
+			ReportRequest rreq = new ReportRequest();
+			rreq.setReportRequestID(CommonUtils.id());
+
+			RptUtils.fillReportSpecifier(rreq.getReportSpecifier());
+
+			rep.getReportRequest()
+				.add(rreq);
+		}
 
 		object = rep;
 	}
@@ -78,19 +67,29 @@ public class RptTest extends AbstractTest {
 	@Test
 	public void testCreateReportRequest() {
 		CreateReportRequest req = new CreateReportRequest();
-		CommonUtils.fillRptRequest(req);
-		RptUtils.fillReportSpecifier(req.getReportSpecifier());
+
+		for (int i = 0; i < 2; ++i) {
+			ReportRequest rreq = new ReportRequest();
+			rreq.setReportRequestID(CommonUtils.id());
+
+			RptUtils.fillReportSpecifier(rreq.getReportSpecifier());
+
+			req.getReportRequest()
+				.add(rreq);
+		}
 
 		object = req;
 	}
 
 	@Test
 	public void testCreateReportResponse() {
-		CreateReportRequest req = new CreateReportRequest();
-		CommonUtils.fillRptRequest(req);
-
-		CreateReportResponse rep = new CreateReportResponse(req);
+		CreateReportResponse rep = new CreateReportResponse();
 		CommonUtils.fillResponse(rep);
+
+		for (int i = 0; i < 2; ++i)
+			rep.getPendingReports()
+				.getReportRequestID()
+				.add(CommonUtils.id());
 
 		object = rep;
 	}
@@ -98,18 +97,26 @@ public class RptTest extends AbstractTest {
 	@Test
 	public void testCancelReportRequest() {
 		CancelReportRequest req = new CancelReportRequest();
-		CommonUtils.fillRptRequest(req);
+		CommonUtils.fillRequest(req);
+
+		req.setReportToFollow(true);
+
+		for (int i = 0; i < 2; ++i)
+			req.getReportRequestID()
+				.add(CommonUtils.id());
 
 		object = req;
 	}
 
 	@Test
 	public void testCancelReportResponse() {
-		CancelReportRequest req = new CancelReportRequest();
-		CommonUtils.fillRptRequest(req);
-
-		CancelReportResponse rep = new CancelReportResponse(req);
+		CancelReportResponse rep = new CancelReportResponse();
 		CommonUtils.fillResponse(rep);
+
+		for (int i = 0; i < 2; ++i)
+			rep.getPendingReports()
+				.getReportRequestID()
+				.add(CommonUtils.id());
 
 		object = rep;
 	}
@@ -119,11 +126,11 @@ public class RptTest extends AbstractTest {
 		LiveReportRequest req = new LiveReportRequest();
 		RptUtils.fillDataReportRequest(req);
 
-		req.getValues()
+		req.getPointData()
 			.add(MetricUtils.createPointValue(1, 97));
-		req.getValues()
+		req.getPointData()
 			.add(MetricUtils.createPointValue(2, 4567));
-		req.getValues()
+		req.getPointData()
 			.add(MetricUtils.createPointValue(3, 232.2));
 
 		object = req;
@@ -134,24 +141,54 @@ public class RptTest extends AbstractTest {
 		HistoryReportRequest req = new HistoryReportRequest();
 		RptUtils.fillDataReportRequest(req);
 
-		req.getValues()
+		req.getPointCurveData()
 			.add(MetricUtils.createPointValues(1));
-		req.getValues()
+		req.getPointCurveData()
 			.add(MetricUtils.createPointValues(2));
-		req.getValues()
+		req.getPointCurveData()
 			.add(MetricUtils.createPointValues(3));
 
 		object = req;
 	}
 
 	@Test
-	public void testDataReportResponse() {
-		LiveReportRequest req = new LiveReportRequest();
-		RptUtils.fillDataReportRequest(req);
-
-		DataReportResponse rep = new DataReportResponse(req);
+	public void testUpdateReportResponse() {
+		UpdateReportResponse rep = new UpdateReportResponse();
 		CommonUtils.fillResponse(rep);
 
+		CancelReportRequest creq = new CancelReportRequest();
+		creq.setRequestID(CommonUtils.id());
+		for (int i = 0; i < 2; ++i)
+			creq.getReportRequestID()
+				.add(CommonUtils.id());
+		rep.setCancelReport(creq);
+
 		object = rep;
+	}
+
+	@Test
+	public void testResourceReportRequest() {
+		ResourceReportRequest req = new ResourceReportRequest();
+
+		for (int i = 0; i < 2; ++i) {
+			Resource res = new Resource();
+			res.getEndDeviceAsset()
+				.setMrid(EndDeviceAssetType.Electric_Vehicle.name());
+			res.setResourceID(CommonUtils.id());
+			res.setResourceName("空调#" + i);
+			req.getResource()
+				.add(res);
+		}
+
+		for (int i = 0; i < 2; ++i) {
+			MeterAsset meter = new MeterAsset();
+			meter.setMrid(CommonUtils.id());
+			req.getMeterAsset()
+				.add(meter);
+		}
+
+		RptUtils.fillReportDescription(req.getReportDescription());
+
+		object = req;
 	}
 }

@@ -1,8 +1,15 @@
 {
-  "version" : 0,
-  "code" : 200,
-  "description" : "successful",
-  "reportSpecifierID" : "553918d4-eb5c-45f5-986d-0e3439cef800",
-  "requestID" : "28bd1d77-8095-478d-bc55-d56a3ce43c10",
-  "dnID" : "dn#1"
+  "UpdateReportResponse" : {
+    "version" : 0,
+    "code" : 200,
+    "description" : "successful",
+    "requestID" : "4de1296e-c95b-461a-9154-0e24a19b9faa",
+    "dnID" : null,
+    "cancelReport" : {
+      "version" : 0,
+      "requestID" : "ff54538d-1528-4363-a9e5-30d9c25273f9",
+      "reportToFollow" : false,
+      "reportRequestID" : [ "d15941c4-50dd-4722-899f-0914c3dbcdd6", "55399869-6c80-4762-8394-232b29f337d3" ]
+    }
+  }
 }

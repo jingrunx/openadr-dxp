@@ -9,11 +9,9 @@ import cn.openadr.domain.UnitSymbol;
 import cn.openadr.model.report.MetricDescription;
 import cn.openadr.model.report.PointCurveData;
 import cn.openadr.model.report.PointData;
-import cn.openadr.tsdb.IrregularValue;
-import cn.openadr.tsdb.Point;
 import cn.openadr.tsdb.DataValue;
+import cn.openadr.tsdb.IrregularValue;
 import cn.openadr.tsdb.RegularValue;
-import cn.openadr.tsdb.TagKey;
 
 public class MetricUtils {
 	public static void fillMetric(MetricDescription metric) {
@@ -28,18 +26,6 @@ public class MetricUtils {
 		fillMetric(r);
 
 		return r;
-	}
-
-	public static void fillPoint(Point point, String metric, String resourceID) {
-		point.setMetric(metric);
-		point.getTags()
-			.put(TagKey.device, resourceID);
-		point.getTags()
-			.put(TagKey.customer, CommonUtils.id());
-		point.getTags()
-			.put(TagKey.catalog, CommonUtils.id());
-		point.getTags()
-			.put(TagKey.facility, CommonUtils.id());
 	}
 
 	public static PointData createPointValue(int rID, double val) {
