@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import cn.openadr.domain.EndDeviceAssetType;
 import cn.openadr.domain.ReportName;
-import cn.openadr.model.report.Report;
+import cn.openadr.model.report.MetaDataReport;
 import cn.openadr.model.report.ReportRequest;
 import cn.openadr.model.target.MeterAsset;
 import cn.openadr.model.target.Resource;
@@ -30,11 +30,10 @@ public class RptTest extends AbstractTest {
 		CommonUtils.fillRequest(req);
 
 		for (int i = 0; i < 2; ++i) {
-			Report report = new Report();
+			MetaDataReport report = new MetaDataReport();
 
 			report.setReportName(ReportName.HISTORY_USAGE);
 			report.setReportRequestID(CommonUtils.id());
-			report.setReportSpecifierID(CommonUtils.id());
 			report.setCreatedDateTime(DateTime.now());
 
 			RptUtils.fillReportDescription(report.getReportDescription());

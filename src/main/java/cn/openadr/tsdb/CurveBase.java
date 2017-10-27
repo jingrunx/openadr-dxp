@@ -17,5 +17,5 @@ public abstract class CurveBase {
 	}
 
 	/** 数据 */
-	public abstract List<DataValue> getValues();
+	public abstract List<Data> getValues();
 }

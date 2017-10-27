@@ -15,4 +15,8 @@ public abstract class DRObject implements Serializable {
 	public void setVersion(int version) {
 		this.version = version;
 	}
+
+	public String getRoot() {
+		return getClass().getSimpleName();
+	}
 }

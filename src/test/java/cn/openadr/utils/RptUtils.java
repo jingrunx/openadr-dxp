@@ -20,7 +20,6 @@ public class RptUtils {
 		CommonUtils.fillRequest(req);
 
 		req.setReportRequestID(CommonUtils.id());
-		req.setReportSpecifierID(CommonUtils.id());
 		req.setCreatedDateTime(DateTime.now());
 	}
 
@@ -49,7 +48,7 @@ public class RptUtils {
 		r.setEndDateTime(r.getStartDateTime()
 			.plusYears(1));
 		r.setBackDuration(Days.ONE.toPeriod());
-		r.setGranularity(Minutes.ONE.toPeriod());
+		r.setPeriod(Minutes.ONE.toPeriod());
 
 		r.getrID()
 			.addAll(Arrays.asList(1, 2, 3, 4, 5));

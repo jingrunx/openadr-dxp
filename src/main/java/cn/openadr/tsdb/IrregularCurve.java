@@ -13,34 +13,34 @@ import org.joda.time.ReadableInterval;
 import org.joda.time.Seconds;
 
 /** 由一组时间和值组成的时间序列数据 */
-public class IrregularValue extends CurveBase {
-	private final List<DataValue> values = new ArrayList<>();
+public class IrregularCurve extends CurveBase {
+	private final List<Data> values = new ArrayList<>();
 
-	public IrregularValue() {
+	public IrregularCurve() {
 	}
 
-	public IrregularValue(Collection<DataValue> values) {
+	public IrregularCurve(Collection<Data> values) {
 		setValues(values);
 	}
 
 	@Override
-	public List<DataValue> getValues() {
+	public List<Data> getValues() {
 		return values;
 	}
 
-	public void setValues(Collection<DataValue> values) {
+	public void setValues(Collection<Data> values) {
 		this.values.addAll(values);
 	}
 
 	@Override
 	public ReadableInterval getInterval() {
 		Optional<DateTime> start = values.stream()
-			.map(DataValue::getTimestamp)
+			.map(Data::getTimestamp)
 			.filter(Objects::nonNull)
 			.min(DateTimeComparator.getInstance());
 
 		Optional<DateTime> end = values.stream()
-			.map(DataValue::getTimestamp)
+			.map(Data::getTimestamp)
 			.filter(Objects::nonNull)
 			.max(DateTimeComparator.getInstance());
 

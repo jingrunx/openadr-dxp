@@ -1,175 +1,174 @@
 {
-  "DistributeEventRequest" : {
-    "version" : 0,
-    "requestID" : null,
-    "events" : [ {
-      "responseRequired" : "always",
-      "descriptor" : {
-        "eventID" : "96452585-5872-4acb-8ac4-8adacd088af3",
-        "modificationNumber" : 0,
-        "status" : "far",
-        "priority" : 0,
-        "test" : false,
-        "modificationDateTime" : null,
-        "modificationReason" : null,
-        "createdDateTime" : "2017-10-23T01:35:20.780Z",
-        "comment" : null,
-        "marketContext" : null
-      },
-      "activePeriod" : {
-        "dtstart" : "2017-10-23T06:00:00.000Z",
-        "duration" : "PT2H",
-        "tolerance" : "PT3M",
-        "notification" : "P1D",
-        "rampup" : "PT15M",
-        "recovery" : "PT30M"
-      },
-      "signals" : {
-        "baseline" : {
-          "baselineID" : null,
-          "baselineName" : null,
-          "metric" : {
-            "metric" : null,
-            "multiplier" : null,
-            "symbol" : null
-          },
-          "resourceID" : [ ],
-          "intervals" : {
-            "regular" : {
-              "dtstart" : "2017-10-22T16:00:00.000Z",
-              "period" : "PT1H",
-              "array" : [ 1000.0, 1841.0, 1909.0, 1141.0, 243.0, 41.0, 720.0, 1656.0, 1989.0, 1412.0, 455.0, 0.0, 463.0, 1420.0, 1990.0, 1650.0, 712.0, 38.0, 249.0, 1149.0, 1912.0, 1836.0, 991.0, 153.0 ]
-            },
-            "irregular" : {
-              "values" : [ {
-                "value" : 100.0,
-                "timestamp" : "2017-10-22T16:00:00.000Z"
-              }, {
-                "value" : 200.0,
-                "timestamp" : "2017-10-22T16:15:00.000Z"
-              }, {
-                "value" : 400.0,
-                "timestamp" : "2017-10-22T17:00:00.000Z"
-              } ]
-            }
-          }
+  "version" : 0,
+  "requestID" : null,
+  "events" : [ {
+    "responseRequired" : "always",
+    "descriptor" : {
+      "eventID" : "d1303e86-6186-43aa-bbfb-29ae5d8a6de1",
+      "modificationNumber" : 0,
+      "status" : "far",
+      "priority" : 0,
+      "test" : false,
+      "modificationDateTime" : null,
+      "modificationReason" : null,
+      "createdDateTime" : "2017-10-27T02:41:05.995Z",
+      "comment" : null,
+      "marketContext" : null
+    },
+    "activePeriod" : {
+      "dtstart" : "2017-10-27T06:00:00.000Z",
+      "duration" : "PT2H",
+      "tolerance" : "PT3M",
+      "notification" : "P1D",
+      "rampup" : "PT15M",
+      "recovery" : "PT30M"
+    },
+    "signals" : {
+      "baseline" : {
+        "baselineID" : null,
+        "baselineName" : null,
+        "metric" : {
+          "metric" : null,
+          "multiplier" : null,
+          "symbol" : null
         },
-        "signal" : [ {
-          "signalID" : null,
-          "signalName" : null,
-          "signalType" : "level",
-          "currentValue" : 3.0,
-          "metric" : {
-            "metric" : null,
-            "multiplier" : "k",
-            "symbol" : "W"
+        "resourceID" : [ ],
+        "intervals" : {
+          "regular" : {
+            "dtstart" : "2017-10-26T16:00:00.000Z",
+            "period" : "PT1H",
+            "array" : [ 1000.0, 1841.0, 1909.0, 1141.0, 243.0, 41.0, 720.0, 1656.0, 1989.0, 1412.0, 455.0, 0.0, 463.0, 1420.0, 1990.0, 1650.0, 712.0, 38.0, 249.0, 1149.0, 1912.0, 1836.0, 991.0, 153.0 ]
           },
-          "intervals" : {
-            "regular" : {
-              "dtstart" : null,
-              "period" : null,
-              "array" : [ ]
-            },
-            "irregular" : {
-              "values" : [ ]
-            }
-          },
-          "target" : {
-            "endDeviceAsset" : [ {
-              "mrid" : "Energy_Management_System"
+          "irregular" : {
+            "values" : [ {
+              "value" : 100.0,
+              "timestamp" : "2017-10-26T16:00:00.000Z"
+            }, {
+              "value" : 200.0,
+              "timestamp" : "2017-10-26T16:15:00.000Z"
+            }, {
+              "value" : 400.0,
+              "timestamp" : "2017-10-26T17:00:00.000Z"
             } ]
           }
-        } ]
+        }
       },
-      "target" : {
-        "endDeviceAsset" : [ {
-          "mrid" : "Energy_Management_System"
-        } ]
-      }
-    }, {
-      "responseRequired" : "always",
-      "descriptor" : {
-        "eventID" : "720f29a5-e05d-4244-adc6-4075de3d6749",
-        "modificationNumber" : 0,
-        "status" : "far",
-        "priority" : 0,
-        "test" : false,
-        "modificationDateTime" : null,
-        "modificationReason" : null,
-        "createdDateTime" : "2017-10-23T01:35:20.792Z",
-        "comment" : null,
-        "marketContext" : null
-      },
-      "activePeriod" : {
-        "dtstart" : "2017-10-23T06:00:00.000Z",
-        "duration" : "PT2H",
-        "tolerance" : "PT3M",
-        "notification" : "P1D",
-        "rampup" : "PT15M",
-        "recovery" : "PT30M"
-      },
-      "signals" : {
-        "baseline" : {
-          "baselineID" : null,
-          "baselineName" : null,
-          "metric" : {
-            "metric" : null,
-            "multiplier" : null,
-            "symbol" : null
+      "signal" : [ {
+        "signalID" : null,
+        "signalName" : null,
+        "signalType" : "level",
+        "currentValue" : 3.0,
+        "metric" : {
+          "metric" : null,
+          "multiplier" : "k",
+          "symbol" : "W"
+        },
+        "intervals" : {
+          "regular" : {
+            "dtstart" : null,
+            "period" : null,
+            "array" : [ ]
           },
-          "resourceID" : [ ],
-          "intervals" : {
-            "regular" : {
-              "dtstart" : "2017-10-22T16:00:00.000Z",
-              "period" : "PT1H",
-              "array" : [ 1000.0, 1841.0, 1909.0, 1141.0, 243.0, 41.0, 720.0, 1656.0, 1989.0, 1412.0, 455.0, 0.0, 463.0, 1420.0, 1990.0, 1650.0, 712.0, 38.0, 249.0, 1149.0, 1912.0, 1836.0, 991.0, 153.0 ]
-            },
-            "irregular" : {
-              "values" : [ {
-                "value" : 100.0,
-                "timestamp" : "2017-10-22T16:00:00.000Z"
-              }, {
-                "value" : 200.0,
-                "timestamp" : "2017-10-22T16:15:00.000Z"
-              }, {
-                "value" : 400.0,
-                "timestamp" : "2017-10-22T17:00:00.000Z"
-              } ]
-            }
+          "irregular" : {
+            "values" : [ ]
           }
         },
-        "signal" : [ {
-          "signalID" : null,
-          "signalName" : null,
-          "signalType" : "level",
-          "currentValue" : 3.0,
-          "metric" : {
-            "metric" : null,
-            "multiplier" : "k",
-            "symbol" : "W"
+        "target" : {
+          "endDeviceAsset" : [ {
+            "mrid" : "Energy_Management_System"
+          } ]
+        }
+      } ]
+    },
+    "target" : {
+      "endDeviceAsset" : [ {
+        "mrid" : "Energy_Management_System"
+      } ]
+    }
+  }, {
+    "responseRequired" : "always",
+    "descriptor" : {
+      "eventID" : "efc00b59-4918-4f7d-ac11-464dcdf1b67e",
+      "modificationNumber" : 0,
+      "status" : "far",
+      "priority" : 0,
+      "test" : false,
+      "modificationDateTime" : null,
+      "modificationReason" : null,
+      "createdDateTime" : "2017-10-27T02:41:06.010Z",
+      "comment" : null,
+      "marketContext" : null
+    },
+    "activePeriod" : {
+      "dtstart" : "2017-10-27T06:00:00.000Z",
+      "duration" : "PT2H",
+      "tolerance" : "PT3M",
+      "notification" : "P1D",
+      "rampup" : "PT15M",
+      "recovery" : "PT30M"
+    },
+    "signals" : {
+      "baseline" : {
+        "baselineID" : null,
+        "baselineName" : null,
+        "metric" : {
+          "metric" : null,
+          "multiplier" : null,
+          "symbol" : null
+        },
+        "resourceID" : [ ],
+        "intervals" : {
+          "regular" : {
+            "dtstart" : "2017-10-26T16:00:00.000Z",
+            "period" : "PT1H",
+            "array" : [ 1000.0, 1841.0, 1909.0, 1141.0, 243.0, 41.0, 720.0, 1656.0, 1989.0, 1412.0, 455.0, 0.0, 463.0, 1420.0, 1990.0, 1650.0, 712.0, 38.0, 249.0, 1149.0, 1912.0, 1836.0, 991.0, 153.0 ]
           },
-          "intervals" : {
-            "regular" : {
-              "dtstart" : null,
-              "period" : null,
-              "array" : [ ]
-            },
-            "irregular" : {
-              "values" : [ ]
-            }
-          },
-          "target" : {
-            "endDeviceAsset" : [ {
-              "mrid" : "Energy_Management_System"
+          "irregular" : {
+            "values" : [ {
+              "value" : 100.0,
+              "timestamp" : "2017-10-26T16:00:00.000Z"
+            }, {
+              "value" : 200.0,
+              "timestamp" : "2017-10-26T16:15:00.000Z"
+            }, {
+              "value" : 400.0,
+              "timestamp" : "2017-10-26T17:00:00.000Z"
             } ]
           }
-        } ]
+        }
       },
-      "target" : {
-        "endDeviceAsset" : [ {
-          "mrid" : "Energy_Management_System"
-        } ]
-      }
-    } ]
-  }
+      "signal" : [ {
+        "signalID" : null,
+        "signalName" : null,
+        "signalType" : "level",
+        "currentValue" : 3.0,
+        "metric" : {
+          "metric" : null,
+          "multiplier" : "k",
+          "symbol" : "W"
+        },
+        "intervals" : {
+          "regular" : {
+            "dtstart" : null,
+            "period" : null,
+            "array" : [ ]
+          },
+          "irregular" : {
+            "values" : [ ]
+          }
+        },
+        "target" : {
+          "endDeviceAsset" : [ {
+            "mrid" : "Energy_Management_System"
+          } ]
+        }
+      } ]
+    },
+    "target" : {
+      "endDeviceAsset" : [ {
+        "mrid" : "Energy_Management_System"
+      } ]
+    }
+  } ],
+  "root" : "DistributeEventRequest"
 }

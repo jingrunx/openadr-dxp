@@ -1,68 +1,67 @@
 {
-  "ResourceReportRequest" : {
-    "version" : 0,
-    "requestID" : null,
-    "dnID" : null,
-    "resource" : [ {
-      "resourceID" : "d9574efa-bcff-4342-956e-1375ecad1fd3",
-      "resourceName" : "空调#0",
-      "status" : null,
-      "ratedU" : null,
-      "ratedI" : null,
-      "ratedS" : null,
-      "parentResourceID" : null,
-      "endDeviceAsset" : {
-        "mrid" : "Electric_Vehicle"
-      },
-      "meterAsset" : null,
-      "relationID" : [ ],
-      "properties" : [ ]
-    }, {
-      "resourceID" : "b3eeca40-48c6-482f-b580-7ff7d8755a31",
-      "resourceName" : "空调#1",
-      "status" : null,
-      "ratedU" : null,
-      "ratedI" : null,
-      "ratedS" : null,
-      "parentResourceID" : null,
-      "endDeviceAsset" : {
-        "mrid" : "Electric_Vehicle"
-      },
-      "meterAsset" : null,
-      "relationID" : [ ],
-      "properties" : [ ]
-    } ],
-    "meterAsset" : [ {
-      "mrid" : "c1244b78-7d83-4883-8183-0e8bd8742b4e"
-    }, {
-      "mrid" : "bd606e3b-5f49-4c8a-a017-15aa09da5c57"
-    } ],
-    "reportDescription" : [ {
-      "rID" : 1,
-      "metric" : "voltage",
-      "readingType" : null,
-      "samplingRate" : {
-        "minPeriod" : "PT1M",
-        "maxPeriod" : "PT1H",
-        "onChange" : false
-      },
-      "reportSubject" : { },
-      "reportDataSource" : {
-        "resourceID" : [ "resourceID#1" ]
-      }
-    }, {
-      "rID" : 1,
-      "metric" : "power.active",
-      "readingType" : null,
-      "samplingRate" : {
-        "minPeriod" : "PT1M",
-        "maxPeriod" : "PT1H",
-        "onChange" : false
-      },
-      "reportSubject" : { },
-      "reportDataSource" : {
-        "resourceID" : [ "resourceID#1" ]
-      }
-    } ]
-  }
+  "version" : 0,
+  "requestID" : null,
+  "dnID" : null,
+  "resource" : [ {
+    "resourceID" : "cb9af507-de5c-491e-8dfa-4db13569975c",
+    "resourceName" : "空调#0",
+    "status" : null,
+    "ratedU" : null,
+    "ratedI" : null,
+    "ratedS" : null,
+    "parentResourceID" : null,
+    "endDeviceAsset" : {
+      "mrid" : "Electric_Vehicle"
+    },
+    "meterAsset" : null,
+    "relationID" : [ ],
+    "properties" : [ ]
+  }, {
+    "resourceID" : "d2fb3b30-09da-4f4d-b4ff-8dadd7278e93",
+    "resourceName" : "空调#1",
+    "status" : null,
+    "ratedU" : null,
+    "ratedI" : null,
+    "ratedS" : null,
+    "parentResourceID" : null,
+    "endDeviceAsset" : {
+      "mrid" : "Electric_Vehicle"
+    },
+    "meterAsset" : null,
+    "relationID" : [ ],
+    "properties" : [ ]
+  } ],
+  "meterAsset" : [ {
+    "mrid" : "8354bb65-166b-4bc7-b23b-868d79daab54"
+  }, {
+    "mrid" : "5112e7a0-cfd4-40a8-b457-852c489a9080"
+  } ],
+  "reportDescription" : [ {
+    "rID" : 1,
+    "metric" : "voltage",
+    "readingType" : null,
+    "samplingRate" : {
+      "minPeriod" : "PT1M",
+      "maxPeriod" : "PT1H",
+      "onChange" : false
+    },
+    "reportSubject" : { },
+    "reportDataSource" : {
+      "resourceID" : [ "resourceID#1" ]
+    }
+  }, {
+    "rID" : 1,
+    "metric" : "power.active",
+    "readingType" : null,
+    "samplingRate" : {
+      "minPeriod" : "PT1M",
+      "maxPeriod" : "PT1H",
+      "onChange" : false
+    },
+    "reportSubject" : { },
+    "reportDataSource" : {
+      "resourceID" : [ "resourceID#1" ]
+    }
+  } ],
+  "root" : "ResourceReportRequest"
 }

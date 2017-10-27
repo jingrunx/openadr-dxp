@@ -1,23 +1,21 @@
 {
-  "LiveReportRequest" : {
-    "version" : 1,
-    "requestID" : "b4b8f027-e4f5-42f8-b3cf-d98fed8cd174",
-    "dnID" : "dn#1",
-    "reportRequestID" : "0ec50bfb-362e-4e44-9e51-f62494c0a4a6",
-    "reportSpecifierID" : "6cb2281b-d9b8-4788-96f7-e6992b059550",
-    "createdDateTime" : "2017-10-23T01:35:21.132Z",
-    "pointData" : [ {
-      "value" : 97.0,
-      "timestamp" : "2017-10-23T01:35:21.133Z",
-      "rID" : 1
-    }, {
-      "value" : 4567.0,
-      "timestamp" : "2017-10-23T01:35:21.133Z",
-      "rID" : 2
-    }, {
-      "value" : 232.2,
-      "timestamp" : "2017-10-23T01:35:21.133Z",
-      "rID" : 3
-    } ]
-  }
+  "version" : 1,
+  "requestID" : "186a3739-77a6-410e-9029-6a555c8d385e",
+  "dnID" : "dn#1",
+  "reportRequestID" : "be4bf7d4-ee1e-4a18-aac2-5d83fc8564b0",
+  "createdDateTime" : "2017-10-27T02:41:06.366Z",
+  "pointData" : [ {
+    "value" : 97.0,
+    "timestamp" : "2017-10-27T02:41:06.366Z",
+    "rID" : 1
+  }, {
+    "value" : 4567.0,
+    "timestamp" : "2017-10-27T02:41:06.366Z",
+    "rID" : 2
+  }, {
+    "value" : 232.2,
+    "timestamp" : "2017-10-27T02:41:06.366Z",
+    "rID" : 3
+  } ],
+  "root" : "LiveReportRequest"
 }

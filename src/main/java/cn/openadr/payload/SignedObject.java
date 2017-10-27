@@ -12,7 +12,8 @@ import cn.openadr.payload.opt.CancelOptRequest;
 import cn.openadr.payload.opt.CancelOptResponse;
 import cn.openadr.payload.opt.CreateOptRequest;
 import cn.openadr.payload.opt.CreateOptResponse;
-import cn.openadr.payload.poll.PollRequest;
+import cn.openadr.payload.poll.Poll;
+import cn.openadr.payload.poll.PollResponse;
 import cn.openadr.payload.reg.CancelRegistrationRequest;
 import cn.openadr.payload.reg.CancelRegistrationResponse;
 import cn.openadr.payload.reg.CreateRegistrationRequest;
@@ -41,7 +42,7 @@ public class SignedObject implements Serializable {
 	//private OadrRequestEventType oadrRequestEvent;
 	private QueryEventRequest queryEventRequest;
 	//private OadrResponseType oadrResponse;
-	private DNResponse response;
+	private PollResponse response;
 
 	//private OadrCancelOptType oadrCancelOpt;
 	private CancelOptRequest cancelOptRequest;
@@ -83,7 +84,7 @@ public class SignedObject implements Serializable {
 	private QueryRegistrationRequest queryRegistrationRequest;
 
 	//private OadrPollType oadrPoll;
-	private PollRequest pollRequest;
+	private Poll poll;
 
 	public String getId() {
 		return id;
@@ -117,11 +118,11 @@ public class SignedObject implements Serializable {
 		this.queryEventRequest = queryEventRequest;
 	}
 
-	public DNResponse getResponse() {
+	public PollResponse getResponse() {
 		return response;
 	}
 
-	public void setResponse(DNResponse response) {
+	public void setResponse(PollResponse response) {
 		this.response = response;
 	}
 
@@ -269,11 +270,11 @@ public class SignedObject implements Serializable {
 		this.queryRegistrationRequest = queryRegistrationRequest;
 	}
 
-	public PollRequest getPollRequest() {
-		return pollRequest;
+	public Poll getPoll() {
+		return poll;
 	}
 
-	public void setPollRequest(PollRequest pollRequest) {
-		this.pollRequest = pollRequest;
+	public void setPoll(Poll poll) {
+		this.poll = poll;
 	}
 }

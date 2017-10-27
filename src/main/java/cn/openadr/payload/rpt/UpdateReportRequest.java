@@ -3,7 +3,7 @@ package cn.openadr.payload.rpt;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.openadr.model.report.Report;
+import cn.openadr.model.report.MetaDataReport;
 import cn.openadr.payload.DNRequest;
 
 /** 数据报送请求 */
@@ -11,9 +11,9 @@ import cn.openadr.payload.DNRequest;
 public class UpdateReportRequest extends DNRequest {
 	private static final long serialVersionUID = 1L;
 
-	private final List<Report> report = new ArrayList<>();
+	private final List<MetaDataReport> report = new ArrayList<>();
 
-	public List<Report> getReport() {
+	public List<MetaDataReport> getReport() {
 		return report;
 	}
 }

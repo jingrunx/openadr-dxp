@@ -6,15 +6,15 @@ public class CurveData implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/** 规则数据，各数据之间间隔相同 */
-	private final RegularValue regular = new RegularValue();
+	private final RegularCurve regular = new RegularCurve();
 	/** 不规则数据，各数据之间间隔不同 */
-	private final IrregularValue irregular = new IrregularValue();
+	private final IrregularCurve irregular = new IrregularCurve();
 
-	public RegularValue getRegular() {
+	public RegularCurve getRegular() {
 		return regular;
 	}
 
-	public IrregularValue getIrregular() {
+	public IrregularCurve getIrregular() {
 		return irregular;
 	}
 }

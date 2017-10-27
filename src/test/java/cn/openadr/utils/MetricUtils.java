@@ -9,9 +9,9 @@ import cn.openadr.domain.UnitSymbol;
 import cn.openadr.model.report.MetricDescription;
 import cn.openadr.model.report.PointCurveData;
 import cn.openadr.model.report.PointData;
-import cn.openadr.tsdb.DataValue;
-import cn.openadr.tsdb.IrregularValue;
-import cn.openadr.tsdb.RegularValue;
+import cn.openadr.tsdb.Data;
+import cn.openadr.tsdb.IrregularCurve;
+import cn.openadr.tsdb.RegularCurve;
 
 public class MetricUtils {
 	public static void fillMetric(MetricDescription metric) {
@@ -43,7 +43,7 @@ public class MetricUtils {
 		return value;
 	}
 
-	public static void fillRegular(RegularValue regular) {
+	public static void fillRegular(RegularCurve regular) {
 		regular.setDtstart(CommonUtils.dtstart());
 		regular.setPeriod(Hours.ONE.toPeriod()
 			.toPeriod());
@@ -54,14 +54,14 @@ public class MetricUtils {
 		regular.setArray(array);
 	}
 
-	public static void fillIrregular(IrregularValue irregular) {
+	public static void fillIrregular(IrregularCurve irregular) {
 		DateTime dtstart = CommonUtils.dtstart();
 
 		irregular.getValues()
-			.add(new DataValue(100.0d, dtstart));
+			.add(new Data(100.0d, dtstart));
 		irregular.getValues()
-			.add(new DataValue(200.0d, dtstart.plusMinutes(15)));
+			.add(new Data(200.0d, dtstart.plusMinutes(15)));
 		irregular.getValues()
-			.add(new DataValue(400.0d, dtstart.plusHours(1)));
+			.add(new Data(400.0d, dtstart.plusHours(1)));
 	}
 }

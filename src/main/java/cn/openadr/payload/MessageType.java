@@ -8,7 +8,7 @@ import cn.openadr.payload.opt.CancelOptRequest;
 import cn.openadr.payload.opt.CancelOptResponse;
 import cn.openadr.payload.opt.CreateOptRequest;
 import cn.openadr.payload.opt.CreateOptResponse;
-import cn.openadr.payload.poll.PollRequest;
+import cn.openadr.payload.poll.Poll;
 import cn.openadr.payload.reg.CancelRegistrationRequest;
 import cn.openadr.payload.reg.CancelRegistrationResponse;
 import cn.openadr.payload.reg.CreateRegistrationRequest;
@@ -50,7 +50,7 @@ public enum MessageType implements EnumeratedType {
 	CREATE_OPT("createOpt", ServiceName.EI_OPT, CreateOptRequest.class, CreateOptResponse.class), //
 	CANCEL_OPT("cancelOpt", ServiceName.EI_OPT, CancelOptRequest.class, CancelOptResponse.class), //
 
-	PULL("poll", ServiceName.EI_POLL, PollRequest.class, DRResponse.class);
+	PULL("poll", ServiceName.EI_POLL, Poll.class, DRResponse.class);
 
 	private final String value;
 	public final ServiceName service;

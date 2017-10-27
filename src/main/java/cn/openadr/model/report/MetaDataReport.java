@@ -9,23 +9,13 @@ import org.joda.time.DateTime;
 import cn.openadr.domain.ReportName;
 
 // OadrReportType
-public class Report implements Serializable {
+public class MetaDataReport implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private String reportID;
 	private ReportName reportName;
 	private String reportRequestID;
-	private String reportSpecifierID;
 	private DateTime createdDateTime;
 	private final List<ReportDescription> reportDescription = new ArrayList<>();
-
-	public String getReportID() {
-		return reportID;
-	}
-
-	public void setReportID(String reportID) {
-		this.reportID = reportID;
-	}
 
 	public ReportName getReportName() {
 		return reportName;
@@ -41,14 +31,6 @@ public class Report implements Serializable {
 
 	public void setReportRequestID(String reportRequestID) {
 		this.reportRequestID = reportRequestID;
-	}
-
-	public String getReportSpecifierID() {
-		return reportSpecifierID;
-	}
-
-	public void setReportSpecifierID(String reportSpecifierID) {
-		this.reportSpecifierID = reportSpecifierID;
 	}
 
 	public DateTime getCreatedDateTime() {

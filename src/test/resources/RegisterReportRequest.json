@@ -1,75 +1,70 @@
 {
-  "RegisterReportRequest" : {
-    "version" : 1,
-    "requestID" : "593d07f5-cb9f-4815-b5fb-1d737faf42a7",
-    "dnID" : "dn#1",
-    "reportRequestID" : null,
-    "report" : [ {
-      "reportID" : null,
-      "reportName" : "HISTORY_USAGE",
-      "reportRequestID" : "dd7efe13-5bac-4b77-b0bf-8ce7c87beaee",
-      "reportSpecifierID" : "cc794320-23d5-4d29-9066-a96e267faa53",
-      "createdDateTime" : "2017-10-23T01:35:21.193Z",
-      "reportDescription" : [ {
-        "rID" : 1,
-        "metric" : "voltage",
-        "readingType" : null,
-        "samplingRate" : {
-          "minPeriod" : "PT1M",
-          "maxPeriod" : "PT1H",
-          "onChange" : false
-        },
-        "reportSubject" : { },
-        "reportDataSource" : {
-          "resourceID" : [ "resourceID#1" ]
-        }
-      }, {
-        "rID" : 1,
-        "metric" : "power.active",
-        "readingType" : null,
-        "samplingRate" : {
-          "minPeriod" : "PT1M",
-          "maxPeriod" : "PT1H",
-          "onChange" : false
-        },
-        "reportSubject" : { },
-        "reportDataSource" : {
-          "resourceID" : [ "resourceID#1" ]
-        }
-      } ]
+  "version" : 1,
+  "requestID" : "e2804076-6d71-430f-bff4-32157288d45a",
+  "dnID" : "dn#1",
+  "reportRequestID" : null,
+  "report" : [ {
+    "reportName" : "HISTORY_USAGE",
+    "reportRequestID" : "e21d599e-fc76-4e81-98c3-8d7a4e83a420",
+    "createdDateTime" : "2017-10-27T02:41:06.428Z",
+    "reportDescription" : [ {
+      "rID" : 1,
+      "metric" : "voltage",
+      "readingType" : null,
+      "samplingRate" : {
+        "minPeriod" : "PT1M",
+        "maxPeriod" : "PT1H",
+        "onChange" : false
+      },
+      "reportSubject" : { },
+      "reportDataSource" : {
+        "resourceID" : [ "resourceID#1" ]
+      }
     }, {
-      "reportID" : null,
-      "reportName" : "HISTORY_USAGE",
-      "reportRequestID" : "3c51626b-5c9c-4b4b-9be6-6ac751e88508",
-      "reportSpecifierID" : "0b2c2369-7582-4fd1-ad36-8a15abe9aefd",
-      "createdDateTime" : "2017-10-23T01:35:21.194Z",
-      "reportDescription" : [ {
-        "rID" : 1,
-        "metric" : "voltage",
-        "readingType" : null,
-        "samplingRate" : {
-          "minPeriod" : "PT1M",
-          "maxPeriod" : "PT1H",
-          "onChange" : false
-        },
-        "reportSubject" : { },
-        "reportDataSource" : {
-          "resourceID" : [ "resourceID#1" ]
-        }
-      }, {
-        "rID" : 1,
-        "metric" : "power.active",
-        "readingType" : null,
-        "samplingRate" : {
-          "minPeriod" : "PT1M",
-          "maxPeriod" : "PT1H",
-          "onChange" : false
-        },
-        "reportSubject" : { },
-        "reportDataSource" : {
-          "resourceID" : [ "resourceID#1" ]
-        }
-      } ]
+      "rID" : 1,
+      "metric" : "power.active",
+      "readingType" : null,
+      "samplingRate" : {
+        "minPeriod" : "PT1M",
+        "maxPeriod" : "PT1H",
+        "onChange" : false
+      },
+      "reportSubject" : { },
+      "reportDataSource" : {
+        "resourceID" : [ "resourceID#1" ]
+      }
     } ]
-  }
+  }, {
+    "reportName" : "HISTORY_USAGE",
+    "reportRequestID" : "330927bc-39e5-49a8-acb2-f83ec21e6724",
+    "createdDateTime" : "2017-10-27T02:41:06.428Z",
+    "reportDescription" : [ {
+      "rID" : 1,
+      "metric" : "voltage",
+      "readingType" : null,
+      "samplingRate" : {
+        "minPeriod" : "PT1M",
+        "maxPeriod" : "PT1H",
+        "onChange" : false
+      },
+      "reportSubject" : { },
+      "reportDataSource" : {
+        "resourceID" : [ "resourceID#1" ]
+      }
+    }, {
+      "rID" : 1,
+      "metric" : "power.active",
+      "readingType" : null,
+      "samplingRate" : {
+        "minPeriod" : "PT1M",
+        "maxPeriod" : "PT1H",
+        "onChange" : false
+      },
+      "reportSubject" : { },
+      "reportDataSource" : {
+        "resourceID" : [ "resourceID#1" ]
+      }
+    } ]
+  } ],
+  "root" : "RegisterReportRequest"
 }

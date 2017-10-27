@@ -1,24 +1,23 @@
 {
-  "CreateRegistrationResponse" : {
-    "version" : 0,
-    "code" : 200,
-    "description" : "successful",
-    "requestID" : "ce17e810-b579-4768-9560-5469f3b1a4e6",
-    "dnID" : null,
-    "registrationID" : null,
-    "unID" : "9501736e-d295-4019-8c13-462dca11b4c4",
-    "pollFreq" : "PT5M",
-    "transport" : [ "JSON" ],
-    "serviceSpecific" : [ {
-      "serviceName" : "EiEvent",
-      "info" : [ {
-        "key" : "IP",
-        "value" : "192.168.1.1"
-      }, {
-        "key" : "PORT",
-        "value" : "80"
-      } ]
-    } ],
-    "extensions" : [ ]
-  }
+  "version" : 0,
+  "code" : 200,
+  "description" : "successful",
+  "requestID" : "96a6b475-7c3f-4845-ba90-84dfb89d1531",
+  "dnID" : null,
+  "registrationID" : null,
+  "unID" : "365dba41-b32a-41f4-b955-033bf17e9641",
+  "pollFreq" : "PT5M",
+  "transport" : [ "JSON" ],
+  "serviceSpecific" : [ {
+    "serviceName" : "EiEvent",
+    "info" : [ {
+      "key" : "IP",
+      "value" : "192.168.1.1"
+    }, {
+      "key" : "PORT",
+      "value" : "80"
+    } ]
+  } ],
+  "extensions" : [ ],
+  "root" : "CreateRegistrationResponse"
 }

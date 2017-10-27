@@ -2,7 +2,6 @@ package cn.openadr.payload.opt;
 
 import org.joda.time.DateTime;
 
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -62,7 +61,6 @@ public class CreateOptRequest extends OptRequest {
 		this.createdDateTime = createdDateTime;
 	}
 
-	@JsonUnwrapped
 	public QualifiedEventID getQualifiedEventID() {
 		return qualifiedEventID;
 	}

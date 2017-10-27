@@ -1,34 +1,33 @@
 {
-  "RegisterReportResponse" : {
-    "version" : 0,
-    "code" : 200,
-    "description" : "successful",
-    "requestID" : "d1980765-c0c4-44c7-bef6-7e96774ee8c2",
-    "dnID" : null,
-    "reportRequest" : [ {
-      "reportRequestID" : "2fe77537-4ed5-4679-82c0-82a6b64b95a0",
-      "reportSpecifier" : {
-        "reportSpecifierID" : null,
-        "reportName" : "HISTORY_USAGE",
-        "reportType" : "x-resourceStatus",
-        "startDateTime" : "2017-10-22T16:00:00.000Z",
-        "endDateTime" : "2018-10-22T16:00:00.000Z",
-        "backDuration" : "P1D",
-        "granularity" : "PT1M",
-        "rID" : [ 1, 2, 3, 4, 5 ]
-      }
-    }, {
-      "reportRequestID" : "29539dc6-a7c4-45ed-b76e-30d998a7cd7f",
-      "reportSpecifier" : {
-        "reportSpecifierID" : null,
-        "reportName" : "HISTORY_USAGE",
-        "reportType" : "x-resourceStatus",
-        "startDateTime" : "2017-10-22T16:00:00.000Z",
-        "endDateTime" : "2018-10-22T16:00:00.000Z",
-        "backDuration" : "P1D",
-        "granularity" : "PT1M",
-        "rID" : [ 1, 2, 3, 4, 5 ]
-      }
-    } ]
-  }
+  "version" : 0,
+  "code" : 200,
+  "description" : "successful",
+  "requestID" : "b7983412-1731-446f-94ea-d5b275817a19",
+  "dnID" : null,
+  "reportRequest" : [ {
+    "reportRequestID" : "0d8afcb8-f173-45e0-aee9-0d905ebbc93c",
+    "reportSpecifier" : {
+      "reportSpecifierID" : null,
+      "reportName" : "HISTORY_USAGE",
+      "reportType" : "x-resourceStatus",
+      "startDateTime" : "2017-10-26T16:00:00.000Z",
+      "endDateTime" : "2018-10-26T16:00:00.000Z",
+      "backDuration" : "P1D",
+      "period" : "PT1M",
+      "rID" : [ 1, 2, 3, 4, 5 ]
+    }
+  }, {
+    "reportRequestID" : "c45caf31-5b56-40a9-984d-5ba6a10f039f",
+    "reportSpecifier" : {
+      "reportSpecifierID" : null,
+      "reportName" : "HISTORY_USAGE",
+      "reportType" : "x-resourceStatus",
+      "startDateTime" : "2017-10-26T16:00:00.000Z",
+      "endDateTime" : "2018-10-26T16:00:00.000Z",
+      "backDuration" : "P1D",
+      "period" : "PT1M",
+      "rID" : [ 1, 2, 3, 4, 5 ]
+    }
+  } ],
+  "root" : "RegisterReportResponse"
 }

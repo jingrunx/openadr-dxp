@@ -52,7 +52,7 @@ public class ReportSpecifier implements Serializable {
 
 	/** 曲线数据之间的采样间隔 */
 	@NotNull
-	private Period granularity;
+	private Period period;
 
 	/** 要报告的rID清单 */
 	@Size(min = 1)
@@ -108,12 +108,12 @@ public class ReportSpecifier implements Serializable {
 		this.backDuration = backDuration;
 	}
 
-	public Period getGranularity() {
-		return granularity;
+	public Period getPeriod() {
+		return period;
 	}
 
-	public void setGranularity(Period granularity) {
-		this.granularity = granularity;
+	public void setPeriod(Period period) {
+		this.period = period;
 	}
 
 	public List<Integer> getrID() {
