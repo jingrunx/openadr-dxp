@@ -5,7 +5,7 @@ import java.util.List;
 
 import cn.openadr.model.report.PointData;
 
-public class LiveReportRequest extends DataReportRequest {
+public class MomentDataReportRequest extends DataReportRequest {
 	private static final long serialVersionUID = 1L;
 
 	private final List<PointData> pointData = new ArrayList<>();

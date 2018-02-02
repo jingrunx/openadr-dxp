@@ -10,7 +10,7 @@ import org.joda.time.Period;
 
 import cn.openadr.model.report.PointCurveData;
 
-public class HistoryReportRequest extends DataReportRequest {
+public class IntervalDataReportRequest extends DataReportRequest {
 	private static final long serialVersionUID = 1L;
 
 	/** 开始时间 */

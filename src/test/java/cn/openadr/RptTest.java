@@ -13,8 +13,8 @@ import cn.openadr.payload.rpt.CancelReportRequest;
 import cn.openadr.payload.rpt.CancelReportResponse;
 import cn.openadr.payload.rpt.CreateReportRequest;
 import cn.openadr.payload.rpt.CreateReportResponse;
-import cn.openadr.payload.rpt.HistoryReportRequest;
-import cn.openadr.payload.rpt.LiveReportRequest;
+import cn.openadr.payload.rpt.IntervalDataReportRequest;
+import cn.openadr.payload.rpt.MomentDataReportRequest;
 import cn.openadr.payload.rpt.RegisterReportRequest;
 import cn.openadr.payload.rpt.RegisterReportResponse;
 import cn.openadr.payload.rpt.ResourceReportRequest;
@@ -122,7 +122,7 @@ public class RptTest extends AbstractTest {
 
 	@Test
 	public void testLiveReportRequest() {
-		LiveReportRequest req = new LiveReportRequest();
+		MomentDataReportRequest req = new MomentDataReportRequest();
 		RptUtils.fillDataReportRequest(req);
 
 		req.getPointData()
@@ -137,7 +137,7 @@ public class RptTest extends AbstractTest {
 
 	@Test
 	public void testHistoryReportRequest() {
-		HistoryReportRequest req = new HistoryReportRequest();
+		IntervalDataReportRequest req = new IntervalDataReportRequest();
 		RptUtils.fillDataReportRequest(req);
 
 		req.getPointCurveData()

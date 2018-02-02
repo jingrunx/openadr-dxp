@@ -12,7 +12,7 @@ public class MetricDescription implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
-	private /* MetricType */ String metric;
+	private String/* MetricType */ metric;
 	/** 倍率 */
 	private UnitMultiplier multiplier;
 	/** 单位 */

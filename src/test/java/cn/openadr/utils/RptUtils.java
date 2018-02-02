@@ -24,18 +24,15 @@ public class RptUtils {
 	}
 
 	public static void fillReportDescription(List<ReportDescription> points) {
-		for (String metric : Arrays.asList(MetricType.VOLTAGE, MetricType.POWER_ACTIVE)) {
+		for (String metric : Arrays.asList(MetricType.VOLTAGE,
+				MetricType.POWER_ACTIVE)) {
 			ReportDescription point = new ReportDescription();
 			point.setrID(1);
-			point.setMetric(metric);
-			point.getReportDataSource()
-				.getResourceID()
-				.add("resourceID#1");
+			// point.setMetric(metric);
+			point.getReportDataSource().getResourceID().add("resourceID#1");
 
-			point.getSamplingRate()
-				.setMinPeriod(Minutes.ONE.toPeriod());
-			point.getSamplingRate()
-				.setMaxPeriod(Hours.ONE.toPeriod());
+			point.getSamplingRate().setMinPeriod(Minutes.ONE.toPeriod());
+			point.getSamplingRate().setMaxPeriod(Hours.ONE.toPeriod());
 
 			points.add(point);
 		}
@@ -45,12 +42,10 @@ public class RptUtils {
 		r.setReportName(ReportName.HISTORY_USAGE.name());
 		r.setReportType(ReportType.X_RESOURCE_STATUS);
 		r.setStartDateTime(CommonUtils.dtstart());
-		r.setEndDateTime(r.getStartDateTime()
-			.plusYears(1));
+		r.setEndDateTime(r.getStartDateTime().plusYears(1));
 		r.setBackDuration(Days.ONE.toPeriod());
 		r.setPeriod(Minutes.ONE.toPeriod());
 
-		r.getrID()
-			.addAll(Arrays.asList(1, 2, 3, 4, 5));
+		r.getrID().addAll(Arrays.asList(1, 2, 3, 4, 5));
 	}
 }

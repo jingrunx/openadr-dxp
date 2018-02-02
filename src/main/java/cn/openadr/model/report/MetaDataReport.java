@@ -1,8 +1,6 @@
 package cn.openadr.model.report;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.joda.time.DateTime;
 
@@ -13,9 +11,8 @@ public class MetaDataReport implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private ReportName reportName;
-	private String reportRequestID;
 	private DateTime createdDateTime;
-	private final List<ReportDescription> reportDescription = new ArrayList<>();
+	private final ReportDescription reportDescription = new ReportDescription();
 
 	public ReportName getReportName() {
 		return reportName;
@@ -23,14 +20,6 @@ public class MetaDataReport implements Serializable {
 
 	public void setReportName(ReportName reportName) {
 		this.reportName = reportName;
-	}
-
-	public String getReportRequestID() {
-		return reportRequestID;
-	}
-
-	public void setReportRequestID(String reportRequestID) {
-		this.reportRequestID = reportRequestID;
 	}
 
 	public DateTime getCreatedDateTime() {
@@ -41,7 +30,7 @@ public class MetaDataReport implements Serializable {
 		this.createdDateTime = createdDateTime;
 	}
 
-	public List<ReportDescription> getReportDescription() {
+	public ReportDescription getReportDescription() {
 		return reportDescription;
 	}
 }
