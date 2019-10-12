@@ -10,23 +10,35 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 public class Target implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	@JsonInclude(value = Include.NON_EMPTY)
 	private final List<String> dnID = new ArrayList<>();
+	@JsonInclude(value = Include.NON_EMPTY)
 	private final List<String> resourceID = new ArrayList<>();
+	@JsonInclude(value = Include.NON_EMPTY)
 	private final List<String> groupID = new ArrayList<>();
+	@JsonInclude(value = Include.NON_EMPTY)
 	private final List<String> partyID = new ArrayList<>();
 
+	@JsonInclude(value = Include.NON_EMPTY)
 	private final List<EndDeviceAsset> endDeviceAsset = new ArrayList<>();
+	@JsonInclude(value = Include.NON_EMPTY)
 	private final List<MeterAsset> meterAsset = new ArrayList<>();
 
-//	private final List<Pnode> pnode = new ArrayList<>();
-//	private final List<AggregatedPnode> aggregatedPnode = new ArrayList<>();
-//	private final List<ServiceDeliveryPoint> serviceDeliveryPoint = new ArrayList<>();
-//	private final List<ServiceLocation> serviceLocation = new ArrayList<>();
-//	private final List<ServiceArea> serviceArea = new ArrayList<>();
-//	private final List<Transport> transport = new ArrayList<>();
+	@JsonInclude(value = Include.NON_EMPTY)
+	private final List<Pnode> pnode = new ArrayList<>();
+	@JsonInclude(value = Include.NON_EMPTY)
+	private final List<AggregatedPnode> aggregatedPnode = new ArrayList<>();
+	@JsonInclude(value = Include.NON_EMPTY)
+	private final List<ServiceDeliveryPoint> serviceDeliveryPoint = new ArrayList<>();
+	@JsonInclude(value = Include.NON_EMPTY)
+	private final List<ServiceLocation> serviceLocation = new ArrayList<>();
+	@JsonInclude(value = Include.NON_EMPTY)
+	private final List<ServiceArea> serviceArea = new ArrayList<>();
+	@JsonInclude(value = Include.NON_EMPTY)
+	private final List<Transport> transport = new ArrayList<>();
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	public List<String> getVens() {
+	public List<String> getDnID() {
 		return this.dnID;
 	}
 
@@ -55,33 +67,33 @@ public class Target implements Serializable {
 		return this.meterAsset;
 	}
 
-//	@JsonInclude(value = Include.NON_EMPTY)
-//	public List<Pnode> getPnode() {
-//		return this.pnode;
-//	}
-//
-//	@JsonInclude(value = Include.NON_EMPTY)
-//	public List<AggregatedPnode> getAggregatedPnode() {
-//		return this.aggregatedPnode;
-//	}
-//
-//	@JsonInclude(value = Include.NON_EMPTY)
-//	public List<ServiceDeliveryPoint> getServiceDeliveryPoint() {
-//		return this.serviceDeliveryPoint;
-//	}
-//
-//	@JsonInclude(value = Include.NON_EMPTY)
-//	public List<ServiceLocation> getServiceLocation() {
-//		return this.serviceLocation;
-//	}
-//
-//	@JsonInclude(value = Include.NON_EMPTY)
-//	public List<ServiceArea> getServiceArea() {
-//		return this.serviceArea;
-//	}
-//
-//	@JsonInclude(value = Include.NON_EMPTY)
-//	public List<Transport> getTransport() {
-//		return this.transport;
-//	}
+	@JsonInclude(value = Include.NON_EMPTY)
+	public List<Pnode> getPnode() {
+		return this.pnode;
+	}
+
+	@JsonInclude(value = Include.NON_EMPTY)
+	public List<AggregatedPnode> getAggregatedPnode() {
+		return this.aggregatedPnode;
+	}
+
+	@JsonInclude(value = Include.NON_EMPTY)
+	public List<ServiceDeliveryPoint> getServiceDeliveryPoint() {
+		return this.serviceDeliveryPoint;
+	}
+
+	@JsonInclude(value = Include.NON_EMPTY)
+	public List<ServiceLocation> getServiceLocation() {
+		return this.serviceLocation;
+	}
+
+	@JsonInclude(value = Include.NON_EMPTY)
+	public List<ServiceArea> getServiceArea() {
+		return this.serviceArea;
+	}
+
+	@JsonInclude(value = Include.NON_EMPTY)
+	public List<Transport> getTransport() {
+		return this.transport;
+	}
 }

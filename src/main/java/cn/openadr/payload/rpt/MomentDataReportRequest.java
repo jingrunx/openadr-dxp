@@ -10,6 +10,10 @@ public class MomentDataReportRequest extends DataReportRequest {
 
 	private final List<PointData> pointData = new ArrayList<>();
 
+	public void addPointData(PointData value) {
+		this.pointData.add(value);
+	}
+
 	public List<PointData> getPointData() {
 		return pointData;
 	}

@@ -1,29 +1,42 @@
 package cn.openadr.model.event;
 
+import java.util.Objects;
 import javax.validation.constraints.NotNull;
 
 import org.joda.time.DateTime;
 import org.joda.time.Period;
 
 public class EventActivePeriod {
-	/** 开始时间 */
+	/**
+	 * 开始时间
+	 */
 	@NotNull
 	private DateTime dtstart;
 
-	/** 持续时间(单位:分钟) */
+	/**
+	 * 持续时间(单位:分钟)
+	 */
 	@NotNull
 	private Period duration;
 
-	/** 降低同时率 */
+	/**
+	 * 降低同时率
+	 */
 	private Period tolerance;
 
-	/** 提前通知时间(单位:分钟) */
+	/**
+	 * 提前通知时间(单位:分钟)
+	 */
 	private Period notification;
 
-	/** 从开始执行到满足要求所需时间(单位:分钟) */
+	/**
+	 * 从开始执行到满足要求所需时间(单位:分钟)
+	 */
 	private Period rampup;
 
-	/** 恢复时间(单位:分钟) */
+	/**
+	 * 恢复时间(单位:分钟)
+	 */
 	private Period recovery;
 
 	public DateTime getDtstart() {
@@ -31,6 +44,7 @@ public class EventActivePeriod {
 	}
 
 	public void setDtstart(DateTime dtstart) {
+		Objects.requireNonNull(dtstart);
 		this.dtstart = dtstart;
 	}
 
@@ -39,6 +53,7 @@ public class EventActivePeriod {
 	}
 
 	public void setDuration(Period duration) {
+		Objects.requireNonNull(duration);
 		this.duration = duration;
 	}
 

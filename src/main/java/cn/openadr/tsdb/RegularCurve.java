@@ -1,29 +1,33 @@
 package cn.openadr.tsdb;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Objects;
-
 import javax.validation.constraints.NotNull;
 
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-import org.joda.time.Interval;
-import org.joda.time.Period;
-import org.joda.time.ReadableDateTime;
-import org.joda.time.ReadablePeriod;
-
+import org.joda.time.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-/** 由固定时间间隔的数据序列组成 */
+/**
+ * 由固定时间间隔的数据序列组成
+ */
 public class RegularCurve extends CurveBase {
-	/** 开始时间 */
+	/**
+	 * 开始时间
+	 */
+	@NotNull
 	private DateTime dtstart;
-	/** 步长(单位:分钟) */
+
+	/**
+	 * 步长(单位:分钟)
+	 */
 	@NotNull
 	private Period period;
-	/** 数据数组 */
-	private double[] array = new double[] {};
+
+	/**
+	 * 数据数组
+	 */
+	@NotNull
+	private double[] array = new double[]{};
 
 	public RegularCurve() {
 	}
@@ -38,10 +42,8 @@ public class RegularCurve extends CurveBase {
 		return dtstart;
 	}
 
-	/** 设置开始时间, 注意:不能设置结束时间,结束时间由开始时间+步长+数据长度决定 */
 	public void setDtstart(DateTime dtstart) {
-		Objects.nonNull(dtstart);
-
+		Objects.requireNonNull(dtstart);
 		this.dtstart = dtstart;
 	}
 
@@ -49,9 +51,17 @@ public class RegularCurve extends CurveBase {
 		return period;
 	}
 
-	/** 设置步长 */
 	public void setPeriod(Period period) {
 		this.period = period;
+	}
+
+	public double[] getArray() {
+		return array;
+	}
+
+	public void setArray(double[] array) {
+		Objects.requireNonNull(array);
+		this.array = array;
 	}
 
 	@JsonIgnore
@@ -62,33 +72,26 @@ public class RegularCurve extends CurveBase {
 		return new Interval(dtstart, duration);
 	}
 
-	/** 数据 */
-	public double[] getArray() {
-		return array;
-	}
-
-	/** 设置数据 */
-	public void setArray(double[] array) {
-		Objects.nonNull(array);
-
-		this.array = array;
-	}
-
-	@JsonIgnore
 	@Override
-	public List<Data> getValues() {
-		ArrayList<Data> values = new ArrayList<>(array.length);
+	public Iterator<Data> iterator() {
+		return new Iterator<Data>() {
+			int idx = -1;
 
-		for (int i = 0; i < array.length; ++i) {
-			DateTime occur = getDateTime(dtstart, period, i);
-			Number value = Double.isNaN(array[i]) ? null : array[i];
-			values.add(new Data(value, occur));
-		}
+			@Override
+			public boolean hasNext() {
+				return ++idx < array.length;
+			}
 
-		return values;
+			@Override
+			public Data next() {
+				DateTime occur = getDateTime(dtstart, period, idx);
+				Number value = Double.isNaN(array[idx]) ? null : array[idx];
+				return new Data(value, occur);
+			}
+		};
 	}
 
-	protected DateTime getDateTime(DateTime start, Period period, int idx) {
+	private static DateTime getDateTime(DateTime start, Period period, int idx) {
 		return start.plus(period.toStandardDuration()
 			.multipliedBy(idx));
 	}

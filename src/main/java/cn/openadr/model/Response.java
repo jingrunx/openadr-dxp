@@ -1,19 +1,25 @@
 package cn.openadr.model;
 
 import java.io.Serializable;
-
+import java.util.Objects;
 import javax.validation.constraints.NotNull;
 
 // EiResponseType
 public class Response implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/** 状态代码 */
+	/**
+	 * 状态代码
+	 */
 	@NotNull
-	private int code;
-	/** 错误描述 */
+	private Integer code;
+	/**
+	 * 错误描述
+	 */
 	private String description;
-	/** 请求ID */
+	/**
+	 * 请求ID
+	 */
 	@NotNull
 	private String requestID;
 
@@ -21,7 +27,8 @@ public class Response implements Serializable {
 		return code;
 	}
 
-	public void setCode(int code) {
+	public void setCode(Integer code) {
+		Objects.requireNonNull(code);
 		this.code = code;
 	}
 
@@ -38,6 +45,7 @@ public class Response implements Serializable {
 	}
 
 	public void setRequestID(String requestID) {
+		Objects.requireNonNull(requestID);
 		this.requestID = requestID;
 	}
 }

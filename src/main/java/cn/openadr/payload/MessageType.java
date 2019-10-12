@@ -1,7 +1,7 @@
 package cn.openadr.payload;
 
 import cn.openadr.domain.EnumeratedType;
-import cn.openadr.domain.ServiceName;
+import cn.openadr.domain.ServiceType;
 import cn.openadr.payload.evt.CreatedEventResponse;
 import cn.openadr.payload.evt.DistributeEventRequest;
 import cn.openadr.payload.opt.CancelOptRequest;
@@ -9,56 +9,44 @@ import cn.openadr.payload.opt.CancelOptResponse;
 import cn.openadr.payload.opt.CreateOptRequest;
 import cn.openadr.payload.opt.CreateOptResponse;
 import cn.openadr.payload.poll.Poll;
-import cn.openadr.payload.reg.CancelRegistrationRequest;
-import cn.openadr.payload.reg.CancelRegistrationResponse;
-import cn.openadr.payload.reg.CreateRegistrationRequest;
-import cn.openadr.payload.reg.CreateRegistrationResponse;
-import cn.openadr.payload.reg.QueryRegistrationRequest;
-import cn.openadr.payload.rpt.CancelReportRequest;
-import cn.openadr.payload.rpt.CancelReportResponse;
-import cn.openadr.payload.rpt.CreateReportRequest;
-import cn.openadr.payload.rpt.CreateReportResponse;
-import cn.openadr.payload.rpt.RegisterReportRequest;
-import cn.openadr.payload.rpt.RegisterReportResponse;
-import cn.openadr.payload.rpt.UpdateReportRequest;
-import cn.openadr.payload.rpt.UpdateReportResponse;
+import cn.openadr.payload.reg.*;
+import cn.openadr.payload.rpt.*;
 
 public enum MessageType implements EnumeratedType {
-	CREATE_REG(
-		"createRegistration",
-		ServiceName.EI_REGISTER_PARTY,
-		CreateRegistrationRequest.class,
-		CreateRegistrationResponse.class), //
-	CANCEL_REG(
-		"cancelRegistration",
-		ServiceName.EI_REGISTER_PARTY,
-		CancelRegistrationRequest.class,
-		CancelRegistrationResponse.class), //
-	QUERY_REG(
-		"queryRegistration",
-		ServiceName.EI_REGISTER_PARTY,
-		QueryRegistrationRequest.class,
-		CreateRegistrationResponse.class), //
+	CREATE_REG("createRegistration", ServiceType.REGISTER,
+		CreateRegistrationRequest.class, CreateRegistrationResponse.class),
+	CANCEL_REG("cancelRegistration", ServiceType.REGISTER,
+		CancelRegistrationRequest.class, CancelRegistrationResponse.class),
+	QUERY_REG("queryRegistration", ServiceType.REGISTER,
+		QueryRegistrationRequest.class, CreateRegistrationResponse.class),
 
-	DIST_EVENT("distEvent", ServiceName.EI_EVENT, DistributeEventRequest.class, CreatedEventResponse.class), //
+	DIST_EVENT("distEvent", ServiceType.EVENT,
+		DistributeEventRequest.class, CreatedEventResponse.class),
 
-	REGISTER_REPORT("registerReport", ServiceName.EI_REPORT, RegisterReportRequest.class, RegisterReportResponse.class), //
-	CREATE_REPORT("createReport", ServiceName.EI_REPORT, CreateReportRequest.class, CreateReportResponse.class), //
-	CANCEL_REPORT("cancelReport", ServiceName.EI_REPORT, CancelReportRequest.class, CancelReportResponse.class), //
-	UPDATE_REPORT("updateReport", ServiceName.EI_REPORT, UpdateReportRequest.class, UpdateReportResponse.class), //
+	REGISTER_REPORT("registerReport", ServiceType.REPORT,
+		RegisterReportRequest.class, RegisterReportResponse.class),
+	CREATE_REPORT("createReport", ServiceType.REPORT,
+		CreateReportRequest.class, CreateReportResponse.class),
+	CANCEL_REPORT("cancelReport", ServiceType.REPORT,
+		CancelReportRequest.class, CancelReportResponse.class),
+	UPDATE_REPORT("updateReport", ServiceType.REPORT,
+		UpdateReportRequest.class, UpdateReportResponse.class),
 
-	CREATE_OPT("createOpt", ServiceName.EI_OPT, CreateOptRequest.class, CreateOptResponse.class), //
-	CANCEL_OPT("cancelOpt", ServiceName.EI_OPT, CancelOptRequest.class, CancelOptResponse.class), //
+	CREATE_OPT("createOpt", ServiceType.OPT,
+		CreateOptRequest.class, CreateOptResponse.class),
+	CANCEL_OPT("cancelOpt", ServiceType.OPT,
+		CancelOptRequest.class, CancelOptResponse.class),
 
-	PULL("poll", ServiceName.EI_POLL, Poll.class, DRResponse.class);
+	POLL("poll", ServiceType.POLL,
+		Poll.class, DRResponse.class);
 
 	private final String value;
-	public final ServiceName service;
+	public final ServiceType service;
 	public final Class<? extends DRRequest> request;
 	public final Class<? extends DRResponse> response;
 
-	private MessageType(String value, ServiceName service, Class<? extends DRRequest> request,
-		Class<? extends DRResponse> response) {
+	MessageType(String value, ServiceType service,
+		Class<? extends DRRequest> request, Class<? extends DRResponse> response) {
 		this.value = value;
 		this.service = service;
 		this.request = request;

@@ -5,13 +5,21 @@ import java.io.Serializable;
 public class LimitValue implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/** 下限(>=) */
+	/**
+	 * 下限(>=)
+	 */
 	private Double lower;
-	/** 上限(<) */
+	/**
+	 * 上限(<)
+	 */
 	private Double upper;
-	/** 闭合 (lower>=? && upper<=?) */
+	/**
+	 * 闭合 (lower>=? && upper<=?)
+	 */
 	private Boolean closure;
-	/** 取反 !(exp) */
+	/**
+	 * 取反 !(exp)
+	 */
 	private Boolean negate;
 
 	public Double getLower() {

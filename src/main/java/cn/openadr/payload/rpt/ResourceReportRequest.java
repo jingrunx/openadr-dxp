@@ -26,5 +26,4 @@ public class ResourceReportRequest extends DNRequest {
 	public List<ReportDescription> getReportDescription() {
 		return reportDescription;
 	}
-
 }

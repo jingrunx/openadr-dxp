@@ -1,106 +1,123 @@
 package cn.openadr.domain;
 
+import org.joda.time.ReadablePeriod;
+
 public interface MetricType {
-	static final String CURRENT = "current";
-	static final String CURRENT_A = "current.a";
-	static final String CURRENT_B = "current.b";
-	static final String CURRENT_C = "current.c";
+	/* private */ String prefix_elec = "e";
 
-	static final String VOLTAGE = "voltage";
-	static final String VOLTAGE_AN = "voltage.an";
-	static final String VOLTAGE_BN = "voltage.bn";
-	static final String VOLTAGE_CN = "voltage.cn";
+	/* ====================模拟量类==================== */
+	/* private */ String prefix_e = prefix_elec;
 
-	static final String VOLTAGE_AB = "voltage.ab";
-	static final String VOLTAGE_BC = "voltage.bc";
-	static final String VOLTAGE_CA = "voltage.ca";
-	static final String VOLTAGE_ABC = "voltage.abc";
-	static final String VOLTAGE_ABCN = "voltage.abcn";
+	//电流
+	String I = prefix_e + '.' + ElectricType.I.code();
+	String I_A = I + '.' + Phase.a.code;
+	String I_B = I + '.' + Phase.b.code;
+	String I_C = I + '.' + Phase.c.code;
+	String I_N = I + '.' + 'n';
+	String I_0 = I + '.' + Phase.zeroSequence.code;
 
-	static final String POWER_ACTIVE = "power.active";
-	static final String POWER_ACTIVE_A = "power.active.a";
-	static final String POWER_ACTIVE_B = "power.active.b";
-	static final String POWER_ACTIVE_C = "power.active.c";
-	static final String POWER_ACTIVE_POSITIVE = "power.active.positive";
-	static final String POWER_ACTIVE_REVERSE = "power.active.reverse";
+	//相电压
+	String U = prefix_e + '.' + ElectricType.U.code();
+	String U_AN = U + '.' + Phase.a.code;
+	String U_BN = U + '.' + Phase.b.code;
+	String U_CN = U + '.' + Phase.c.code;
+	String U_ABCN = U + ".abcn";
 
-	static final String POWER_REACTIVE = "power.reactive";
-	static final String POWER_REACTIVE_A = "power.reactive.a";
-	static final String POWER_REACTIVE_B = "power.reactive.b";
-	static final String POWER_REACTIVE_C = "power.reactive.c";
-	static final String POWER_REACTIVE_POSITIVE = "power.reactive.positive";
-	static final String POWER_REACTIVE_REVERSE = "power.reactive.reverse";
+	//线电压
+	String U_wire = U + ".wire";
+	String U_AB = U_wire + ".ab";
+	String U_BC = U_wire + ".bc";
+	String U_CA = U_wire + ".ca";
+	String U_ABC = U_wire + ".abc";
 
-	static final String POWER_REACTIVE_Q1 = "power.reactive.q1";
-	static final String POWER_REACTIVE_Q2 = "power.reactive.q2";
-	static final String POWER_REACTIVE_Q3 = "power.reactive.q3";
-	static final String POWER_REACTIVE_Q4 = "power.reactive.q4";
+	//功率因素
+	String PF = prefix_e + '.' + ElectricType.PF.code();
+	String PF_A = PF + '.' + Phase.a.code;
+	String PF_B = PF + '.' + Phase.b.code;
+	String PF_C = PF + '.' + Phase.c.code;
 
-	static final String POWER_APPARENT = "power.apparent";
-	static final String POWER_APPARENT_A = "power.apparent.a";
-	static final String POWER_APPARENT_B = "power.apparent.b";
-	static final String POWER_APPARENT_C = "power.apparent.c";
+	//温度
+	String T = prefix_e + '.' + 't';
+	String T_A = T + '.' + Phase.a.code;
+	String T_B = T + '.' + Phase.b.code;
+	String T_C = T + '.' + Phase.c.code;
 
-	static final String FREQUENCY = "frequency";
+	//频率
+	String Hz = prefix_e + '.' + ElectricType.Hz.code();
 
-	static final String POWER_FACTOR = "power.factor";
-	static final String POWER_FACTOR_A = "power.factor.a";
-	static final String POWER_FACTOR_B = "power.factor.b";
-	static final String POWER_FACTOR_C = "power.factor.c";
+	//相角
+	String Z = prefix_e + ".z";
+	String Z_I = Z + '.' + ElectricType.I.code();
+	String Z_U = Z + '.' + ElectricType.U.code();
+	String Z_IA = Z_I + '.' + Phase.a.code;
+	String Z_IB = Z_I + '.' + Phase.b.code;
+	String Z_IC = Z_I + '.' + Phase.c.code;
+	String Z_UA = Z_U + '.' + Phase.a.code;
+	String Z_UB = Z_U + '.' + Phase.b.code;
+	String Z_UC = Z_U + '.' + Phase.c.code;
 
-	static final String PHASE_ANGLE_IA = "phase.angle.ia";
-	static final String PHASE_ANGLE_IB = "phase.angle.ib";
-	static final String PHASE_ANGLE_IC = "phase.angle.ic";
-	static final String PHASE_ANGLE_UA = "phase.angle.ua";
-	static final String PHASE_ANGLE_UB = "phase.angle.ub";
-	static final String PHASE_ANGLE_UC = "phase.angle.uc";
+	/* ====================功率类==================== */
+	/* private */ String prefix_p = prefix_elec;
 
-	static final String ENERGY_ACTIVE = "energy.active";
-	static final String ENERGY_ACTIVE_A = "energy.active.a";
-	static final String ENERGY_ACTIVE_B = "energy.active.b";
-	static final String ENERGY_ACTIVE_C = "energy.active.c";
+	//有功功率
+	String P = prefix_p + '.' + ElectricType.P.code();
+	String P_A = P + '.' + Phase.a.code;
+	String P_B = P + '.' + Phase.b.code;
+	String P_C = P + '.' + Phase.c.code;
 
-	static final String ENERGY_ACTIVE_POSITIVE = "energy.active.positive";
-	static final String ENERGY_ACTIVE_REVERSE = "energy.active.reverse";
+	//无功功率
+	String Q = prefix_p + '.' + ElectricType.Q.code();
+	String Q_A = Q + '.' + Phase.a.code;
+	String Q_B = Q + '.' + Phase.b.code;
+	String Q_C = Q + '.' + Phase.c.code;
 
-	static final String ENERGY_REACTIVE = "energy.reactive";
-	static final String ENERGY_REACTIVE_A = "energy.reactive.a";
-	static final String ENERGY_REACTIVE_B = "energy.reactive.b";
-	static final String ENERGY_REACTIVE_C = "energy.reactive.c";
+	//视在功率
+	String S = prefix_p + '.' + ElectricType.S.code();
+	String S_A = S + '.' + Phase.a.code;
+	String S_B = S + '.' + Phase.b.code;
+	String S_C = S + '.' + Phase.c.code;
 
-	static final String ENERGY_REACTIVE_POSITIVE = "energy.reactive.positive";
-	static final String ENERGY_REACTIVE_REVERSE = "energy.reactive.reverse";
+	/* ====================电量类==================== */
+	/* private */ String prefix_ee = prefix_elec;
+	// 正向
+	/* private */ String pos = ".imp";
+	// 反向
+	/* private */ String rev = ".exp";
 
-	static final String ENERGY_REACTIVE_Q1 = "energy.reactive.q1";
-	static final String ENERGY_REACTIVE_Q2 = "energy.reactive.q2";
-	static final String ENERGY_REACTIVE_Q3 = "energy.reactive.q3";
-	static final String ENERGY_REACTIVE_Q4 = "energy.reactive.q4";
+	String EP = prefix_ee + '.' + ElectricType.EP.code();
+	String EP_pos = EP + pos;
+	String EP_rev = EP + rev;
 
-	static final String ENERGY_APPARENT = "energy.apparent";
-	static final String ENERGY_APPARENT_A = "energy.apparent.a";
-	static final String ENERGY_APPARENT_B = "energy.apparent.b";
-	static final String ENERGY_APPARENT_C = "energy.apparent.c";
+	String EQ = prefix_ee + '.' + ElectricType.EQ.code();
+	String EQ_pos = EQ + pos;
+	String EQ_rev = EQ + rev;
+	String EQ_Q1 = EQ + '.' + Direction.q1.code;
+	String EQ_Q2 = EQ + '.' + Direction.q2.code;
+	String EQ_Q3 = EQ + '.' + Direction.q3.code;
+	String EQ_Q4 = EQ + '.' + Direction.q4.code;
 
-	static final String POWER_ACTIVE_DEMAND_MAX = "power.active.demand.max";
-	static final String POWER_ACTIVE_DEMAND_MAX_OCCUR = "power.active.demand.max.occur";
-	static final String POWER_ACTIVE_DEMAND_MIN = "power.active.demand.min";
-	static final String POWER_ACTIVE_DEMAND_MIN_OCCUR = "power.active.demand.min.occur";
+	String ES = prefix_ee + '.' + ElectricType.ES.code();
 
-	static final String POWER_REACTIVE_DEMAND_MAX = "power.reactive.demand.max";
-	static final String POWER_REACTIVE_DEMAND_MAX_OCCUR = "power.reactive.demand.max.occur";
-	static final String POWER_REACTIVE_DEMAND_MIN = "power.reactive.demand.min";
-	static final String POWER_REACTIVE_DEMAND_MIN_OCCUR = "power.reactive.demand.min.occur";
+	/**
+	 * 根据电量测点和积分时段产生与时段相关的测点名
+	 * <li>后缀与joda.Period保持一致
+	 * <li>如有功电量为[e.ep]，15分钟有功电量为[e.ep.pt15m]，日有功电量为[e.ep.p1d]
+	 */
+	default String periodMetric(String eMetric, ReadablePeriod period) {
+		String periodStr = period.toString();
+		return eMetric + '.' + periodStr.toLowerCase();
+	}
 
-	static final String ENERGY_ACTIVE_DEMAND_MAX = "energy.active.demand.max";
-	static final String ENERGY_ACTIVE_DEMAND_MAX_OCCUR = "energy.active.demand.max.occur";
-	static final String ENERGY_ACTIVE_DEMAND_MIN = "energy.active.demand.min";
-	static final String ENERGY_ACTIVE_DEMAND_MIN_OCCUR = "energy.active.demand.min.occur";
+	/* ====================电能示值类==================== */
+	/* private */ String prefix_r = "r";
 
-	static final String ENERGY_REACTIVE_DEMAND_MAX = "energy.reactive.demand.max";
-	static final String ENERGY_REACTIVE_DEMAND_MAX_OCCUR = "energy.reactive.demand.max.occur";
-	static final String ENERGY_REACTIVE_DEMAND_MIN = "energy.reactive.demand.min";
-	static final String ENERGY_REACTIVE_DEMAND_MIN_OCCUR = "energy.reactive.demand.min.occur";
+	String EPr = prefix_r + '.' + ElectricType.EP.code();
+	String EPr_pos = EPr + pos;
+	String EPr_rev = EPr + rev;
 
-	static final String QUALITY_CURRENT_UNBALANCE = "quality.current.unbalance";
-	static final String QUALITY_VOLTAGE_UNBALANCE = "quality.voltage.unbalance";
+	String EQr = prefix_r + '.' + ElectricType.EQ.code();
+	String EQr_pos = EQr + pos;
+	String EQr_rev = EQr + rev;
+
+	String ESr = prefix_r + '.' + ElectricType.ES.code();
 }

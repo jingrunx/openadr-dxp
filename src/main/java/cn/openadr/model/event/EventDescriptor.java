@@ -1,9 +1,9 @@
 package cn.openadr.model.event;
 
+import java.util.Objects;
 import javax.validation.constraints.NotNull;
 
 import org.joda.time.DateTime;
-
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -11,33 +11,51 @@ import cn.openadr.domain.EventStatus;
 import cn.openadr.domain.EventStatus.EventStatusDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 
-/** 事件描述 */
+/**
+ * 事件描述
+ */
 public class EventDescriptor extends QualifiedEventID {
 	private static final long serialVersionUID = 1L;
 
-	/** 事件状态 */
+	/**
+	 * 事件状态
+	 */
 	@NotNull
 	private EventStatus status;
 
-	/** 优先级 */
+	/**
+	 * 优先级
+	 */
 	private int priority;
 
-	/** 测试事件 */
+	/**
+	 * 测试事件
+	 */
 	private boolean test;
 
-	/** 修改时间 */
+	/**
+	 * 修改时间
+	 */
 	private DateTime modificationDateTime;
 
-	/** 修改原因 */
+	/**
+	 * 修改原因
+	 */
 	private String modificationReason;
 
-	/** 创建时间 */
+	/**
+	 * 创建时间
+	 */
 	private DateTime createdDateTime;
 
-	/** 注释 */
+	/**
+	 * 注释
+	 */
 	private String comment;
 
-	/** 市场信息 */
+	/**
+	 * 市场信息
+	 */
 	private String marketContext;
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
@@ -47,6 +65,7 @@ public class EventDescriptor extends QualifiedEventID {
 
 	@JsonDeserialize(using = EventStatusDeserializer.class)
 	public void setStatus(EventStatus status) {
+		Objects.requireNonNull(status);
 		this.status = status;
 	}
 

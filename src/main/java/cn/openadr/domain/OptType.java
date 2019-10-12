@@ -7,7 +7,7 @@ public enum OptType implements EnumeratedType {
 
 	private final String value;
 
-	private OptType(String paramString) {
+	OptType(String paramString) {
 		this.value = paramString;
 	}
 

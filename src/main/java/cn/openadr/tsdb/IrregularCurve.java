@@ -1,18 +1,12 @@
 package cn.openadr.tsdb;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeComparator;
-import org.joda.time.Interval;
-import org.joda.time.ReadableInterval;
-import org.joda.time.Seconds;
+import org.joda.time.*;
 
-/** 由一组时间和值组成的时间序列数据 */
+/**
+ * 由一组时间和值组成的时间序列数据
+ */
 public class IrregularCurve extends CurveBase {
 	private final List<Data> values = new ArrayList<>();
 
@@ -20,15 +14,14 @@ public class IrregularCurve extends CurveBase {
 	}
 
 	public IrregularCurve(Collection<Data> values) {
-		setValues(values);
+		addValues(values);
 	}
 
-	@Override
-	public List<Data> getValues() {
-		return values;
+	public void addValue(Data value) {
+		this.values.add(value);
 	}
 
-	public void setValues(Collection<Data> values) {
+	public void addValues(Collection<Data> values) {
 		this.values.addAll(values);
 	}
 
@@ -44,10 +37,15 @@ public class IrregularCurve extends CurveBase {
 			.filter(Objects::nonNull)
 			.max(DateTimeComparator.getInstance());
 
-		if (start.isPresent() && end.isPresent()) {
+		if(start.isPresent() && end.isPresent()) {
 			return new Interval(start.get(), end.get());
 		} else {
-			return new Interval(new DateTime(0L), Seconds.ZERO);
+			return new Interval(Instant.ofEpochMilli(0), Seconds.ZERO);
 		}
+	}
+
+	@Override
+	public Iterator<Data> iterator() {
+		return values.iterator();
 	}
 }

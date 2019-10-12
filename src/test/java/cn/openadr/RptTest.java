@@ -9,16 +9,7 @@ import cn.openadr.model.report.MetaDataReport;
 import cn.openadr.model.report.ReportRequest;
 import cn.openadr.model.target.MeterAsset;
 import cn.openadr.model.target.Resource;
-import cn.openadr.payload.rpt.CancelReportRequest;
-import cn.openadr.payload.rpt.CancelReportResponse;
-import cn.openadr.payload.rpt.CreateReportRequest;
-import cn.openadr.payload.rpt.CreateReportResponse;
-import cn.openadr.payload.rpt.IntervalDataReportRequest;
-import cn.openadr.payload.rpt.MomentDataReportRequest;
-import cn.openadr.payload.rpt.RegisterReportRequest;
-import cn.openadr.payload.rpt.RegisterReportResponse;
-import cn.openadr.payload.rpt.ResourceReportRequest;
-import cn.openadr.payload.rpt.UpdateReportResponse;
+import cn.openadr.payload.rpt.*;
 import cn.openadr.utils.CommonUtils;
 import cn.openadr.utils.MetricUtils;
 import cn.openadr.utils.RptUtils;
@@ -29,14 +20,14 @@ public class RptTest extends AbstractTest {
 		RegisterReportRequest req = new RegisterReportRequest();
 		CommonUtils.fillRequest(req);
 
-		for (int i = 0; i < 2; ++i) {
+		for(int i = 0; i < 2; ++i) {
 			MetaDataReport report = new MetaDataReport();
 
 			report.setReportName(ReportName.HISTORY_USAGE);
-			report.setReportRequestID(CommonUtils.id());
+//			report.setReportRequestID(CommonUtils.id());
 			report.setCreatedDateTime(DateTime.now());
 
-			RptUtils.fillReportDescription(report.getReportDescription());
+//			RptUtils.fillReportDescription(report.getReportDescription());
 
 			req.getReport()
 				.add(report);
@@ -50,7 +41,7 @@ public class RptTest extends AbstractTest {
 		RegisterReportResponse rep = new RegisterReportResponse();
 		CommonUtils.fillResponse(rep);
 
-		for (int i = 0; i < 2; ++i) {
+		for(int i = 0; i < 2; ++i) {
 			ReportRequest rreq = new ReportRequest();
 			rreq.setReportRequestID(CommonUtils.id());
 
@@ -67,7 +58,7 @@ public class RptTest extends AbstractTest {
 	public void testCreateReportRequest() {
 		CreateReportRequest req = new CreateReportRequest();
 
-		for (int i = 0; i < 2; ++i) {
+		for(int i = 0; i < 2; ++i) {
 			ReportRequest rreq = new ReportRequest();
 			rreq.setReportRequestID(CommonUtils.id());
 
@@ -85,7 +76,7 @@ public class RptTest extends AbstractTest {
 		CreateReportResponse rep = new CreateReportResponse();
 		CommonUtils.fillResponse(rep);
 
-		for (int i = 0; i < 2; ++i)
+		for(int i = 0; i < 2; ++i)
 			rep.getPendingReports()
 				.getReportRequestID()
 				.add(CommonUtils.id());
@@ -100,7 +91,7 @@ public class RptTest extends AbstractTest {
 
 		req.setReportToFollow(true);
 
-		for (int i = 0; i < 2; ++i)
+		for(int i = 0; i < 2; ++i)
 			req.getReportRequestID()
 				.add(CommonUtils.id());
 
@@ -112,7 +103,7 @@ public class RptTest extends AbstractTest {
 		CancelReportResponse rep = new CancelReportResponse();
 		CommonUtils.fillResponse(rep);
 
-		for (int i = 0; i < 2; ++i)
+		for(int i = 0; i < 2; ++i)
 			rep.getPendingReports()
 				.getReportRequestID()
 				.add(CommonUtils.id());
@@ -125,12 +116,9 @@ public class RptTest extends AbstractTest {
 		MomentDataReportRequest req = new MomentDataReportRequest();
 		RptUtils.fillDataReportRequest(req);
 
-		req.getPointData()
-			.add(MetricUtils.createPointValue(1, 97));
-		req.getPointData()
-			.add(MetricUtils.createPointValue(2, 4567));
-		req.getPointData()
-			.add(MetricUtils.createPointValue(3, 232.2));
+		req.addPointData(MetricUtils.createPointValue(1, 97));
+		req.addPointData(MetricUtils.createPointValue(2, 4567));
+		req.addPointData(MetricUtils.createPointValue(3, 232.2));
 
 		object = req;
 	}
@@ -140,12 +128,9 @@ public class RptTest extends AbstractTest {
 		IntervalDataReportRequest req = new IntervalDataReportRequest();
 		RptUtils.fillDataReportRequest(req);
 
-		req.getPointCurveData()
-			.add(MetricUtils.createPointValues(1));
-		req.getPointCurveData()
-			.add(MetricUtils.createPointValues(2));
-		req.getPointCurveData()
-			.add(MetricUtils.createPointValues(3));
+		req.addPointCurveData(MetricUtils.createPointValues(1));
+		req.addPointCurveData(MetricUtils.createPointValues(2));
+		req.addPointCurveData(MetricUtils.createPointValues(3));
 
 		object = req;
 	}
@@ -157,7 +142,7 @@ public class RptTest extends AbstractTest {
 
 		CancelReportRequest creq = new CancelReportRequest();
 		creq.setRequestID(CommonUtils.id());
-		for (int i = 0; i < 2; ++i)
+		for(int i = 0; i < 2; ++i)
 			creq.getReportRequestID()
 				.add(CommonUtils.id());
 		rep.setCancelReport(creq);
@@ -169,7 +154,7 @@ public class RptTest extends AbstractTest {
 	public void testResourceReportRequest() {
 		ResourceReportRequest req = new ResourceReportRequest();
 
-		for (int i = 0; i < 2; ++i) {
+		for(int i = 0; i < 2; ++i) {
 			Resource res = new Resource();
 			res.getEndDeviceAsset()
 				.setMrid(EndDeviceAssetType.Electric_Vehicle.name());
@@ -179,7 +164,7 @@ public class RptTest extends AbstractTest {
 				.add(res);
 		}
 
-		for (int i = 0; i < 2; ++i) {
+		for(int i = 0; i < 2; ++i) {
 			MeterAsset meter = new MeterAsset();
 			meter.setMrid(CommonUtils.id());
 			req.getMeterAsset()

@@ -48,7 +48,7 @@ public class MetricUtils {
 		regular.setPeriod(Hours.ONE.toPeriod()
 			.toPeriod());
 		double[] array = new double[DateTimeConstants.HOURS_PER_DAY];
-		for (int i = 0; i < array.length; ++i) {
+		for(int i = 0; i < array.length; ++i) {
 			array[i] = (int) (Math.sin(i) * 1000 + 1000);
 		}
 		regular.setArray(array);
@@ -57,11 +57,8 @@ public class MetricUtils {
 	public static void fillIrregular(IrregularCurve irregular) {
 		DateTime dtstart = CommonUtils.dtstart();
 
-		irregular.getValues()
-			.add(new Data(100.0d, dtstart));
-		irregular.getValues()
-			.add(new Data(200.0d, dtstart.plusMinutes(15)));
-		irregular.getValues()
-			.add(new Data(400.0d, dtstart.plusHours(1)));
+		irregular.addValue(new Data(100.0d, dtstart));
+		irregular.addValue(new Data(200.0d, dtstart.plusMinutes(15)));
+		irregular.addValue(new Data(400.0d, dtstart.plusHours(1)));
 	}
 }

@@ -10,5 +10,5 @@ public enum SignalName {
 	BID_ENERGY,
 	CHARGE_STATE,
 	LOAD_DISPATCH,
-	LOAD_CONTROL;
+	LOAD_CONTROL
 }

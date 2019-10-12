@@ -3,16 +3,11 @@ package cn.openadr;
 import org.joda.time.Minutes;
 import org.junit.Test;
 
-import cn.openadr.domain.ServiceName;
+import cn.openadr.domain.ServiceType;
 import cn.openadr.domain.TransportType;
 import cn.openadr.model.register.KeyValue;
 import cn.openadr.model.register.ServiceSpecific;
-import cn.openadr.payload.reg.CancelRegistrationRequest;
-import cn.openadr.payload.reg.CancelRegistrationResponse;
-import cn.openadr.payload.reg.CreateRegistrationRequest;
-import cn.openadr.payload.reg.CreateRegistrationResponse;
-import cn.openadr.payload.reg.QueryRegistrationRequest;
-import cn.openadr.payload.reg.ReregistrationRequest;
+import cn.openadr.payload.reg.*;
 import cn.openadr.utils.CommonUtils;
 
 public class RegTest extends AbstractTest {
@@ -44,7 +39,7 @@ public class RegTest extends AbstractTest {
 			.add(TransportType.JSON);
 
 		ServiceSpecific spec = new ServiceSpecific();
-		spec.setServiceName(ServiceName.EI_EVENT);
+		spec.setServiceName(ServiceType.EI_EVENT);
 		spec.getInfo()
 			.add(new KeyValue("IP", "192.168.1.1"));
 		spec.getInfo()

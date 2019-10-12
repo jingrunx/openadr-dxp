@@ -7,23 +7,23 @@ import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-import cn.openadr.domain.ServiceName;
-import cn.openadr.domain.ServiceName.ServiceNameDeserializer;
+import cn.openadr.domain.ServiceType;
+import cn.openadr.domain.ServiceType.ServiceTypeDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 
 public class ServiceSpecific implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private ServiceName serviceName;
+	private ServiceType serviceName;
 	private final List<KeyValue> info = new ArrayList<>();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	public ServiceName getServiceName() {
+	public ServiceType getServiceName() {
 		return serviceName;
 	}
 
-	@JsonDeserialize(using = ServiceNameDeserializer.class)
-	public void setServiceName(ServiceName name) {
+	@JsonDeserialize(using = ServiceTypeDeserializer.class)
+	public void setServiceName(ServiceType name) {
 		this.serviceName = name;
 	}
 

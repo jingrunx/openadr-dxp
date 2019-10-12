@@ -1,21 +1,26 @@
 package cn.openadr.model.report;
 
 import java.io.Serializable;
-
 import javax.validation.constraints.NotNull;
 
 import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
 
-/** 计量单位 */
+/**
+ * 计量单位
+ */
 public class MetricDescription implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
 	private String/* MetricType */ metric;
-	/** 倍率 */
+	/**
+	 * 倍率
+	 */
 	private UnitMultiplier multiplier;
-	/** 单位 */
+	/**
+	 * 单位
+	 */
 	private UnitSymbol symbol;
 
 	public String getMetric() {

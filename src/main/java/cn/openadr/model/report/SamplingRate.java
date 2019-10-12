@@ -1,22 +1,29 @@
 package cn.openadr.model.report;
 
 import java.io.Serializable;
-
 import javax.validation.constraints.NotNull;
 
 import org.joda.time.Period;
 
-/** 采样频率 */
+/**
+ * 采样频率
+ */
 public class SamplingRate implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/** 最小间隔: 单位(分钟) */
+	/**
+	 * 最小间隔: 单位(分钟)
+	 */
 	@NotNull
 	private Period minPeriod;
-	/** 最大间隔: 单位(分钟) */
+	/**
+	 * 最大间隔: 单位(分钟)
+	 */
 	@NotNull
 	private Period maxPeriod;
-	/** 变位上送 */
+	/**
+	 * 变位上送
+	 */
 	private boolean onChange;
 
 	public Period getMinPeriod() {

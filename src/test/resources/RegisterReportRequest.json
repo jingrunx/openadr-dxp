@@ -1,70 +1,87 @@
 {
-  "version" : 1,
-  "requestID" : "e2804076-6d71-430f-bff4-32157288d45a",
-  "dnID" : "dn#1",
-  "reportRequestID" : null,
-  "report" : [ {
-    "reportName" : "HISTORY_USAGE",
-    "reportRequestID" : "e21d599e-fc76-4e81-98c3-8d7a4e83a420",
-    "createdDateTime" : "2017-10-27T02:41:06.428Z",
-    "reportDescription" : [ {
-      "rID" : 1,
-      "metric" : "voltage",
-      "readingType" : null,
-      "samplingRate" : {
-        "minPeriod" : "PT1M",
-        "maxPeriod" : "PT1H",
-        "onChange" : false
-      },
-      "reportSubject" : { },
-      "reportDataSource" : {
-        "resourceID" : [ "resourceID#1" ]
-      }
-    }, {
-      "rID" : 1,
-      "metric" : "power.active",
-      "readingType" : null,
-      "samplingRate" : {
-        "minPeriod" : "PT1M",
-        "maxPeriod" : "PT1H",
-        "onChange" : false
-      },
-      "reportSubject" : { },
-      "reportDataSource" : {
-        "resourceID" : [ "resourceID#1" ]
-      }
-    } ]
-  }, {
-    "reportName" : "HISTORY_USAGE",
-    "reportRequestID" : "330927bc-39e5-49a8-acb2-f83ec21e6724",
-    "createdDateTime" : "2017-10-27T02:41:06.428Z",
-    "reportDescription" : [ {
-      "rID" : 1,
-      "metric" : "voltage",
-      "readingType" : null,
-      "samplingRate" : {
-        "minPeriod" : "PT1M",
-        "maxPeriod" : "PT1H",
-        "onChange" : false
-      },
-      "reportSubject" : { },
-      "reportDataSource" : {
-        "resourceID" : [ "resourceID#1" ]
-      }
-    }, {
-      "rID" : 1,
-      "metric" : "power.active",
-      "readingType" : null,
-      "samplingRate" : {
-        "minPeriod" : "PT1M",
-        "maxPeriod" : "PT1H",
-        "onChange" : false
-      },
-      "reportSubject" : { },
-      "reportDataSource" : {
-        "resourceID" : [ "resourceID#1" ]
-      }
-    } ]
-  } ],
-  "root" : "RegisterReportRequest"
+  "version": 1,
+  "requestID": "e2804076-6d71-430f-bff4-32157288d45a",
+  "dnID": "dn#1",
+  "reportRequestID": null,
+  "report": [
+    {
+      "reportName": "HISTORY_USAGE",
+      "reportRequestID": "e21d599e-fc76-4e81-98c3-8d7a4e83a420",
+      "createdDateTime": "2017-10-27T02:41:06.428Z",
+      "reportDescription": [
+        {
+          "rID": 1,
+          "metric": "UA",
+          "readingType": null,
+          "samplingRate": {
+            "minPeriod": "PT1M",
+            "maxPeriod": "PT1H",
+            "onChange": false
+          },
+          "reportSubject": {},
+          "reportDataSource": {
+            "resourceID": [
+              "resourceID#1"
+            ]
+          }
+        },
+        {
+          "rID": 2,
+          "metric": "PAP",
+          "readingType": null,
+          "samplingRate": {
+            "minPeriod": "PT1M",
+            "maxPeriod": "PT1H",
+            "onChange": false
+          },
+          "reportSubject": {},
+          "reportDataSource": {
+            "resourceID": [
+              "resourceID#1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "reportName": "HISTORY_USAGE",
+      "reportRequestID": "330927bc-39e5-49a8-acb2-f83ec21e6724",
+      "createdDateTime": "2017-10-27T02:41:06.428Z",
+      "reportDescription": [
+        {
+          "rID": 1,
+          "metric": "UA",
+          "readingType": null,
+          "samplingRate": {
+            "minPeriod": "PT1M",
+            "maxPeriod": "PT1H",
+            "onChange": false
+          },
+          "reportSubject": {},
+          "reportDataSource": {
+            "resourceID": [
+              "resourceID#1"
+            ]
+          }
+        },
+        {
+          "rID": 2,
+          "metric": "PAP",
+          "readingType": null,
+          "samplingRate": {
+            "minPeriod": "PT1M",
+            "maxPeriod": "PT1H",
+            "onChange": false
+          },
+          "reportSubject": {},
+          "reportDataSource": {
+            "resourceID": [
+              "resourceID#1"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "root": "RegisterReportRequest"
 }
