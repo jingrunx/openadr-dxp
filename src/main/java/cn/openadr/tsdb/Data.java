@@ -6,7 +6,7 @@ import org.joda.time.DateTime;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-import cn.openadr.domain.DataQuality;
+import cn.openadr.domain.Quality;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -27,5 +27,5 @@ public class Data implements Serializable {
 	private DateTime timestamp;
 
 	@JsonInclude(Include.NON_NULL)
-	private DataQuality quality;
+	private Quality quality;
 }

@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import org.joda.time.DateTime;
 
-import cn.openadr.domain.ReportName;
 import lombok.NoArgsConstructor;
 
 // OadrReportType
@@ -14,7 +13,6 @@ import lombok.NoArgsConstructor;
 public class MetaDataReport implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private ReportName reportName;
 	private DateTime createdDateTime;
 	private final ReportDescription reportDescription = new ReportDescription();
 }

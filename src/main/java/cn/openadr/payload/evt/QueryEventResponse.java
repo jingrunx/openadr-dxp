@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cn.openadr.model.event.Event;
-import cn.openadr.payload.DNRequest;
+import cn.openadr.payload.DNResponse;
 
-// OadrDistributeEventType
-@lombok.Getter
-public class DistributeEventRequest extends DNRequest {
+/**
+ * Author: jrxian
+ * Date: 2019-10-17 14:32
+ */
+public class QueryEventResponse extends DNResponse {
 	private static final long serialVersionUID = 1L;
 
 	private final List<Event> events = new ArrayList<>();

@@ -2,7 +2,7 @@ package cn.openadr.payload;
 
 import cn.openadr.domain.EnumeratedType;
 import cn.openadr.domain.ServiceType;
-import cn.openadr.payload.evt.CreatedEventResponse;
+import cn.openadr.payload.evt.CreateEventResponse;
 import cn.openadr.payload.evt.DistributeEventRequest;
 import cn.openadr.payload.opt.CancelOptRequest;
 import cn.openadr.payload.opt.CancelOptResponse;
@@ -21,7 +21,7 @@ public enum MessageType implements EnumeratedType {
 		QueryRegistrationRequest.class, CreateRegistrationResponse.class),
 
 	DIST_EVENT("distEvent", ServiceType.EVENT,
-		DistributeEventRequest.class, CreatedEventResponse.class),
+		DistributeEventRequest.class, CreateEventResponse.class),
 
 	REGISTER_REPORT("registerReport", ServiceType.REPORT,
 		RegisterReportRequest.class, RegisterReportResponse.class),

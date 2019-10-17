@@ -5,7 +5,7 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-import cn.openadr.payload.evt.CreatedEventResponse;
+import cn.openadr.payload.evt.CreateEventResponse;
 import cn.openadr.payload.evt.DistributeEventRequest;
 import cn.openadr.payload.evt.QueryEventRequest;
 import cn.openadr.payload.opt.CancelOptRequest;
@@ -28,7 +28,7 @@ public class SignedObject implements Serializable {
 	//private OadrDistributeEventType oadrDistributeEvent;
 	private DistributeEventRequest distributeEventRequest;
 	//private OadrCreatedEventType oadrCreatedEvent;
-	private CreatedEventResponse createdEventResponse;
+	private CreateEventResponse createdEventResponse;
 	//private OadrRequestEventType oadrRequestEvent;
 	private QueryEventRequest queryEventRequest;
 	//private OadrResponseType oadrResponse;

@@ -9,10 +9,9 @@ import lombok.NoArgsConstructor;
 @lombok.Getter
 @lombok.Setter
 @NoArgsConstructor
-public class EventResponse implements Serializable {
+public class EventResponse extends Response implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private OptType optType;
-	private final Response response = new Response();
 	private final QualifiedEventID qualifiedEventID = new QualifiedEventID();
 }

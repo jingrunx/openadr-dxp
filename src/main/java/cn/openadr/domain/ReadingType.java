@@ -9,7 +9,7 @@ public enum ReadingType implements EnumeratedType {
 	/**
 	 * 示值
 	 */
-	DIRECT_READ("Direct Read"),
+	DIRECT_READ("Direct_Read"),
 	/**
 	 * 净值
 	 */
