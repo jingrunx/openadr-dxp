@@ -57,8 +57,8 @@ public class MetricUtils {
 	public static void fillIrregular(IrregularCurve irregular) {
 		DateTime dtstart = CommonUtils.dtstart();
 
-		irregular.addValue(new Data(100.0d, dtstart));
-		irregular.addValue(new Data(200.0d, dtstart.plusMinutes(15)));
-		irregular.addValue(new Data(400.0d, dtstart.plusHours(1)));
+		irregular.addValue(new Data(100.0d, dtstart, null));
+		irregular.addValue(new Data(200.0d, dtstart.plusMinutes(15), null));
+		irregular.addValue(new Data(400.0d, dtstart.plusHours(1), null));
 	}
 }

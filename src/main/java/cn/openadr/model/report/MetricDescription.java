@@ -1,18 +1,24 @@
 package cn.openadr.model.report;
 
 import java.io.Serializable;
-import javax.validation.constraints.NotNull;
 
 import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 /**
  * 计量单位
  */
+@lombok.Getter
+@lombok.Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class MetricDescription implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@NotNull
+	@NonNull
 	private String/* MetricType */ metric;
 	/**
 	 * 倍率
@@ -22,28 +28,4 @@ public class MetricDescription implements Serializable {
 	 * 单位
 	 */
 	private UnitSymbol symbol;
-
-	public String getMetric() {
-		return metric;
-	}
-
-	public void setMetric(String metric) {
-		this.metric = metric;
-	}
-
-	public UnitMultiplier getMultiplier() {
-		return multiplier;
-	}
-
-	public void setMultiplier(UnitMultiplier multiplier) {
-		this.multiplier = multiplier;
-	}
-
-	public UnitSymbol getSymbol() {
-		return symbol;
-	}
-
-	public void setSymbol(UnitSymbol symbol) {
-		this.symbol = symbol;
-	}
 }

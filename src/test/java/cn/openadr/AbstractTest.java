@@ -6,12 +6,11 @@ import java.io.IOException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
-
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.joda.JodaMapper;
 
 public class AbstractTest {
-	private static JodaMapper jsonMapper = new JodaMapper();
+	private static final JodaMapper jsonMapper = new JodaMapper();
 
 	public Object object;
 

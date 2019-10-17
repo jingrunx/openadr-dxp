@@ -1,20 +1,13 @@
 package cn.openadr.payload.opt;
 
-import javax.validation.constraints.NotNull;
-
 import cn.openadr.payload.DNRequest;
+import lombok.NonNull;
 
+@lombok.Getter
+@lombok.Setter
 public abstract class OptRequest extends DNRequest {
 	private static final long serialVersionUID = 1L;
 
-	@NotNull
+	@NonNull
 	private String optID;
-
-	public String getOptID() {
-		return optID;
-	}
-
-	public void setOptID(String optID) {
-		this.optID = optID;
-	}
 }

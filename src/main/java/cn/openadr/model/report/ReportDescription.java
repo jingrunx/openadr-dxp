@@ -7,11 +7,15 @@ import cn.openadr.domain.ReadingType;
 import cn.openadr.domain.ReadingType.ReadingTypeDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.target.Target;
+import lombok.NoArgsConstructor;
 
 /**
  * 报表的测点描述
  */
 //OadrReportDescriptionType
+@lombok.Getter
+@lombok.Setter
+@NoArgsConstructor
 public class ReportDescription {
 	/**
 	 * 测点编号
@@ -44,38 +48,4 @@ public class ReportDescription {
 	 * 只用到resourceID或meterAsset
 	 */
 	private final Target reportDataSource = new Target();
-
-	public int getrID() {
-		return rID;
-	}
-
-	public void setrID(int rID) {
-		this.rID = rID;
-	}
-
-	public MetricDescription getMetric() {
-		return metric;
-	}
-
-	@JsonSerialize(using = EnumeratedSerializer.class)
-	public ReadingType getReadingType() {
-		return readingType;
-	}
-
-	@JsonDeserialize(using = ReadingTypeDeserializer.class)
-	public void setReadingType(ReadingType readingType) {
-		this.readingType = readingType;
-	}
-
-	public SamplingRate getSamplingRate() {
-		return samplingRate;
-	}
-
-	public Target getReportSubject() {
-		return reportSubject;
-	}
-
-	public Target getReportDataSource() {
-		return reportDataSource;
-	}
 }

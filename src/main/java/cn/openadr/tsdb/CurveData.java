@@ -2,6 +2,7 @@ package cn.openadr.tsdb;
 
 import java.io.Serializable;
 
+@lombok.Getter
 public class CurveData implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -14,12 +15,4 @@ public class CurveData implements Serializable {
 	 * 不规则数据，各数据之间间隔不同
 	 */
 	private final IrregularCurve irregular = new IrregularCurve();
-
-	public RegularCurve getRegular() {
-		return regular;
-	}
-
-	public IrregularCurve getIrregular() {
-		return irregular;
-	}
 }

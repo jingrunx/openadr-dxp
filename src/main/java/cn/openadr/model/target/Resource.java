@@ -3,7 +3,6 @@ package cn.openadr.model.target;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import javax.validation.constraints.NotNull;
 
 import cn.openadr.model.register.KeyValue;
 
@@ -44,7 +43,6 @@ public class Resource implements Serializable {
 	/**
 	 * 资源类型，对应到资源模型
 	 */
-	@NotNull
 	private final EndDeviceAsset endDeviceAsset = new EndDeviceAsset();
 	/**
 	 * 关联的表计

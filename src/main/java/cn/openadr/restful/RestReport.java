@@ -3,14 +3,7 @@ package cn.openadr.restful;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
-import cn.openadr.payload.rpt.CancelReportRequest;
-import cn.openadr.payload.rpt.CancelReportResponse;
-import cn.openadr.payload.rpt.CreateReportRequest;
-import cn.openadr.payload.rpt.CreateReportResponse;
-import cn.openadr.payload.rpt.RegisterReportRequest;
-import cn.openadr.payload.rpt.RegisterReportResponse;
-import cn.openadr.payload.rpt.UpdateReportRequest;
-import cn.openadr.payload.rpt.UpdateReportResponse;
+import cn.openadr.payload.rpt.*;
 
 /** 报告 */
 @Path("/report")

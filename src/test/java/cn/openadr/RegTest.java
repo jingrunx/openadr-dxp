@@ -20,7 +20,7 @@ public class RegTest extends AbstractTest {
 		req.setDnName("dnname");
 		req.setReportOnly(false);
 		req.setPullMode(true);
-		req.setTransport(TransportType.JSON);
+		req.setTransport(TransportType.REST);
 		req.setTransportAddress("http://www.openadr.cn/rest/api/");
 
 		object = req;
@@ -36,13 +36,13 @@ public class RegTest extends AbstractTest {
 			.toPeriod());
 
 		rep.getTransport()
-			.add(TransportType.JSON);
+			.add(TransportType.REST);
 
 		ServiceSpecific spec = new ServiceSpecific();
-		spec.setServiceName(ServiceType.EI_EVENT);
-		spec.getInfo()
+		spec.setServiceName(ServiceType.EVENT);
+		spec.getKeyValue()
 			.add(new KeyValue("IP", "192.168.1.1"));
-		spec.getInfo()
+		spec.getKeyValue()
 			.add(new KeyValue("PORT", "80"));
 		rep.getServiceSpecific()
 			.add(spec);

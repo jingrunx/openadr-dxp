@@ -2,6 +2,8 @@ package cn.openadr.payload;
 
 import java.io.Serializable;
 
+@lombok.Getter
+@lombok.Setter
 public class DRPayload implements Serializable {
 	private static final long serialVersionUID = 1L;
 

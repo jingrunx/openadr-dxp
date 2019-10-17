@@ -26,7 +26,7 @@ public class RptUtils {
 	public static void fillReportDescription(List<ReportDescription> points) {
 		for(String metric : Arrays.asList(MetricType.U, MetricType.P)) {
 			ReportDescription point = new ReportDescription();
-			point.setrID(1);
+			point.setRID(1);
 			// point.setMetric(metric);
 			point.getReportDataSource()
 				.getResourceID()
@@ -50,7 +50,7 @@ public class RptUtils {
 		r.setBackDuration(Days.ONE.toPeriod());
 		r.setPeriod(Minutes.ONE.toPeriod());
 
-		r.getrID()
+		r.getRID()
 			.addAll(Arrays.asList(1, 2, 3, 4, 5));
 	}
 }

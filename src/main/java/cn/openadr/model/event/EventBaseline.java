@@ -6,8 +6,14 @@ import java.util.List;
 
 import cn.openadr.model.report.MetricDescription;
 import cn.openadr.tsdb.CurveData;
+import lombok.NoArgsConstructor;
 
-/** 基线 */
+/**
+ * 基线
+ */
+@lombok.Getter
+@lombok.Setter
+@NoArgsConstructor
 public class EventBaseline implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -16,32 +22,4 @@ public class EventBaseline implements Serializable {
 	private final MetricDescription metric = new MetricDescription();
 	private final List<String> resourceID = new ArrayList<>();
 	private final CurveData intervals = new CurveData();
-
-	public String getBaselineID() {
-		return baselineID;
-	}
-
-	public void setBaselineID(String baselineID) {
-		this.baselineID = baselineID;
-	}
-
-	public String getBaselineName() {
-		return baselineName;
-	}
-
-	public void setBaselineName(String baselineName) {
-		this.baselineName = baselineName;
-	}
-
-	public MetricDescription getMetric() {
-		return metric;
-	}
-
-	public List<String> getResourceID() {
-		return resourceID;
-	}
-
-	public CurveData getIntervals() {
-		return this.intervals;
-	}
 }

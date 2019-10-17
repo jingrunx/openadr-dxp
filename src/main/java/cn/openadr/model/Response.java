@@ -1,17 +1,23 @@
 package cn.openadr.model;
 
 import java.io.Serializable;
-import java.util.Objects;
-import javax.validation.constraints.NotNull;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 // EiResponseType
+@lombok.Getter
+@lombok.Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Response implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 状态代码
 	 */
-	@NotNull
+	@NonNull
 	private Integer code;
 	/**
 	 * 错误描述
@@ -20,32 +26,6 @@ public class Response implements Serializable {
 	/**
 	 * 请求ID
 	 */
-	@NotNull
+	@NonNull
 	private String requestID;
-
-	public int getCode() {
-		return code;
-	}
-
-	public void setCode(Integer code) {
-		Objects.requireNonNull(code);
-		this.code = code;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public String getRequestID() {
-		return requestID;
-	}
-
-	public void setRequestID(String requestID) {
-		Objects.requireNonNull(requestID);
-		this.requestID = requestID;
-	}
 }

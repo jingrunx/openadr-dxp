@@ -5,32 +5,16 @@ import java.io.Serializable;
 import org.joda.time.DateTime;
 
 import cn.openadr.domain.ReportName;
+import lombok.NoArgsConstructor;
 
 // OadrReportType
+@lombok.Getter
+@lombok.Setter
+@NoArgsConstructor
 public class MetaDataReport implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private ReportName reportName;
 	private DateTime createdDateTime;
 	private final ReportDescription reportDescription = new ReportDescription();
-
-	public ReportName getReportName() {
-		return reportName;
-	}
-
-	public void setReportName(ReportName reportName) {
-		this.reportName = reportName;
-	}
-
-	public DateTime getCreatedDateTime() {
-		return createdDateTime;
-	}
-
-	public void setCreatedDateTime(DateTime createdDateTime) {
-		this.createdDateTime = createdDateTime;
-	}
-
-	public ReportDescription getReportDescription() {
-		return reportDescription;
-	}
 }

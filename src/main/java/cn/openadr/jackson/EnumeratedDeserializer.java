@@ -1,9 +1,9 @@
 package cn.openadr.jackson;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 
@@ -19,14 +19,10 @@ public class EnumeratedDeserializer<E extends Enum<?> & EnumeratedType> extends 
 	}
 
 	@Override
-	public E deserialize(JsonParser p, DeserializationContext ctxt) throws IOException, JsonProcessingException {
-		String value = p.getText()
-			.trim();
-
-		for (E e : clazz.getEnumConstants()) {
-			if (e.value()
-				.equals(value))
-				return e;
+	public E deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
+		for(E value : clazz.getEnumConstants()) {
+			if(Objects.equals(value.value(), p.getText()))
+				return value;
 		}
 
 		return null;

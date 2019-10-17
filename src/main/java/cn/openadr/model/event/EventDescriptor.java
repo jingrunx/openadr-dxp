@@ -1,26 +1,31 @@
 package cn.openadr.model.event;
 
-import java.util.Objects;
-import javax.validation.constraints.NotNull;
-
 import org.joda.time.DateTime;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import cn.openadr.domain.EventStatus;
 import cn.openadr.domain.EventStatus.EventStatusDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 /**
  * 事件描述
  */
+@lombok.Getter
+@lombok.Setter
+@NoArgsConstructor
 public class EventDescriptor extends QualifiedEventID {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * 事件状态
 	 */
-	@NotNull
+	@NonNull
+	@JsonSerialize(using = EnumeratedSerializer.class)
+	@JsonDeserialize(using = EventStatusDeserializer.class)
 	private EventStatus status;
 
 	/**
@@ -56,72 +61,6 @@ public class EventDescriptor extends QualifiedEventID {
 	/**
 	 * 市场信息
 	 */
+	@JsonProperty("marketURL")
 	private String marketContext;
-
-	@JsonSerialize(using = EnumeratedSerializer.class)
-	public EventStatus getStatus() {
-		return status;
-	}
-
-	@JsonDeserialize(using = EventStatusDeserializer.class)
-	public void setStatus(EventStatus status) {
-		Objects.requireNonNull(status);
-		this.status = status;
-	}
-
-	public DateTime getModificationDateTime() {
-		return modificationDateTime;
-	}
-
-	public void setModificationDateTime(DateTime modificationDateTime) {
-		this.modificationDateTime = modificationDateTime;
-	}
-
-	public String getModificationReason() {
-		return modificationReason;
-	}
-
-	public void setModificationReason(String modificationReason) {
-		this.modificationReason = modificationReason;
-	}
-
-	public int getPriority() {
-		return priority;
-	}
-
-	public void setPriority(int priority) {
-		this.priority = priority;
-	}
-
-	public boolean isTest() {
-		return test;
-	}
-
-	public void setTest(boolean test) {
-		this.test = test;
-	}
-
-	public DateTime getCreatedDateTime() {
-		return createdDateTime;
-	}
-
-	public void setCreatedDateTime(DateTime createdDateTime) {
-		this.createdDateTime = createdDateTime;
-	}
-
-	public String getComment() {
-		return comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
-
-	public String getMarketContext() {
-		return marketContext;
-	}
-
-	public void setMarketContext(String marketContext) {
-		this.marketContext = marketContext;
-	}
 }

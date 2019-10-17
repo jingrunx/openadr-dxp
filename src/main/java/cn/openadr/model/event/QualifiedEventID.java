@@ -2,32 +2,23 @@ package cn.openadr.model.event;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.NotNull;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
+@lombok.Getter
+@lombok.Setter
+@NoArgsConstructor
 public class QualifiedEventID implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/** 事件ID */
-	@NotNull
+	/**
+	 * 事件ID
+	 */
+	@NonNull
 	private String eventID;
 
-	/** 修改版本 */
+	/**
+	 * 修改版本
+	 */
 	private int modificationNumber;
-
-	public String getEventID() {
-		return eventID;
-	}
-
-	public void setEventID(String eventID) {
-		this.eventID = eventID;
-	}
-
-	public int getModificationNumber() {
-		return modificationNumber;
-	}
-
-	public void setModificationNumber(int modificationNumber) {
-		this.modificationNumber = modificationNumber;
-	}
-
 }

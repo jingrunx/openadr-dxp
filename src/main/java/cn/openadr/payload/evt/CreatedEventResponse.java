@@ -7,12 +7,9 @@ import cn.openadr.model.event.EventResponse;
 import cn.openadr.payload.DNResponse;
 
 // OadrCreatedEventType
+@lombok.Getter
 public class CreatedEventResponse extends DNResponse {
 	private static final long serialVersionUID = 1L;
 
 	private final List<EventResponse> eventResponses = new ArrayList<>();
-
-	public List<EventResponse> getEventResponses() {
-		return eventResponses;
-	}
 }

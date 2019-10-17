@@ -5,6 +5,7 @@ import java.util.List;
 
 import cn.openadr.model.report.PointData;
 
+@lombok.Getter
 public class MomentDataReportRequest extends DataReportRequest {
 	private static final long serialVersionUID = 1L;
 
@@ -12,9 +13,5 @@ public class MomentDataReportRequest extends DataReportRequest {
 
 	public void addPointData(PointData value) {
 		this.pointData.add(value);
-	}
-
-	public List<PointData> getPointData() {
-		return pointData;
 	}
 }
