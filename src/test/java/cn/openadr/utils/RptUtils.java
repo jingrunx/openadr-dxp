@@ -8,7 +8,7 @@ import org.joda.time.Days;
 import org.joda.time.Hours;
 import org.joda.time.Minutes;
 
-import cn.openadr.domain.MetricType;
+import cn.openadr.domain.MetricType2;
 import cn.openadr.domain.ReportName;
 import cn.openadr.domain.ReportType;
 import cn.openadr.model.report.ReportDescription;
@@ -24,7 +24,7 @@ public class RptUtils {
 	}
 
 	public static void fillReportDescription(List<ReportDescription> points) {
-		for(String metric : Arrays.asList(MetricType.U, MetricType.P)) {
+		for(String metric : Arrays.asList(MetricType2.U, MetricType2.P)) {
 			ReportDescription point = new ReportDescription();
 			point.setRID(1);
 			// point.setMetric(metric);
@@ -50,7 +50,7 @@ public class RptUtils {
 		r.setBackDuration(Days.ONE.toPeriod());
 		r.setPeriod(Minutes.ONE.toPeriod());
 
-		r.getRID()
+		r.getPoints()
 			.addAll(Arrays.asList(1, 2, 3, 4, 5));
 	}
 }

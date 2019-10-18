@@ -1,12 +1,12 @@
 package cn.openadr.domain;
 
 public enum QualityType implements EnumeratedType {
-	QUALITY_GOOD("Quality Good"),
+	QUALITY_GOOD("DataQuality Good"),
 	NO_NEW_VALUE("No New Value"),
-	QUALITY_BAD("Quality Bad"),
-	QUALITY_UNCERTAIN("Quality Uncertain"),
-	QUALITY_LIMIT("Quality Limit"),
-	NO_QUALITY("No Quality");
+	QUALITY_BAD("DataQuality Bad"),
+	QUALITY_UNCERTAIN("DataQuality Uncertain"),
+	QUALITY_LIMIT("DataQuality Limit"),
+	NO_QUALITY("No DataQuality");
 
 	private final String value;
 

@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -22,5 +24,6 @@ public class ServiceSpecific implements Serializable {
 	@JsonDeserialize(using = ServiceTypeDeserializer.class)
 	private ServiceType serviceName;
 
+	@JsonInclude(value = Include.NON_EMPTY)
 	private final List<KeyValue> keyValue = new ArrayList<>();
 }

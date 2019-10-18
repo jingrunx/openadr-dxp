@@ -75,4 +75,8 @@ public class ReportSpecifier implements Serializable {
 	 * 要报告的rID清单
 	 */
 	private final List<Integer> points = new ArrayList<>();
+
+	public void addPoint(int rID) {
+		this.points.add(rID);
+	}
 }

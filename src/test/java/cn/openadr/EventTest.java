@@ -44,7 +44,7 @@ public class EventTest extends AbstractTest {
 		for(int i = 0; i < 2; ++i) {
 			EventResponse eventResponse = new EventResponse();
 
-			CommonUtils.fillResponse(eventResponse.getResponse());
+			CommonUtils.fillResponse(eventResponse);
 			eventResponse.setOptType(OptType.OPT_IN);
 			eventResponse.getQualifiedEventID()
 				.setEventID(CommonUtils.id());

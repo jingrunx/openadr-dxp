@@ -19,7 +19,7 @@ public class MetricDescription implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@NonNull
-	private String/* MetricType */ metric;
+	private String/* MetricType2 */ metricName;
 	/**
 	 * 倍率
 	 */

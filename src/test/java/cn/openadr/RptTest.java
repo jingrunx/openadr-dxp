@@ -4,7 +4,6 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 
 import cn.openadr.domain.EndDeviceAssetType;
-import cn.openadr.domain.ReportName;
 import cn.openadr.model.report.MetaDataReport;
 import cn.openadr.model.report.ReportRequest;
 import cn.openadr.model.target.MeterAsset;
@@ -23,7 +22,6 @@ public class RptTest extends AbstractTest {
 		for(int i = 0; i < 2; ++i) {
 			MetaDataReport report = new MetaDataReport();
 
-			report.setReportName(ReportName.HISTORY_USAGE);
 //			report.setReportRequestID(CommonUtils.id());
 			report.setCreatedDateTime(DateTime.now());
 
@@ -167,11 +165,9 @@ public class RptTest extends AbstractTest {
 		for(int i = 0; i < 2; ++i) {
 			MeterAsset meter = new MeterAsset();
 			meter.setMrid(CommonUtils.id());
-			req.getMeterAsset()
-				.add(meter);
 		}
 
-		RptUtils.fillReportDescription(req.getReportDescription());
+//		RptUtils.fillReportDescription(req.getReportDescription());
 
 		object = req;
 	}
