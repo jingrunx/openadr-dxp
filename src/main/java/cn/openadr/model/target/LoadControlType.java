@@ -1,9 +1,9 @@
 package cn.openadr.model.target;
 
 public class LoadControlType {
-	private double current;
-	private Double normal;
-	private Double min, max;
+	public double current;
+	public Double normal;
+	public Double min, max;
 
 	public double getCurrent() {
 		return current;

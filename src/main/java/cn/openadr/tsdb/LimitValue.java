@@ -3,24 +3,24 @@ package cn.openadr.tsdb;
 import java.io.Serializable;
 
 public class LimitValue implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 下限(>=)
 	 */
-	private Double lower;
+	public Double lower;
 	/**
 	 * 上限(<)
 	 */
-	private Double upper;
+	public Double upper;
 	/**
 	 * 闭合 (lower>=? && upper<=?)
 	 */
-	private Boolean closure;
+	public Boolean closure;
 	/**
 	 * 取反 !(exp)
 	 */
-	private Boolean negate;
+	public Boolean negate;
 
 	public Double getLower() {
 		return lower;

@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @lombok.Setter
 @NoArgsConstructor
 public class EventResponse extends Response implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private OptType optType;
-	private final QualifiedEventID qualifiedEventID = new QualifiedEventID();
+	public OptType optType;
+	public final QualifiedEventID qualifiedEventID = new QualifiedEventID();
 }

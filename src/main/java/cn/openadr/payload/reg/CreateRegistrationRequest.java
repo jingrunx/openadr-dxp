@@ -7,30 +7,30 @@ import lombok.NonNull;
 @lombok.Getter
 @lombok.Setter
 public class CreateRegistrationRequest extends RegistrationRequest {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private String dnName;
+	public String dnName;
 	/**
 	 * 只报送数据
 	 */
-	private boolean reportOnly;
+	public boolean reportOnly;
 	/**
 	 * 主动拉的模式
 	 */
-	private boolean pullMode;
+	public boolean pullMode;
 	/**
 	 * 传输的数据需要签名
 	 */
-	private boolean signature;
+	public boolean signature;
 	/**
 	 * 传输类型
 	 */
 	@NonNull
-	private TransportType transport;
+	public TransportType transport;
 	/**
 	 * 传输地址
 	 * JSON格式是RESTful地址
 	 * MQTT格式是mqtt服务器地址
 	 */
-	private String transportAddress;
+	public String transportAddress;
 }

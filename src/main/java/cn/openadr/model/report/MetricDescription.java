@@ -16,16 +16,16 @@ import lombok.NonNull;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MetricDescription implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@NonNull
-	private String/* MetricType2 */ metricName;
+	public String/* MetricType2 */ metricName;
 	/**
 	 * 倍率
 	 */
-	private UnitMultiplier multiplier;
+	public UnitMultiplier multiplier;
 	/**
 	 * 单位
 	 */
-	private UnitSymbol symbol;
+	public UnitSymbol symbol;
 }

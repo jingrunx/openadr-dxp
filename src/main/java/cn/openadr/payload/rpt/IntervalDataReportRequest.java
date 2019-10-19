@@ -12,21 +12,21 @@ import lombok.NonNull;
 @lombok.Getter
 @lombok.Setter
 public class IntervalDataReportRequest extends DataReportRequest {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 开始时间
 	 */
 	@NonNull
-	private DateTime dtstart;
+	public DateTime dtstart;
 
 	/**
 	 * 步长(单位:分钟)
 	 */
 	@NonNull
-	private Period period;
+	public Period period;
 
-	private final List<PointCurveData> pointCurveData = new ArrayList<>();
+	public final List<PointCurveData> pointCurveData = new ArrayList<>();
 
 	public void addPointCurveData(PointCurveData value) {
 		this.pointCurveData.add(value);

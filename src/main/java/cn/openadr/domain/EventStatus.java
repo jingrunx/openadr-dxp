@@ -3,17 +3,29 @@ package cn.openadr.domain;
 import cn.openadr.jackson.EnumeratedDeserializer;
 
 public enum EventStatus implements EnumeratedType {
-	/** 无 */
+	/**
+	 * 无
+	 */
 	NONE("none"),
-	/** 准备 */
+	/**
+	 * 准备
+	 */
 	FAR("far"),
-	/** 就绪 */
+	/**
+	 * 就绪
+	 */
 	NEAR("near"),
-	/** 激活 */
+	/**
+	 * 激活
+	 */
 	ACTIVE("active"),
-	/** 完成 */
+	/**
+	 * 完成
+	 */
 	COMPLETED("completed"),
-	/** 取消 */
+	/**
+	 * 取消
+	 */
 	CANCELLED("cancelled");
 
 	private final String value;

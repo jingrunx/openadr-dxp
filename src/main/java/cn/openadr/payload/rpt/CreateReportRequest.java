@@ -12,10 +12,10 @@ import cn.openadr.payload.DNRequest;
 // OadrCreateReportType
 @lombok.Getter
 public class CreateReportRequest extends DNRequest {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 报表样式
 	 */
-	private final List<ReportRequest> reportRequest = new ArrayList<>();
+	public final List<ReportRequest> reportRequest = new ArrayList<>();
 }

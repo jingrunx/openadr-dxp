@@ -1,4 +1,4 @@
-package cn.openadr.domain;
+package cn.openadr;
 
 import java.security.SecureRandom;
 import java.util.Objects;
@@ -33,7 +33,7 @@ public final class UniqueIdentifier {
 		return randomUUID(mostSigBits);
 	}
 
-	private static UUID randomUUID(long mostSigBits) {
+	public static UUID randomUUID(long mostSigBits) {
 		long leastSigBits = sr.nextLong();
 		return new UUID(mostSigBits, leastSigBits);
 	}

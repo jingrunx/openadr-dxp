@@ -1,10 +1,10 @@
 package cn.openadr.model.target;
 
 public class LoadControl {
-	private LoadControlType capacity;
-	private LoadControlType levelOffset;
-	private LoadControlType percentOffset;
-	private LoadControlType setPoint;
+	public LoadControlType capacity;
+	public LoadControlType levelOffset;
+	public LoadControlType percentOffset;
+	public LoadControlType setPoint;
 
 	public LoadControlType getCapacity() {
 		return capacity;

@@ -10,52 +10,52 @@ import cn.openadr.model.register.KeyValue;
  * 资源
  */
 public class Resource implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 资源ID
 	 */
-	private String resourceID;
+	public String resourceID;
 	/**
 	 * 资源名称
 	 */
-	private String resourceName;
+	public String resourceName;
 	/**
 	 * 资源状态
 	 */
-	private String status;
+	public String status;
 	/**
 	 * 额定电压
 	 */
-	private Double ratedU;
+	public Double ratedU;
 	/**
 	 * 额定电流
 	 */
-	private Double ratedI;
+	public Double ratedI;
 	/**
 	 * 额定功率
 	 */
-	private Double ratedS;
+	public Double ratedS;
 	/**
 	 * 上级资源
 	 */
-	private String parentResourceID;
+	public String parentResourceID;
 	/**
 	 * 资源类型，对应到资源模型
 	 */
-	private final EndDeviceAsset endDeviceAsset = new EndDeviceAsset();
+	public final EndDeviceAsset endDeviceAsset = new EndDeviceAsset();
 	/**
 	 * 关联的表计
 	 */
-	private MeterAsset meterAsset;
+	public MeterAsset meterAsset;
 	/**
 	 * 资源之间的横向关联关系
 	 */
-	private final List<String> relationID = new ArrayList<>();
+	public final List<String> relationID = new ArrayList<>();
 	/**
 	 * 资源的扩展属性
 	 */
-	private final List<KeyValue> properties = new ArrayList<>();
+	public final List<KeyValue> properties = new ArrayList<>();
 
 	public String getResourceID() {
 		return resourceID;

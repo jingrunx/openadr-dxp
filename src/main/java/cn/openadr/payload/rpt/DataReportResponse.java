@@ -6,7 +6,7 @@ import cn.openadr.payload.DNResponse;
 @lombok.Getter
 @lombok.Setter
 public class DataReportResponse extends DNResponse {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private CancelReportRequest cancelReport;
+	public CancelReportRequest cancelReport;
 }

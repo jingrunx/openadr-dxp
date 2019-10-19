@@ -1,6 +1,7 @@
 package cn.openadr.tsdb;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
@@ -22,13 +23,13 @@ public class RegularCurve extends CurveBase {
 	 * 开始时间
 	 */
 	@NonNull
-	private DateTime dtstart;
+	public DateTime dtstart;
 
 	/**
 	 * 步长(单位:分钟)
 	 */
 	@NonNull
-	private Period period;
+	public Period period;
 
 	/**
 	 * 数据数组
@@ -36,12 +37,20 @@ public class RegularCurve extends CurveBase {
 	@NonNull
 	private double[] array = new double[]{};
 
+	public double[] getArray() {
+		return array;
+	}
+
+	public void setArray(double[] array) {
+		Objects.requireNonNull(array);
+		this.array = array;
+	}
+
 	@JsonIgnore
 	@Override
 	public Interval getInterval() {
-		Duration duration = period.toStandardDuration()
-			.multipliedBy(array.length);
-		return new Interval(dtstart, duration);
+		Duration duration = period.toStandardDuration();
+		return new Interval(dtstart, duration.multipliedBy(array.length));
 	}
 
 	@Override
@@ -63,7 +72,7 @@ public class RegularCurve extends CurveBase {
 		};
 	}
 
-	private static DateTime getDateTime(DateTime start, Period period, int idx) {
+	public static DateTime getDateTime(DateTime start, Period period, int idx) {
 		return start.plus(period.toStandardDuration()
 			.multipliedBy(idx));
 	}

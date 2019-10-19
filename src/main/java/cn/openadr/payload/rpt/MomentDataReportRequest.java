@@ -7,9 +7,9 @@ import cn.openadr.model.report.PointData;
 
 @lombok.Getter
 public class MomentDataReportRequest extends DataReportRequest {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private final List<PointData> pointData = new ArrayList<>();
+	public final List<PointData> pointData = new ArrayList<>();
 
 	public void addPointData(PointData value) {
 		this.pointData.add(value);

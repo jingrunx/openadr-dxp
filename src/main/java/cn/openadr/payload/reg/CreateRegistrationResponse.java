@@ -15,17 +15,17 @@ import cn.openadr.model.register.ServiceSpecific;
 @lombok.Getter
 @lombok.Setter
 public class CreateRegistrationResponse extends RegistrationResponse {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 上位节点ID
 	 */
-	private String unID;
+	public String unID;
 	/**
 	 * 轮询频率
 	 */
-	private Period pollFreq;
-	private final Set<TransportType> transport = EnumSet.noneOf(TransportType.class);
-	private final List<ServiceSpecific> serviceSpecific = new ArrayList<>();
-	private final List<Extension> extensions = new ArrayList<>();
+	public Period pollFreq;
+	public final Set<TransportType> transport = EnumSet.noneOf(TransportType.class);
+	public final List<ServiceSpecific> serviceSpecific = new ArrayList<>();
+	public final List<Extension> extensions = new ArrayList<>();
 }

@@ -6,10 +6,10 @@ package cn.openadr.payload;
 @lombok.Getter
 @lombok.Setter
 public abstract class DRRequest extends DRObject {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 请求编号
 	 */
-	private String requestID;
+	public String requestID;
 }

@@ -9,16 +9,16 @@ import lombok.NonNull;
 @lombok.Setter
 @NoArgsConstructor
 public class QualifiedEventID implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 事件ID
 	 */
 	@NonNull
-	private String eventID;
+	public String eventID;
 
 	/**
 	 * 修改版本
 	 */
-	private int modificationNumber;
+	public int modificationNumber;
 }

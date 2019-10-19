@@ -9,7 +9,7 @@ import cn.openadr.payload.DNResponse;
 // OadrCreatedReportType
 @lombok.Getter
 public class CreateReportResponse extends DNResponse {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private final PendingReports pendingReports = new PendingReports();
+	public final PendingReports pendingReports = new PendingReports();
 }

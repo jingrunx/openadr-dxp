@@ -9,8 +9,8 @@ import cn.openadr.payload.DNRequest;
 @lombok.Getter
 @lombok.Setter
 public class CancelReportRequest extends DNRequest {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private boolean reportToFollow;
-	private final List<String> reportRequestID = new ArrayList<>();
+	public boolean reportToFollow;
+	public final List<String> reportRequestID = new ArrayList<>();
 }

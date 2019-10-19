@@ -14,20 +14,20 @@ import lombok.NonNull;
 @lombok.Setter
 @NoArgsConstructor
 public class SamplingRate implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 最小间隔: 单位(分钟)
 	 */
 	@NonNull
-	private Period minPeriod;
+	public Period minPeriod;
 	/**
 	 * 最大间隔: 单位(分钟)
 	 */
 	@NonNull
-	private Period maxPeriod;
+	public Period maxPeriod;
 	/**
 	 * 变位上送
 	 */
-	private boolean onChange;
+	public boolean onChange;
 }

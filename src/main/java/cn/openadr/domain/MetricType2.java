@@ -3,10 +3,10 @@ package cn.openadr.domain;
 import org.joda.time.ReadablePeriod;
 
 public interface MetricType2 {
-	/* private */ String prefix_elec = "e";
+	/* public */ String prefix_elec = "e";
 
 	/* ====================模拟量类==================== */
-	/* private */ String prefix_e = prefix_elec;
+	/* public */ String prefix_e = prefix_elec;
 
 	//电流
 	String I = prefix_e + '.' + ElectricType.I.code();
@@ -57,7 +57,7 @@ public interface MetricType2 {
 	String Z_UC = Z_U + '.' + Phase.c.code;
 
 	/* ====================功率类==================== */
-	/* private */ String prefix_p = prefix_elec;
+	/* public */ String prefix_p = prefix_elec;
 
 	//有功功率
 	String P = prefix_p + '.' + ElectricType.P.code();
@@ -78,11 +78,11 @@ public interface MetricType2 {
 	String S_C = S + '.' + Phase.c.code;
 
 	/* ====================电量类==================== */
-	/* private */ String prefix_ee = prefix_elec;
+	/* public */ String prefix_ee = prefix_elec;
 	// 正向
-	/* private */ String pos = ".imp";
+	/* public */ String pos = ".imp";
 	// 反向
-	/* private */ String rev = ".exp";
+	/* public */ String rev = ".exp";
 
 	String EP = prefix_ee + '.' + ElectricType.EP.code();
 	String EP_pos = EP + pos;
@@ -109,7 +109,7 @@ public interface MetricType2 {
 	}
 
 	/* ====================电能示值类==================== */
-	/* private */ String prefix_r = "r";
+	/* public */ String prefix_r = "r";
 
 	String EPr = prefix_r + '.' + ElectricType.EP.code();
 	String EPr_pos = EPr + pos;

@@ -20,32 +20,32 @@ public class ReportDescription {
 	/**
 	 * 测点编号
 	 */
-	private int rID;
+	public int rID;
 
 	/**
 	 * 读数类型
 	 */
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	@JsonDeserialize(using = ReadingTypeDeserializer.class)
-	private ReadingType readingType;
+	public ReadingType readingType;
 
 	/**
 	 * 计量单位
 	 */
-	private final MetricDescription metric = new MetricDescription();
+	public final MetricDescription metric = new MetricDescription();
 
 	/**
 	 * 采样周期
 	 */
-	private final SamplingRate samplingRate = new SamplingRate();
+	public final SamplingRate samplingRate = new SamplingRate();
 
 	/**
 	 * 只用endDeviceAsset
 	 */
-	private final Target reportSubject = new Target();
+	public final Target reportSubject = new Target();
 
 	/**
 	 * 只用到resourceID或meterAsset
 	 */
-	private final Target reportDataSource = new Target();
+	public final Target reportDataSource = new Target();
 }

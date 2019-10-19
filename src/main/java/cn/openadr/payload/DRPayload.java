@@ -5,12 +5,12 @@ import java.io.Serializable;
 @lombok.Getter
 @lombok.Setter
 public class DRPayload implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private final SignedObject signedObject = new SignedObject();
-	private String publicKey;
-	private SignMethod signMethod;
-	private String signature;
+	public final SignedObject signedObject = new SignedObject();
+	public String publicKey;
+	public SignMethod signMethod;
+	public String signature;
 
 	public SignedObject getSignedObject() {
 		return signedObject;

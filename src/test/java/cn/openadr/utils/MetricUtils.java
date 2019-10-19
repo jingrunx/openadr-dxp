@@ -20,12 +20,12 @@ public class MetricUtils {
 	}
 
 	public static MetricDescription createMetric(String metric, String metricName) {
-		MetricDescription r = new MetricDescription();
+		MetricDescription descr = new MetricDescription();
 
-		r.setMetric(metric);
-		fillMetric(r);
+		descr.setMetricName(metric);
+		fillMetric(descr);
 
-		return r;
+		return descr;
 	}
 
 	public static PointData createPointValue(int rID, double val) {

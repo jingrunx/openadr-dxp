@@ -18,7 +18,7 @@ import lombok.NonNull;
 @lombok.Setter
 @NoArgsConstructor
 public class EventDescriptor extends QualifiedEventID {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 事件状态
@@ -26,41 +26,41 @@ public class EventDescriptor extends QualifiedEventID {
 	@NonNull
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	@JsonDeserialize(using = EventStatusDeserializer.class)
-	private EventStatus status;
+	public EventStatus status;
 
 	/**
 	 * 优先级
 	 */
-	private int priority;
+	public int priority;
 
 	/**
 	 * 测试事件
 	 */
-	private boolean test;
+	public boolean test;
 
 	/**
 	 * 修改时间
 	 */
-	private DateTime modificationDateTime;
+	public DateTime modificationDateTime;
 
 	/**
 	 * 修改原因
 	 */
-	private String modificationReason;
+	public String modificationReason;
 
 	/**
 	 * 创建时间
 	 */
-	private DateTime createdDateTime;
+	public DateTime createdDateTime;
 
 	/**
 	 * 注释
 	 */
-	private String comment;
+	public String comment;
 
 	/**
 	 * 市场信息
 	 */
 	@JsonProperty("marketURL")
-	private String marketContext;
+	public String marketContext;
 }

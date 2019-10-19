@@ -5,6 +5,6 @@ import java.util.List;
 
 @lombok.Getter
 public class EventSignals {
-	private final EventBaseline baseline = new EventBaseline();
-	private final List<EventSignal> signal = new ArrayList<>();
+	public final EventBaseline baseline = new EventBaseline();
+	public final List<EventSignal> signal = new ArrayList<>();
 }

@@ -18,14 +18,14 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @AllArgsConstructor
 public class Data implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@NonNull
-	private Number value;
+	public Number value;
 
 	@JsonInclude(Include.NON_NULL)
-	private DateTime timestamp;
+	public DateTime timestamp;
 
 	@JsonInclude(Include.NON_NULL)
-	private DataQuality quality;
+	public DataQuality quality;
 }

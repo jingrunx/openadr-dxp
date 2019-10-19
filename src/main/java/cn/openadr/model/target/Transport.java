@@ -3,10 +3,10 @@ package cn.openadr.model.target;
 import java.io.Serializable;
 
 public class Transport implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private Node receipt;
-	private Node delivery;
+	public Node receipt;
+	public Node delivery;
 
 	public Node getReceipt() {
 		return receipt;

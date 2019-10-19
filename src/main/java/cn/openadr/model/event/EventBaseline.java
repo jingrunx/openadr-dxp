@@ -15,11 +15,11 @@ import lombok.NoArgsConstructor;
 @lombok.Setter
 @NoArgsConstructor
 public class EventBaseline implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private String baselineID;
-	private String baselineName;
-	private final MetricDescription metric = new MetricDescription();
-	private final List<String> resourceID = new ArrayList<>();
-	private final CurveData intervals = new CurveData();
+	public String baselineID;
+	public String baselineName;
+	public final MetricDescription metric = new MetricDescription();
+	public final List<String> resourceID = new ArrayList<>();
+	public final CurveData intervals = new CurveData();
 }

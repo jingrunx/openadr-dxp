@@ -23,20 +23,20 @@ import lombok.NonNull;
 @lombok.Setter
 @NoArgsConstructor
 public class ReportSpecifier implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 报告样式编号
 	 */
 	@NonNull
-	private String reportSpecifierID;
+	public String reportSpecifierID;
 
 	/**
 	 * 报告名称
 	 */
 	/* cn.openadr.domain.ReportName */
 	@NonNull
-	private String reportName;
+	public String reportName;
 
 	/**
 	 * 报告类型
@@ -44,18 +44,18 @@ public class ReportSpecifier implements Serializable {
 	@NonNull
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	@JsonDeserialize(using = ReportTypeDeserializer.class)
-	private ReportType reportType;
+	public ReportType reportType;
 
 	/**
 	 * 开始报告时间
 	 */
 	@NonNull
-	private DateTime startDateTime;
+	public DateTime startDateTime;
 
 	/**
 	 * 取消报告时间，超过此时间后不再发送报告，为空表示一直发送直到收到取消报送指令
 	 */
-	private DateTime endDateTime;
+	public DateTime endDateTime;
 
 	/**
 	 * 报告周期，每隔多长时间报告一次
@@ -63,20 +63,16 @@ public class ReportSpecifier implements Serializable {
 	 * 否则按照HistoryReport格式报送
 	 */
 	@NonNull
-	private Period backDuration;
+	public Period backDuration;
 
 	/**
 	 * 曲线数据之间的采样间隔
 	 */
 	@NonNull
-	private Period period;
+	public Period period;
 
 	/**
 	 * 要报告的rID清单
 	 */
-	private final List<Integer> points = new ArrayList<>();
-
-	public void addPoint(int rID) {
-		this.points.add(rID);
-	}
+	public final List<Integer> points = new ArrayList<>();
 }

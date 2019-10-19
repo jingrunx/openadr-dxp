@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 @lombok.Getter
 public class CurveData implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 规则数据，各数据之间间隔相同
 	 */
-	private final RegularCurve regular = new RegularCurve();
+	public final RegularCurve regular = new RegularCurve();
 
 	/**
 	 * 不规则数据，各数据之间间隔不同
 	 */
-	private final IrregularCurve irregular = new IrregularCurve();
+	public final IrregularCurve irregular = new IrregularCurve();
 }

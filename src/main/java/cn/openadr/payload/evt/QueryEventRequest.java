@@ -13,22 +13,22 @@ import cn.openadr.payload.DNRequest;
 @lombok.Getter
 @lombok.Setter
 public class QueryEventRequest extends DNRequest {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 限制返回的事件数目
 	 */
-	private int replyLimit;
+	public int replyLimit;
 	/**
 	 * 要查询的事件开始时间
 	 */
-	private DateTime dtstart;
+	public DateTime dtstart;
 	/**
 	 * 要查询的事件时间范围
 	 */
-	private Period duration;
+	public Period duration;
 	/**
 	 * 要查询的事件状态
 	 */
-	private final Set<EventStatus> status = EnumSet.of(EventStatus.FAR, EventStatus.NEAR, EventStatus.ACTIVE);
+	public final Set<EventStatus> status = EnumSet.of(EventStatus.FAR, EventStatus.NEAR, EventStatus.ACTIVE);
 }

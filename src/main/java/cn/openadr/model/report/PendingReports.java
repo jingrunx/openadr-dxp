@@ -7,7 +7,7 @@ import java.util.List;
 // OadrPendingReportsType
 @lombok.Getter
 public class PendingReports implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private final List<String> reportRequestID = new ArrayList<>();
+	public final List<String> reportRequestID = new ArrayList<>();
 }

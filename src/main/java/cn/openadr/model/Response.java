@@ -12,20 +12,20 @@ import lombok.NonNull;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Response implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
 	 * 状态代码
 	 */
 	@NonNull
-	private Integer code;
+	public Integer code;
 	/**
 	 * 错误描述
 	 */
-	private String description;
+	public String description;
 	/**
 	 * 请求ID
 	 */
 	@NonNull
-	private String requestID;
+	public String requestID;
 }

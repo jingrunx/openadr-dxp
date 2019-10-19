@@ -10,9 +10,9 @@ import lombok.NonNull;
 @lombok.Setter
 @NoArgsConstructor
 public class ReportRequest implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@NonNull
-	private String reportRequestID;
-	private final ReportSpecifier reportSpecifier = new ReportSpecifier();
+	public String reportRequestID;
+	public final ReportSpecifier reportSpecifier = new ReportSpecifier();
 }

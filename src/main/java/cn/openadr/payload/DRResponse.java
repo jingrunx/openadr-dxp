@@ -9,8 +9,8 @@ import cn.openadr.model.Response;
  */
 @lombok.Getter
 public abstract class DRResponse extends DRObject {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@JsonUnwrapped
-	private final Response response = new Response();
+	public final Response response = new Response();
 }

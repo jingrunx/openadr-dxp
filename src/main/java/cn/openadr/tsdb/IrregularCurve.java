@@ -8,20 +8,12 @@ import org.joda.time.*;
  * 由一组时间和值组成的时间序列数据
  */
 public class IrregularCurve extends CurveBase {
-	private final List<Data> values = new ArrayList<>();
+	public final List<Data> values = new LinkedList<>();
 
 	public IrregularCurve() {
 	}
 
 	public IrregularCurve(Collection<Data> values) {
-		addValues(values);
-	}
-
-	public void addValue(Data value) {
-		this.values.add(value);
-	}
-
-	public void addValues(Collection<Data> values) {
 		this.values.addAll(values);
 	}
 

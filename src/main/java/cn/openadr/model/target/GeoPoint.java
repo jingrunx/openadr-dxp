@@ -3,11 +3,11 @@ package cn.openadr.model.target;
 import java.io.Serializable;
 
 public class GeoPoint implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private double Latitude;
-	private double longitude;
-	private String location;
+	public double Latitude;
+	public double longitude;
+	public String location;
 
 	public double getLatitude() {
 		return Latitude;

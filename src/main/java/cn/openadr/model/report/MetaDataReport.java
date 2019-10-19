@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @lombok.Setter
 @NoArgsConstructor
 public class MetaDataReport implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private DateTime createdDateTime;
-	private final ReportDescription reportDescription = new ReportDescription();
+	public DateTime createdDateTime;
+	public final ReportDescription reportDescription = new ReportDescription();
 }

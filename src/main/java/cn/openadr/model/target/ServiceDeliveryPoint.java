@@ -1,11 +1,11 @@
 package cn.openadr.model.target;
 
 public class ServiceDeliveryPoint extends Node {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private String name;
-	private String tariffProfile;
-	private String customerAgreement;
+	public String name;
+	public String tariffProfile;
+	public String customerAgreement;
 
 	public String getName() {
 		return name;

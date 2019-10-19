@@ -16,18 +16,18 @@ import cn.openadr.model.target.Target;
 @lombok.Getter
 @lombok.Setter
 public class CreateOptRequest extends OptRequest {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	@JsonDeserialize(using = OptTypeDeserializer.class)
-	private OptType optType;
+	public OptType optType;
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	@JsonDeserialize(using = OptReasonDeserializer.class)
-	private OptReason optReason;
-	private String marketContext;
-	private DateTime createdDateTime;
-	private final QualifiedEventID qualifiedEventID = new QualifiedEventID();
-	private final Target target = new Target();
-	private final Target deviceClass = new Target();
+	public OptReason optReason;
+	public String marketContext;
+	public DateTime createdDateTime;
+	public final QualifiedEventID qualifiedEventID = new QualifiedEventID();
+	public final Target target = new Target();
+	public final Target deviceClass = new Target();
 }

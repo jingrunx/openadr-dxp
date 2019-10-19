@@ -23,7 +23,7 @@ public enum DataQuality2 implements EnumeratedType {
 	PREVIOUS_VALUE_USED(QualityType.NO_NEW_VALUE, "Previous Value Used"),
 	NO_VALUE(QualityType.NO_QUALITY, "No Value");
 
-	public final QualityType type;
+	private final QualityType type;
 	private final String value;
 
 	DataQuality2(QualityType type, String value) {

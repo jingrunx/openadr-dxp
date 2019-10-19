@@ -6,8 +6,8 @@ import lombok.NonNull;
 @lombok.Getter
 @lombok.Setter
 public abstract class OptResponse extends DNResponse {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@NonNull
-	private String optID;
+	public String optID;
 }

@@ -18,12 +18,12 @@ import lombok.NoArgsConstructor;
 @lombok.Setter
 @NoArgsConstructor
 public class ServiceSpecific implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	@JsonDeserialize(using = ServiceTypeDeserializer.class)
-	private ServiceType serviceName;
+	public ServiceType serviceName;
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<KeyValue> keyValue = new ArrayList<>();
+	public final List<KeyValue> keyValue = new ArrayList<>();
 }

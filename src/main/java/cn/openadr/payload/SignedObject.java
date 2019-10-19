@@ -21,58 +21,58 @@ import cn.openadr.payload.rpt.*;
 @lombok.Getter
 @lombok.Setter
 public class SignedObject implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	private String id;
+	public String id;
 
-	//private OadrDistributeEventType oadrDistributeEvent;
-	private DistributeEventRequest distributeEventRequest;
-	//private OadrCreatedEventType oadrCreatedEvent;
-	private CreateEventResponse createdEventResponse;
-	//private OadrRequestEventType oadrRequestEvent;
-	private QueryEventRequest queryEventRequest;
-	//private OadrResponseType oadrResponse;
-	private PollResponse response;
+	//public OadrDistributeEventType oadrDistributeEvent;
+	public DistributeEventRequest distributeEventRequest;
+	//public OadrCreatedEventType oadrCreatedEvent;
+	public CreateEventResponse createdEventResponse;
+	//public OadrRequestEventType oadrRequestEvent;
+	public QueryEventRequest queryEventRequest;
+	//public OadrResponseType oadrResponse;
+	public PollResponse response;
 
-	//private OadrCancelOptType oadrCancelOpt;
-	private CancelOptRequest cancelOptRequest;
-	//private OadrCanceledOptType oadrCanceledOpt;
-	private CancelOptResponse cancelOptResponse;
-	//private OadrCreateOptType oadrCreateOpt;
-	private CreateOptRequest createOptRequest;
-	//private OadrCreatedOptType oadrCreatedOpt;
-	private CreateOptResponse createOptResponse;
+	//public OadrCancelOptType oadrCancelOpt;
+	public CancelOptRequest cancelOptRequest;
+	//public OadrCanceledOptType oadrCanceledOpt;
+	public CancelOptResponse cancelOptResponse;
+	//public OadrCreateOptType oadrCreateOpt;
+	public CreateOptRequest createOptRequest;
+	//public OadrCreatedOptType oadrCreatedOpt;
+	public CreateOptResponse createOptResponse;
 
-	//private OadrCancelReportType oadrCancelReport;
-	private CancelReportRequest cancelReportRequest;
-	//private OadrCanceledReportType oadrCanceledReport;
-	private CancelReportResponse cancelReportResponse;
-	//private OadrCreateReportType oadrCreateReport;
-	private CreateReportRequest createReportRequest;
-	//private OadrCreatedReportType oadrCreatedReport;
-	private CreateReportResponse createReportResponse;
-	//private OadrRegisterReportType oadrRegisterReport;
-	private RegisterReportRequest registerReportRequest;
-	//private OadrRegisteredReportType oadrRegisteredReport;
-	private RegisterReportResponse registerReportResponse;
-	//private OadrUpdateReportType oadrUpdateReport;
-	private UpdateReportRequest updateReportRequest;
-	//private OadrUpdatedReportType oadrUpdatedReport;
-	private UpdateReportResponse updateReportResponse;
+	//public OadrCancelReportType oadrCancelReport;
+	public CancelReportRequest cancelReportRequest;
+	//public OadrCanceledReportType oadrCanceledReport;
+	public CancelReportResponse cancelReportResponse;
+	//public OadrCreateReportType oadrCreateReport;
+	public CreateReportRequest createReportRequest;
+	//public OadrCreatedReportType oadrCreatedReport;
+	public CreateReportResponse createReportResponse;
+	//public OadrRegisterReportType oadrRegisterReport;
+	public RegisterReportRequest registerReportRequest;
+	//public OadrRegisteredReportType oadrRegisteredReport;
+	public RegisterReportResponse registerReportResponse;
+	//public OadrUpdateReportType oadrUpdateReport;
+	public UpdateReportRequest updateReportRequest;
+	//public OadrUpdatedReportType oadrUpdatedReport;
+	public UpdateReportResponse updateReportResponse;
 
-	//private OadrCancelPartyRegistrationType oadrCancelPartyRegistration;
-	private CancelRegistrationRequest cancelRegistrationRequest;
-	//private OadrCanceledPartyRegistrationType oadrCanceledPartyRegistration;
-	private CancelRegistrationResponse cancelRegistrationResponse;
-	//private OadrCreatePartyRegistrationType oadrCreatePartyRegistration;
-	private CreateRegistrationRequest createRegistrationRequest;
-	//private OadrCreatedPartyRegistrationType oadrCreatedPartyRegistration;
-	private CreateRegistrationResponse createRegistrationResponse;
-	//private OadrRequestReregistrationType oadrRequestReregistration;
-	private ReregistrationRequest reregistrationRequest;
-	//private OadrQueryRegistrationType oadrQueryRegistration;
-	private QueryRegistrationRequest queryRegistrationRequest;
+	//public OadrCancelPartyRegistrationType oadrCancelPartyRegistration;
+	public CancelRegistrationRequest cancelRegistrationRequest;
+	//public OadrCanceledPartyRegistrationType oadrCanceledPartyRegistration;
+	public CancelRegistrationResponse cancelRegistrationResponse;
+	//public OadrCreatePartyRegistrationType oadrCreatePartyRegistration;
+	public CreateRegistrationRequest createRegistrationRequest;
+	//public OadrCreatedPartyRegistrationType oadrCreatedPartyRegistration;
+	public CreateRegistrationResponse createRegistrationResponse;
+	//public OadrRequestReregistrationType oadrRequestReregistration;
+	public ReregistrationRequest reregistrationRequest;
+	//public OadrQueryRegistrationType oadrQueryRegistration;
+	public QueryRegistrationRequest queryRegistrationRequest;
 
-	//private OadrPollType oadrPoll;
-	private Poll poll;
+	//public OadrPollType oadrPoll;
+	public Poll poll;
 }

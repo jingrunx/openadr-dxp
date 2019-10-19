@@ -10,32 +10,32 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 @lombok.Getter
 @lombok.Setter
 public class Target implements Serializable {
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<String> dnID = new ArrayList<>();
+	public final List<String> dnID = new ArrayList<>();
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<String> resourceID = new ArrayList<>();
+	public final List<String> resourceID = new ArrayList<>();
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<String> groupID = new ArrayList<>();
+	public final List<String> groupID = new ArrayList<>();
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<String> partyID = new ArrayList<>();
+	public final List<String> partyID = new ArrayList<>();
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<EndDeviceAsset> endDeviceAsset = new ArrayList<>();
+	public final List<EndDeviceAsset> endDeviceAsset = new ArrayList<>();
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<MeterAsset> meterAsset = new ArrayList<>();
+	public final List<MeterAsset> meterAsset = new ArrayList<>();
 
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<Pnode> pnode = new ArrayList<>();
+	public final List<Pnode> pnode = new ArrayList<>();
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<AggregatedPnode> aggregatedPnode = new ArrayList<>();
+	public final List<AggregatedPnode> aggregatedPnode = new ArrayList<>();
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<ServiceDeliveryPoint> serviceDeliveryPoint = new ArrayList<>();
+	public final List<ServiceDeliveryPoint> serviceDeliveryPoint = new ArrayList<>();
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<ServiceLocation> serviceLocation = new ArrayList<>();
+	public final List<ServiceLocation> serviceLocation = new ArrayList<>();
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<ServiceArea> serviceArea = new ArrayList<>();
+	public final List<ServiceArea> serviceArea = new ArrayList<>();
 	@JsonInclude(value = Include.NON_EMPTY)
-	private final List<Transport> transport = new ArrayList<>();
+	public final List<Transport> transport = new ArrayList<>();
 }
