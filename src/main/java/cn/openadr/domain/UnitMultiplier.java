@@ -5,6 +5,10 @@ package cn.openadr.domain;
  */
 public enum UnitMultiplier {
 	/**
+	 * -
+	 */
+	none(0, "none"),
+	/**
 	 * 皮
 	 */
 	p(-12, "Pico 10^-12"),
@@ -28,10 +32,6 @@ public enum UnitMultiplier {
 	 * 分
 	 */
 	d(-1, "Deci 10^-1"),
-	/**
-	 * -
-	 */
-	none(0, "none"),
 	/**
 	 * 千
 	 */
