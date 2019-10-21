@@ -19,7 +19,7 @@ public enum UnitMultiplier {
 	/**
 	 * 毫
 	 */
-	m(-3, "Milli 10^-3"),
+	milli(-3, "Milli 10^-3"),
 	/**
 	 * 厘
 	 */

@@ -17,6 +17,10 @@ public class IrregularCurve extends CurveBase {
 		this.values.addAll(values);
 	}
 
+	public void addValue(Data value) {
+		this.values.add(value);
+	}
+
 	@Override
 	public ReadableInterval getInterval() {
 		Optional<DateTime> start = values.stream()

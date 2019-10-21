@@ -51,7 +51,7 @@ public enum UnitSymbol {
 	/**
 	 * Inductance in henry
 	 */
-	H("Inductance in henry"),
+//	H("Inductance in henry"),
 	/**
 	 * Relative temperature in degrees Celsius
 	 */
@@ -87,7 +87,7 @@ public enum UnitSymbol {
 	/**
 	 * Conductance in siemens
 	 */
-	S("Conductance in siemens"),
+//	S("Conductance in siemens"),
 	/**
 	 * Frequency in hertz
 	 */
