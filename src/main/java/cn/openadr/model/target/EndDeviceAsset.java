@@ -6,5 +6,5 @@ package cn.openadr.model.target;
 public class EndDeviceAsset extends Asset {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	/** mrid = cn.openadr.domain.EndDeviceAssetType */
+	/* mrid = cn.openadr.domain.EndDeviceAssetType */
 }
