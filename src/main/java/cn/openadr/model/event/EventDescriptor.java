@@ -62,5 +62,5 @@ public class EventDescriptor extends QualifiedEventID {
 	 * 市场信息
 	 */
 	@JsonProperty("marketURL")
-	public String marketContext;
+	public String marketUrl;
 }
