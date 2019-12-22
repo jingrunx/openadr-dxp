@@ -145,8 +145,9 @@ public enum UnitSymbol {
 
 	public static UnitSymbol valueOf(int value) {
 		for(UnitSymbol i : values()) {
-			if(i.ordinal() == value)
+			if(i.ordinal() == value) {
 				return i;
+			}
 		}
 		return none;
 	}

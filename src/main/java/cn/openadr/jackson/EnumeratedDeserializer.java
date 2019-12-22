@@ -21,8 +21,9 @@ public class EnumeratedDeserializer<E extends Enum<?> & EnumeratedType> extends 
 	@Override
 	public E deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
 		for(E value : clazz.getEnumConstants()) {
-			if(Objects.equals(value.value(), p.getText()))
+			if(Objects.equals(value.value(), p.getText())) {
 				return value;
+			}
 		}
 
 		return null;

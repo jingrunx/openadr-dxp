@@ -59,8 +59,9 @@ public enum UnitMultiplier {
 
 	public static UnitMultiplier valueOf(int value) {
 		for(UnitMultiplier i : values()) {
-			if(i.exp == value)
+			if(i.exp == value) {
 				return i;
+			}
 		}
 		return none;
 	}
