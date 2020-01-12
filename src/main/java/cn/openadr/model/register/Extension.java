@@ -6,7 +6,6 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
 import lombok.NoArgsConstructor;
 
 @lombok.Getter
@@ -16,6 +15,7 @@ public class Extension implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public String name;
+
 	@JsonInclude(value = Include.NON_EMPTY)
 	public final List<KeyValue> info = new ArrayList<>();
 }
