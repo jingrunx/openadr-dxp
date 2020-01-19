@@ -4,6 +4,8 @@ import cn.openadr.domain.EnumeratedType;
 import cn.openadr.domain.ServiceType;
 import cn.openadr.payload.evt.CreateEventResponse;
 import cn.openadr.payload.evt.DistributeEventRequest;
+import cn.openadr.payload.evt.QueryEventRequest;
+import cn.openadr.payload.evt.QueryEventResponse;
 import cn.openadr.payload.opt.CancelOptRequest;
 import cn.openadr.payload.opt.CancelOptResponse;
 import cn.openadr.payload.opt.CreateOptRequest;
@@ -18,14 +20,15 @@ public enum MessageType implements EnumeratedType {
 	QUERY_REG("queryRegistration", ServiceType.REGISTER, QueryRegistrationRequest.class, CreateRegistrationResponse.class),
 
 	DIST_EVENT("distEvent", ServiceType.EVENT, DistributeEventRequest.class, CreateEventResponse.class),
+	QUERY_EVENT("queryEvent", ServiceType.EVENT, QueryEventRequest.class, QueryEventResponse.class),
 
 	REGISTER_REPORT("registerReport", ServiceType.REPORT, RegisterReportRequest.class, RegisterReportResponse.class),
 	CREATE_REPORT("createReport", ServiceType.REPORT, CreateReportRequest.class, CreateReportResponse.class),
 	CANCEL_REPORT("cancelReport", ServiceType.REPORT, CancelReportRequest.class, CancelReportResponse.class),
 	UPDATE_REPORT("updateReport", ServiceType.REPORT, UpdateReportRequest.class, UpdateReportResponse.class),
-	RESOURCE_REPORT("resourceReport", ServiceType.REPORT, ResourceReportRequest.class,UpdateReportResponse.class),
-	MOMENT_REPORT("momentReport", ServiceType.REPORT, MomentDataReportRequest.class,UpdateReportResponse.class),
-	INTERVAL_REPORT("intervalReport", ServiceType.REPORT, IntervalDataReportRequest.class,UpdateReportResponse.class),
+	RESOURCE_REPORT("resourceReport", ServiceType.REPORT, ResourceReportRequest.class, DataReportResponse.class),
+	MOMENT_REPORT("momentReport", ServiceType.REPORT, MomentDataReportRequest.class, DataReportResponse.class),
+	INTERVAL_REPORT("intervalReport", ServiceType.REPORT, IntervalDataReportRequest.class, DataReportResponse.class),
 
 	CREATE_OPT("createOpt", ServiceType.OPT, CreateOptRequest.class, CreateOptResponse.class),
 	CANCEL_OPT("cancelOpt", ServiceType.OPT, CancelOptRequest.class, CancelOptResponse.class),
