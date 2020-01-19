@@ -23,6 +23,9 @@ public enum MessageType implements EnumeratedType {
 	CREATE_REPORT("createReport", ServiceType.REPORT, CreateReportRequest.class, CreateReportResponse.class),
 	CANCEL_REPORT("cancelReport", ServiceType.REPORT, CancelReportRequest.class, CancelReportResponse.class),
 	UPDATE_REPORT("updateReport", ServiceType.REPORT, UpdateReportRequest.class, UpdateReportResponse.class),
+	RESOURCE_REPORT("resourceReport", ServiceType.REPORT, ResourceReportRequest.class,UpdateReportResponse.class),
+	MOMENT_REPORT("momentReport", ServiceType.REPORT, MomentDataReportRequest.class,UpdateReportResponse.class),
+	INTERVAL_REPORT("intervalReport", ServiceType.REPORT, IntervalDataReportRequest.class,UpdateReportResponse.class),
 
 	CREATE_OPT("createOpt", ServiceType.OPT, CreateOptRequest.class, CreateOptResponse.class),
 	CANCEL_OPT("cancelOpt", ServiceType.OPT, CancelOptRequest.class, CancelOptResponse.class),
