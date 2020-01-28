@@ -2,9 +2,7 @@ package cn.openadr.model.report;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import cn.openadr.domain.ReadingType;
-import cn.openadr.domain.ReadingType.ReadingTypeDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.target.Target;
 import lombok.NoArgsConstructor;
@@ -23,10 +21,15 @@ public class ReportDescription {
 	public int rID;
 
 	/**
+	 * FIXME: 规范扩展，测点名称
+	 */
+	public String name;
+
+	/**
 	 * 读数类型
 	 */
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = ReadingTypeDeserializer.class)
+	@JsonDeserialize(using = ReadingType.ReadingTypeDeserializer.class)
 	public ReadingType readingType;
 
 	/**

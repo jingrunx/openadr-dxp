@@ -47,7 +47,7 @@ public class Resource implements Serializable {
 	/**
 	 * 关联的表计
 	 */
-	public MeterAsset meterAsset;
+	public final MeterAsset meterAsset = new MeterAsset();
 	/**
 	 * 资源之间的横向关联关系
 	 */
@@ -119,10 +119,6 @@ public class Resource implements Serializable {
 
 	public MeterAsset getMeterAsset() {
 		return meterAsset;
-	}
-
-	public void setMeterAsset(MeterAsset meterAsset) {
-		this.meterAsset = meterAsset;
 	}
 
 	public List<String> getRelationID() {

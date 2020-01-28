@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import cn.openadr.domain.ResponseRequired;
-import cn.openadr.domain.ResponseRequired.ResponseRequiredDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.target.Target;
 import lombok.NoArgsConstructor;
@@ -21,7 +19,7 @@ public class Event implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = ResponseRequiredDeserializer.class)
+	@JsonDeserialize(using = ResponseRequired.ResponseRequiredDeserializer.class)
 	public ResponseRequired responseRequired;
 
 	public final EventDescriptor descriptor = new EventDescriptor();

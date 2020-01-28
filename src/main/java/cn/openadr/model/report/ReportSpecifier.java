@@ -8,9 +8,7 @@ import org.joda.time.DateTime;
 import org.joda.time.Period;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import cn.openadr.domain.ReportType;
-import cn.openadr.domain.ReportType.ReportTypeDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -43,7 +41,7 @@ public class ReportSpecifier implements Serializable {
 	 */
 	@NonNull
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = ReportTypeDeserializer.class)
+	@JsonDeserialize(using = ReportType.ReportTypeDeserializer.class)
 	public ReportType reportType;
 
 	/**
