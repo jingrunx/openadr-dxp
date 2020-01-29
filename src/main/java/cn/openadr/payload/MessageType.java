@@ -10,14 +10,17 @@ import cn.openadr.payload.opt.CancelOptRequest;
 import cn.openadr.payload.opt.CancelOptResponse;
 import cn.openadr.payload.opt.CreateOptRequest;
 import cn.openadr.payload.opt.CreateOptResponse;
+import cn.openadr.payload.poll.DrResponse;
 import cn.openadr.payload.poll.Poll;
+import cn.openadr.payload.poll.PollResponse;
 import cn.openadr.payload.reg.*;
 import cn.openadr.payload.rpt.*;
 
 public enum MessageType implements EnumeratedType {
+	QUERY_REG("queryRegistration", ServiceType.REGISTER, QueryRegistrationRequest.class, CreateRegistrationResponse.class),
 	CREATE_REG("createRegistration", ServiceType.REGISTER, CreateRegistrationRequest.class, CreateRegistrationResponse.class),
 	CANCEL_REG("cancelRegistration", ServiceType.REGISTER, CancelRegistrationRequest.class, CancelRegistrationResponse.class),
-	QUERY_REG("queryRegistration", ServiceType.REGISTER, QueryRegistrationRequest.class, CreateRegistrationResponse.class),
+	RE_REG("reregistration", ServiceType.REGISTER, ReregistrationRequest.class, DrResponse.class),
 
 	DIST_EVENT("distEvent", ServiceType.EVENT, DistributeEventRequest.class, CreateEventResponse.class),
 	QUERY_EVENT("queryEvent", ServiceType.EVENT, QueryEventRequest.class, QueryEventResponse.class),
@@ -33,7 +36,7 @@ public enum MessageType implements EnumeratedType {
 	CREATE_OPT("createOpt", ServiceType.OPT, CreateOptRequest.class, CreateOptResponse.class),
 	CANCEL_OPT("cancelOpt", ServiceType.OPT, CancelOptRequest.class, CancelOptResponse.class),
 
-	POLL("poll", ServiceType.POLL, Poll.class, DRResponse.class);
+	POLL("poll", ServiceType.POLL, Poll.class, PollResponse.class);
 
 	private final String value;
 	public final ServiceType service;

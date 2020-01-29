@@ -1,10 +1,9 @@
 package cn.openadr.payload;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo.Id;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.DatabindContext;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.jsontype.impl.TypeIdResolverBase;
@@ -35,13 +34,13 @@ public class DRTypeIdResolver extends TypeIdResolverBase {
 	}
 
 	@Override
-	public JavaType typeFromId(DatabindContext context, String id) throws IOException {
+	public JavaType typeFromId(DatabindContext context, String id) {
 		TypeFactory factory = context.getTypeFactory();
 		return factory.constructType(types.get(id));
 	}
 
 	@Override
-	public Id getMechanism() {
-		return Id.CUSTOM;
+	public JsonTypeInfo.Id getMechanism() {
+		return JsonTypeInfo.Id.CUSTOM;
 	}
 }
