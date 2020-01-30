@@ -1,31 +1,46 @@
 {
-  "version" : 0,
-  "requestID" : null,
-  "dnID" : null,
-  "reportRequest" : [ {
-    "reportRequestID" : "c87c3125-f485-416f-9c6d-fbf01383f2a9",
-    "reportSpecifier" : {
-      "reportSpecifierID" : null,
-      "reportName" : "HISTORY_USAGE",
-      "reportType" : "x-resourceStatus",
-      "startDateTime" : "2017-10-26T16:00:00.000Z",
-      "endDateTime" : "2018-10-26T16:00:00.000Z",
-      "backDuration" : "P1D",
-      "period" : "PT1M",
-      "rID" : [ 1, 2, 3, 4, 5 ]
+  "version": 0,
+  "requestID": null,
+  "dnID": null,
+  "reportRequest": [
+    {
+      "reportRequestID": "c87c3125-f485-416f-9c6d-fbf01383f2a9",
+      "reportSpecifier": {
+        "reportSpecifierID": null,
+        "reportName": "HISTORY_USAGE",
+        "reportType": "x-resourceStatus",
+        "startDateTime": "2017-10-26T16:00:00.000Z",
+        "endDateTime": "2018-10-26T16:00:00.000Z",
+        "backDuration": "P1D",
+        "period": "PT1M",
+        "rID": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "reportRequestID": "a77d46be-94e6-41a9-b9a0-729d4ca7f098",
+      "reportSpecifier": {
+        "reportSpecifierID": null,
+        "reportName": "HISTORY_USAGE",
+        "reportType": "x-resourceStatus",
+        "startDateTime": "2017-10-26T16:00:00.000Z",
+        "endDateTime": "2018-10-26T16:00:00.000Z",
+        "backDuration": "P1D",
+        "period": "PT1M",
+        "rID": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
     }
-  }, {
-    "reportRequestID" : "a77d46be-94e6-41a9-b9a0-729d4ca7f098",
-    "reportSpecifier" : {
-      "reportSpecifierID" : null,
-      "reportName" : "HISTORY_USAGE",
-      "reportType" : "x-resourceStatus",
-      "startDateTime" : "2017-10-26T16:00:00.000Z",
-      "endDateTime" : "2018-10-26T16:00:00.000Z",
-      "backDuration" : "P1D",
-      "period" : "PT1M",
-      "rID" : [ 1, 2, 3, 4, 5 ]
-    }
-  } ],
-  "root" : "CreateReportRequest"
+  ],
+  "root": "CreateReportRequest"
 }

@@ -3,8 +3,6 @@ package cn.openadr.payload;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
 import cn.openadr.payload.evt.CreateEventResponse;
 import cn.openadr.payload.evt.DistributeEventRequest;
 import cn.openadr.payload.evt.QueryEventRequest;
@@ -17,9 +15,9 @@ import cn.openadr.payload.poll.PollResponse;
 import cn.openadr.payload.reg.*;
 import cn.openadr.payload.rpt.*;
 
-@JsonInclude(Include.NON_NULL)
 @lombok.Getter
 @lombok.Setter
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class SignedObject implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
@@ -75,4 +73,6 @@ public class SignedObject implements Serializable {
 
 	//public OadrPollType oadrPoll;
 	public Poll poll;
+	public PollResponse pollResponse;
+	public DRResponse drResponse;
 }

@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 // EiResponseType
 @lombok.Getter
@@ -17,7 +16,6 @@ public class Response implements Serializable {
 	/**
 	 * 状态代码
 	 */
-	@NonNull
 	public Integer code;
 	/**
 	 * 错误描述
@@ -26,6 +24,5 @@ public class Response implements Serializable {
 	/**
 	 * 请求ID
 	 */
-	@NonNull
 	public String requestID;
 }

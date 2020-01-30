@@ -1,25 +1,25 @@
 package cn.openadr.model.event;
 
+import java.io.Serializable;
+
 import org.joda.time.DateTime;
 import org.joda.time.Period;
-
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 @lombok.Getter
 @lombok.Setter
 @NoArgsConstructor
-public class EventActivePeriod {
+public class EventActivePeriod implements Serializable {
+	private static final long serialVersionUID = cn.openadr.Version.V1;
+
 	/**
 	 * 开始时间
 	 */
-	@NonNull
 	public DateTime dtstart;
 
 	/**
 	 * 持续时间(单位:分钟)
 	 */
-	@NonNull
 	public Period duration;
 
 	/**

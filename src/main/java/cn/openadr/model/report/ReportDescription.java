@@ -1,5 +1,7 @@
 package cn.openadr.model.report;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.ReadingType;
@@ -14,41 +16,37 @@ import lombok.NoArgsConstructor;
 @lombok.Getter
 @lombok.Setter
 @NoArgsConstructor
-public class ReportDescription {
+public class ReportDescription implements Serializable {
+	private static final long serialVersionUID = cn.openadr.Version.V1;
+
+	/**
+	 * 计量单位
+	 */
+	public final MetricDescription metric = new MetricDescription();
+	/**
+	 * 采样周期
+	 */
+	public final SamplingRate samplingRate = new SamplingRate();
+	/**
+	 * 只用endDeviceAsset
+	 */
+	public final Target reportSubject = new Target();
+	/**
+	 * 只用到resourceID或meterAsset
+	 */
+	public final Target reportDataSource = new Target();
 	/**
 	 * 测点编号
 	 */
 	public int rID;
-
 	/**
 	 * FIXME: 规范扩展，测点名称
 	 */
 	public String name;
-
 	/**
 	 * 读数类型
 	 */
 	@JsonSerialize(using = EnumeratedSerializer.class)
 	@JsonDeserialize(using = ReadingType.ReadingTypeDeserializer.class)
 	public ReadingType readingType;
-
-	/**
-	 * 计量单位
-	 */
-	public final MetricDescription metric = new MetricDescription();
-
-	/**
-	 * 采样周期
-	 */
-	public final SamplingRate samplingRate = new SamplingRate();
-
-	/**
-	 * 只用endDeviceAsset
-	 */
-	public final Target reportSubject = new Target();
-
-	/**
-	 * 只用到resourceID或meterAsset
-	 */
-	public final Target reportDataSource = new Target();
 }

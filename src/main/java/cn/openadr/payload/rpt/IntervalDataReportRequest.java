@@ -5,9 +5,7 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 import org.joda.time.Period;
-
 import cn.openadr.model.report.PointCurveData;
-import lombok.NonNull;
 
 @lombok.Getter
 @lombok.Setter
@@ -17,13 +15,10 @@ public class IntervalDataReportRequest extends DataReportRequest {
 	/**
 	 * 开始时间
 	 */
-	@NonNull
 	public DateTime dtstart;
-
 	/**
 	 * 步长(单位:分钟)
 	 */
-	@NonNull
 	public Period period;
 
 	public final List<PointCurveData> pointCurveData = new ArrayList<>();

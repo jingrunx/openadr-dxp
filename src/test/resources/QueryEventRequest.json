@@ -1,10 +1,14 @@
 {
-  "version" : 1,
-  "requestID" : "f5fbd7bf-72ff-490a-9edd-042babf46053",
-  "dnID" : "dn#1",
-  "replyLimit" : 5,
-  "dtstart" : null,
-  "duration" : null,
-  "status" : [ "FAR", "NEAR", "ACTIVE" ],
-  "root" : "QueryEventRequest"
+  "version": 1,
+  "requestID": "f5fbd7bf-72ff-490a-9edd-042babf46053",
+  "dnID": "dn#1",
+  "replyLimit": 5,
+  "dtstart": null,
+  "duration": null,
+  "status": [
+    "FAR",
+    "NEAR",
+    "ACTIVE"
+  ],
+  "root": "QueryEventRequest"
 }

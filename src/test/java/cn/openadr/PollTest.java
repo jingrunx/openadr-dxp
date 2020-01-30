@@ -1,7 +1,6 @@
 package cn.openadr;
 
 import org.junit.Test;
-
 import cn.openadr.payload.poll.Poll;
 import cn.openadr.payload.poll.PollResponse;
 import cn.openadr.utils.CommonUtils;

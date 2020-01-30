@@ -11,6 +11,6 @@ import cn.openadr.payload.DNRequest;
 public class CancelReportRequest extends DNRequest {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	public boolean reportToFollow;
 	public final List<String> reportRequestID = new ArrayList<>();
+	public boolean reportToFollow;
 }

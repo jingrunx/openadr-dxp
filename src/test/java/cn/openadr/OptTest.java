@@ -2,7 +2,6 @@ package cn.openadr;
 
 import org.joda.time.DateTime;
 import org.junit.Test;
-
 import cn.openadr.domain.OptReason;
 import cn.openadr.domain.OptType;
 import cn.openadr.payload.opt.CancelOptRequest;

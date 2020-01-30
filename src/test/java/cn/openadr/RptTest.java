@@ -2,7 +2,6 @@ package cn.openadr;
 
 import org.joda.time.DateTime;
 import org.junit.Test;
-
 import cn.openadr.domain.EndDeviceAssetType;
 import cn.openadr.model.report.MetaDataReport;
 import cn.openadr.model.report.ReportRequest;

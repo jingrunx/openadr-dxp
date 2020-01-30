@@ -38,10 +38,10 @@ public enum MessageType implements EnumeratedType {
 
 	POLL("poll", ServiceType.POLL, Poll.class, PollResponse.class);
 
-	private final String value;
 	public final ServiceType service;
 	public final Class<? extends DRRequest> reqClass;
 	public final Class<? extends DRResponse> respClass;
+	private final String value;
 
 	MessageType(String value, ServiceType service,
 		Class<? extends DRRequest> reqClass, Class<? extends DRResponse> respClass) {

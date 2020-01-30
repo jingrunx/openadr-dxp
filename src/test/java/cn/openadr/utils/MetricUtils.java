@@ -3,7 +3,6 @@ package cn.openadr.utils;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeConstants;
 import org.joda.time.Hours;
-
 import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
 import cn.openadr.model.report.MetricDescription;

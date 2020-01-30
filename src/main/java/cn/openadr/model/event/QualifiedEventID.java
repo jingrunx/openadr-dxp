@@ -3,7 +3,6 @@ package cn.openadr.model.event;
 import java.io.Serializable;
 
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 @lombok.Getter
 @lombok.Setter
@@ -14,7 +13,6 @@ public class QualifiedEventID implements Serializable {
 	/**
 	 * 事件ID
 	 */
-	@NonNull
 	public String eventID;
 
 	/**

@@ -1,7 +1,7 @@
 {
-  "version" : 1,
-  "requestID" : "b234a8f4-d0d8-4391-aa5e-585d18dc1f5f",
-  "dnID" : "dn#1",
-  "optID" : "fe507d79-75c1-4e0f-850c-8d115159d107",
-  "root" : "CancelOptRequest"
+  "version": 1,
+  "requestID": "b234a8f4-d0d8-4391-aa5e-585d18dc1f5f",
+  "dnID": "dn#1",
+  "optID": "fe507d79-75c1-4e0f-850c-8d115159d107",
+  "root": "CancelOptRequest"
 }

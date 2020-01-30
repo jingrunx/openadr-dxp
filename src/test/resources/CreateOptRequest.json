@@ -1,21 +1,23 @@
 {
-  "version" : 1,
-  "requestID" : "2ff068a7-27a3-4deb-9ef3-1b354af6ef7f",
-  "dnID" : "dn#1",
-  "optID" : "830b444a-5588-4a26-9a41-f8f718fe83be",
-  "optType" : "optOut",
-  "optReason" : "economic",
-  "marketContext" : null,
-  "createdDateTime" : "2017-10-27T02:41:06.191Z",
-  "qualifiedEventID" : {
-    "eventID" : "6d97fe1e-cc45-4745-b117-740bec2cca14",
-    "modificationNumber" : 1
+  "version": 1,
+  "requestID": "2ff068a7-27a3-4deb-9ef3-1b354af6ef7f",
+  "dnID": "dn#1",
+  "optID": "830b444a-5588-4a26-9a41-f8f718fe83be",
+  "optType": "optOut",
+  "optReason": "economic",
+  "marketContext": null,
+  "createdDateTime": "2017-10-27T02:41:06.191Z",
+  "qualifiedEventID": {
+    "eventID": "6d97fe1e-cc45-4745-b117-740bec2cca14",
+    "modificationNumber": 1
   },
-  "target" : {
-    "endDeviceAsset" : [ {
-      "mrid" : "Energy_Management_System"
-    } ]
+  "target": {
+    "endDeviceAsset": [
+      {
+        "mrid": "Energy_Management_System"
+      }
+    ]
   },
-  "deviceClass" : { },
-  "root" : "CreateOptRequest"
+  "deviceClass": {},
+  "root": "CreateOptRequest"
 }

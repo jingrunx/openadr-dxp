@@ -4,7 +4,6 @@ import java.util.UUID;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
-
 import cn.openadr.domain.EndDeviceAssetType;
 import cn.openadr.model.Response;
 import cn.openadr.model.target.EndDeviceAsset;

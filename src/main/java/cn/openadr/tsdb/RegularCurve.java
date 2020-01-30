@@ -8,9 +8,7 @@ import org.joda.time.Duration;
 import org.joda.time.Interval;
 import org.joda.time.Period;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 /**
  * 由固定时间间隔的数据序列组成
@@ -19,23 +17,27 @@ import lombok.NonNull;
 @lombok.Setter
 @NoArgsConstructor
 public class RegularCurve extends CurveBase {
+	private static final long serialVersionUID = cn.openadr.Version.V1;
+
 	/**
 	 * 开始时间
 	 */
-	@NonNull
 	public DateTime dtstart;
 
 	/**
 	 * 步长(单位:分钟)
 	 */
-	@NonNull
 	public Period period;
 
 	/**
 	 * 数据数组
 	 */
-	@NonNull
 	private double[] array = new double[]{};
+
+	public static DateTime getDateTime(DateTime start, Period period, int idx) {
+		return start.plus(period.toStandardDuration()
+			.multipliedBy(idx));
+	}
 
 	public double[] getArray() {
 		return array;
@@ -70,10 +72,5 @@ public class RegularCurve extends CurveBase {
 				return new Data(value, occur, null);
 			}
 		};
-	}
-
-	public static DateTime getDateTime(DateTime start, Period period, int idx) {
-		return start.plus(period.toStandardDuration()
-			.multipliedBy(idx));
 	}
 }

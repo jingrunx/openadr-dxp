@@ -4,16 +4,10 @@ import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.joda.time.Hours;
 import org.joda.time.Minutes;
-
 import cn.openadr.domain.EventStatus;
 import cn.openadr.domain.ResponseRequired;
 import cn.openadr.domain.SignalType;
-import cn.openadr.model.event.Event;
-import cn.openadr.model.event.EventActivePeriod;
-import cn.openadr.model.event.EventBaseline;
-import cn.openadr.model.event.EventDescriptor;
-import cn.openadr.model.event.EventSignal;
-import cn.openadr.model.event.EventSignals;
+import cn.openadr.model.event.*;
 import cn.openadr.tsdb.CurveData;
 
 public class EventUtils {

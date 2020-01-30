@@ -6,7 +6,6 @@ import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 /**
  * 计量单位
@@ -18,7 +17,6 @@ import lombok.NonNull;
 public class MetricDescription implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	@NonNull
 	public String/* MetricType */ metricName;
 	/**
 	 * 倍率

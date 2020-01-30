@@ -1,7 +1,6 @@
 package cn.openadr.payload.rpt;
 
 import org.joda.time.DateTime;
-
 import cn.openadr.payload.DNRequest;
 
 @lombok.Getter

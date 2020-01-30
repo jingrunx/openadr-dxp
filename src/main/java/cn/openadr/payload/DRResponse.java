@@ -1,7 +1,6 @@
 package cn.openadr.payload;
 
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
-
 import cn.openadr.model.Response;
 
 /**

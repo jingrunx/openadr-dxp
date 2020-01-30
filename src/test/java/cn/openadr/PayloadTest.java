@@ -1,7 +1,6 @@
 package cn.openadr;
 
 import org.junit.Test;
-
 import cn.openadr.payload.DRPayload;
 import cn.openadr.payload.SignMethod;
 import cn.openadr.payload.opt.CancelOptRequest;

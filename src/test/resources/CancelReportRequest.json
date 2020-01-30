@@ -1,7 +1,10 @@
 {
-  "version" : 1,
-  "requestID" : "35236905-c612-4229-9fb5-1c6a2155653b",
-  "reportToFollow" : true,
-  "reportRequestID" : [ "948abdb4-3300-4098-9f50-d925c797c34d", "8c2c4b19-7b81-48d0-815b-d0547dcbf9b1" ],
-  "root" : "CancelReportRequest"
+  "version": 1,
+  "requestID": "35236905-c612-4229-9fb5-1c6a2155653b",
+  "reportToFollow": true,
+  "reportRequestID": [
+    "948abdb4-3300-4098-9f50-d925c797c34d",
+    "8c2c4b19-7b81-48d0-815b-d0547dcbf9b1"
+  ],
+  "root": "CancelReportRequest"
 }

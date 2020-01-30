@@ -1,7 +1,6 @@
 package cn.openadr.payload.reg;
 
 import cn.openadr.domain.TransportType;
-import lombok.NonNull;
 
 // OadrCreatePartyRegistrationType
 @lombok.Getter
@@ -25,7 +24,6 @@ public class CreateRegistrationRequest extends RegistrationRequest {
 	/**
 	 * 传输类型
 	 */
-	@NonNull
 	public TransportType transport;
 	/**
 	 * 传输地址

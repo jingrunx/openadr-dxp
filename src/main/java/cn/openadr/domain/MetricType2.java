@@ -97,6 +97,15 @@ public interface MetricType2 {
 	String EQ_Q4 = EQ + '.' + Direction.q4.code;
 
 	String ES = prefix_ee + '.' + ElectricType.ES.code();
+	/* ====================电能示值类==================== */
+	/* public */ String prefix_r = "r";
+	String EPr = prefix_r + '.' + ElectricType.EP.code();
+	String EPr_pos = EPr + pos;
+	String EPr_rev = EPr + rev;
+	String EQr = prefix_r + '.' + ElectricType.EQ.code();
+	String EQr_pos = EQr + pos;
+	String EQr_rev = EQr + rev;
+	String ESr = prefix_r + '.' + ElectricType.ES.code();
 
 	/**
 	 * 根据电量测点和积分时段产生与时段相关的测点名
@@ -107,17 +116,4 @@ public interface MetricType2 {
 		String periodStr = period.toString();
 		return eMetric + '.' + periodStr.toLowerCase();
 	}
-
-	/* ====================电能示值类==================== */
-	/* public */ String prefix_r = "r";
-
-	String EPr = prefix_r + '.' + ElectricType.EP.code();
-	String EPr_pos = EPr + pos;
-	String EPr_rev = EPr + rev;
-
-	String EQr = prefix_r + '.' + ElectricType.EQ.code();
-	String EQr_pos = EQr + pos;
-	String EQr_rev = EQr + rev;
-
-	String ESr = prefix_r + '.' + ElectricType.ES.code();
 }

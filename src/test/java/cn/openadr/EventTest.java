@@ -1,7 +1,6 @@
 package cn.openadr;
 
 import org.junit.Test;
-
 import cn.openadr.domain.OptType;
 import cn.openadr.model.event.Event;
 import cn.openadr.model.event.EventResponse;

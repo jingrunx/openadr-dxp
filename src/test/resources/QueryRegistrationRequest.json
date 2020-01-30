@@ -1,6 +1,6 @@
 {
-  "version" : 1,
-  "requestID" : "541a176e-98e2-4c56-a852-715dda061d0c",
-  "dnID" : "dn#1",
-  "root" : "QueryRegistrationRequest"
+  "version": 1,
+  "requestID": "541a176e-98e2-4c56-a852-715dda061d0c",
+  "dnID": "dn#1",
+  "root": "QueryRegistrationRequest"
 }

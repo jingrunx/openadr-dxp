@@ -3,6 +3,7 @@ package cn.openadr.payload.rpt;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.openadr.model.target.MeterAsset;
 import cn.openadr.model.target.Resource;
 import cn.openadr.payload.DNRequest;
 
@@ -12,5 +13,5 @@ public class ResourceReportRequest extends DNRequest {
 
 	public String reportRequestID;
 	public final List<Resource> resource = new ArrayList<>();
-//	public final List<MeterAsset> meterAsset = new ArrayList<>();
+	public final List<MeterAsset> meterAsset = new ArrayList<>();
 }

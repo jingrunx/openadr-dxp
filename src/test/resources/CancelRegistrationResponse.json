@@ -1,9 +1,9 @@
 {
-  "version" : 0,
-  "code" : 200,
-  "description" : "successful",
-  "requestID" : "9b25a17c-952a-43d2-8b9c-99a9a15f09ee",
-  "dnID" : null,
-  "registrationID" : null,
-  "root" : "CancelRegistrationResponse"
+  "version": 0,
+  "code": 200,
+  "description": "successful",
+  "requestID": "9b25a17c-952a-43d2-8b9c-99a9a15f09ee",
+  "dnID": null,
+  "registrationID": null,
+  "root": "CancelRegistrationResponse"
 }

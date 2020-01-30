@@ -1,7 +1,7 @@
 {
-  "version" : 1,
-  "requestID" : "65061a62-9204-49d5-a31e-d2629c86ae85",
-  "dnID" : "dn#1",
-  "registrationID" : "f68e1b9e-2fa0-48e0-b1bd-ade01e0a3c3a",
-  "root" : "CancelRegistrationRequest"
+  "version": 1,
+  "requestID": "65061a62-9204-49d5-a31e-d2629c86ae85",
+  "dnID": "dn#1",
+  "registrationID": "f68e1b9e-2fa0-48e0-b1bd-ade01e0a3c3a",
+  "root": "CancelRegistrationRequest"
 }

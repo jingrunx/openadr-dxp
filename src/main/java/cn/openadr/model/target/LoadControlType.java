@@ -1,39 +1,14 @@
 package cn.openadr.model.target;
 
-public class LoadControlType {
+import java.io.Serializable;
+
+@lombok.Getter
+@lombok.Setter
+public class LoadControlType implements Serializable {
+	private static final long serialVersionUID = cn.openadr.Version.V1;
+
 	public double current;
 	public Double normal;
-	public Double min, max;
-
-	public double getCurrent() {
-		return current;
-	}
-
-	public void setCurrent(double current) {
-		this.current = current;
-	}
-
-	public Double getNormal() {
-		return normal;
-	}
-
-	public void setNormal(Double normal) {
-		this.normal = normal;
-	}
-
-	public Double getMin() {
-		return min;
-	}
-
-	public void setMin(Double min) {
-		this.min = min;
-	}
-
-	public Double getMax() {
-		return max;
-	}
-
-	public void setMax(Double max) {
-		this.max = max;
-	}
+	public Double min;
+	public Double max;
 }

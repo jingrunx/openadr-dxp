@@ -4,12 +4,9 @@ import org.joda.time.DateTime;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import cn.openadr.domain.EventStatus;
-import cn.openadr.domain.EventStatus.EventStatusDeserializer;
 import cn.openadr.jackson.EnumeratedSerializer;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 /**
  * 事件描述
@@ -23,9 +20,8 @@ public class EventDescriptor extends QualifiedEventID {
 	/**
 	 * 事件状态
 	 */
-	@NonNull
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = EventStatusDeserializer.class)
+	@JsonDeserialize(using = EventStatus.EventStatusDeserializer.class)
 	public EventStatus status;
 
 	/**

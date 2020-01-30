@@ -1,13 +1,11 @@
 package cn.openadr.model.target;
 
-public class Asset {
+import java.io.Serializable;
+
+@lombok.Getter
+@lombok.Setter
+public class Asset implements Serializable {
+	private static final long serialVersionUID = cn.openadr.Version.V1;
+
 	public String mrid;
-
-	public String getMrid() {
-		return mrid;
-	}
-
-	public void setMrid(String mrid) {
-		this.mrid = mrid;
-	}
 }

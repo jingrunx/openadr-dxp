@@ -6,7 +6,6 @@ import java.util.Objects;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
-
 import cn.openadr.domain.EnumeratedType;
 
 public class EnumeratedDeserializer<E extends Enum<?> & EnumeratedType> extends JsonDeserializer<E> {

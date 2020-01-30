@@ -2,7 +2,6 @@ package cn.openadr;
 
 import org.joda.time.Minutes;
 import org.junit.Test;
-
 import cn.openadr.domain.ServiceType;
 import cn.openadr.domain.TransportType;
 import cn.openadr.model.register.KeyValue;

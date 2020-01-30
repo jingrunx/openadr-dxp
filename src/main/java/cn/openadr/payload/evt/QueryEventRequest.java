@@ -5,7 +5,6 @@ import java.util.Set;
 
 import org.joda.time.DateTime;
 import org.joda.time.Period;
-
 import cn.openadr.domain.EventStatus;
 import cn.openadr.payload.DNRequest;
 
@@ -15,6 +14,10 @@ import cn.openadr.payload.DNRequest;
 public class QueryEventRequest extends DNRequest {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
+	/**
+	 * 要查询的事件状态
+	 */
+	public final Set<EventStatus> status = EnumSet.of(EventStatus.FAR, EventStatus.NEAR, EventStatus.ACTIVE);
 	/**
 	 * 限制返回的事件数目
 	 */
@@ -27,8 +30,4 @@ public class QueryEventRequest extends DNRequest {
 	 * 要查询的事件时间范围
 	 */
 	public Period duration;
-	/**
-	 * 要查询的事件状态
-	 */
-	public final Set<EventStatus> status = EnumSet.of(EventStatus.FAR, EventStatus.NEAR, EventStatus.ACTIVE);
 }

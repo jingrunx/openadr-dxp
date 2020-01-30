@@ -1,6 +1,6 @@
 {
-  "version" : 1,
-  "requestID" : "1d2b2e41-cc70-4474-b10c-7f7681cbe1a8",
-  "dnID" : "dn#1",
-  "root" : "ReregistrationRequest"
+  "version": 1,
+  "requestID": "1d2b2e41-cc70-4474-b10c-7f7681cbe1a8",
+  "dnID": "dn#1",
+  "root": "ReregistrationRequest"
 }

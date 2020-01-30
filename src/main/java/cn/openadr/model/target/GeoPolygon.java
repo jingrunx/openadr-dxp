@@ -1,15 +1,13 @@
 package cn.openadr.model.target;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
-public class GeoPolygon {
-	public List<GeoPoint> polygon;
+@lombok.Getter
+@lombok.Setter
+public class GeoPolygon implements Serializable {
+	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	public List<GeoPoint> getPolygon() {
-		return polygon;
-	}
-
-	public void setPolygon(List<GeoPoint> polygon) {
-		this.polygon = polygon;
-	}
+	public final List<GeoPoint> polygon = new ArrayList<>();
 }

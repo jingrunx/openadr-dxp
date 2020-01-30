@@ -7,7 +7,6 @@ import org.joda.time.DateTime;
 import org.joda.time.Days;
 import org.joda.time.Hours;
 import org.joda.time.Minutes;
-
 import cn.openadr.domain.MetricType2;
 import cn.openadr.domain.ReportName;
 import cn.openadr.domain.ReportType;
