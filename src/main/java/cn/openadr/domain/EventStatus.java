@@ -39,8 +39,8 @@ public enum EventStatus implements EnumeratedType {
 		return value;
 	}
 
-	public static class EventStatusDeserializer extends EnumeratedDeserializer<EventStatus> {
-		public EventStatusDeserializer() {
+	public static class Deserializer extends EnumeratedDeserializer<EventStatus> {
+		public Deserializer() {
 			super(EventStatus.class);
 		}
 	}

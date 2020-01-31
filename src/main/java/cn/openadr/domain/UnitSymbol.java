@@ -1,13 +1,27 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 /**
  * 单元符号
  */
-public enum UnitSymbol {
+public enum UnitSymbol implements EnumeratedType {
 	/**
 	 * Dimension less quantity
 	 */
 	none("Dimension less quantity"),
+	/**
+	 * 频率
+	 */
+	Hz("Frequency in hertz"),
+	/**
+	 * 伏
+	 */
+	V("Voltage in volt"),
+	/**
+	 * 安
+	 */
+	A("Current in ampere"),
 	/**
 	 * 伏安
 	 */
@@ -33,107 +47,95 @@ public enum UnitSymbol {
 	 */
 	VArh("Reactive energy in volt ampere hours"),
 	/**
-	 * 伏
-	 */
-	V("Voltage in volt"),
-	/**
-	 * 欧姆
+	 * 欧姆(电阻)
 	 */
 	ohm("Resistance in ohm"),
 	/**
-	 * 安
+	 * 法拉(电容)
 	 */
-	A("Current in ampere"),
+	farad("Capacitance in farad"),
 	/**
-	 * Capacitance in farad
+	 * 亨利(电感)
 	 */
-	F("Capacitance in farad"),
+	henry("Inductance in henry"),
 	/**
-	 * Inductance in henry
+	 * 西门子(电导)
 	 */
-//	H("Inductance in henry"),
+	siemens("Conductance in siemens"),
 	/**
-	 * Relative temperature in degrees Celsius
+	 * 摄氏度
 	 */
-	c("Relative temperature in degrees Celsius"),
+	C("Relative temperature in degrees Celsius"),
 	/**
-	 * Time in seconds
+	 * 秒
 	 */
-	s("Time in seconds"),
+	sec("Time in seconds"),
 	/**
-	 * Time in minutes
+	 * 分
 	 */
 	min("Time in minutes"),
 	/**
-	 * Time in hours
+	 * 时
 	 */
-	h("Time in hours"),
+	hour("Time in hours"),
 	/**
-	 * Plane angle in degrees
+	 * 角度
 	 */
 	deg("Plane angle in degrees"),
 	/**
-	 * Plane angle in radians
+	 * 弧度
 	 */
 	rad("Plane angle in radians"),
 	/**
-	 * Energy in joule
+	 * 焦耳(能量)
 	 */
 	J("Energy in joule"),
 	/**
-	 * Force in newton
+	 * 牛(力)
 	 */
 	N("Force in newton"),
 	/**
-	 * Conductance in siemens
-	 */
-//	S("Conductance in siemens"),
-	/**
-	 * Frequency in hertz
-	 */
-	Hz("Frequency in hertz"),
-	/**
-	 * Mass in kilogram
+	 * 千克(质量)
 	 */
 	kg("Mass in kilogram"),
 	/**
-	 * Pressure in pascal (n/m2)
+	 * 帕(压力)
 	 */
 	Pa("Pressure in pascal (n/m2)"),
 	/**
-	 * Length in meter
+	 * 米(长度)
 	 */
 	m("Length in meter"),
 	/**
-	 * Area in square meters
+	 * 平方米(面积)
 	 */
 	m2("Area in square meters"),
 	/**
-	 * Volume in cubic meters
+	 * 立方米(体积)
 	 */
 	m3("Volume in cubic meters"),
 	/**
-	 * Volt per volt ampere reactive
+	 * 伏特/伏安
 	 */
 	V_VAr("Volt per volt ampere reactive"),
 	/**
-	 * Watt per hertz
+	 * 瓦/赫兹
 	 */
 	W_Hz("Watt per hertz"),
 	/**
-	 * Joule per second
+	 * 焦/秒
 	 */
 	J_s("Joule per second"),
 	/**
-	 * per second
+	 * 每秒
 	 */
 	s_1("per second"),
 	/**
-	 * Mass per energy
+	 * 千克/焦
 	 */
 	kg_J("Mass per energy"),
 	/**
-	 * Watt per second
+	 * 瓦/秒
 	 */
 	W_s("Watt per second");
 
@@ -143,6 +145,11 @@ public enum UnitSymbol {
 		this.literal = literal;
 	}
 
+	@Override
+	public String value() {
+		return name();
+	}
+
 	public static UnitSymbol valueOf(int value) {
 		for(UnitSymbol i : values()) {
 			if(i.ordinal() == value) {
@@ -150,5 +157,11 @@ public enum UnitSymbol {
 			}
 		}
 		return none;
+	}
+
+	public static class Deserializer extends EnumeratedDeserializer<UnitSymbol> {
+		public Deserializer() {
+			super(UnitSymbol.class);
+		}
 	}
 }

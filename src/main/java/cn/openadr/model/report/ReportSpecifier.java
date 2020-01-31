@@ -39,7 +39,7 @@ public class ReportSpecifier implements Serializable {
 	 * 报告类型
 	 */
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = ReportType.ReportTypeDeserializer.class)
+	@JsonDeserialize(using = ReportType.Deserializer.class)
 	public ReportType reportType;
 	/**
 	 * 开始报告时间

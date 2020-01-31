@@ -1,5 +1,6 @@
 package cn.openadr.payload.reg;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import cn.openadr.domain.TransportType;
 
 // OadrCreatePartyRegistrationType
@@ -24,6 +25,7 @@ public class CreateRegistrationRequest extends RegistrationRequest {
 	/**
 	 * 传输类型
 	 */
+	@JsonDeserialize(using = TransportType.Deserializer.class)
 	public TransportType transport;
 	/**
 	 * 传输地址

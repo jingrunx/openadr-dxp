@@ -1,6 +1,8 @@
 package cn.openadr.domain;
 
-public enum EndDeviceAssetType {
+import cn.openadr.jackson.EnumeratedDeserializer;
+
+public enum EndDeviceAssetType implements EnumeratedType {
 	/**
 	 * 恒温器
 	 */
@@ -91,4 +93,15 @@ public enum EndDeviceAssetType {
 	Storage,
 	//x-{user defined}
 	;
+
+	@Override
+	public String value() {
+		return name();
+	}
+
+	public static class Deserializer extends EnumeratedDeserializer<EndDeviceAssetType> {
+		public Deserializer() {
+			super(EndDeviceAssetType.class);
+		}
+	}
 }

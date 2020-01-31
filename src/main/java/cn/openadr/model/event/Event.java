@@ -17,12 +17,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Event implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
-	
+
 	public final EventDescriptor descriptor = new EventDescriptor();
 	public final EventActivePeriod activePeriod = new EventActivePeriod();
 	public final EventSignals signals = new EventSignals();
 	public final Target target = new Target();
+
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = ResponseRequired.ResponseRequiredDeserializer.class)
+	@JsonDeserialize(using = ResponseRequired.Deserializer.class)
 	public ResponseRequired responseRequired;
 }

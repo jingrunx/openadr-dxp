@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import org.joda.time.DateTime;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import cn.openadr.domain.DataQuality;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -21,5 +22,6 @@ public class Data implements Serializable {
 	public DateTime timestamp;
 
 	@JsonInclude(JsonInclude.Include.NON_NULL)
+	@JsonDeserialize(using = DataQuality.Deserializer.class)
 	public DataQuality quality;
 }

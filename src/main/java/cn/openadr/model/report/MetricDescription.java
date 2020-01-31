@@ -2,6 +2,7 @@ package cn.openadr.model.report;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
 import lombok.AllArgsConstructor;
@@ -21,9 +22,11 @@ public class MetricDescription implements Serializable {
 	/**
 	 * 倍率
 	 */
+	@JsonDeserialize(using = UnitMultiplier.Deserializer.class)
 	public UnitMultiplier multiplier;
 	/**
 	 * 单位
 	 */
+	@JsonDeserialize(using = UnitSymbol.Deserializer.class)
 	public UnitSymbol symbol;
 }

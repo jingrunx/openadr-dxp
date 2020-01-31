@@ -21,11 +21,11 @@ public class CreateOptRequest extends OptRequest {
 	public final Target deviceClass = new Target();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = OptType.OptTypeDeserializer.class)
+	@JsonDeserialize(using = OptType.Deserializer.class)
 	public OptType optType;
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = OptReason.OptReasonDeserializer.class)
+	@JsonDeserialize(using = OptReason.Deserializer.class)
 	public OptReason optReason;
 
 	public String marketContext;

@@ -18,6 +18,6 @@ public class EventResponse extends Response implements Serializable {
 	public final QualifiedEventID qualifiedEventID = new QualifiedEventID();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = OptType.OptTypeDeserializer.class)
+	@JsonDeserialize(using = OptType.Deserializer.class)
 	public OptType optType;
 }

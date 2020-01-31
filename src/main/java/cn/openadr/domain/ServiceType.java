@@ -20,8 +20,8 @@ public enum ServiceType implements EnumeratedType {
 		return value;
 	}
 
-	public static class ServiceTypeDeserializer extends EnumeratedDeserializer<ServiceType> {
-		public ServiceTypeDeserializer() {
+	public static class Deserializer extends EnumeratedDeserializer<ServiceType> {
+		public Deserializer() {
 			super(ServiceType.class);
 		}
 	}

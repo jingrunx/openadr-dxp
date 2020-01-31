@@ -1,9 +1,11 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 /**
  * 质量码
  */
-public enum DataQuality {
+public enum DataQuality implements EnumeratedType {
 	/**
 	 * 未定义
 	 */
@@ -55,6 +57,11 @@ public enum DataQuality {
 		this.value = value;
 	}
 
+	@Override
+	public String value() {
+		return name();
+	}
+
 	public static DataQuality valueOf(int value) {
 		for(DataQuality i : DataQuality.values()) {
 			if(i.value == value) {
@@ -62,5 +69,11 @@ public enum DataQuality {
 			}
 		}
 		return good;
+	}
+
+	public static class Deserializer extends EnumeratedDeserializer<DataQuality> {
+		public Deserializer() {
+			super(DataQuality.class);
+		}
 	}
 }

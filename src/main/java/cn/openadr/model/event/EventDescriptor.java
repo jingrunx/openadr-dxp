@@ -21,7 +21,7 @@ public class EventDescriptor extends QualifiedEventID {
 	 * 事件状态
 	 */
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = EventStatus.EventStatusDeserializer.class)
+	@JsonDeserialize(using = EventStatus.Deserializer.class)
 	public EventStatus status;
 
 	/**

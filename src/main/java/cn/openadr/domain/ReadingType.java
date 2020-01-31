@@ -70,8 +70,8 @@ public enum ReadingType implements EnumeratedType {
 		return value;
 	}
 
-	public static class ReadingTypeDeserializer extends EnumeratedDeserializer<ReadingType> {
-		public ReadingTypeDeserializer() {
+	public static class Deserializer extends EnumeratedDeserializer<ReadingType> {
+		public Deserializer() {
 			super(ReadingType.class);
 		}
 	}

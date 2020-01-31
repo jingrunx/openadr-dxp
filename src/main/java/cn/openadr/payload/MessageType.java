@@ -37,11 +37,11 @@ public enum MessageType implements EnumeratedType {
 	CANCEL_OPT("cancelOpt", ServiceType.OPT, CancelOptRequest.class, CancelOptResponse.class),
 
 	//	POLL_CREATE_REG("pollCreateReg", ServiceType.POLL, Poll.class, CreateRegistrationRequest.class),
-//	POLL_CANCEL_REG("pollCancelReg", ServiceType.POLL, Poll.class, CancelRegistrationRequest.class),
-//	POLL_REREG("pollRereg", ServiceType.POLL, Poll.class, ReregistrationRequest.class),
-//	POLL_CREATE_REPORT("pollCreateReport", ServiceType.POLL, Poll.class, CreateReportRequest.class),
-//	POLL_CANCEL_REPORT("pollCancelReport", ServiceType.POLL, Poll.class, CancelReportRequest.class),
-//	POLL_EVENT("pollEvent", ServiceType.POLL, Poll.class, DistributeEventRequest.class),
+	//	POLL_CANCEL_REG("pollCancelReg", ServiceType.POLL, Poll.class, CancelRegistrationRequest.class),
+	//	POLL_REREG("pollRereg", ServiceType.POLL, Poll.class, ReregistrationRequest.class),
+	//	POLL_CREATE_REPORT("pollCreateReport", ServiceType.POLL, Poll.class, CreateReportRequest.class),
+	//	POLL_CANCEL_REPORT("pollCancelReport", ServiceType.POLL, Poll.class, CancelReportRequest.class),
+	//	POLL_EVENT("pollEvent", ServiceType.POLL, Poll.class, DistributeEventRequest.class),
 	POLL("poll", ServiceType.POLL, Poll.class, PollResponse.class);
 
 	public final ServiceType service;

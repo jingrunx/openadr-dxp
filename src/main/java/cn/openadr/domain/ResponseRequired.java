@@ -16,8 +16,8 @@ public enum ResponseRequired implements EnumeratedType {
 		return value;
 	}
 
-	public static class ResponseRequiredDeserializer extends EnumeratedDeserializer<ResponseRequired> {
-		public ResponseRequiredDeserializer() {
+	public static class Deserializer extends EnumeratedDeserializer<ResponseRequired> {
+		public Deserializer() {
 			super(ResponseRequired.class);
 		}
 	}

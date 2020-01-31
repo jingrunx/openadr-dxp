@@ -1,5 +1,7 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 public enum ReportName implements EnumeratedType {
 	METADATA_HISTORY_USAGE,
 	HISTORY_USAGE,
@@ -13,5 +15,20 @@ public enum ReportName implements EnumeratedType {
 	@Override
 	public String value() {
 		return name();
+	}
+
+	public static ReportName fromString(String value) {
+		for(ReportName reportName : values()) {
+			if(0 == String.CASE_INSENSITIVE_ORDER.compare(reportName.name(), value)) {
+				return reportName;
+			}
+		}
+		return null;
+	}
+
+	public static class Deserializer extends EnumeratedDeserializer<ReportName> {
+		public Deserializer() {
+			super(ReportName.class);
+		}
 	}
 }

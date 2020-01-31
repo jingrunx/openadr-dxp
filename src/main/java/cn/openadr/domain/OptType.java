@@ -16,8 +16,8 @@ public enum OptType implements EnumeratedType {
 		return value;
 	}
 
-	public static class OptTypeDeserializer extends EnumeratedDeserializer<OptType> {
-		public OptTypeDeserializer() {
+	public static class Deserializer extends EnumeratedDeserializer<OptType> {
+		public Deserializer() {
 			super(OptType.class);
 		}
 	}

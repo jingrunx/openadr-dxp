@@ -1,10 +1,12 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 /**
  * Author: jrxian
  * Date: 2019-10-18 10:41
  */
-public enum MetricType {
+public enum MetricType implements EnumeratedType {
 	IA, IB, IC, U,
 	UA, UB, UC, UAB, UBC, UCA,
 	AP, PAP, RAP, RP, PRP, RRP,
@@ -14,5 +16,16 @@ public enum MetricType {
 	SP_E,
 	AP_R, PAP_R, RAP_R,
 	RP_R, PRP_R, RRP_R,
-	SP_R
+	SP_R;
+
+	@Override
+	public String value() {
+		return name();
+	}
+
+	public static class Deserializer extends EnumeratedDeserializer<MetricType> {
+		public Deserializer() {
+			super(MetricType.class);
+		}
+	}
 }

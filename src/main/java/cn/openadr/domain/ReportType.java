@@ -42,8 +42,8 @@ public enum ReportType implements EnumeratedType {
 		return value;
 	}
 
-	public static class ReportTypeDeserializer extends EnumeratedDeserializer<ReportType> {
-		public ReportTypeDeserializer() {
+	public static class Deserializer extends EnumeratedDeserializer<ReportType> {
+		public Deserializer() {
 			super(ReportType.class);
 		}
 	}

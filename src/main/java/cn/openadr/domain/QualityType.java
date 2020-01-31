@@ -1,5 +1,7 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 public enum QualityType implements EnumeratedType {
 	QUALITY_GOOD("DataQuality Good"),
 	NO_NEW_VALUE("No New Value"),
@@ -17,5 +19,11 @@ public enum QualityType implements EnumeratedType {
 	@Override
 	public String value() {
 		return value;
+	}
+
+	public static class Deserializer extends EnumeratedDeserializer<QualityType> {
+		public Deserializer() {
+			super(QualityType.class);
+		}
 	}
 }

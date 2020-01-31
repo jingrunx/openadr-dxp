@@ -1,7 +1,6 @@
 package cn.openadr.jackson;
 
 import java.io.IOException;
-import java.util.Objects;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -20,7 +19,7 @@ public class EnumeratedDeserializer<E extends Enum<?> & EnumeratedType> extends 
 	@Override
 	public E deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
 		for(E value : clazz.getEnumConstants()) {
-			if(Objects.equals(value.value(), p.getText())) {
+			if(0 == String.CASE_INSENSITIVE_ORDER.compare(value.value(), p.getText())) {
 				return value;
 			}
 		}

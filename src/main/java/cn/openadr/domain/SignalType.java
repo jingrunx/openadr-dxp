@@ -62,8 +62,8 @@ public enum SignalType implements EnumeratedType {
 		return value;
 	}
 
-	public static class SignalTypeDeserializer extends EnumeratedDeserializer<SignalType> {
-		public SignalTypeDeserializer() {
+	public static class Deserializer extends EnumeratedDeserializer<SignalType> {
+		public Deserializer() {
 			super(SignalType.class);
 		}
 	}

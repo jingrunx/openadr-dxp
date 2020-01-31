@@ -50,8 +50,8 @@ public enum OptReason implements EnumeratedType {
 		return value;
 	}
 
-	public static class OptReasonDeserializer extends EnumeratedDeserializer<OptReason> {
-		public OptReasonDeserializer() {
+	public static class Deserializer extends EnumeratedDeserializer<OptReason> {
+		public Deserializer() {
 			super(OptReason.class);
 		}
 	}

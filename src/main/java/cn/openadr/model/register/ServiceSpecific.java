@@ -21,6 +21,6 @@ public class ServiceSpecific implements Serializable {
 	public final List<KeyValue> keyValue = new ArrayList<>();
 
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = ServiceType.ServiceTypeDeserializer.class)
+	@JsonDeserialize(using = ServiceType.Deserializer.class)
 	public ServiceType serviceName;
 }

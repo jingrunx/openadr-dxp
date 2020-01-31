@@ -17,25 +17,26 @@ import lombok.NoArgsConstructor;
 public class EventSignal implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	/**
-	 * 相当于ItemBase
-	 */
-	public final MetricDescription metric = new MetricDescription();
-	public final CurveData intervals = new CurveData();
-	public final Target target = new Target();
 	public String signalID;
 	/**
-	 * cn.openadr.domain.SignalName
+	 * @see cn.openadr.domain.SignalName
 	 */
 	public String signalName;
 	/**
 	 * 信号类别
 	 */
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = SignalType.SignalTypeDeserializer.class)
+	@JsonDeserialize(using = SignalType.Deserializer.class)
 	public SignalType signalType;
 	/**
 	 * 信号的当前值
 	 */
 	public Float currentValue;
+
+	/**
+	 * 相当于ItemBase
+	 */
+	public final MetricDescription metric = new MetricDescription();
+	public final CurveData intervals = new CurveData();
+	public final Target target = new Target();
 }

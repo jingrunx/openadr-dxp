@@ -1,9 +1,11 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 /**
  * 相位
  */
-public enum Phase {
+public enum Phase implements EnumeratedType {
 	/**
 	 * 全部
 	 */
@@ -49,5 +51,16 @@ public enum Phase {
 		}
 
 		return all;
+	}
+
+	@Override
+	public String value() {
+		return String.valueOf(code);
+	}
+
+	public static class Deserializer extends EnumeratedDeserializer<Phase> {
+		public Deserializer() {
+			super(Phase.class);
+		}
 	}
 }

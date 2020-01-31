@@ -20,6 +20,10 @@ public class ReportDescription implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**
+	 * 测点名称（规范扩展）
+	 */
+	public String name;
+	/**
 	 * 计量单位
 	 */
 	public final MetricDescription metric = new MetricDescription();
@@ -40,13 +44,9 @@ public class ReportDescription implements Serializable {
 	 */
 	public int rID;
 	/**
-	 * FIXME: 规范扩展，测点名称
-	 */
-	public String name;
-	/**
 	 * 读数类型
 	 */
 	@JsonSerialize(using = EnumeratedSerializer.class)
-	@JsonDeserialize(using = ReadingType.ReadingTypeDeserializer.class)
+	@JsonDeserialize(using = ReadingType.Deserializer.class)
 	public ReadingType readingType;
 }

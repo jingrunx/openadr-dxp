@@ -1,9 +1,11 @@
 package cn.openadr.domain;
 
+import cn.openadr.jackson.EnumeratedDeserializer;
+
 /**
  * 单位乘数
  */
-public enum UnitMultiplier {
+public enum UnitMultiplier implements EnumeratedType {
 	/**
 	 * -
 	 */
@@ -64,5 +66,16 @@ public enum UnitMultiplier {
 			}
 		}
 		return none;
+	}
+
+	@Override
+	public String value() {
+		return name();
+	}
+
+	public static class Deserializer extends EnumeratedDeserializer<UnitMultiplier> {
+		public Deserializer() {
+			super(UnitMultiplier.class);
+		}
 	}
 }
