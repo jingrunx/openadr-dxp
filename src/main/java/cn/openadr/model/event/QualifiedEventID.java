@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 @lombok.Getter
 @lombok.Setter
+@lombok.EqualsAndHashCode
 @NoArgsConstructor
 public class QualifiedEventID implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
