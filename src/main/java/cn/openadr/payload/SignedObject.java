@@ -10,6 +10,7 @@ import cn.openadr.payload.opt.CancelOptRequest;
 import cn.openadr.payload.opt.CancelOptResponse;
 import cn.openadr.payload.opt.CreateOptRequest;
 import cn.openadr.payload.opt.CreateOptResponse;
+import cn.openadr.payload.poll.DrResponse;
 import cn.openadr.payload.poll.Poll;
 import cn.openadr.payload.poll.PollResponse;
 import cn.openadr.payload.reg.*;
@@ -23,23 +24,18 @@ public class SignedObject implements Serializable {
 
 	public String id;
 
-	//public OadrDistributeEventType oadrDistributeEvent;
-	public DistributeEventRequest distributeEventRequest;
-	//public OadrCreatedEventType oadrCreatedEvent;
-	public CreateEventResponse createdEventResponse;
-	//public OadrRequestEventType oadrRequestEvent;
-	public QueryEventRequest queryEventRequest;
-	//public OadrResponseType oadrResponse;
-	public PollResponse response;
-
-	//public OadrCancelOptType oadrCancelOpt;
-	public CancelOptRequest cancelOptRequest;
-	//public OadrCanceledOptType oadrCanceledOpt;
-	public CancelOptResponse cancelOptResponse;
-	//public OadrCreateOptType oadrCreateOpt;
-	public CreateOptRequest createOptRequest;
-	//public OadrCreatedOptType oadrCreatedOpt;
-	public CreateOptResponse createOptResponse;
+	//public OadrCancelPartyRegistrationType oadrCancelPartyRegistration;
+	public CancelRegistrationRequest cancelRegistrationRequest;
+	//public OadrCanceledPartyRegistrationType oadrCanceledPartyRegistration;
+	public CancelRegistrationResponse cancelRegistrationResponse;
+	//public OadrCreatePartyRegistrationType oadrCreatePartyRegistration;
+	public CreateRegistrationRequest createRegistrationRequest;
+	//public OadrCreatedPartyRegistrationType oadrCreatedPartyRegistration;
+	public CreateRegistrationResponse createRegistrationResponse;
+	//public OadrRequestReregistrationType oadrRequestReregistration;
+	public ReregistrationRequest reregistrationRequest;
+	//public OadrQueryRegistrationType oadrQueryRegistration;
+	public QueryRegistrationRequest queryRegistrationRequest;
 
 	//public OadrCancelReportType oadrCancelReport;
 	public CancelReportRequest cancelReportRequest;
@@ -58,21 +54,25 @@ public class SignedObject implements Serializable {
 	//public OadrUpdatedReportType oadrUpdatedReport;
 	public UpdateReportResponse updateReportResponse;
 
-	//public OadrCancelPartyRegistrationType oadrCancelPartyRegistration;
-	public CancelRegistrationRequest cancelRegistrationRequest;
-	//public OadrCanceledPartyRegistrationType oadrCanceledPartyRegistration;
-	public CancelRegistrationResponse cancelRegistrationResponse;
-	//public OadrCreatePartyRegistrationType oadrCreatePartyRegistration;
-	public CreateRegistrationRequest createRegistrationRequest;
-	//public OadrCreatedPartyRegistrationType oadrCreatedPartyRegistration;
-	public CreateRegistrationResponse createRegistrationResponse;
-	//public OadrRequestReregistrationType oadrRequestReregistration;
-	public ReregistrationRequest reregistrationRequest;
-	//public OadrQueryRegistrationType oadrQueryRegistration;
-	public QueryRegistrationRequest queryRegistrationRequest;
+	//public OadrDistributeEventType oadrDistributeEvent;
+	public DistributeEventRequest distributeEventRequest;
+	//public OadrCreatedEventType oadrCreatedEvent;
+	public CreateEventResponse createdEventResponse;
+	//public OadrRequestEventType oadrRequestEvent;
+	public QueryEventRequest queryEventRequest;
+
+	//public OadrCancelOptType oadrCancelOpt;
+	public CancelOptRequest cancelOptRequest;
+	//public OadrCanceledOptType oadrCanceledOpt;
+	public CancelOptResponse cancelOptResponse;
+	//public OadrCreateOptType oadrCreateOpt;
+	public CreateOptRequest createOptRequest;
+	//public OadrCreatedOptType oadrCreatedOpt;
+	public CreateOptResponse createOptResponse;
 
 	//public OadrPollType oadrPoll;
 	public Poll poll;
+	//public OadrResponseType oadrResponse;
 	public PollResponse pollResponse;
-	public DRResponse drResponse;
+	public DrResponse drResponse;
 }
