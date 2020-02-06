@@ -1,5 +1,7 @@
 package cn.openadr.payload.rpt;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.joda.time.DateTime;
 import cn.openadr.payload.DNRequest;
 
@@ -10,4 +12,13 @@ public abstract class DataReportRequest extends DNRequest {
 
 	public String reportRequestID;
 	public DateTime createdDateTime;
+
+	@Override
+	public String toString() {
+		return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
+			.append("requestID", requestID)
+			.append("dnID", dnID)
+			.append("reportRequestID", reportRequestID)
+			.toString();
+	}
 }

@@ -1,11 +1,22 @@
 package cn.openadr.payload;
 
+import java.util.Optional;
+
+import cn.openadr.model.Response;
+
 /**
  * Author: jrxian
  * Date: 2020-02-05 21:48
  */
 public final class DRObjectUtils {
 	private DRObjectUtils() {
+	}
+
+	public static String className(Object object) {
+		return Optional.ofNullable(object)
+			.map(Object::getClass)
+			.map(Class::getSimpleName)
+			.orElse(null);
 	}
 
 	public static String dnID(Object object) {
@@ -26,5 +37,22 @@ public final class DRObjectUtils {
 		} else {
 			return null;
 		}
+	}
+
+	public static String requestID(DNRequest request, DNResponse response) {
+		return Optional.ofNullable(request)
+			.map(DNRequest::getRequestID)
+			.orElse(Optional.ofNullable(response)
+				.map(DNResponse::getResponse)
+				.map(Response::getRequestID)
+				.orElse(null));
+	}
+
+	public static String dnID(DNRequest request, DNResponse response) {
+		return Optional.ofNullable(request)
+			.map(DNRequest::getDnID)
+			.orElse(Optional.ofNullable(response)
+				.map(DNResponse::getDnID)
+				.orElse(null));
 	}
 }

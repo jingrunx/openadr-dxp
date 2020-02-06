@@ -27,12 +27,12 @@ public class EventDescriptor extends QualifiedEventID {
 	/**
 	 * 优先级
 	 */
-	public int priority;
+	public Integer priority;
 
 	/**
 	 * 测试事件
 	 */
-	public boolean test;
+	public Boolean test;
 
 	/**
 	 * 修改时间
