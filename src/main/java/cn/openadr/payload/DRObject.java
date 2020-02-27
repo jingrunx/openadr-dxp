@@ -2,6 +2,7 @@ package cn.openadr.payload;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
 
@@ -16,4 +17,8 @@ public abstract class DRObject implements Serializable {
 	 * 协议版本号
 	 */
 	public int version;
+
+	//接收或发送的时间戳
+	@JsonIgnore
+	public long timestamp;
 }
