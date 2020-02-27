@@ -5,4 +5,12 @@ package cn.openadr.model.target;
  */
 public class MeterAsset extends Asset {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
+
+	public MeterAsset() {
+		super();
+	}
+
+	public MeterAsset(String mrid) {
+		super(mrid);
+	}
 }

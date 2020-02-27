@@ -11,6 +11,7 @@ import cn.openadr.payload.DNRequest;
  */
 // OadrCreateReportType
 @lombok.Getter
+@lombok.NoArgsConstructor
 public class CreateReportRequest extends DNRequest {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
@@ -18,4 +19,8 @@ public class CreateReportRequest extends DNRequest {
 	 * 报表样式
 	 */
 	public final List<ReportRequest> reportRequest = new ArrayList<>();
+
+	public CreateReportRequest(ReportRequest reportRequest) {
+		this.reportRequest.add(reportRequest);
+	}
 }

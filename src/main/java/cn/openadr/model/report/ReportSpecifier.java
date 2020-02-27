@@ -56,7 +56,7 @@ public class ReportSpecifier implements Serializable {
 	 */
 	public Period backDuration;
 	/**
-	 * 曲线数据之间的采样间隔
+	 * 曲线数据之间的采样间隔(granularity)
 	 */
 	public Period period;
 }

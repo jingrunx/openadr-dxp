@@ -13,4 +13,8 @@ public class ReportRequest implements Serializable {
 
 	public final ReportSpecifier reportSpecifier = new ReportSpecifier();
 	public String reportRequestID;
+
+	public ReportRequest(String reportRequestID) {
+		this.reportRequestID = reportRequestID;
+	}
 }
