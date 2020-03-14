@@ -25,7 +25,7 @@ public enum UnitMultiplier implements EnumeratedType {
 	/**
 	 * 毫
 	 */
-	milli(-3, "Milli 10^-3"),
+	m(-3, "Milli 10^-3"),
 	/**
 	 * 厘
 	 */
