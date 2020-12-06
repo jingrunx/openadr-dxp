@@ -9,11 +9,10 @@ import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.report.MetricDescription;
 import cn.openadr.model.target.Target;
 import cn.openadr.tsdb.CurveData;
-import lombok.NoArgsConstructor;
 
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class EventSignal implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

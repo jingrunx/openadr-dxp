@@ -9,11 +9,10 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.ServiceType;
 import cn.openadr.jackson.EnumeratedSerializer;
-import lombok.NoArgsConstructor;
 
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class ServiceSpecific implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

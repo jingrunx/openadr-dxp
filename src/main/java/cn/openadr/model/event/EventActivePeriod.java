@@ -4,11 +4,10 @@ import java.io.Serializable;
 
 import org.joda.time.DateTime;
 import org.joda.time.Period;
-import lombok.NoArgsConstructor;
 
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class EventActivePeriod implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

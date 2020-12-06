@@ -6,14 +6,13 @@ import java.util.List;
 
 import cn.openadr.model.report.MetricDescription;
 import cn.openadr.tsdb.CurveData;
-import lombok.NoArgsConstructor;
 
 /**
  * 基线
  */
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class EventBaseline implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

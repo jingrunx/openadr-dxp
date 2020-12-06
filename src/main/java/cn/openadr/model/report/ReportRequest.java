@@ -2,12 +2,10 @@ package cn.openadr.model.report;
 
 import java.io.Serializable;
 
-import lombok.NoArgsConstructor;
-
 // OadrReportRequestType
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class ReportRequest implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

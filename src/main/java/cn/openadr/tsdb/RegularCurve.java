@@ -8,14 +8,13 @@ import org.joda.time.Duration;
 import org.joda.time.Interval;
 import org.joda.time.Period;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.NoArgsConstructor;
 
 /**
  * 由固定时间间隔的数据序列组成
  */
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class RegularCurve extends CurveBase {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.ReportType;
 import cn.openadr.jackson.EnumeratedSerializer;
-import lombok.NoArgsConstructor;
 
 /**
  * 为报告数据准备的格式样式
@@ -18,7 +17,7 @@ import lombok.NoArgsConstructor;
 // ReportSpecifierType
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class ReportSpecifier implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

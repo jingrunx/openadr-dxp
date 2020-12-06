@@ -3,14 +3,13 @@ package cn.openadr.model.report;
 import java.io.Serializable;
 
 import org.joda.time.Period;
-import lombok.NoArgsConstructor;
 
 /**
  * 采样频率
  */
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class SamplingRate implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

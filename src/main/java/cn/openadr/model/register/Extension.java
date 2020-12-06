@@ -5,11 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.NoArgsConstructor;
 
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class Extension implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

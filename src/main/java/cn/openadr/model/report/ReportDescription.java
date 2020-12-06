@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.ReadingType;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.target.Target;
-import lombok.NoArgsConstructor;
 
 /**
  * 报表的测点描述
@@ -15,7 +14,7 @@ import lombok.NoArgsConstructor;
 //OadrReportDescriptionType
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class ReportDescription implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

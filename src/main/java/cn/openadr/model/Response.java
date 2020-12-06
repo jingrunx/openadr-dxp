@@ -2,14 +2,11 @@ package cn.openadr.model;
 
 import java.io.Serializable;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
 // EiResponseType
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@lombok.NoArgsConstructor
+@lombok.AllArgsConstructor
 public class Response implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

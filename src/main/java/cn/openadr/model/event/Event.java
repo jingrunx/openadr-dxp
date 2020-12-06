@@ -7,14 +7,13 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.ResponseRequired;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.target.Target;
-import lombok.NoArgsConstructor;
 
 /**
  * 事件
  */
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class Event implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

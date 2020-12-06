@@ -6,14 +6,13 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.EventStatus;
 import cn.openadr.jackson.EnumeratedSerializer;
-import lombok.NoArgsConstructor;
 
 /**
  * 事件描述
  */
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
+@lombok.NoArgsConstructor
 public class EventDescriptor extends QualifiedEventID {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 

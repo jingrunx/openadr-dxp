@@ -5,16 +5,14 @@ import java.io.Serializable;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import cn.openadr.domain.UnitMultiplier;
 import cn.openadr.domain.UnitSymbol;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 /**
  * 计量单位
  */
 @lombok.Getter
 @lombok.Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@lombok.NoArgsConstructor
+@lombok.AllArgsConstructor
 public class MetricDescription implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
