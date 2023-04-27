@@ -2,7 +2,7 @@ package cn.openadr;
 
 import java.time.LocalDateTime;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import cn.openadr.domain.EndDeviceAssetType;
 import cn.openadr.model.report.MetaDataReport;
 import cn.openadr.model.report.ReportRequest;

@@ -2,7 +2,7 @@ package cn.openadr;
 
 import java.time.LocalDateTime;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import cn.openadr.domain.OptReason;
 import cn.openadr.domain.OptType;
 import cn.openadr.payload.opt.CancelOptRequest;

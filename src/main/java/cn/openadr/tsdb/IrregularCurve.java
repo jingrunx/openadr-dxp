@@ -1,8 +1,6 @@
 package cn.openadr.tsdb;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.*;
 import lombok.NoArgsConstructor;
 
@@ -42,7 +40,7 @@ public class IrregularCurve extends CurveBase {
 		if(start.isPresent() && end.isPresent()) {
 			return Pair.of(start.get(), end.get());
 		} else {
-			LocalDateTime occur = LocalDateTime.of(LocalDate.EPOCH, LocalTime.MIDNIGHT);
+			LocalDateTime occur = LocalDateTime.of(1970, 1, 1, 0, 0, 0);
 			return Pair.of(occur, occur);
 		}
 	}

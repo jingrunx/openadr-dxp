@@ -1,6 +1,6 @@
 package cn.openadr;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import cn.openadr.domain.OptType;
 import cn.openadr.model.event.Event;
 import cn.openadr.model.event.EventResponse;

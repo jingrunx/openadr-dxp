@@ -3,33 +3,27 @@ package cn.openadr;
 import java.io.File;
 import java.io.IOException;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
+import cn.openadr.utils.JsonUtils;
 
 public class AbstractTest {
-	private static final ObjectMapper jsonMapper = new ObjectMapper();
+	private static final ObjectMapper jsonMapper = JsonUtils.jsonMapper;
 
 	public Object object;
 
-	@BeforeClass
-	public static void beforeClass() {
-		jsonMapper.enable(SerializationFeature.INDENT_OUTPUT);
-	}
-
-	@Before
+	@BeforeEach
 	public void before() {
 		object = null;
 	}
 
-	@After
+	@AfterEach
 	public void after() throws IOException {
 		String name = object.getClass()
 			.getSimpleName();
 
-		String path = "C:\\Users\\jrxian\\Workspaces\\openadr\\openadr-dxp\\src\\test\\resources\\";
+		String path = "C:/Windows/Temp/openadr";
 		File file = new File(path + name + ".json");
 		jsonMapper.writeValue(file, object);
 
