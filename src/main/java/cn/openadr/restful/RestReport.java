@@ -1,61 +1,54 @@
 package cn.openadr.restful;
 
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import cn.openadr.payload.rpt.*;
 
 /**
  * 报告
  */
-@Path("/report")
+@RequestMapping("/report")
 public interface RestReport extends RestApi {
 	/**
 	 * DN包含的测点信息
 	 */
-	@POST
-	@Path("/register")
-	RegisterReportResponse register(RegisterReportRequest request);
+	@PostMapping("/register")
+	RegisterReportResponse register(@RequestBody RegisterReportRequest request);
 
 	/**
 	 * 可以由UN或DN发起
 	 */
-	@POST
-	@Path("/create")
-	CreateReportResponse create(CreateReportRequest request);
+	@PostMapping("/create")
+	CreateReportResponse create(@RequestBody CreateReportRequest request);
 
 	/**
 	 * 取消报告
 	 */
-	@POST
-	@Path("/cancel")
-	CancelReportResponse cancel(CancelReportRequest request);
+	@PostMapping("/cancel")
+	CancelReportResponse cancel(@RequestBody CancelReportRequest request);
 
 	/**
 	 * 更新报告
 	 */
-	@POST
-	@Path("/update")
-	UpdateReportResponse update(UpdateReportRequest request);
+	@PostMapping("/update")
+	UpdateReportResponse update(@RequestBody UpdateReportRequest request);
 
 	/**
 	 * 资源报告
 	 */
-	@POST
-	@Path("/resource")
-	UpdateReportResponse resource(ResourceReportRequest request);
+	@PostMapping("/resource")
+	UpdateReportResponse resource(@RequestBody ResourceReportRequest request);
 
 	/**
 	 * 实时数据
 	 */
-	@POST
-	@Path("/moment")
-	UpdateReportResponse moment(MomentDataReportRequest request);
+	@PostMapping("/moment")
+	UpdateReportResponse moment(@RequestBody MomentDataReportRequest request);
 
 	/**
 	 * 历史曲线
 	 */
-	@POST
-	@Path("/interval")
-	UpdateReportResponse interval(IntervalDataReportRequest request);
+	@PostMapping("/interval")
+	UpdateReportResponse interval(@RequestBody IntervalDataReportRequest request);
 }

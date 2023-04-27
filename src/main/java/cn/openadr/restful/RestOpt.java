@@ -1,20 +1,18 @@
 package cn.openadr.restful;
 
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import cn.openadr.payload.opt.CancelOptRequest;
 import cn.openadr.payload.opt.CancelOptResponse;
 import cn.openadr.payload.opt.CreateOptRequest;
 import cn.openadr.payload.opt.CreateOptResponse;
 
-@Path("/opt")
+@RequestMapping("/opt")
 public interface RestOpt extends RestApi {
-	@POST
-	@Path("/create")
-	CreateOptResponse create(CreateOptRequest request);
+	@PostMapping("/create")
+	CreateOptResponse create(@RequestBody CreateOptRequest request);
 
-	@POST
-	@Path("/cancel")
-	CancelOptResponse cancel(CancelOptRequest request);
+	@PostMapping("/cancel")
+	CancelOptResponse cancel(@RequestBody CancelOptRequest request);
 }

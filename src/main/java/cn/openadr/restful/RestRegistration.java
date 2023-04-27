@@ -1,21 +1,18 @@
 package cn.openadr.restful;
 
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import cn.openadr.payload.reg.*;
 
-@Path("/registration")
+@RequestMapping("/registration")
 public interface RestRegistration extends RestApi {
-	@POST
-	@Path("/create")
-	CreateRegistrationResponse create(CreateRegistrationRequest request);
+	@PostMapping("/create")
+	CreateRegistrationResponse create(@RequestBody CreateRegistrationRequest request);
 
-	@POST
-	@Path("/query")
-	CreateRegistrationResponse query(QueryRegistrationRequest request);
+	@PostMapping("/query")
+	CreateRegistrationResponse query(@RequestBody QueryRegistrationRequest request);
 
-	@POST
-	@Path("/cancel")
-	CancelRegistrationResponse cancel(CancelRegistrationRequest request);
+	@PostMapping("/cancel")
+	CancelRegistrationResponse cancel(@RequestBody CancelRegistrationRequest request);
 }

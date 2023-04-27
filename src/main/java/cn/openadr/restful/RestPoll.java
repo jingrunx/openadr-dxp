@@ -1,22 +1,20 @@
 package cn.openadr.restful;
 
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import cn.openadr.payload.DRObject;
 import cn.openadr.payload.poll.DrResponse;
 import cn.openadr.payload.poll.Poll;
 
-@Path("/poll")
+@RequestMapping("/poll")
 public interface RestPoll extends RestApi {
 	/**
 	 * 查询事件或报表
 	 */
-	@POST
-	@Path("/request")
-	DRObject request(Poll request);
+	@PostMapping("/request")
+	DRObject request(@RequestBody Poll request);
 
-	@POST
-	@Path("/response")
-	void response(DrResponse response);
+	@PostMapping("/response")
+	void response(@RequestBody DrResponse response);
 }

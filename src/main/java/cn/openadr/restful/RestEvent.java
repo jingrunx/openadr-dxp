@@ -1,17 +1,16 @@
 package cn.openadr.restful;
 
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import cn.openadr.payload.evt.DistributeEventRequest;
 import cn.openadr.payload.evt.QueryEventRequest;
 
-@Path("/event")
+@RequestMapping("/event")
 public interface RestEvent extends RestApi {
 	/**
 	 * 查询
 	 */
-	@POST
-	@Path("/query")
-	DistributeEventRequest request(QueryEventRequest request);
+	@PostMapping("/query")
+	DistributeEventRequest request(@RequestBody QueryEventRequest request);
 }
