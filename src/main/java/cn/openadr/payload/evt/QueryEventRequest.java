@@ -1,10 +1,10 @@
 package cn.openadr.payload.evt;
 
+import java.time.LocalDateTime;
+import java.time.temporal.TemporalAmount;
 import java.util.EnumSet;
 import java.util.Set;
 
-import org.joda.time.DateTime;
-import org.joda.time.Period;
 import cn.openadr.domain.EventStatus;
 import cn.openadr.payload.DNRequest;
 
@@ -25,9 +25,9 @@ public class QueryEventRequest extends DNRequest {
 	/**
 	 * 要查询的事件开始时间
 	 */
-	public DateTime dtstart;
+	public LocalDateTime dtstart;
 	/**
 	 * 要查询的事件时间范围
 	 */
-	public Period duration;
+	public TemporalAmount duration;
 }

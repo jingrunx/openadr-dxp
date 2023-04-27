@@ -1,10 +1,10 @@
 package cn.openadr.payload.rpt;
 
+import java.time.LocalDateTime;
+import java.time.temporal.TemporalAmount;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.joda.time.DateTime;
-import org.joda.time.Period;
 import cn.openadr.model.report.PointCurveData;
 
 @lombok.Getter
@@ -15,11 +15,11 @@ public class IntervalDataReportRequest extends DataReportRequest {
 	/**
 	 * 开始时间
 	 */
-	public DateTime dtstart;
+	public LocalDateTime dtstart;
 	/**
 	 * 步长(单位:分钟)
 	 */
-	public Period period;
+	public TemporalAmount period;
 
 	public final List<PointCurveData> pointCurveData = new ArrayList<>();
 

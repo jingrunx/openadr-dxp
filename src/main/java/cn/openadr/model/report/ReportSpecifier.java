@@ -1,16 +1,16 @@
 package cn.openadr.model.report;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.temporal.TemporalAmount;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.NoArgsConstructor;
 
-import org.joda.time.DateTime;
-import org.joda.time.Period;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.ReportType;
 import cn.openadr.jackson.EnumeratedSerializer;
-import lombok.NoArgsConstructor;
 
 /**
  * 为报告数据准备的格式样式
@@ -44,19 +44,19 @@ public class ReportSpecifier implements Serializable {
 	/**
 	 * 开始报告时间
 	 */
-	public DateTime startDateTime;
+	public LocalDateTime startDateTime;
 	/**
 	 * 取消报告时间，超过此时间后不再发送报告，为空表示一直发送直到收到取消报送指令
 	 */
-	public DateTime endDateTime;
+	public LocalDateTime endDateTime;
 	/**
 	 * 报告周期，每隔多长时间报告一次
 	 * 如果与granularity相同或者为PT0S，则相当于每次报送实时数据，用LiveReport格式报送
 	 * 否则按照HistoryReport格式报送
 	 */
-	public Period backDuration;
+	public TemporalAmount backDuration;
 	/**
 	 * 曲线数据之间的采样间隔(granularity)
 	 */
-	public Period period;
+	public TemporalAmount period;
 }

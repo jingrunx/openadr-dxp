@@ -1,6 +1,7 @@
 package cn.openadr.payload.opt;
 
-import org.joda.time.DateTime;
+import java.time.LocalDateTime;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.OptReason;
@@ -29,5 +30,5 @@ public class CreateOptRequest extends OptRequest {
 	public OptReason optReason;
 
 	public String marketContext;
-	public DateTime createdDateTime;
+	public LocalDateTime createdDateTime;
 }

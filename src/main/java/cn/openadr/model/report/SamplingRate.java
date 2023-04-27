@@ -1,8 +1,7 @@
 package cn.openadr.model.report;
 
 import java.io.Serializable;
-
-import org.joda.time.Period;
+import java.time.temporal.TemporalAmount;
 import lombok.NoArgsConstructor;
 
 /**
@@ -17,11 +16,11 @@ public class SamplingRate implements Serializable {
 	/**
 	 * 最小间隔: 单位(分钟)
 	 */
-	public Period minPeriod;
+	public TemporalAmount minPeriod;
 	/**
 	 * 最大间隔: 单位(分钟)
 	 */
-	public Period maxPeriod;
+	public TemporalAmount maxPeriod;
 	/**
 	 * 变位上送
 	 */

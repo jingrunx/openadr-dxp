@@ -1,11 +1,11 @@
 package cn.openadr.payload.reg;
 
+import java.time.temporal.TemporalAmount;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.Set;
 
-import org.joda.time.Period;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import cn.openadr.domain.TransportType;
 import cn.openadr.model.register.Extension;
@@ -28,5 +28,5 @@ public class CreateRegistrationResponse extends RegistrationResponse {
 	/**
 	 * 轮询频率
 	 */
-	public Period pollFreq;
+	public TemporalAmount pollFreq;
 }

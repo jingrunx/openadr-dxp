@@ -1,9 +1,9 @@
 package cn.openadr.utils;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
-import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
 import cn.openadr.domain.EndDeviceAssetType;
 import cn.openadr.model.Response;
 import cn.openadr.model.target.EndDeviceAsset;
@@ -20,9 +20,9 @@ public class CommonUtils {
 			.toString();
 	}
 
-	public static DateTime dtstart() {
+	public static LocalDateTime dtstart() {
 		return LocalDate.now()
-			.toDateTimeAtStartOfDay();
+			.atStartOfDay();
 	}
 
 	public static void fillRequest(DRRequest req) {

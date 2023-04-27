@@ -2,8 +2,8 @@ package cn.openadr;
 
 import java.io.IOException;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.joda.JodaMapper;
 import cn.openadr.payload.DRObject;
 import cn.openadr.payload.reg.QueryRegistrationRequest;
 
@@ -13,9 +13,8 @@ import cn.openadr.payload.reg.QueryRegistrationRequest;
  */
 public class JsonTest {
 	public static void main(String[] args) throws IOException {
-		JodaMapper objectMapper = new JodaMapper();
+		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-		objectMapper.setWriteDatesAsTimestamps(false);
 
 		QueryRegistrationRequest request = new QueryRegistrationRequest();
 		String json = objectMapper.writeValueAsString(request);

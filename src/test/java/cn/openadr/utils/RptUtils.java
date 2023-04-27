@@ -1,12 +1,10 @@
 package cn.openadr.utils;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
-import org.joda.time.DateTime;
-import org.joda.time.Days;
-import org.joda.time.Hours;
-import org.joda.time.Minutes;
 import cn.openadr.domain.MetricType2;
 import cn.openadr.domain.ReportName;
 import cn.openadr.domain.ReportType;
@@ -19,7 +17,7 @@ public class RptUtils {
 		CommonUtils.fillRequest(req);
 
 		req.setReportRequestID(CommonUtils.id());
-		req.setCreatedDateTime(DateTime.now());
+		req.setCreatedDateTime(LocalDateTime.now());
 	}
 
 	public static void fillReportDescription(List<ReportDescription> points) {
@@ -32,9 +30,9 @@ public class RptUtils {
 				.add("resourceID#1");
 
 			point.getSamplingRate()
-				.setMinPeriod(Minutes.ONE.toPeriod());
+				.setMinPeriod(Duration.ofMinutes(1));
 			point.getSamplingRate()
-				.setMaxPeriod(Hours.ONE.toPeriod());
+				.setMaxPeriod(Duration.ofHours(1));
 
 			points.add(point);
 		}
@@ -46,8 +44,8 @@ public class RptUtils {
 		r.setStartDateTime(CommonUtils.dtstart());
 		r.setEndDateTime(r.getStartDateTime()
 			.plusYears(1));
-		r.setBackDuration(Days.ONE.toPeriod());
-		r.setPeriod(Minutes.ONE.toPeriod());
+		r.setBackDuration(Duration.ofDays(1));
+		r.setPeriod(Duration.ofMinutes(1));
 
 		r.getPoints()
 			.addAll(Arrays.asList(1, 2, 3, 4, 5));

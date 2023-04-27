@@ -1,13 +1,13 @@
 package cn.openadr.tsdb;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
-import org.joda.time.DateTime;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import cn.openadr.domain.DataQuality;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @lombok.Getter
 @lombok.Setter
@@ -19,7 +19,7 @@ public class Data implements Serializable {
 	public Number value;
 
 	@JsonInclude(JsonInclude.Include.NON_NULL)
-	public DateTime timestamp;
+	public LocalDateTime timestamp;
 
 	@JsonInclude(JsonInclude.Include.NON_NULL)
 	@JsonDeserialize(using = DataQuality.Deserializer.class)

@@ -1,6 +1,7 @@
 package cn.openadr;
 
-import org.joda.time.DateTime;
+import java.time.LocalDateTime;
+
 import org.junit.Test;
 import cn.openadr.domain.EndDeviceAssetType;
 import cn.openadr.model.report.MetaDataReport;
@@ -22,7 +23,7 @@ public class RptTest extends AbstractTest {
 			MetaDataReport report = new MetaDataReport();
 
 //			report.setReportRequestID(CommonUtils.id());
-			report.setCreatedDateTime(DateTime.now());
+			report.setCreatedDateTime(LocalDateTime.now());
 
 //			RptUtils.fillReportDescription(report.getReportDescription());
 

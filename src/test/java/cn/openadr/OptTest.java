@@ -1,6 +1,7 @@
 package cn.openadr;
 
-import org.joda.time.DateTime;
+import java.time.LocalDateTime;
+
 import org.junit.Test;
 import cn.openadr.domain.OptReason;
 import cn.openadr.domain.OptType;
@@ -22,7 +23,7 @@ public class OptTest extends AbstractTest {
 			.setModificationNumber(1);
 		req.setOptType(OptType.OPT_OUT);
 		req.setOptReason(OptReason.ECONOMIC);
-		req.setCreatedDateTime(DateTime.now());
+		req.setCreatedDateTime(LocalDateTime.now());
 		CommonUtils.fillEndDeviceAsset(req.getTarget());
 
 		object = req;

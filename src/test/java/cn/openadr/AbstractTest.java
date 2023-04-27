@@ -6,17 +6,16 @@ import java.io.IOException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.joda.JodaMapper;
 
 public class AbstractTest {
-	private static final JodaMapper jsonMapper = new JodaMapper();
+	private static final ObjectMapper jsonMapper = new ObjectMapper();
 
 	public Object object;
 
 	@BeforeClass
 	public static void beforeClass() {
-		jsonMapper.setWriteDatesAsTimestamps(false);
 		jsonMapper.enable(SerializationFeature.INDENT_OUTPUT);
 	}
 

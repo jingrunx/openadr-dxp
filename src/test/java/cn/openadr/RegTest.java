@@ -1,6 +1,7 @@
 package cn.openadr;
 
-import org.joda.time.Minutes;
+import java.time.Duration;
+
 import org.junit.Test;
 import cn.openadr.domain.ServiceType;
 import cn.openadr.domain.TransportType;
@@ -31,8 +32,7 @@ public class RegTest extends AbstractTest {
 		CommonUtils.fillResponse(rep);
 
 		rep.setUnID(CommonUtils.id());
-		rep.setPollFreq(Minutes.minutes(5)
-			.toPeriod());
+		rep.setPollFreq(Duration.ofMinutes(5));
 
 		rep.getTransport()
 			.add(TransportType.REST);
@@ -50,7 +50,7 @@ public class RegTest extends AbstractTest {
 	}
 
 	@Test
-	public void testCancelRegstrationRequest() {
+	public void testCancelRegistrationRequest() {
 		CancelRegistrationRequest req = new CancelRegistrationRequest();
 		CommonUtils.fillRegRequest(req);
 
@@ -58,7 +58,7 @@ public class RegTest extends AbstractTest {
 	}
 
 	@Test
-	public void testCancelRegstrationResponse() {
+	public void testCancelRegistrationResponse() {
 		CancelRegistrationResponse rep = new CancelRegistrationResponse();
 		CommonUtils.fillResponse(rep);
 		object = rep;

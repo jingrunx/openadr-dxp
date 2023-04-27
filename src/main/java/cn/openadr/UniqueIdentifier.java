@@ -4,8 +4,6 @@ import java.security.SecureRandom;
 import java.util.Objects;
 import java.util.UUID;
 
-import org.joda.time.DateTimeConstants;
-
 public final class UniqueIdentifier {
 	private static final SecureRandom sr = new SecureRandom();
 
@@ -14,7 +12,7 @@ public final class UniqueIdentifier {
 
 	public static UUID classBased(Class<?> clazz) {
 		long chash = Objects.hashCode(clazz.getName());
-		long shash = System.currentTimeMillis() / DateTimeConstants.MILLIS_PER_SECOND;
+		long shash = System.currentTimeMillis() / 1000L;
 		long mostSigBits = (chash << 32) + shash;
 		return randomUUID(mostSigBits);
 	}

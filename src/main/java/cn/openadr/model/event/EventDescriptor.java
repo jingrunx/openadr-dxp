@@ -1,12 +1,13 @@
 package cn.openadr.model.event;
 
-import org.joda.time.DateTime;
+import java.time.LocalDateTime;
+import lombok.NoArgsConstructor;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.EventStatus;
 import cn.openadr.jackson.EnumeratedSerializer;
-import lombok.NoArgsConstructor;
 
 /**
  * 事件描述
@@ -37,7 +38,7 @@ public class EventDescriptor extends QualifiedEventID {
 	/**
 	 * 修改时间
 	 */
-	public DateTime modificationDateTime;
+	public LocalDateTime modificationDateTime;
 
 	/**
 	 * 修改原因
@@ -47,7 +48,7 @@ public class EventDescriptor extends QualifiedEventID {
 	/**
 	 * 创建时间
 	 */
-	public DateTime createdDateTime;
+	public LocalDateTime createdDateTime;
 
 	/**
 	 * 注释

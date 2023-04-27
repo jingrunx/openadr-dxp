@@ -1,9 +1,8 @@
 package cn.openadr.utils;
 
-import org.joda.time.DateTime;
-import org.joda.time.Days;
-import org.joda.time.Hours;
-import org.joda.time.Minutes;
+import java.time.Duration;
+import java.time.LocalDateTime;
+
 import cn.openadr.domain.EventStatus;
 import cn.openadr.domain.ResponseRequired;
 import cn.openadr.domain.SignalType;
@@ -27,20 +26,17 @@ public class EventUtils {
 	public static void fillDescriptor(EventDescriptor descriptor) {
 		descriptor.setEventID(CommonUtils.id());
 		descriptor.setStatus(EventStatus.FAR);
-		descriptor.setCreatedDateTime(DateTime.now());
+		descriptor.setCreatedDateTime(LocalDateTime.now());
 	}
 
 	public static void fillActivePeriod(EventActivePeriod activePeriod) {
 		activePeriod.setDtstart(CommonUtils.dtstart()
-			.withHourOfDay(14));
-		activePeriod.setDuration(Hours.TWO.toPeriod());
-		activePeriod.setNotification(Days.ONE.toPeriod());
-		activePeriod.setTolerance(Minutes.minutes(3)
-			.toPeriod());
-		activePeriod.setRampup(Minutes.minutes(15)
-			.toPeriod());
-		activePeriod.setRecovery(Minutes.minutes(30)
-			.toPeriod());
+			.withHour(14));
+		activePeriod.setDuration(Duration.ofHours(2));
+		activePeriod.setNotification(Duration.ofDays(1));
+		activePeriod.setTolerance(Duration.ofMinutes(3));
+		activePeriod.setRampup(Duration.ofMinutes(15));
+		activePeriod.setRecovery(Duration.ofMinutes(30));
 	}
 
 	public static void fillSignals(EventSignals signals) {
@@ -64,5 +60,4 @@ public class EventUtils {
 		signal.setCurrentValue(3.0f);
 		CommonUtils.fillEndDeviceAsset(signal.getTarget());
 	}
-
 }

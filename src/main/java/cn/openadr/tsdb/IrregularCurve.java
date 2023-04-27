@@ -1,9 +1,12 @@
 package cn.openadr.tsdb;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
-
-import org.joda.time.*;
 import lombok.NoArgsConstructor;
+
+import org.apache.commons.lang3.tuple.Pair;
 
 /**
  * 由一组时间和值组成的时间序列数据
@@ -25,21 +28,22 @@ public class IrregularCurve extends CurveBase {
 	}
 
 	@Override
-	public ReadableInterval getInterval() {
-		Optional<DateTime> start = values.stream()
+	public Pair<LocalDateTime, LocalDateTime> getInterval() {
+		Optional<LocalDateTime> start = values.stream()
 			.map(Data::getTimestamp)
 			.filter(Objects::nonNull)
-			.min(DateTimeComparator.getInstance());
+			.min(LocalDateTime::compareTo);
 
-		Optional<DateTime> end = values.stream()
+		Optional<LocalDateTime> end = values.stream()
 			.map(Data::getTimestamp)
 			.filter(Objects::nonNull)
-			.max(DateTimeComparator.getInstance());
+			.max(LocalDateTime::compareTo);
 
 		if(start.isPresent() && end.isPresent()) {
-			return new Interval(start.get(), end.get());
+			return Pair.of(start.get(), end.get());
 		} else {
-			return new Interval(Instant.ofEpochMilli(0), Seconds.ZERO);
+			LocalDateTime occur = LocalDateTime.of(LocalDate.EPOCH, LocalTime.MIDNIGHT);
+			return Pair.of(occur, occur);
 		}
 	}
 

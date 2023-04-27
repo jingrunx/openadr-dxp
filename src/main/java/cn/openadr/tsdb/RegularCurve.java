@@ -1,14 +1,13 @@
 package cn.openadr.tsdb;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Iterator;
 import java.util.Objects;
-
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-import org.joda.time.Interval;
-import org.joda.time.Period;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.NoArgsConstructor;
+
+import org.apache.commons.lang3.tuple.Pair;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * 由固定时间间隔的数据序列组成
@@ -22,37 +21,31 @@ public class RegularCurve extends CurveBase {
 	/**
 	 * 开始时间
 	 */
-	public DateTime dtstart;
+	public LocalDateTime dtstart;
 
 	/**
 	 * 步长(单位:分钟)
 	 */
-	public Period period;
+	public Duration period;
 
 	/**
 	 * 数据数组
 	 */
+	@lombok.Getter
 	private double[] array = new double[]{};
 
-	public static DateTime getDateTime(DateTime start, Period period, int idx) {
-		return start.plus(period.toStandardDuration()
-			.multipliedBy(idx));
-	}
-
-	public double[] getArray() {
-		return array;
+	public static LocalDateTime getDateTime(LocalDateTime start, Duration period, int idx) {
+		return start.plus(period.multipliedBy(idx));
 	}
 
 	public void setArray(double[] array) {
-		Objects.requireNonNull(array);
-		this.array = array;
+		this.array = Objects.requireNonNull(array);
 	}
 
 	@JsonIgnore
 	@Override
-	public Interval getInterval() {
-		Duration duration = period.toStandardDuration();
-		return new Interval(dtstart, duration.multipliedBy(array.length));
+	public Pair<LocalDateTime, LocalDateTime> getInterval() {
+		return Pair.of(dtstart, dtstart.plus(period.multipliedBy(array.length)));
 	}
 
 	@Override
@@ -67,7 +60,7 @@ public class RegularCurve extends CurveBase {
 
 			@Override
 			public Data next() {
-				DateTime occur = getDateTime(dtstart, period, idx);
+				LocalDateTime occur = getDateTime(dtstart, period, idx);
 				Number value = Double.isNaN(array[idx]) ? null : array[idx];
 				return new Data(value, occur, null);
 			}
