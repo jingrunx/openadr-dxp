@@ -1,5 +1,7 @@
 package cn.openadr.payload.reg;
 
+import java.io.Serial;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import cn.openadr.domain.TransportType;
 
@@ -7,6 +9,7 @@ import cn.openadr.domain.TransportType;
 @lombok.Getter
 @lombok.Setter
 public class CreateRegistrationRequest extends RegistrationRequest {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public String dnName;

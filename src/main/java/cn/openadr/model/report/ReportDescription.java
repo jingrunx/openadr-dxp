@@ -1,13 +1,14 @@
 package cn.openadr.model.report;
 
+import java.io.Serial;
 import java.io.Serializable;
+import lombok.NoArgsConstructor;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.ReadingType;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.target.Target;
-import lombok.NoArgsConstructor;
 
 /**
  * 报表的测点描述
@@ -17,6 +18,7 @@ import lombok.NoArgsConstructor;
 @lombok.Setter
 @NoArgsConstructor
 public class ReportDescription implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

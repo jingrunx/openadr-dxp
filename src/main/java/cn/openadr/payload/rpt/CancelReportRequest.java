@@ -1,5 +1,6 @@
 package cn.openadr.payload.rpt;
 
+import java.io.Serial;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import cn.openadr.payload.DNRequest;
 @lombok.Setter
 @lombok.NoArgsConstructor
 public class CancelReportRequest extends DNRequest {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public final List<String> reportRequestID = new ArrayList<>();

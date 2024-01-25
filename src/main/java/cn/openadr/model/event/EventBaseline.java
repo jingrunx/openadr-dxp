@@ -1,12 +1,13 @@
 package cn.openadr.model.event;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.NoArgsConstructor;
 
 import cn.openadr.model.report.MetricDescription;
 import cn.openadr.tsdb.CurveData;
-import lombok.NoArgsConstructor;
 
 /**
  * 基线
@@ -15,6 +16,7 @@ import lombok.NoArgsConstructor;
 @lombok.Setter
 @NoArgsConstructor
 public class EventBaseline implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public String baselineID;

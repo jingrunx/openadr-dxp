@@ -1,16 +1,18 @@
 package cn.openadr.model.register;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import lombok.NoArgsConstructor;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.NoArgsConstructor;
 
 @lombok.Getter
 @lombok.Setter
 @NoArgsConstructor
 public class Extension implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@JsonInclude(value = JsonInclude.Include.NON_EMPTY)

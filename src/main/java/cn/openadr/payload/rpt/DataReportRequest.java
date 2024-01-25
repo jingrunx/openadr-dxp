@@ -1,5 +1,6 @@
 package cn.openadr.payload.rpt;
 
+import java.io.Serial;
 import java.time.LocalDateTime;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -9,6 +10,7 @@ import cn.openadr.payload.DNRequest;
 @lombok.Getter
 @lombok.Setter
 public abstract class DataReportRequest extends DNRequest {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public String reportRequestID;

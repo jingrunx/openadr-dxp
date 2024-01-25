@@ -1,5 +1,6 @@
 package cn.openadr.model.register;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ import cn.openadr.jackson.EnumeratedSerializer;
 @lombok.Setter
 @NoArgsConstructor
 public class ServiceSpecific implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@JsonInclude(value = JsonInclude.Include.NON_EMPTY)

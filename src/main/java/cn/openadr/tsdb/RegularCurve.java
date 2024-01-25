@@ -1,5 +1,6 @@
 package cn.openadr.tsdb;
 
+import java.io.Serial;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.Iterator;
@@ -16,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @lombok.Setter
 @NoArgsConstructor
 public class RegularCurve extends CurveBase {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

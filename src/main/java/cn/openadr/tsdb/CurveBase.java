@@ -1,5 +1,6 @@
 package cn.openadr.tsdb;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -8,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @lombok.Getter
 public abstract class CurveBase implements Iterable<Data>, Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

@@ -1,5 +1,6 @@
 package cn.openadr.payload.evt;
 
+import java.io.Serial;
 import java.time.LocalDateTime;
 import java.time.temporal.TemporalAmount;
 import java.util.EnumSet;
@@ -12,6 +13,7 @@ import cn.openadr.payload.DNRequest;
 @lombok.Getter
 @lombok.Setter
 public class QueryEventRequest extends DNRequest {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

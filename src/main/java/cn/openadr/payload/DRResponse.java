@@ -1,5 +1,7 @@
 package cn.openadr.payload;
 
+import java.io.Serial;
+
 import com.fasterxml.jackson.annotation.JsonUnwrapped;
 import cn.openadr.model.Response;
 
@@ -8,6 +10,7 @@ import cn.openadr.model.Response;
  */
 @lombok.Getter
 public abstract class DRResponse extends DRObject {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@JsonUnwrapped

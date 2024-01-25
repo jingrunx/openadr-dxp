@@ -1,6 +1,8 @@
 package cn.openadr.model.event;
 
+import java.io.Serial;
 import java.io.Serializable;
+import lombok.NoArgsConstructor;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -9,12 +11,12 @@ import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.report.MetricDescription;
 import cn.openadr.model.target.Target;
 import cn.openadr.tsdb.CurveData;
-import lombok.NoArgsConstructor;
 
 @lombok.Getter
 @lombok.Setter
 @NoArgsConstructor
 public class EventSignal implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public String signalID;

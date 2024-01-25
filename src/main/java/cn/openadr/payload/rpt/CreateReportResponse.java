@@ -1,5 +1,7 @@
 package cn.openadr.payload.rpt;
 
+import java.io.Serial;
+
 import cn.openadr.model.report.PendingReports;
 import cn.openadr.payload.DNResponse;
 
@@ -9,6 +11,7 @@ import cn.openadr.payload.DNResponse;
 // OadrCreatedReportType
 @lombok.Getter
 public class CreateReportResponse extends DNResponse {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public final PendingReports pendingReports = new PendingReports();

@@ -1,13 +1,14 @@
 package cn.openadr.model.event;
 
+import java.io.Serial;
 import java.io.Serializable;
+import lombok.NoArgsConstructor;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import cn.openadr.domain.ResponseRequired;
 import cn.openadr.jackson.EnumeratedSerializer;
 import cn.openadr.model.target.Target;
-import lombok.NoArgsConstructor;
 
 /**
  * 事件
@@ -16,6 +17,7 @@ import lombok.NoArgsConstructor;
 @lombok.Setter
 @NoArgsConstructor
 public class Event implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public final EventDescriptor descriptor = new EventDescriptor();

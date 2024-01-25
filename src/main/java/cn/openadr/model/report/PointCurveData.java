@@ -1,14 +1,17 @@
 package cn.openadr.model.report;
 
-import cn.openadr.tsdb.CurveData;
+import java.io.Serial;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+
+import cn.openadr.tsdb.CurveData;
 
 @lombok.Getter
 @lombok.Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class PointCurveData extends CurveData {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

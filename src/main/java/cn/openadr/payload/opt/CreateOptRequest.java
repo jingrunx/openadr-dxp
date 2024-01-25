@@ -1,5 +1,6 @@
 package cn.openadr.payload.opt;
 
+import java.io.Serial;
 import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -14,6 +15,7 @@ import cn.openadr.model.target.Target;
 @lombok.Getter
 @lombok.Setter
 public class CreateOptRequest extends OptRequest {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public final QualifiedEventID qualifiedEventID = new QualifiedEventID();

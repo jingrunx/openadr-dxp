@@ -1,5 +1,6 @@
 package cn.openadr.model.event;
 
+import java.io.Serial;
 import java.time.LocalDateTime;
 import lombok.NoArgsConstructor;
 
@@ -16,6 +17,7 @@ import cn.openadr.jackson.EnumeratedSerializer;
 @lombok.Setter
 @NoArgsConstructor
 public class EventDescriptor extends QualifiedEventID {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

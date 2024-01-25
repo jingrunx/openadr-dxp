@@ -1,5 +1,6 @@
 package cn.openadr.payload;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -20,6 +21,7 @@ import cn.openadr.payload.rpt.*;
 @lombok.Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SignedObject implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public String id;

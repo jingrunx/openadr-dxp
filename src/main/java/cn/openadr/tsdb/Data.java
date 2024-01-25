@@ -1,5 +1,6 @@
 package cn.openadr.tsdb;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
@@ -14,6 +15,7 @@ import cn.openadr.domain.DataQuality;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Data implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public Number value;

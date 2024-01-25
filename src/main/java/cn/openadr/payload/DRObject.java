@@ -1,5 +1,6 @@
 package cn.openadr.payload;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.databind.annotation.JsonTypeIdResolver;
 @JsonTypeInfo(property = "root", use = JsonTypeInfo.Id.CUSTOM)
 @JsonTypeIdResolver(DRTypeIdResolver.class)
 public abstract class DRObject implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

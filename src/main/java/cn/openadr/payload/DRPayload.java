@@ -1,10 +1,12 @@
 package cn.openadr.payload;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @lombok.Getter
 @lombok.Setter
 public class DRPayload implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public final SignedObject signedObject = new SignedObject();

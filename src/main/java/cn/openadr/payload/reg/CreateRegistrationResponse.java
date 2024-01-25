@@ -1,5 +1,6 @@
 package cn.openadr.payload.reg;
 
+import java.io.Serial;
 import java.time.temporal.TemporalAmount;
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -15,6 +16,7 @@ import cn.openadr.model.register.ServiceSpecific;
 @lombok.Getter
 @lombok.Setter
 public class CreateRegistrationResponse extends RegistrationResponse {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@JsonDeserialize(contentUsing = TransportType.Deserializer.class)

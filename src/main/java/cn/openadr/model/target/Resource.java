@@ -1,5 +1,6 @@
 package cn.openadr.model.target;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ import cn.openadr.model.register.KeyValue;
 @lombok.Getter
 @lombok.Setter
 public class Resource implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

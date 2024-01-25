@@ -1,7 +1,7 @@
 package cn.openadr.model.event;
 
+import java.io.Serial;
 import java.io.Serializable;
-
 import lombok.NoArgsConstructor;
 
 @lombok.Getter
@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @lombok.EqualsAndHashCode
 @NoArgsConstructor
 public class QualifiedEventID implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

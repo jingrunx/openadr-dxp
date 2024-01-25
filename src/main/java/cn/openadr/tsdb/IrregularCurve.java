@@ -1,5 +1,6 @@
 package cn.openadr.tsdb;
 
+import java.io.Serial;
 import java.time.LocalDateTime;
 import java.util.*;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import org.apache.commons.lang3.tuple.Pair;
 @lombok.Setter
 @NoArgsConstructor
 public class IrregularCurve extends CurveBase {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public final List<Data> values = new LinkedList<>();

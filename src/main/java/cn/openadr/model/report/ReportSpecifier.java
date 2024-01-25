@@ -1,5 +1,6 @@
 package cn.openadr.model.report;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.temporal.TemporalAmount;
@@ -20,6 +21,7 @@ import cn.openadr.jackson.EnumeratedSerializer;
 @lombok.Setter
 @NoArgsConstructor
 public class ReportSpecifier implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

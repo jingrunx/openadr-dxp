@@ -1,9 +1,11 @@
 package cn.openadr.tsdb;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 @lombok.Getter
 public class CurveData implements Serializable {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	/**

@@ -1,5 +1,7 @@
 package cn.openadr.payload.reg;
 
+import java.io.Serial;
+
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import cn.openadr.payload.DNResponse;
@@ -7,6 +9,7 @@ import cn.openadr.payload.DNResponse;
 @lombok.Getter
 @lombok.Setter
 public abstract class RegistrationResponse extends DNResponse {
+	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public String registrationID;
