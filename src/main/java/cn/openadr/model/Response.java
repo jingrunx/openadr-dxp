@@ -25,5 +25,5 @@ public class Response implements Serializable {
 	/**
 	 * 请求ID
 	 */
-	public String requestID;
+	public Long requestID;
 }

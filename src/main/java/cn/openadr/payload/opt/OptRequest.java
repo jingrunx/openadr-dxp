@@ -12,7 +12,7 @@ public abstract class OptRequest extends DNRequest {
 	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	public String optID;
+	public Long optID;
 
 	@Override
 	public String toString() {

@@ -13,9 +13,9 @@ public class ReportRequest implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	public final ReportSpecifier reportSpecifier = new ReportSpecifier();
-	public String reportRequestID;
+	public Long reportRequestID;
 
-	public ReportRequest(String reportRequestID) {
+	public ReportRequest(Long reportRequestID) {
 		this.reportRequestID = reportRequestID;
 	}
 }

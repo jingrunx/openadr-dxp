@@ -11,12 +11,13 @@ import cn.openadr.domain.ReportType;
 import cn.openadr.model.report.ReportDescription;
 import cn.openadr.model.report.ReportSpecifier;
 import cn.openadr.payload.rpt.DataReportRequest;
+import static cn.openadr.utils.CommonUtils.id;
 
 public class RptUtils {
 	public static void fillDataReportRequest(DataReportRequest req) {
 		CommonUtils.fillRequest(req);
 
-		req.setReportRequestID(CommonUtils.id());
+		req.setReportRequestID(id());
 		req.setCreatedDateTime(LocalDateTime.now());
 	}
 
@@ -27,7 +28,7 @@ public class RptUtils {
 			// point.setMetric(metric);
 			point.getReportDataSource()
 				.getResourceID()
-				.add("resourceID#1");
+				.add(id());
 
 			point.getSamplingRate()
 				.setMinPeriod(Duration.ofMinutes(1));

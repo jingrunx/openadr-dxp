@@ -14,5 +14,5 @@ public abstract class DRRequest extends DRObject {
 	/**
 	 * 请求编号
 	 */
-	public String requestID;
+	public Long requestID;
 }

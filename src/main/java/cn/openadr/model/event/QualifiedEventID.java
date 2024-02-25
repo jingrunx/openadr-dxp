@@ -15,7 +15,7 @@ public class QualifiedEventID implements Serializable {
 	/**
 	 * 事件ID
 	 */
-	public String eventID;
+	public Long eventID;
 
 	/**
 	 * 修改版本

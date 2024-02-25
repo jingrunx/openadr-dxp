@@ -2,7 +2,7 @@ package cn.openadr.model.report;
 
 import java.io.Serial;
 import java.io.Serializable;
-import java.time.temporal.TemporalAmount;
+import java.time.Duration;
 import lombok.NoArgsConstructor;
 
 /**
@@ -18,11 +18,11 @@ public class SamplingRate implements Serializable {
 	/**
 	 * 最小间隔: 单位(分钟)
 	 */
-	public TemporalAmount minPeriod;
+	public Duration minPeriod;
 	/**
 	 * 最大间隔: 单位(分钟)
 	 */
-	public TemporalAmount maxPeriod;
+	public Duration maxPeriod;
 	/**
 	 * 变位上送
 	 */

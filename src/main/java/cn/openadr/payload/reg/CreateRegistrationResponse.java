@@ -1,7 +1,7 @@
 package cn.openadr.payload.reg;
 
 import java.io.Serial;
-import java.time.temporal.TemporalAmount;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
@@ -26,9 +26,9 @@ public class CreateRegistrationResponse extends RegistrationResponse {
 	/**
 	 * 上位节点ID
 	 */
-	public String unID;
+	public Long unID;
 	/**
 	 * 轮询频率
 	 */
-	public TemporalAmount pollFreq;
+	public Duration pollFreq;
 }

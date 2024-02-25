@@ -13,7 +13,7 @@ public abstract class DataReportRequest extends DNRequest {
 	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	public String reportRequestID;
+	public Long reportRequestID;
 	public LocalDateTime createdDateTime;
 
 	@Override

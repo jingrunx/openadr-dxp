@@ -19,7 +19,7 @@ public final class DRObjectUtils {
 			.orElse(null);
 	}
 
-	public static String dnID(Object object) {
+	public static Long dnID(Object object) {
 		if(object instanceof DNRequest) {
 			return ((DNRequest) object).dnID;
 		} else if(object instanceof DNResponse) {
@@ -29,7 +29,7 @@ public final class DRObjectUtils {
 		}
 	}
 
-	public static String requestID(Object object) {
+	public static Long requestID(Object object) {
 		if(object instanceof DNRequest) {
 			return ((DNRequest) object).requestID;
 		} else if(object instanceof DNResponse) {
@@ -39,7 +39,7 @@ public final class DRObjectUtils {
 		}
 	}
 
-	public static String requestID(DNRequest request, DNResponse response) {
+	public static Long requestID(DNRequest request, DNResponse response) {
 		return Optional.ofNullable(request)
 			.map(DNRequest::getRequestID)
 			.orElse(Optional.ofNullable(response)
@@ -48,7 +48,7 @@ public final class DRObjectUtils {
 				.orElse(null));
 	}
 
-	public static String dnID(DNRequest request, DNResponse response) {
+	public static Long dnID(DNRequest request, DNResponse response) {
 		return Optional.ofNullable(request)
 			.map(DNRequest::getDnID)
 			.orElse(Optional.ofNullable(response)

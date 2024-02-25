@@ -2,8 +2,8 @@ package cn.openadr.model.report;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.temporal.TemporalAmount;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.NoArgsConstructor;
@@ -31,7 +31,7 @@ public class ReportSpecifier implements Serializable {
 	/**
 	 * 报告样式编号
 	 */
-	public String reportSpecifierID;
+	public Long reportSpecifierID;
 	/**
 	 * 报告名称
 	 */
@@ -56,9 +56,9 @@ public class ReportSpecifier implements Serializable {
 	 * 如果与granularity相同或者为PT0S，则相当于每次报送实时数据，用LiveReport格式报送
 	 * 否则按照HistoryReport格式报送
 	 */
-	public TemporalAmount backDuration;
+	public Duration backDuration;
 	/**
 	 * 曲线数据之间的采样间隔(granularity)
 	 */
-	public TemporalAmount period;
+	public Duration period;
 }

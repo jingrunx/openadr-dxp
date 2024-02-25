@@ -9,5 +9,5 @@ public class Node implements Serializable {
 	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	public String node;
+	public Long node;
 }

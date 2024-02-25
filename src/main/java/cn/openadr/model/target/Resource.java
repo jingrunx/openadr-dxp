@@ -27,7 +27,7 @@ public class Resource implements Serializable {
 	/**
 	 * 资源之间的横向关联关系
 	 */
-	public final List<String> relationID = new ArrayList<>();
+	public final List<Long> relationID = new ArrayList<>();
 	/**
 	 * 资源的扩展属性
 	 */
@@ -35,7 +35,7 @@ public class Resource implements Serializable {
 	/**
 	 * 资源ID
 	 */
-	public String resourceID;
+	public Long resourceID;
 	/**
 	 * 资源名称
 	 */
@@ -59,5 +59,5 @@ public class Resource implements Serializable {
 	/**
 	 * 上级资源
 	 */
-	public String parentResourceID;
+	public Long parentResourceID;
 }

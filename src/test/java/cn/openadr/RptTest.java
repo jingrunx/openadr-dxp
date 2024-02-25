@@ -164,7 +164,7 @@ public class RptTest extends AbstractTest {
 
 		for(int i = 0; i < 2; ++i) {
 			MeterAsset meter = new MeterAsset();
-			meter.setMrid(CommonUtils.id());
+			meter.setMrid(String.valueOf(CommonUtils.id()));
 		}
 
 //		RptUtils.fillReportDescription(req.getReportDescription());

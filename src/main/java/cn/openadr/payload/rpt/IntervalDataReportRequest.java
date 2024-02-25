@@ -1,8 +1,8 @@
 package cn.openadr.payload.rpt;
 
 import java.io.Serial;
+import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.temporal.TemporalAmount;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +21,7 @@ public class IntervalDataReportRequest extends DataReportRequest {
 	/**
 	 * 步长(单位:分钟)
 	 */
-	public TemporalAmount period;
+	public Duration period;
 
 	public final List<PointCurveData> pointCurveData = new ArrayList<>();
 

@@ -14,14 +14,14 @@ public class CancelReportRequest extends DNRequest {
 	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	public final List<String> reportRequestID = new ArrayList<>();
+	public final List<Long> reportRequestID = new ArrayList<>();
 	public boolean reportToFollow;
 
-	public CancelReportRequest(String reportRequestID) {
+	public CancelReportRequest(Long reportRequestID) {
 		this(reportRequestID, false);
 	}
 
-	public CancelReportRequest(String reportRequestID, boolean reportToFollow) {
+	public CancelReportRequest(Long reportRequestID, boolean reportToFollow) {
 		this.reportRequestID.add(reportRequestID);
 		this.reportToFollow = reportToFollow;
 	}

@@ -14,13 +14,13 @@ public class Target implements Serializable {
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
 	@JsonInclude(value = JsonInclude.Include.NON_EMPTY)
-	public final List<String> dnID = new ArrayList<>();
+	public final List<Long> dnID = new ArrayList<>();
 	@JsonInclude(value = JsonInclude.Include.NON_EMPTY)
-	public final List<String> resourceID = new ArrayList<>();
+	public final List<Long> resourceID = new ArrayList<>();
 	@JsonInclude(value = JsonInclude.Include.NON_EMPTY)
-	public final List<String> groupID = new ArrayList<>();
+	public final List<Long> groupID = new ArrayList<>();
 	@JsonInclude(value = JsonInclude.Include.NON_EMPTY)
-	public final List<String> partyID = new ArrayList<>();
+	public final List<Long> partyID = new ArrayList<>();
 
 	@JsonInclude(value = JsonInclude.Include.NON_EMPTY)
 	public final List<EndDeviceAsset> endDeviceAsset = new ArrayList<>();

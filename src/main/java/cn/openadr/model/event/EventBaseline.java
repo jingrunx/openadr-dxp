@@ -19,9 +19,9 @@ public class EventBaseline implements Serializable {
 	@Serial
 	private static final long serialVersionUID = cn.openadr.Version.V1;
 
-	public String baselineID;
+	public Long baselineID;
 	public String baselineName;
 	public final MetricDescription metric = new MetricDescription();
-	public final List<String> resourceID = new ArrayList<>();
+	public final List<Long> resourceID = new ArrayList<>();
 	public final CurveData intervals = new CurveData();
 }

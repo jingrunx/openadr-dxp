@@ -1,6 +1,6 @@
 package cn.openadr.domain;
 
-import java.time.temporal.TemporalAmount;
+import java.time.Duration;
 
 public interface MetricType2 {
 	/* public */ String prefix_elec = "e";
@@ -111,7 +111,7 @@ public interface MetricType2 {
 	 * 根据电量测点和积分时段产生与时段相关的测点名
 	 * <li>如有功电量为[e.ep]，15分钟有功电量为[e.ep.pt15m]，日有功电量为[e.ep.p1d]
 	 */
-	default String periodMetric(String eMetric, TemporalAmount period) {
+	default String periodMetric(String eMetric, Duration period) {
 		String periodStr = period.toString();
 		return eMetric + '.' + periodStr.toLowerCase();
 	}

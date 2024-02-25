@@ -2,7 +2,6 @@ package cn.openadr.utils;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 import cn.openadr.domain.EndDeviceAssetType;
 import cn.openadr.model.Response;
@@ -15,9 +14,8 @@ import cn.openadr.payload.opt.OptRequest;
 import cn.openadr.payload.reg.RegistrationRequest;
 
 public class CommonUtils {
-	public static String id() {
-		return UUID.randomUUID()
-			.toString();
+	public static Long id() {
+		return System.currentTimeMillis();
 	}
 
 	public static LocalDateTime dtstart() {
@@ -32,7 +30,7 @@ public class CommonUtils {
 
 	public static void fillRequest(DNRequest req) {
 		fillRequest((DRRequest) req);
-		req.setDnID("dn#1");
+		req.setDnID(id());
 	}
 
 	public static void fillRegRequest(RegistrationRequest req) {

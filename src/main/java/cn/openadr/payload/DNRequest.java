@@ -17,7 +17,7 @@ public abstract class DNRequest extends DRRequest {
 	/**
 	 * DN编号
 	 */
-	public String dnID;
+	public Long dnID;
 
 	@Override
 	public String toString() {

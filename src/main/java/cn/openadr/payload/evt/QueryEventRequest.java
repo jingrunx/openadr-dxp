@@ -1,8 +1,8 @@
 package cn.openadr.payload.evt;
 
 import java.io.Serial;
+import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.temporal.TemporalAmount;
 import java.util.EnumSet;
 import java.util.Set;
 
@@ -31,5 +31,5 @@ public class QueryEventRequest extends DNRequest {
 	/**
 	 * 要查询的事件时间范围
 	 */
-	public TemporalAmount duration;
+	public Duration duration;
 }
